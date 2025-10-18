@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact CodeCanvas - Get in touch with our team for inquiries, collaborations, or feedback about AI and technology.">
+    <title>Contact Us | CodeCanvas - AI & Technology Blog</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fadeIn': 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .form-input:focus, .form-textarea:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: bold;
+            color: #333;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 28px;
+        }
+        h3 {
+            font-size: 22px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+        h5 {
+            font-size: 16px;
+        }
+        h6 {
+            font-size: 14px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #337ab7;
+        }
+        a:hover {
+            color: #23527c;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #23527c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="text-2xl font-bold text-primary-700">TechBlog</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary-600 transition-colors">About</a>
+                    <a href="contact.html" class="text-primary-600 font-medium">Contact</a>
+                    <a href="posts-page.html" class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full hover:opacity-90 transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-primary-600">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary-600">About</a>
+                <a href="contact.html" class="block py-2 text-primary-600 font-medium">Contact</a>
+                <a href="#" class="inline-block mt-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full text-sm">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-white py-20 md:py-28 overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-secondary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 mb-6">
+                    <span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+                    Get In Touch
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Let's <span class="gradient-text">Connect</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Have questions or feedback? We'd love to hear from you. Reach out to our team and we'll get back to you within 24 hours.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact-form" class="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium rounded-full hover:opacity-90 transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl">
+                        Send a Message
+                    </a>
+                    <a href="#contact-info" class="px-8 py-4 bg-white text-gray-700 font-medium rounded-full border border-gray-200 hover:border-primary-300 hover:text-primary-600 transition-all">
+                        Contact Info
+                        <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Success/Error Messages -->
+            <div id="form-messages" class="hidden fixed top-20 right-6 max-w-sm p-4 rounded-lg shadow-lg z-50">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-900" id="message-text"></p>
+                    </div>
+                    <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg p-1.5 hover:bg-gray-100">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="inline-flex items-center px-4 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-4">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Us a Message
+                        </span>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Get in Touch</h2>
+                        <p class="text-gray-600">Have a question or want to work together? Fill out the form below.</p>
+                    </div>
+                    
+                    <form id="contactForm" class="space-y-6">
+                    <p>Fill out the form below and we'll get back to you shortly.</p>
+                    
+                    <div class="alert alert-success" id="success-message">
+                        <i class="fas fa-check-circle"></i> Your message has been sent successfully!
+                    </div>
+                    
+                    <div class="alert alert-error" id="error-message">
+                        <i class="fas fa-exclamation-circle"></i> There was an error sending your message. Please try again.
+                    </div>
+                    
+                    <form id="contact-form">
+                        <div class="form-group" id="name-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <div class="error-message" id="name-error">Please enter your full name</div>
+                        </div>
+                        
+                        <div class="form-group" id="email-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                            <div class="error-message" id="email-error">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group" id="subject-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control">
+                        </div>
+                        
+                        <div class="form-group" id="message-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <div class="error-message" id="message-error">Please enter your message</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent" id="submit-btn">
+                            <span id="btn-text">Send Message</span>
+                            <span id="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Feel free to reach out through any of these channels:</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>contact@codecanvas.blog</p>
+                            <p>We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p>Mon-Fri from 9am to 5pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Office</h3>
+                            <p>123 Tech Street</p>
+                            <p>San Francisco, CA 94107</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/IT-Developeres/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="relative h-96 md:h-[500px] bg-gray-100">
+        <div id="map" class="w-full h-full"></div>
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full shadow-lg px-6 py-2 flex items-center">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-sm font-medium">Our Office Location</span>
+        </div>
+        
+        <!-- Map Info Window Template (Hidden by default) -->
+        <div id="map-info-window" class="hidden">
+            <div class="p-4">
+                <h4 class="font-bold text-lg mb-1">BlogsTech </h4>
+                <p class="text-gray-600 text-sm">123 Tech Street, San Francisco, CA 94107</p>
+                <a href="#" class="inline-flex items-center text-primary-600 text-sm mt-2">
+                    <i class="fas fa-directions mr-1"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-flex items-center px-4 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">
+                    <i class="fas fa-question-circle mr-2"></i>
+                    FAQs
+                </span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-4 mb-3">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our products, services, and support.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+                        <span class="text-lg font-medium text-gray-900">How can I contact customer support?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">You can reach our customer support team by emailing support@codecanvas.com or by calling our toll-free number at +1 (555) 123-4567. Our support team is available Monday through Friday from 9 AM to 6 PM EST.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+                        <span class="text-lg font-medium text-gray-900">What are your business hours?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">Our main office is open Monday through Friday from 9:00 AM to 6:00 PM EST. However, our support team is available 24/7 for urgent matters. You can also reach us via email at any time, and we'll respond within 24 hours.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+                        <span class="text-lg font-medium text-gray-900">Do you offer custom development services?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">Yes, we offer custom development services tailored to your specific needs. Our team of experienced developers can help you build custom solutions, integrate with existing systems, or develop new applications from scratch. Contact our sales team to discuss your project requirements.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+                        <span class="text-lg font-medium text-gray-900">What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">We accept all major credit cards (Visa, Mastercard, American Express, Discover), PayPal, and bank transfers. For enterprise customers, we also offer annual billing with net-30 terms. All transactions are processed securely through our PCI-compliant payment processor.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6">Still have questions? We're here to help!</p>
+                <a href="#contact-form" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Contact Support
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section with Animation -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-secondary-600 text-white relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full mix-blend-overlay filter blur-xl animate-blob"></div>
+            <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-white/10 rounded-full mix-blend-overlay filter blur-xl animate-blob animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/10 rounded-full mix-blend-overlay filter blur-xl animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center justify-center px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    <span class="text-sm font-medium">Stay Updated</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto mb-8">
+                    Get the latest AI & tech news, tutorials, and exclusive content delivered straight to your inbox every week.
+                </p>
+                
+                <form id="newsletterForm" class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-3">
+                    <div class="flex-1">
+                        <label for="newsletter-email" class="sr-only">Email address</label>
+                        <div class="relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="far fa-envelope text-gray-400"></i>
+                            </div>
+                            <input type="email" id="newsletter-email" name="email" required 
+                                class="block w-full pl-10 pr-4 py-4 border-0 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500" 
+                                placeholder="Enter your email address">
+                        </div>
+                    </div>
+                    <button type="submit" 
+                        class="px-6 py-4 bg-white text-primary-700 font-medium rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-primary-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                        id="subscribe-btn">
+                        <span id="btn-text">Subscribe Now</span>
+                        <span id="btn-loading" class="hidden">
+                            <i class="fas fa-spinner fa-spin mr-2"></i> Subscribing...
+                        </span>
+                    </button>
+                </form>
+                
+                <p class="text-sm text-white/70 mt-4">
+                    We respect your privacy. Unsubscribe at any time. No spam, ever.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Live Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
+        <button id="chat-toggle" class="w-14 h-14 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all transform hover:scale-105">
+            <i class="fas fa-comment-dots text-xl"></i>
+            <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full animate-ping"></span>
+        </button>
+        
+        <div id="chat-container" class="hidden absolute bottom-20 right-0 w-80 bg-white rounded-xl shadow-xl overflow-hidden flex flex-col" style="height: 500px;">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                        <i class="fas fa-robot text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">BlogsTech Support</h3>
+                        <p class="text-xs opacity-80">We're online</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-50">
+                <div class="mb-4">
+                    <div class="flex items-start mb-2">
+                        <div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mr-2">
+                            <i class="fas fa-robot text-primary-600"></i>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm max-w-xs">
+                            <p class="text-sm">Hello! 👋 How can I help you today?</p>
+                            <p class="text-xs text-gray-500 mt-1">Just now</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="border-t border-gray-200 p-3 bg-white">
+                <form id="chat-form" class="flex items-center">
+                    <input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <button type="submit" class="bg-primary-600 text-white px-4 py-2 rounded-r-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+  
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    this.querySelector('i').classList.toggle('fa-bars');
+                    this.querySelector('i').classList.toggle('fa-times');
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenuButton.querySelector('i').classList.remove('fa-times');
+                            mobileMenuButton.querySelector('i').classList.add('fa-bars');
+                        }
+                    }
+                });
+            });
+            
+            // Add shadow to header on scroll
+            const header = document.querySelector('header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 10) {
+                        header.classList.add('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+                    } else {
+                        header.classList.remove('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+                    }
+                });
+            }
+            
+            // Initialize Google Map
+            function initMap() {
+                const location = { lat: 37.7749, lng: -122.4194 }; // San Francisco coordinates
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: location,
+                    styles: [
+                        {
+                            "featureType": "all",
+                            "elementType": "geometry.fill",
+                            "stylers": [{"lightness": "-100"}, {"color": "#ffdac9"}]
+                        },
+                        {
+                            "featureType": "poi",
+                            "elementType": "geometry.fill",
+                            "stylers": [{"visibility": "on"}, {"color": "#eeebe6"}]
+                        },
+                        {
+                            "featureType": "water",
+                            "elementType": "geometry",
+                            "stylers": [{"color":"#5f94ff"}, {"lightness": 20}]
+                        }
+                    ]
+                });
+                
+                const marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    title: 'CodeCanvas HQ',
+                    icon: {
+                        url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                        scaledSize: new google.maps.Size(40, 40)
+                    },
+                    animation: google.maps.Animation.DROP
+                });
+                
+                const infoWindow = new google.maps.InfoWindow({
+                    content: document.getElementById('map-info-window')
+                });
+                
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+            }
+            
+            // FAQ Accordion
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('i');
+                    
+                    // Close all other open items
+                    document.querySelectorAll('.faq-content').forEach(item => {
+                        if (item !== content && !item.classList.contains('hidden')) {
+                            item.classList.add('hidden');
+                            const otherIcon = item.previousElementSibling.querySelector('i');
+                            otherIcon.classList.remove('rotate-180');
+                            otherIcon.classList.add('rotate-0');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                    icon.classList.toggle('rotate-0');
+                });
+            });
+            
+            // Live Chat Toggle
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatContainer = document.getElementById('chat-container');
+            const closeChat = document.getElementById('close-chat');
+            
+            if (chatToggle && chatContainer) {
+                chatToggle.addEventListener('click', () => {
+                    chatContainer.classList.toggle('hidden');
+                    chatContainer.classList.toggle('opacity-0');
+                    chatContainer.classList.toggle('opacity-100');
+                });
+                
+                closeChat.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    chatContainer.classList.add('hidden', 'opacity-0');
+                    chatContainer.classList.remove('opacity-100');
+                });
+                
+                // Close chat when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!chatContainer.contains(e.target) && e.target !== chatToggle) {
+                        chatContainer.classList.add('hidden', 'opacity-0');
+                        chatContainer.classList.remove('opacity-100');
+                    }
+                });
+            }
+            
+            // Chat Form Submission
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+            
+            if (chatForm && chatInput && chatMessages) {
+                chatForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const message = chatInput.value.trim();
+                    
+                    if (message) {
+                        // Add user message
+                        addMessage(message, 'user');
+                        chatInput.value = '';
+                        
+                        // Simulate bot response
+                        setTimeout(() => {
+                            const responses = [
+                                "Thanks for your message! Our team will get back to you soon.",
+                                "I've noted your inquiry. Is there anything else I can help with?",
+                                "Great question! Let me check that for you..."
+                            ];
+                            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                            addMessage(randomResponse, 'bot');
+                        }, 1000);
+                    }
+                });
+                
+                function addMessage(text, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('mb-4');
+                    
+                    const messageContent = `
+                        <div class="flex items-start ${sender === 'user' ? 'justify-end' : ''} mb-2">
+                            ${sender === 'bot' ? `
+                            <div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mr-2">
+                                <i class="fas fa-robot text-primary-600"></i>
+                            </div>` : ''}
+                            <div class="bg-${sender === 'user' ? 'primary-600' : 'white'} p-3 rounded-lg shadow-sm max-w-xs">
+                                <p class="text-sm ${sender === 'user' ? 'text-white' : 'text-gray-800'}">${text}</p>
+                                <p class="text-xs ${sender === 'user' ? 'text-primary-200' : 'text-gray-500'} mt-1">Just now</p>
+                            </div>
+                            ${sender === 'user' ? `
+                            <div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 ml-2">
+                                <i class="fas fa-user text-primary-600"></i>
+                            </div>` : ''}
+                        </div>
+                    `;
+                    
+                    messageDiv.innerHTML = messageContent;
+                    chatMessages.appendChild(messageDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            }
+            
+            // Form validation and submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                // Initialize EmailJS with your public key
+                emailjs.init("YOUR_PUBLIC_KEY");
+                
+                // Form elements
+                const formElements = {
+                    name: document.getElementById('name'),
+                    email: document.getElementById('email'),
+                    subject: document.getElementById('subject'),
+                    message: document.getElementById('message'),
+                    submitBtn: document.querySelector('#contactForm button[type="submit"]')
+                };
+                
+                // Show form message
+                function showMessage(type, message) {
+                    const messageEl = document.getElementById('form-messages');
+                    const messageText = document.getElementById('message-text');
+                    
+                    messageEl.className = `fixed top-20 right-6 max-w-sm p-4 rounded-lg shadow-lg z-50 flex items-start ${type === 'success' ? 'bg-green-50' : 'bg-red-50'}`;
+                    messageText.textContent = message;
+                    messageText.className = `text-sm ${type === 'success' ? 'text-green-800' : 'text-red-800'}`;
+                    messageEl.querySelector('i').className = `fas ${type === 'success' ? 'fa-check-circle text-green-500' : 'fa-exclamation-circle text-red-500'} text-2xl mr-3`;
+                    
+                    messageEl.classList.remove('hidden');
+                    
+                    // Auto-hide after 5 seconds
+                    setTimeout(() => {
+                        messageEl.classList.add('hidden');
+                    }, 5000);
+                }
+                
+                // Form validation function
+                function validateForm() {
+                    let isValid = true;
+                    
+                    // Reset all error states
+                    Object.keys(formElements).forEach(key => {
+                        if (formElements[key] && formElements[key].parentElement) {
+                            formElements[key].parentElement.classList.remove('border-red-500');
+                            const errorElement = document.getElementById(`${key}-error`);
+                            if (errorElement) errorElement.textContent = '';
+                        }
+                    });
+                    
+                    // Validate name
+                    if (!formElements.name.value.trim()) {
+                        formElements.name.parentElement.classList.add('border-red-500');
+                        const errorElement = document.getElementById('name-error');
+                        if (errorElement) errorElement.textContent = 'Name is required';
+                        isValid = false;
+                    }
+                    
+                    // Validate email
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!formElements.email.value.trim()) {
+                        formElements.email.parentElement.classList.add('border-red-500');
+                        const errorElement = document.getElementById('email-error');
+                        if (errorElement) errorElement.textContent = 'Email is required';
+                        isValid = false;
+                    } else if (!emailRegex.test(formElements.email.value)) {
+                        formElements.email.parentElement.classList.add('border-red-500');
+                        const errorElement = document.getElementById('email-error');
+                        if (errorElement) errorElement.textContent = 'Please enter a valid email address';
+                        isValid = false;
+                    }
+                    
+                    // Validate message
+                    if (!formElements.message.value.trim()) {
+                        formElements.message.parentElement.classList.add('border-red-500');
+                        const errorElement = document.getElementById('message-error');
+                        if (errorElement) errorElement.textContent = 'Message is required';
+                        isValid = false;
+                    }
+                    
+                    return isValid;
+                }          
+                // Form submission handler
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validate form
+                    if (!validateForm()) {
+                        showMessage('error', 'Please fill in all required fields correctly.');
+                        return;
+                    }
+                    
+                    // Show loading state
+                    const originalText = formElements.submitBtn.innerHTML;
+                    formElements.submitBtn.disabled = true;
+                    formElements.submitBtn.innerHTML = `
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                    `;
+                    
+                    // Prepare form data
+                    const formData = {
+                        name: formElements.name.value.trim(),
+                        email: formElements.email.value.trim(),
+                        subject: formElements.subject.value.trim(),
+                        message: formElements.message.value.trim()
+                    };
+                    
+                    // Simulate form submission (replace with actual EmailJS code)
+                    setTimeout(() => {
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Show success message
+                        showMessage('success', 'Your message has been sent successfully! We\'ll get back to you soon.');
+                        
+                        // Reset button
+                        formElements.submitBtn.disabled = false;
+                        formElements.submitBtn.innerHTML = originalText;
+                        
+                        // Scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        
+                        // For actual EmailJS integration, uncomment and configure:
+                        /*
+                        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                            .then(function(response) {
+                                console.log('SUCCESS!', response.status, response.text);
+                                showMessage('success', 'Your message has been sent successfully! We\'ll get back to you soon.');
+                                contactForm.reset();
+                            }, function(error) {
+                                console.log('FAILED...', error);
+                                showMessage('error', 'Failed to send message. Please try again later.');
+                            })
+                            .finally(function() {
+                                formElements.submitBtn.disabled = false;
+                                formElements.submitBtn.innerHTML = originalText;
+                            });
+                        */
+                    }, 1500);
+                });
+                
+                // Real-time validation for required fields
+                const requiredFields = ['name', 'email', 'message'];
+                requiredFields.forEach(fieldName => {
+                    const field = formElements[fieldName];
+                    if (field) {
+                        field.addEventListener('input', function() {
+                            const value = this.value.trim();
+                            const fieldGroup = this.parentElement;
+                            
+                            if (fieldName === 'email' && value) {
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailRegex.test(value)) {
+                                    fieldGroup.classList.add('border-red-500');
+                                    const errorElement = document.getElementById(`${fieldName}-error`);
+                                    if (errorElement) errorElement.textContent = 'Please enter a valid email address';
+                                    return;
+                                }
+                            }
+                            
+                            if (value) {
+                                fieldGroup.classList.remove('border-red-500');
+                                const errorElement = document.getElementById(`${fieldName}-error`);
+                                if (errorElement) errorElement.textContent = '';
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Newsletter form submission
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('newsletter-email').value.trim();
+                    const btnText = document.getElementById('btn-text');
+                    const btnLoading = document.getElementById('btn-loading');
+                    
+                    // Simple email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!email || !emailRegex.test(email)) {
+                        showMessage('error', 'Please enter a valid email address');
+                        return;
+                    }
+                    
+                    // Show loading state
+                    btnText.classList.add('hidden');
+                    btnLoading.classList.remove('hidden');
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Reset form
+                        newsletterForm.reset();
+                        
+                        // Show success message
+                        showMessage('success', 'Thank you for subscribing to our newsletter!');
+                        
+                        // Reset button
+                        btnText.classList.remove('hidden');
+                        btnLoading.classList.add('hidden');
+                    }, 1500);
+                });
+            }
+            
+            // Close message when clicking the close button
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('#form-messages button')) {
+                    document.getElementById('form-messages').classList.add('hidden');
+                }
+            });
+            
+            // Add animation classes on scroll
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.animate-on-scroll');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('opacity-100', 'translate-y-0');
+                    }
+                });
+            }
+            
+            // Run once on load and then on scroll
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-10 h-10 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="text-2xl font-bold text-white">Tech<span class="text-primary-400">Blog</span></span>
+                    </div>
+                    <p class="text-gray-400">
+                        BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
+                        Learn, build, and grow with the future of technology.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="https://www.facebook.com/share/1BTCzRpnMr/" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muhammad-imran-972364373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="GitHub">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="index.html#recent-posts" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Data Science</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" required 
+                            class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-500 bg-gray-800 text-white">
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-4 rounded-r-md transition-colors duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-500 mt-2">We'll never share your email with anyone else.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm">
+                        &copy; 2025 BlogsTech. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Sitemap</a>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <p class="text-xs text-gray-600">
+                        Made with <i class="fas fa-heart text-red-500"></i> by <a href="#" class="text-primary-400 hover:underline">IT Developer</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

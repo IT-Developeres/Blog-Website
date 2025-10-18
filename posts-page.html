@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Posts</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'typewriter': 'typewriter 2s steps(20, end) 0.5s 1 normal both',
+            'blink-caret': 'blink-caret 0.75s step-end infinite',
+            'fade-in': 'fadeIn 1.5s ease-in-out 2s 1 normal both',
+            'float': 'float 15s infinite ease-in-out',
+            'float-1': 'float 20s infinite ease-in-out',
+            'float-2': 'float 25s infinite ease-in-out -5s',
+            'float-3': 'float 30s infinite ease-in-out -10s',
+          },
+          keyframes: {
+            typewriter: {
+              'from': { width: '0' },
+              'to': { width: '100%' },
+            },
+            'blink-caret': {
+              'from, to': { 'border-color': 'transparent' },
+              '50%': { 'border-color': 'white' },
+            },
+            fadeIn: {
+              'to': { opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+              '50%': { transform: 'translateY(-10px) rotate(2deg)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .transform-style-preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-visible {
+        backface-visibility: visible;
+      }
+      /* Add smooth transition for the click effect */
+      .post-card {
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+      }
+      .post-card.scale-95 {
+        transform: scale(0.98);
+      }
+    }
+  </style>
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800 font-sans">
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="text-2xl font-bold text-primary-700">TechBlog</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary-600 transition-colors">About</a>
+                    <a href="contact.html" class="text-primary-600 font-medium">Contact</a>
+                    <a href="posts-page.html" class="text-primary-600 font-medium">
+                        Recent Posts
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-primary-600">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary-600">About</a>
+                <a href="contact.html" class="block py-2 text-primary-600 font-medium">Contact</a>
+                <a href="posts-page.html" class="block py-2 text-primary-600 font-medium">
+                    Recent Posts
+                </a>
+            </div>
+        </div>
+    </header>
+
+  <main class="py-12 md:py-16 px-4 container mx-auto max-w-7xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">AI Articles</h2>
+      <div class="h-1 w-20 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <article class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 flex flex-col h-full relative group hover:-translate-y-1 hover:shadow-xl border border-gray-100" 
+               style="transform-style: preserve-3d; will-change: transform;"
+               onmousemove="handleCardHover(this, event)"
+               onmouseleave="handleCardLeave(this)">
+        <div class="w-full h-48 overflow-hidden relative">
+          <img src="img/ai.avif" alt="AI History" loading="lazy" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">1</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center mb-3">
+            <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+            <span class="text-sm text-gray-500">New Article</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">History of AI</h3>
+          <p class="text-gray-600 mb-4 flex-grow">Explore the fascinating journey of Artificial Intelligence from its early concepts to modern breakthroughs that are shaping our future.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <a href="ai-history.html" class="inline-flex items-center text-purple-600 font-medium transition-colors duration-300 group-hover:text-purple-700">
+              <span>Read full post</span>
+              <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <span class="text-xs text-gray-400">5 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 flex flex-col h-full relative group hover:-translate-y-1 hover:shadow-xl border border-gray-100"
+               style="transform-style: preserve-3d; will-change: transform;"
+               onmousemove="handleCardHover(this, event)"
+               onmouseleave="handleCardLeave(this)">
+        <div class="w-full h-48 overflow-hidden relative">
+          <img src="img/web-app.avif" alt="Machine Learning" loading="lazy" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">2</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center mb-3">
+            <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+            <span class="text-sm text-gray-500">Trending</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Types of AI Launched in Market</h3>
+          <p class="text-gray-600 mb-4 flex-grow">Discover the various types of Artificial Intelligence technologies currently available in the market and their real-world applications.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <a href="types-ai.html" class="inline-flex items-center text-purple-600 font-medium transition-colors duration-300 group-hover:text-purple-700">
+              <span>Read full post</span>
+              <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <span class="text-xs text-gray-400">8 min read</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    
+    <div class="load-more-container">
+      <button class="load-more-btn">Load More Posts</button>
+    </div>
+  </main>
+
+ <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-10 h-10 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="text-2xl font-bold text-white">Tech<span class="text-primary-400">Blog</span></span>
+                    </div>
+                    <p class="text-gray-400">
+                        BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
+                        Learn, build, and grow with the future of technology.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://github.com/IT-Developeres/" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="GitHub">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="index.html#recent-posts" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Data Science</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" required 
+                            class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-500 bg-gray-800 text-white">
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-4 rounded-r-md transition-colors duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-500 mt-2">We'll never share your email with anyone else.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm">
+                        &copy; 2025 BlogsTech. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Sitemap</a>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <p class="text-xs text-gray-600">
+                        Made with <i class="fas fa-heart text-red-500"></i> by <a href="#" class="text-primary-400 hover:underline">IT Developer</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+  <!-- Back to top button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary-600 transition-colors duration-300 opacity-0 invisible" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // 3D Tilt Effect for Cards
+    function handleCardHover(card, e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+    }
+    
+    function handleCardLeave(card) {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    }
+    
+    // Initialize animations and effects
+    document.addEventListener('DOMContentLoaded', function() {
+      // Back to top button
+      const backToTopButton = document.getElementById('back-to-top');
+      
+      if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('opacity-0', 'invisible');
+            backToTopButton.classList.add('opacity-100', 'visible');
+          } else {
+            backToTopButton.classList.remove('opacity-100', 'visible');
+            backToTopButton.classList.add('opacity-0', 'invisible');
+          }
+        });
+      }
+      
+      // Add click effect to cards
+      const cards = document.querySelectorAll('.post-card');
+      cards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          // Don't trigger if clicking on links, buttons, or form elements inside the card
+          if (e.target.matches('a, a *, button, button *, input, textarea, select') || 
+              e.target.closest('a, button, [role="button"], [tabindex]')) {
+            return;
+          }
+          
+          // Add click effect using class instead of inline styles
+          this.classList.add('scale-95');
+          
+          // Find the first link in the card
+          const link = this.querySelector('a[href]');
+          if (link) {
+            // Navigate to the post page after a short delay for the animation
+            setTimeout(() => {
+              window.location.href = link.href;
+            }, 200);
+          }
+        });
+        
+        // Remove the scale class when mouse leaves the card
+        card.addEventListener('mouseleave', function() {
+          this.classList.remove('scale-95');
+        });
+   
+  
+  </script>
+</body>
+</html>

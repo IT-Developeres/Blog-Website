@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogsTech</title>
+    <meta name="description" content="BlogsTech is your go-to blog for Artificial Intelligence, Machine Learning, and the latest trends in Technology and Digital Innovation.">
+    <meta name="keywords" content="AI blog, Artificial Intelligence, Machine Learning, Tech News, IT Trends, Future Technology, AI Tools, Data Science">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Custom color palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between py-4">
+                <a href="#" class="flex items-center space-x-2">
+                    <svg class="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="text-2xl font-bold text-primary-700">TechBlog</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">Contact</a>
+                    <a href="posts-page.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">Recent Posts</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden bg-white py-4" id="mobile-menu">
+                <a href="index.html" class="block py-2 text-gray-700 hover:bg-gray-100 px-4 rounded">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:bg-gray-100 px-4 rounded">About</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:bg-gray-100 px-4 rounded">Contact</a>
+                <a href="posts-page.html" class="block py-2 text-gray-700 hover:bg-gray-100 px-4 rounded">Recent Posts</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Add padding to account for fixed header -->
+    <div class="h-20"></div>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-primary-50 to-primary-100 py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgxNDAsIDE0LCAyNTUsIDAuMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="inline-block px-4 py-2 mb-6 text-sm font-semibold text-primary-700 bg-primary-100 rounded-full">
+                    Latest in AI & Technology
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                    Welcome to <span class="text-primary-600">Blogs</span><span class="text-secondary-600">Tech</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                    Your daily dose of Artificial Intelligence, emerging technologies, and digital innovation. 
+                    Explore deep dives, tutorials, and insights shaping the future of tech.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="posts-page.html" class="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                        Explore Latest Articles
+                    </a>
+                    <a href="#newsletter" class="px-8 py-4 bg-white hover:bg-gray-50 text-gray-800 font-semibold border-2 border-gray-200 rounded-lg shadow hover:shadow-md transition-all duration-300">
+                        Subscribe to Newsletter
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mt-20 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">500+</div>
+                    <div class="text-gray-600">Articles</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl font-bold text-secondary-600 mb-2">50K+</div>
+                    <div class="text-gray-600">Monthly Readers</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">100+</div>
+                    <div class="text-gray-600">Expert Authors</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl font-bold text-secondary-600 mb-2">24/7</div>
+                    <div class="text-gray-600">Latest Updates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Featured Content -->
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full">
+                                Featured
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="far fa-calendar mr-1"></i> October 18, 2025
+                            </span>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 ">
+                            The Rise of Generative AI: Transforming Creativity and Productivity
+                        </h2>
+                        
+                        <p class="text-gray-600 mb-6 text-lg">
+                            Generative AI is reshaping industries from art to software development. Learn how tools like ChatGPT, DALL·E, and Midjourney are revolutionizing content creation, automation, and business workflows.
+                        </p>
+                        
+                        
+                        
+                    </div>
+                    
+                    <!-- Featured Image -->
+                    <div class="h-64 md:h-auto relative group overflow-hidden">
+                        <img src="img/ai.avif" alt="Generative AI concept image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                            <div class="text-white">
+                                <span class="text-sm font-medium">Photo by AI Artist</span>
+                                <p class="text-xs opacity-80">Generated with DALL·E 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Blog Posts Section -->
+    <section id="recent-posts" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Latest AI & Technology Articles</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with our latest insights, tutorials, and news about artificial intelligence and emerging technologies.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-container">
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-300">
+                    View All Articles
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Explore by Category</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover articles based on your interests and stay ahead in the world of technology.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-primary-100 hover:bg-primary-50">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 mb-3 group-hover:bg-primary-200 transition-colors duration-300">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-primary-700 transition-colors duration-300">AI & ML</h3>
+                        <p class="text-sm text-gray-500 mt-1">0 Articles</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-secondary-100 hover:bg-secondary-50">
+                        <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center text-secondary-600 mb-3 group-hover:bg-secondary-200 transition-colors duration-300">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-secondary-700 transition-colors duration-300">Web Dev</h3>
+                        <p class="text-sm text-gray-500 mt-1">0 Articles</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-green-100 hover:bg-green-50">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-3 group-hover:bg-green-200 transition-colors duration-300">
+                            <i class="fas fa-database text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-green-700 transition-colors duration-300">Data Science</h3>
+                        <p class="text-sm text-gray-500 mt-1">0 Articles</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-purple-100 hover:bg-purple-50">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-3 group-hover:bg-purple-200 transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-purple-700 transition-colors duration-300">Cybersecurity</h3>
+                        <p class="text-sm text-gray-500 mt-1">0 Articles</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-blue-100 hover:bg-blue-50">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-3 group-hover:bg-blue-200 transition-colors duration-300">
+                            <i class="fas fa-cloud text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-blue-700 transition-colors duration-300">Cloud</h3>
+                        <p class="text-sm text-gray-500 mt-1">0 Articles</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-red-100 hover:bg-red-50">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-3 group-hover:bg-red-200 transition-colors duration-300">
+                            <i class="fas fa-mobile-alt text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-red-700 transition-colors duration-300">Mobile</h3>
+                        <p class="text-sm text-gray-500 mt-1">0 Articles</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-yellow-100 hover:bg-yellow-50">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 mb-3 group-hover:bg-yellow-200 transition-colors duration-300">
+                            <i class="fas fa-cube text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-yellow-700 transition-colors duration-300">Blockchain</h3>
+                        <p class="text-sm text-gray-500 mt-1">0 Articles</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card group">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center justify-center text-center hover:border-pink-100 hover:bg-pink-50">
+                        <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-600 mb-3 group-hover:bg-pink-200 transition-colors duration-300">
+                            <i class="fas fa-ellipsis-h text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-900 group-hover:text-pink-700 transition-colors duration-300">More</h3>
+                        <p class="text-sm text-gray-500 mt-1">View all categories</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-16 bg-primary-600 text-white relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center justify-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    <span class="text-sm font-medium">Stay Updated</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto mb-8">
+                    Get the latest AI & tech news, tutorials, and exclusive content delivered straight to your inbox every week.
+                </p>
+                
+                <form class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-3">
+                    <div class="flex-1">
+                        <label for="email" class="sr-only">Email address</label>
+                        <div class="relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="far fa-envelope text-gray-400"></i>
+                            </div>
+                            <input type="email" id="email" name="email" required 
+                                class="focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 block w-full pl-10 pr-4 py-4 border-0 rounded-md text-gray-900 placeholder-gray-500" 
+                                placeholder="Enter your email address">
+                        </div>
+                    </div>
+                    <button type="submit" 
+                        class="px-6 py-4 border border-transparent text-base font-medium rounded-md text-primary-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-primary-500 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                        Subscribe Now
+                    </button>
+                </form>
+                
+                <p class="text-sm text-white/70 mt-4">
+                    We respect your privacy. Unsubscribe at any time. No spam, ever.
+                </p>
+                
+                <div class="flex justify-center space-x-6 mt-8">
+                    <a href="https://www.facebook.com/share/1BTCzRpnMr/" class="text-white hover:text-white/80 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                        <span class="sr-only">Facebook</span>
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-white/80 transition-colors duration-300">
+                        <span class="sr-only">Twitter</span>
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-white/80 transition-colors duration-300">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/IT-Developeres/" class="text-white hover:text-white/80 transition-colors duration-300">
+                        <span class="sr-only">GitHub</span>
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-10 h-10 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="text-2xl font-bold text-white">Tech<span class="text-primary-400">Blog</span></span>
+                    </div>
+                    <p class="text-gray-400">
+                        BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
+                        Learn, build, and grow with the future of technology.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="https://www.facebook.com/share/1BTCzRpnMr/" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muhammad-imran-972364373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://github.com/IT-Developeres/" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="GitHub">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#recent-posts" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Data Science</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" required 
+                            class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-500 bg-gray-800 text-white">
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-4 rounded-r-md transition-colors duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-500 mt-2">We'll never share your email with anyone else.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm">
+                        &copy; 2025 BlogsTech. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Sitemap</a>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <p class="text-xs text-gray-600">
+                        Made with <i class="fas fa-heart text-red-500"></i> by <a href="#" class="text-primary-400 hover:underline">IT Developer</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="app.js"></script>
+</body>
+</html>
