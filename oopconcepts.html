@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python vs C++ as OOP Languages — A Deep Comparison</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins for Icons --> <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800  ">
+      <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+      <nav class="flex items-center justify-between h-16">
+        <a href="home.html" class="flex items-center space-x-2">
+<img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="home.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
+          <a href="about.html" class="text-gray-600 hover:text-primary-600 transition-colors">About</a>
+          <a href="contact.html" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a>
+          <a href="posts-page.html" class="text-primary-600 font-medium">Recent Posts</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </nav>
+      
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <a href="home.html" class="block py-2 text-gray-600 hover:text-primary-600">Home</a>
+        <a href="about.html" class="block py-2 text-gray-600 hover:text-primary-600">About</a>
+        <a href="contact.html" class="block py-2 text-gray-600 hover:text-primary-600">Contact</a>
+        <a href="posts-page.html" class="block py-2 text-primary-600 font-medium">Recent Posts</a>
+      </div>
+    </div>
+  </header>
+  <div><script type="text/javascript">
+	atOptions = {
+		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    
+    <h1 class="text-4xl font-bold text-center mb-8 text-blue-600">
+      Python vs C++ as Object-Oriented Languages — A Deep Comparison
+    </h1>
+
+    <p class="text-lg mb-6">
+      Programming languages define how we think and design solutions. Among the many languages out there, <strong>Python</strong> and <strong>C++</strong> stand as two of the most influential in the world of Object-Oriented Programming (OOP). 
+      Both are powerful, both are object-oriented — but they approach problems differently. This article dives deep into how these two languages compare from the OOP perspective, 
+      their structure, complexity, use cases, and what makes one easier or harder than the other.
+    </p>
+
+    <!-- Section 1 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">1. Introduction to OOP</h2>
+    <p class="mb-6">
+      Object-Oriented Programming (OOP) is a paradigm that organizes code into <strong>objects</strong> — reusable structures that contain both data (attributes) and behaviors (methods).
+      OOP helps developers build modular, maintainable, and scalable software. The four core principles of OOP are:
+    </p>
+    <ul class="list-disc ml-8 mb-6 space-y-2">
+      <li><strong>Encapsulation:</strong> Binding data and functions together into one unit (class).</li>
+      <li><strong>Inheritance:</strong> Reusing existing code by creating new classes from old ones.</li>
+      <li><strong>Polymorphism:</strong> Using a single interface to represent different data types.</li>
+      <li><strong>Abstraction:</strong> Hiding unnecessary implementation details from the user.</li>
+    </ul>
+    <p>
+      Both Python and C++ support these principles, but they implement and enforce them differently. Let's explore how.
+    </p>
+
+    <!-- Section 2 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">2. Syntax and Structure</h2>
+    <p class="mb-6">
+      One of the first noticeable differences between Python and C++ lies in their syntax. 
+      Python was designed to be <strong>simple and readable</strong>, while C++ was designed to be <strong>efficient and powerful</strong>.
+    </p>
+<div><script type="text/javascript">
+	atOptions = {
+		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Python Syntax Example:</h3>
+    <pre class="bg-gray-900 text-green-200 rounded-xl p-4 mb-6 overflow-x-auto"><code>class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display(self):
+        print(f"Car: {self.brand} {self.model}")
+
+my_car = Car("Toyota", "Corolla")
+my_car.display()
+</code></pre>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">C++ Syntax Example:</h3>
+    <pre class="bg-gray-900 text-green-200 rounded-xl p-4 mb-6 overflow-x-auto"><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Car {
+public:
+    string brand;
+    string model;
+
+    Car(string b, string m) {
+        brand = b;
+        model = m;
+    }
+
+    void display() {
+        cout &lt;&lt; "Car: " &lt;&lt; brand &lt;&lt; " " &lt;&lt; model &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Car myCar("Toyota", "Corolla");
+    myCar.display();
+    return 0;
+}
+</code></pre>
+
+    <p>
+      You can immediately notice how Python code is cleaner, shorter, and easier to read. C++ requires semicolons, braces, 
+      explicit typing, and includes — giving more control but also more complexity. 
+      For beginners, Python’s structure feels intuitive, while C++ demands attention to detail.
+    </p>
+<div><script type="text/javascript">
+	atOptions = {
+		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+    <!-- Section 3 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">3. Learning Curve and Difficulty</h2>
+    <p class="mb-6">
+      Python is known as a <strong>beginner-friendly language</strong>. Its simplicity allows new programmers to focus on logic rather than syntax.
+      In contrast, C++ is more challenging due to its complex syntax, manual memory management, and strict type system.
+    </p>
+
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-5 mb-6 rounded">
+      <p><strong>Python:</strong> Easy to read, no need to define data types explicitly, no manual memory management, indentation-based structure.</p>
+      <p><strong>C++:</strong> Requires managing pointers, defining data types, handling headers, and understanding memory allocation (stack vs heap).</p>
+    </div>
+
+    <p>
+      So, for students or developers who are new to OOP, Python offers a smoother start. 
+      But for those aiming to build system-level applications or games, understanding C++ is extremely valuable despite its difficulty.
+    </p>
+
+    <!-- Section 4 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">4. OOP Implementation Differences</h2>
+
+    <h3 class="text-2xl font-semibold mb-3 text-gray-700">Classes and Objects</h3>
+    <p class="mb-6">
+      Both languages use <code>class</code> as the blueprint for creating objects. However, C++ differentiates between <strong>stack objects</strong> and <strong>heap objects</strong> 
+      (depending on whether they’re created normally or with <code>new</code>), while Python objects are dynamically created on the heap.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-3 text-gray-700">Inheritance</h3>
+    <p class="mb-6">
+      Python supports multiple inheritance directly. C++ also supports it, but it can become complex due to the “diamond problem.” 
+      Python handles this using a mechanism called the <strong>Method Resolution Order (MRO)</strong>.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-3 text-gray-700">Encapsulation</h3>
+    <p class="mb-6">
+      In Python, encapsulation is more of a convention — private variables are indicated by a single or double underscore, 
+      but they can still be accessed if you try. In C++, access specifiers (<code>public</code>, <code>private</code>, <code>protected</code>) 
+      strictly control visibility and access.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-3 text-gray-700">Polymorphism</h3>
+    <p class="mb-6">
+      Both languages support polymorphism through method overriding and operator overloading. 
+      However, in C++, you often need to use <code>virtual</code> functions for dynamic polymorphism, whereas Python handles it naturally.
+    </p>
+<div><script type="text/javascript">
+	atOptions = {
+		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+    <!-- Section 5 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">5. Memory Management</h2>
+    <p class="mb-6">
+      Memory management is one of the most significant differences between Python and C++.  
+      C++ gives you direct control over memory through pointers and manual allocation (<code>new</code> and <code>delete</code>).  
+      This power allows for optimization but also increases the risk of memory leaks and segmentation faults.
+    </p>
+    <p>
+      Python, on the other hand, has a built-in garbage collector that automatically frees memory that’s no longer in use. 
+      This makes development faster and less error-prone — though it sacrifices some performance.
+    </p>
+
+    <!-- Section 6 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">6. Performance</h2>
+    <p class="mb-6">
+      C++ is generally much faster than Python because it’s a <strong>compiled language</strong>. 
+      Python is an <strong>interpreted language</strong>, which means its code runs through a virtual machine at runtime. 
+      This makes Python slower but much easier to debug and modify.
+    </p>
+
+    <div class="bg-gray-100 border-l-4 border-gray-400 p-5 mb-6 rounded">
+      <p><strong>When performance matters most</strong> — like in games, operating systems, or embedded systems — <strong>C++</strong> is preferred.</p>
+      <p><strong>When development speed and flexibility matter more</strong> — like in data analysis, web apps, or automation — <strong>Python</strong> wins.</p>
+    </div>
+
+    <!-- Section 7 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">7. Use Cases and Real-World Applications</h2>
+
+    <h3 class="text-2xl font-semibold mb-3 text-gray-700">C++ Common Uses</h3>
+    <ul class="list-disc ml-8 mb-6 space-y-2">
+      <li>Game Development (Unreal Engine, Unity backend)</li>
+      <li>System Programming (Operating systems, device drivers)</li>
+      <li>High-performance software (Databases, trading systems)</li>
+      <li>Embedded Systems and IoT</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mb-3 text-gray-700">Python Common Uses</h3>
+    <ul class="list-disc ml-8 mb-6 space-y-2">
+      <li>Web Development (Django, Flask)</li>
+      <li>Data Science and Machine Learning (NumPy, Pandas, TensorFlow)</li>
+      <li>Automation and Scripting</li>
+      <li>AI, Neural Networks, and Data Visualization</li>
+    </ul>
+
+    <!-- Section 8 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">8. Which One Is Easier?</h2>
+    <p class="mb-6">
+      If your goal is to <strong>learn OOP quickly</strong>, Python is easier. It lets you focus on OOP concepts rather than language mechanics. 
+      Its syntax resembles natural English and avoids unnecessary complexity.
+    </p>
+    <p>
+      If your goal is to <strong>master performance and low-level control</strong>, C++ is the better choice. 
+      It teaches how memory, data types, and hardware interact with your program — skills that make you a stronger developer overall.
+    </p>
+<div><script type="text/javascript">
+	atOptions = {
+		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+    <!-- New Section: No-Code / Drag-and-Drop Agents Debate -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">9. Can You Skip Learning Python Because of No-Code / Drag-and-Drop Agent Builders?</h2>
+    <p class="mb-6">
+      A common conversation today is: "Why learn Python or C++ to build agents when powerful no-code, drag-and-drop platforms can create agents for you?" The short answer is: <strong>it depends</strong> on your goals, scale, and the kind of control you need.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">What No-Code / Low-Code Tools Offer</h3>
+    <p class="mb-4">
+      No-code platforms and visual agent builders have matured rapidly. They let non-developers assemble workflows, connect APIs, and create simple automations or agents using visual blocks, templates, and connectors. These tools accelerate prototyping, lower the barrier to entry, and are excellent for business users who need quick solutions without hiring developers.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Limitations of No-Code Solutions</h3>
+    <ul class="list-disc ml-8 mb-4 space-y-2">
+      <li><strong>Flexibility:</strong> Visual builders usually provide common building blocks, but creating highly-custom or novel behaviors often requires writing code.</li>
+      <li><strong>Performance & Optimization:</strong> Fine-grained performance tuning, memory usage optimization, or low-latency behavior is out of reach for most no-code platforms.</li>
+      <li><strong>Integration Complexity:</strong> When systems need bespoke integrations, data transformations, or specialized protocols, code becomes necessary.</li>
+      <li><strong>Debugging & Observability:</strong> Debugging complex flows and instrumenting for monitoring is typically easier when you control the code directly.</li>
+      <li><strong>Vendor Lock-in:</strong> No-code tools can lock you into proprietary formats or platforms, making migration difficult later.</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Where No-Code Excels</h3>
+    <p class="mb-4">
+      No-code agents are ideal for rapid prototyping, internal tools, marketing automations, and small-scale workflows where speed and ease-of-use matter more than custom performance. Teams often use them to validate ideas quickly before investing in full-code implementations.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Why Learning Python Still Matters</h3>
+    <p class="mb-4">
+      Learning Python (or another programming language) remains valuable even in a no-code world. Here’s why:
+    </p>
+    <ul class="list-disc ml-8 mb-6 space-y-2">
+      <li><strong>Deeper Understanding:</strong> Code teaches fundamental concepts — data structures, algorithms, OOP principles — that help you design robust systems.</li>
+      <li><strong>Custom Extensions:</strong> Many no-code platforms allow custom code hooks. Knowing Python lets you write those extensions and fill gaps the visual tools can’t cover.</li>
+      <li><strong>Career Opportunities:</strong> Employers still value engineers who can build, diagnose, and scale systems, not just glue them together visually.</li>
+      <li><strong>Portability:</strong> Code is portable. If you outgrow a platform, your skills and code can move to new environments without vendor lock-in.
+      </li>
+      <li><strong>Advanced ML / AI Work:</strong> Implementing, fine-tuning, and deploying machine learning models typically requires coding — Python is dominant in this space.</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">A Balanced Recommendation</h3>
+    <p class="mb-6">
+      If you are a business user or product manager who needs to build quick agents for internal workflows, start with no-code tools — they save time and let you iterate fast. If you aim to build production-grade systems, optimize performance, or work in AI and research, investing time in Python (and optionally C++) is still essential.
+    </p>
+
+    <p class="mb-6">
+      In short: <strong>no-code is a powerful complement, not a full replacement</strong>. Learning to code gives you the freedom to extend, optimize, and future-proof your agent solutions.
+    </p>
+<div><script type="text/javascript">
+	atOptions = {
+		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+    <!-- Section 10 (renumbered) -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">10. Summary of Key Differences</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="min-w-full border border-gray-300 text-left">
+        <thead class="bg-blue-100">
+          <tr>
+            <th class="py-3 px-4 border-b">Feature</th>
+            <th class="py-3 px-4 border-b">Python</th>
+            <th class="py-3 px-4 border-b">C++</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-3 px-4 border-b">Syntax</td>
+            <td class="py-3 px-4 border-b">Simple and clean</td>
+            <td class="py-3 px-4 border-b">Complex and detailed</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 border-b">Learning Curve</td>
+            <td class="py-3 px-4 border-b">Beginner-friendly</td>
+            <td class="py-3 px-4 border-b">Steep learning curve</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 border-b">Speed</td>
+            <td class="py-3 px-4 border-b">Slower (interpreted)</td>
+            <td class="py-3 px-4 border-b">Faster (compiled)</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 border-b">Memory Management</td>
+            <td class="py-3 px-4 border-b">Automatic (Garbage Collector)</td>
+            <td class="py-3 px-4 border-b">Manual (Pointers)</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 border-b">Use Cases</td>
+            <td class="py-3 px-4 border-b">AI, Web, Automation</td>
+            <td class="py-3 px-4 border-b">Games, OS, Embedded</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 11 -->
+    <h2 class="text-3xl font-semibold text-blue-500 mt-10 mb-4">11. Final Thoughts</h2>
+    <p class="mb-6">
+      Both Python and C++ are brilliant languages that implement Object-Oriented Programming beautifully — but their philosophies differ. 
+      <strong>Python</strong> aims to make coding easier, more readable, and faster to develop. <strong>C++</strong> aims for maximum performance, precision, and control.
+    </p>
+    <p class="mb-6">
+      If you’re just starting out, begin with Python to grasp the essence of OOP. Once you’re comfortable, move to C++ to understand the depth of how things actually work under the hood. 
+      Learning both gives you the best of both worlds — clarity from Python and control from C++.
+    </p>
+
+    <p class="text-center text-xl font-semibold text-gray-600 mt-10">
+      🚀 Learn Python for simplicity. Master C++ for power.  
+      Together, they make you an unstoppable programmer.
+    </p>
+
+  <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                  <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+ </div>
+                    <p class="text-gray-400">
+                        BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
+                        Learn, build, and grow with the future of technology.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="https://www.facebook.com/share/1BTCzRpnMr/" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muhammad-imran-972364373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://github.com/IT-Developeres/" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="GitHub">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="index.html#recent-posts" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cloud Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Data Science</a></li>
+                    </ul>
+                </div>
+<div><script type="text/javascript">
+	atOptions = {
+		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" required 
+                            class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-500 bg-gray-800 text-white">
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-4 rounded-r-md transition-colors duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-500 mt-2">We'll never share your email with anyone else.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm">
+                        &copy; 2025 BlogsTech. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Sitemap</a>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <p class="text-xs text-gray-600">
+                        Made with <i class="fas fa-heart text-red-500"></i> by <a href="#" class="text-primary-400 hover:underline">IT Developer</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
+</body>
+</html>

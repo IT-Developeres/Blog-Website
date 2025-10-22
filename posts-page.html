@@ -73,10 +73,8 @@
         <div class="container mx-auto px-4">
             <nav class="flex items-center justify-between h-16">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <svg class="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    <span class="text-2xl font-bold text-primary-700">TechBlog</span>
+                  <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+
                 </a>
                 
                 <!-- Desktop Navigation -->
@@ -180,6 +178,33 @@
           </div>
         </div>
       </article>
+      <article class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 flex flex-col h-full relative group hover:-translate-y-1 hover:shadow-xl border border-gray-100"
+               style="transform-style: preserve-3d; will-change: transform;"
+               onmousemove="handleCardHover(this, event)"
+               onmouseleave="handleCardLeave(this)">
+        <div class="w-full h-48 overflow-hidden relative">
+          <img src="img/web-app.avif" alt="Machine Learning" loading="lazy" 
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">2</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center mb-3">
+            <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+            <span class="text-sm text-gray-500">Trending</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Diffrence b/w python or c++ in oop</h3>
+          <p class="text-gray-600 mb-4 flex-grow">Discover the various types of Artificial Intelligence technologies currently available in the market and their real-world applications.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <a href="oopconcepts.html" class="inline-flex items-center text-purple-600 font-medium transition-colors duration-300 group-hover:text-purple-700">
+              <span>Read full post</span>
+              <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <span class="text-xs text-gray-400">8 min read</span>
+          </div>
+        </div>
+      </article>
     </div>
     
     <div class="load-more-container">
@@ -193,11 +218,8 @@
                 <!-- About Column -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-2">
-                        <svg class="w-10 h-10 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                        <span class="text-2xl font-bold text-white">Tech<span class="text-primary-400">Blog</span></span>
-                    </div>
+                        <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+ </div>
                     <p class="text-gray-400">
                         BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
                         Learn, build, and grow with the future of technology.
