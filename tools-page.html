@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodeCanvas - Your premier destination for AI, Machine Learning, and Technology insights. Learn about our mission to democratize AI knowledge.">
+    <meta name="keywords" content="AI blog, Artificial Intelligence, Machine Learning, Technology trends, Future Tech, AI insights, ML tutorials">
+    <title>Tools Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fadeIn': 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-primary-600 font-medium">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a>
+                                       <a href="tools-page.html" class="text-gray-600 hover:text-primary-600 transition-colors">Tools</a>
+
+                    <a href="posts-page.html" class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full hover:opacity-90 transition-all transform hover:-translate-y-0.5">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="home.html" class="block py-2 text-gray-600 hover:text-primary-600">Home</a>
+                <a href="about.html" class="block py-2 text-primary-600 font-medium">About</a>
+                <a href="contact.html" class="block py-2 text-gray-600 hover:text-primary-600">Contact</a>
+                                               <a href="tools-page.html" class="block py-2 text-gray-600 hover:text-primary-600">Tools</a>
+
+                <a href="#" class="inline-block mt-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full text-sm">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-white py-5 md:py-10 overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-secondary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+               
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Tools  <span class="gradient-text">Page</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+We’re happy to provide free tools that bring joy and creativity to everyone. Spend your free time exploring and having fun with our tools!                </p>
+                
+                
+            
+            </div>
+        </div>
+    </section>
+    </div>
+ 
+</div>  <!-- About Content Section -->
+   
+ <section id="values" class="py-6 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+           
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Our Core <span class="gradient-text">Tools & Apps</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+Providing the Best Market Tools for our important audience free of cost                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Mission Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300" data-aos="fade-right">
+                    <div class="flex gap-4">
+                        <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-6">
+<i class="fas fa-heart text-2xl text-pink-600"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-6">
+<i class="fas fa-handshake text-2xl text-blue-600"></i>
+                    </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Friendship, Love Calculator</h3>
+                    <div class="space-y-4 text-gray-600">
+                        <p>
+  Our <strong>Love and Friendship Calculator</strong> is designed to bring a touch of fun, curiosity, and positivity into relationships. 
+  Using simple name-based compatibility logic, it provides an entertaining way to explore the bond between two people — whether it’s love, friendship, or both!
+</p>
+
+<p>
+  While it’s not based on complex AI algorithms or scientific matchmaking, the calculator is a lighthearted tool to celebrate connections and share smiles. 
+  Just enter two names, and let the magic reveal your compatibility score — because sometimes, love and friendship are best enjoyed with a bit of playful technology.
+</p>
+
+<a 
+  href="calulator.html" 
+  target="_blank"
+  class="inline-block mt-6 bg-pink-600 text-white font-medium px-6 py-3 rounded-lg shadow-md hover:bg-pink-700 hover:shadow-lg transition-all duration-300"
+>
+  Live Visit Now
+</a>
+ </div>
+                </div>
+                
+                <!-- Values Card -->
+               
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center justify-center px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    <span class="text-sm font-medium">Stay Updated</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated with AI Trends</h2>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto mb-8">
+                    Subscribe to our newsletter and receive the latest insights on Artificial Intelligence, Machine Learning, and Technology trends directly in your inbox.
+                </p>
+                
+                <form class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-3">
+                    <div class="flex-1">
+                        <label for="email" class="sr-only">Email address</label>
+                        <div class="relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="far fa-envelope text-gray-400"></i>
+                            </div>
+                            <input type="email" id="email" name="email" required 
+                                class="block w-full pl-10 pr-4 py-4 border-0 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500" 
+                                placeholder="Enter your email address">
+                        </div>
+                    </div>
+                    <button type="submit" class="px-6 py-4 bg-white text-primary-700 font-medium rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+                
+                <p class="text-sm text-white/70 mt-4">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-white rounded-full mix-blend-overlay"></div>
+                <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-white rounded-full mix-blend-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- About Column -->
+                <div class="lg:col-span-2">
+                    <a href="home.html" class="flex items-center space-x-2">
+                   <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+
+                </a>
+                    <p class="text-gray-400 mb-6">
+                        Your premier destination for AI, Machine Learning, and Technology insights. We're dedicated to making complex concepts accessible to everyone.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center text-white transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="home.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Categories</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Machine Learning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Science</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Deep Learning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Technology Trends</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tutorials</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-semibold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
+                    <form class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white">
+                        <button type="submit" class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-md transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm">&copy; 2023 CodeCanvas. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // Add shadow to header on scroll
+            const header = document.querySelector('header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 10) {
+                        header.classList.add('shadow-md');
+                        header.classList.add('bg-white/95');
+                        header.classList.add('backdrop-blur-sm');
+                    } else {
+                        header.classList.remove('shadow-md');
+                        header.classList.remove('bg-white/95');
+                        header.classList.remove('backdrop-blur-sm');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
