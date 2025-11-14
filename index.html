@@ -6,47 +6,57 @@
     <title>BlogsTech</title>
     <meta name="description" content="BlogsTech is your go-to blog for Artificial Intelligence, Machine Learning, and the latest trends in Technology and Digital Innovation.">
     <meta name="keywords" content="AI blog, Artificial Intelligence, Machine Learning, Tech News, IT Trends, Future Technology, AI Tools, Data Science">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Critical CSS Inlined -->
+    <style>body{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}</style>
+    <!-- Font Awesome - Deferred -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <!-- Tailwind CSS -->
      <meta name="google-site-verification" content="1fwJdomkW1xnybyD2y6k79Go1QAuzbVeXmzYZJm3MxQ" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Custom color palette -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Custom styles - Deferred -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <!-- CSS Async Loader -->
+    <script>!function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);</script>
+    <!-- Custom color palette - Deferred -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        secondary: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            200: '#ddd6fe',
-                            300: '#c4b5fd',
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            800: '#5b21b6',
-                            900: '#4c1d95',
-                        },
+        document.addEventListener('DOMContentLoaded',function(){
+            if(typeof tailwind!=='undefined'){
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                primary: {
+                                    50: '#f0f9ff',
+                                    100: '#e0f2fe',
+                                    200: '#bae6fd',
+                                    300: '#7dd3fc',
+                                    400: '#38bdf8',
+                                    500: '#0ea5e9',
+                                    600: '#0284c7',
+                                    700: '#0369a1',
+                                    800: '#075985',
+                                    900: '#0c4a6e',
+                                },
+                                secondary: {
+                                    50: '#f5f3ff',
+                                    100: '#ede9fe',
+                                    200: '#ddd6fe',
+                                    300: '#c4b5fd',
+                                    400: '#a78bfa',
+                                    500: '#8b5cf6',
+                                    600: '#7c3aed',
+                                    700: '#6d28d9',
+                                    800: '#5b21b6',
+                                    900: '#4c1d95',
+                                },
+                            }
+                        }
                     }
-                }
+                };
             }
-        }
+        });
     </script>
 </head>
 <body>
@@ -54,7 +64,7 @@
         <div class="container mx-auto px-4">
             <nav class="flex items-center justify-between py-4">
                  <a href="index.html" class="flex items-center space-x-2">
-                    <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+                    <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto" width="64" height="64" loading="eager" fetchpriority="high">
 
                 </a>
                 
@@ -98,7 +108,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
 <div><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
@@ -108,7 +118,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
  
 </div>  
 </div>
@@ -191,7 +201,11 @@
                     
                     <!-- Featured Image -->
                     <div class="h-64 md:h-auto relative group overflow-hidden">
-                        <img src="img/ai.avif" alt="Generative AI concept image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <picture>
+                            <source srcset="img/ai.avif" type="image/avif">
+                            <source srcset="img/ai.webp" type="image/webp">
+                            <img src="img/ai.avif" alt="Generative AI concept image" width="800" height="600" loading="eager" fetchpriority="high" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                             <div class="text-white">
                                 <span class="text-sm font-medium">Photo by AI Artist</span>
@@ -235,7 +249,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
 <div><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
@@ -245,7 +259,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
  
 </div><!-- Categories Section -->
     <section class="py-16 bg-gray-50">
@@ -349,7 +363,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
 <div><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
@@ -359,7 +373,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
  
 </div>
     <section id="newsletter" class="py-16 bg-primary-600 text-white relative overflow-hidden">
@@ -433,7 +447,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
 <div><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
@@ -443,7 +457,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js" defer></script></div>
  
 </div>
 
@@ -544,6 +558,6 @@
         </div>
     </footer>
 
-<script src="app.js"></script>
+<script src="app.js" defer></script>
 </body>
 </html>
