@@ -126,56 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Newsletter form submission
-    const newsletterForms = document.querySelectorAll('form.newsletter-form');
-    newsletterForms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value.trim();
-
-            if (email && validateEmail(email)) {
-                // Here you would typically send this to your server
-                console.log('Subscribed with email:', email);
-
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'mt-4 p-3 bg-green-100 text-green-700 rounded-md text-sm';
-                successMessage.textContent = 'Thank you for subscribing! Please check your email to confirm.';
-
-                // Insert after the form
-                this.parentNode.insertBefore(successMessage, this.nextSibling);
-
-                // Clear the input
-                emailInput.value = '';
-
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
-            } else {
-                // Show error message
-                const errorMessage = document.createElement('div');
-                errorMessage.className = 'mt-4 p-3 bg-red-100 text-red-700 rounded-md text-sm';
-                errorMessage.textContent = 'Please enter a valid email address.';
-
-                // Insert after the form
-                this.parentNode.insertBefore(errorMessage, this.nextSibling);
-
-                // Remove error message after 3 seconds
-                setTimeout(() => {
-                    errorMessage.remove();
-                }, 3000);
-            }
-        });
-    });
-
-    // Email validation helper function
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -201,26 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize blog posts when DOM is loaded
     generateBlogPosts();
-
-    // Add animation on scroll
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.fade-in-up, .fade-in, .slide-in-left, .slide-in-right');
-
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('opacity-100', 'translate-y-0');
-            }
-        });
-    };
-
-    // Run once on load
-    animateOnScroll();
-
-    // Run on scroll
-    window.addEventListener('scroll', animateOnScroll);
 
     // Back to top button
     const backToTopButton = document.createElement('button');
