@@ -8,6 +8,7 @@
     <meta name="keywords" content="AI blog, Artificial Intelligence, Machine Learning, Tech News, IT Trends, Future Technology, AI Tools, Data Science">
     <!-- Critical CSS Inlined -->
     <style>body{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}</style>
+    <!-- Note: If loading fonts via @font-face, add font-display:swap to @font-face rules -->
     <!-- Font Awesome - Deferred -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
@@ -80,8 +81,8 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-button">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
             </nav>
             
