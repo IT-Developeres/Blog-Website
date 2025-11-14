@@ -6,11 +6,24 @@
     <meta name="description" content="CodeCanvas - Your premier destination for AI, Machine Learning, and Technology insights. Learn about our mission to democratize AI knowledge.">
     <meta name="keywords" content="AI blog, Artificial Intelligence, Machine Learning, Technology trends, Future Tech, AI insights, ML tutorials">
     <title>About Us</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Critical CSS Inlined -->
+    <style>body{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}.gradient-text{background:linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}</style>
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="img/ai-knowledge.avif" fetchpriority="high">
+    <!-- Font Awesome - Deferred -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Google Fonts with font-display: swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Tailwind CSS - Deferred -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- CSS Async Loader -->
+    <script>!function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);</script>
     <script>
-        tailwind.config = {
+        document.addEventListener('DOMContentLoaded',function(){
+            if(typeof tailwind!=='undefined'){
+                tailwind.config = {
             theme: {
                 extend: {
                     colors: {
@@ -51,69 +64,54 @@
                     },
                 },
             },
-        }
+        };
+            }
+        });
     </script>
-    <style>
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .stat-card:hover .stat-icon {
-            transform: scale(1.1);
-            color: #3b82f6;
-        }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <nav class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center space-x-2">
-                    <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+                <a href="index.html" class="flex items-center space-x-2" aria-label="Home - BlogsTech">
+                    <img src="img/logo1-removebg-preview (1).png" alt="BlogsTech Logo" class="h-16 w-auto" width="64" height="64" loading="eager" fetchpriority="high">
 
                 </a>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="home.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
-                    <a href="about.html" class="text-primary-600 font-medium">About</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a>
-
-                    <a href="tools-page.html" class="text-gray-600 hover:text-primary-600 transition-colors">Tools</a>
-                    <a href="posts-page.html" class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full hover:opacity-90 transition-all transform hover:-translate-y-0.5">
+                    <a href="home.html" class="text-gray-600 hover:text-primary-600 transition-opacity duration-200 hover:opacity-70" style="will-change:opacity">Home</a>
+                    <a href="about.html" class="text-primary-600 font-medium" aria-current="page">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary-600 transition-opacity duration-200 hover:opacity-70" style="will-change:opacity">Contact</a>
+                    <a href="tools-page.html" class="text-gray-600 hover:text-primary-600 transition-opacity duration-200 hover:opacity-70" style="will-change:opacity">Tools</a>
+                    <a href="posts-page.html" class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full hover:opacity-90 transform transition-transform duration-300 hover:-translate-y-0.5" style="will-change:transform" aria-label="Get Started - View Posts">
                         Get Started
                     </a>
                 </div>
                 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
                     </button>
                 </div>
             </nav>
             
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <a href="home.html" class="block py-2 text-gray-600 hover:text-primary-600">Home</a>
-                <a href="about.html" class="block py-2 text-primary-600 font-medium">About</a>
-                <a href="contact.html" class="block py-2 text-gray-600 hover:text-primary-600">Contact</a>
-                                <a href="tools-page.html" class="block py-2 text-gray-600 hover:text-primary-600">Tools</a>
-
-                <a href="#" class="inline-block mt-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full text-sm">
+                <a href="home.html" class="block py-2 text-gray-600 hover:text-primary-600 transition-opacity duration-200 hover:opacity-70">Home</a>
+                <a href="about.html" class="block py-2 text-primary-600 font-medium" aria-current="page">About</a>
+                <a href="contact.html" class="block py-2 text-gray-600 hover:text-primary-600 transition-opacity duration-200 hover:opacity-70">Contact</a>
+                <a href="tools-page.html" class="block py-2 text-gray-600 hover:text-primary-600 transition-opacity duration-200 hover:opacity-70">Tools</a>
+                <a href="posts-page.html" class="inline-block mt-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-full text-sm transform transition-transform duration-300 hover:scale-105" style="will-change:transform" aria-label="Get Started - View Posts">
                     Get Started
                 </a>
             </div>
         </div>
     </header>
 
+    <main>
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-br from-primary-50 to-white py-20 md:py-28 overflow-hidden">
         <!-- Animated background elements -->
@@ -147,19 +145,19 @@
                 
                 <!-- Stats -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="bg-white p-6 rounded-xl shadow-sm transform transition-transform duration-300 hover:scale-105 text-center" style="will-change:transform">
                         <div class="text-4xl font-bold text-primary-600 mb-2">50+</div>
                         <div class="text-gray-500">Published Articles</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="bg-white p-6 rounded-xl shadow-sm transform transition-transform duration-300 hover:scale-105 text-center" style="will-change:transform">
                         <div class="text-4xl font-bold text-primary-600 mb-2">100K+</div>
                         <div class="text-gray-500">Monthly Readers</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="bg-white p-6 rounded-xl shadow-sm transform transition-transform duration-300 hover:scale-105 text-center" style="will-change:transform">
                         <div class="text-4xl font-bold text-primary-600 mb-2">10+</div>
                         <div class="text-gray-500">Expert Contributors</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="bg-white p-6 rounded-xl shadow-sm transform transition-transform duration-300 hover:scale-105 text-center" style="will-change:transform">
                         <div class="text-4xl font-bold text-primary-600 mb-2">5+</div>
                         <div class="text-gray-500">Years Experience</div>
                     </div>
@@ -177,7 +175,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js"></script></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js" defer async></script></div>
     <div class="flex justify-center mt-6">
   <a href="https://s.daraz.pk/s.YdmCL?cc" target="_blank"
      class="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
@@ -217,9 +215,17 @@
                 </div>
                 <div class="lg:w-1/2 relative" data-aos="fade-left">
                     <div class="relative rounded-2xl overflow-hidden shadow-xl">
-                        <img src="img/ai-knowledge.avif" 
-                             alt="AI and Technology" 
-                             class="w-full h-auto rounded-2xl transform transition-transform duration-500 hover:scale-105">
+                        <picture>
+                            <source srcset="img/ai-knowledge.avif" type="image/avif">
+                            <source srcset="img/ai-knowledge.webp" type="image/webp">
+                            <img src="img/ai-knowledge.avif" 
+                                 alt="AI and Technology Knowledge" 
+                                 width="800" height="600" 
+                                 loading="eager"
+                                 fetchpriority="high"
+                                 class="w-full h-auto rounded-2xl transform transition-transform duration-500 hover:scale-105" 
+                                 style="will-change:transform">
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
                         <div class="absolute bottom-0 left-0 p-6 text-white">
                             <div class="flex items-center mb-2">
@@ -340,9 +346,16 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2 relative" data-aos="fade-right">
                     <div class="relative rounded-2xl overflow-hidden shadow-xl">
-                        <img src="img/ai values.avif" 
-                             alt="Why Choose CodeCanvas" 
-                             class="w-full h-auto rounded-2xl transform transition-transform duration-500 hover:scale-105">
+                        <picture>
+                            <source srcset="img/ai values.avif" type="image/avif">
+                            <source srcset="img/ai values.webp" type="image/webp">
+                            <img src="img/ai values.avif" 
+                                 alt="Why Choose CodeCanvas - AI Values" 
+                                 width="800" height="600" 
+                                 loading="lazy"
+                                 class="w-full h-auto rounded-2xl transform transition-transform duration-500 hover:scale-105" 
+                                 style="will-change:transform">
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
                         <div class="absolute bottom-0 left-0 p-6 text-white">
                             <div class="flex items-center">
@@ -446,11 +459,11 @@
                     <div class="w-16 h-16 bg-primary-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-100 transition-colors duration-300">
                         <i class="fas fa-brain text-2xl text-primary-600 group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Artificial Intelligence</h4>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Artificial Intelligence</h3>
                     <p class="text-gray-600 mb-6">Explore the fundamentals and advanced concepts of AI, including neural networks, natural language processing, and computer vision.</p>
-                    <a href="#" class="inline-flex items-center text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
+                        <a href="#" class="inline-flex items-center text-primary-600 font-medium transform transition-opacity duration-300 group-hover:opacity-70" style="will-change:opacity" aria-label="Learn more about Artificial Intelligence">
                         Learn more
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                     </a>
                 </div>
                 
@@ -459,11 +472,11 @@
                     <div class="w-16 h-16 bg-primary-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-100 transition-colors duration-300">
                         <i class="fas fa-chart-line text-2xl text-primary-600 group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Machine Learning</h4>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Machine Learning</h3>
                     <p class="text-gray-600 mb-6">Learn about supervised and unsupervised learning, deep learning, reinforcement learning, and ML model deployment.</p>
-                    <a href="#" class="inline-flex items-center text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
+                        <a href="#" class="inline-flex items-center text-primary-600 font-medium transform transition-opacity duration-300 group-hover:opacity-70" style="will-change:opacity" aria-label="Learn more about Machine Learning">
                         Learn more
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                     </a>
                 </div>
                 
@@ -472,11 +485,11 @@
                     <div class="w-16 h-16 bg-primary-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-100 transition-colors duration-300">
                         <i class="fas fa-robot text-2xl text-primary-600 group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">AI Applications</h4>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Applications</h3>
                     <p class="text-gray-600 mb-6">Discover how AI is transforming industries like healthcare, finance, automotive, and entertainment through practical case studies.</p>
-                    <a href="#" class="inline-flex items-center text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
+                        <a href="#" class="inline-flex items-center text-primary-600 font-medium transform transition-opacity duration-300 group-hover:opacity-70" style="will-change:opacity" aria-label="Learn more about AI Applications">
                         Learn more
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                     </a>
                 </div>
                 
@@ -485,11 +498,11 @@
                     <div class="w-16 h-16 bg-primary-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-100 transition-colors duration-300">
                         <i class="fas fa-code text-2xl text-primary-600 group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Technology Trends</h4>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Technology Trends</h3>
                     <p class="text-gray-600 mb-6">Stay updated on the latest developments in quantum computing, edge AI, IoT, and other emerging technologies.</p>
-                    <a href="#" class="inline-flex items-center text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
+                        <a href="#" class="inline-flex items-center text-primary-600 font-medium transform transition-opacity duration-300 group-hover:opacity-70" style="will-change:opacity" aria-label="Learn more about Technology Trends">
                         Learn more
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -529,7 +542,7 @@
                                 placeholder="Enter your email address">
                         </div>
                     </div>
-                    <button type="submit" class="px-6 py-4 bg-white text-primary-700 font-medium rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transition-colors">
+                    <button type="submit" class="px-6 py-4 bg-white text-primary-700 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transform transition-transform duration-300 hover:scale-105" style="will-change:transform" aria-label="Subscribe to newsletter">
                         Subscribe
                     </button>
                 </form>
@@ -554,7 +567,7 @@
                 <!-- About Column -->
                 <div class="lg:col-span-2">
                     <a href="home.html" class="flex items-center space-x-2">
-                   <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
+                   <img src="img/logo1-removebg-preview (1).png" alt="BlogsTech Logo" class="h-16 w-auto" width="64" height="64" loading="lazy">
 
                 </a>
                     <p class="text-gray-400 mb-6">
@@ -608,7 +621,7 @@
                     <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
                     <form class="flex flex-col sm:flex-row gap-3">
                         <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white">
-                        <button type="submit" class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-md transition-colors">
+                        <button type="submit" class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-md transform transition-transform duration-300 hover:scale-105" style="will-change:transform" aria-label="Subscribe to newsletter">
                             Subscribe
                         </button>
                     </form>
@@ -629,69 +642,15 @@
         </div>
     </footer>
 
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </main>
+    <!-- AOS Animation Library - Deferred -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     
-    <!-- Custom JavaScript -->
-    <script>
-        // Initialize AOS (Animate On Scroll)
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
-            
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                    }
-                });
-            });
-            
-            // Add shadow to header on scroll
-            const header = document.querySelector('header');
-            if (header) {
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 10) {
-                        header.classList.add('shadow-md');
-                        header.classList.add('bg-white/95');
-                        header.classList.add('backdrop-blur-sm');
-                    } else {
-                        header.classList.remove('shadow-md');
-                        header.classList.remove('bg-white/95');
-                        header.classList.remove('backdrop-blur-sm');
-                    }
-                });
-            }
-        });
+    <!-- Custom JavaScript - Optimized -->
+    <script defer>
+        (function(){'use strict';const debounce=(fn,wait)=>{let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn.apply(this,args),wait)}};const initAOS=()=>{if(typeof AOS!=='undefined'){AOS.init({duration:800,easing:'ease-in-out',once:true,mirror:false})}};const initMobileMenu=()=>{const b=document.getElementById('mobile-menu-button'),m=document.getElementById('mobile-menu');b&&m&&b.addEventListener('click',()=>{const e=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!e);m.classList.toggle('hidden')})};const initSmoothScroll=()=>{document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const t=this.getAttribute('href');if(t==='#')return;const el=document.querySelector(t);if(el){window.scrollTo({top:el.offsetTop-80,behavior:'smooth'});const m=document.getElementById('mobile-menu');if(m&&!m.classList.contains('hidden'))m.classList.add('hidden')}})})};const initHeaderScroll=()=>{const h=document.querySelector('header');if(h){let ticking=false;const handleScroll=debounce(()=>{if(!ticking){requestAnimationFrame(()=>{const show=window.scrollY>10;if(show){h.classList.add('shadow-md','bg-white/95','backdrop-blur-sm')}else{h.classList.remove('shadow-md','bg-white/95','backdrop-blur-sm')}ticking=false});ticking=true}},16);window.addEventListener('scroll',handleScroll,{passive:true})}};document.addEventListener('DOMContentLoaded',()=>{if('requestIdleCallback'in window){requestIdleCallback(()=>{initAOS();initMobileMenu();initSmoothScroll();initHeaderScroll()})}else{setTimeout(()=>{initAOS();initMobileMenu();initSmoothScroll();initHeaderScroll()},0)}})})();
     </script>
 </body>
 </html>
