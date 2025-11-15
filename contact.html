@@ -5,18 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact CodeCanvas - Get in touch with our team for inquiries, collaborations, or feedback about AI and technology.">
     <title>Contact Us</title>
-    <!-- Critical CSS Inlined -->
-    <style>body{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;font-size:16px;line-height:1.5;color:#333;background-color:#f9f9f9}.gradient-text{background:linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}</style>
-    <!-- Font Awesome - Deferred -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <!-- Google Fonts with font-display: swap -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS Inlined with font-display optimization -->
+    <style>
+        body{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;font-size:16px;line-height:1.5;color:#333;background-color:#f9f9f9}
+        .gradient-text{background:linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        /* Prevent layout shift for images */
+        img{max-width:100%;height:auto;display:block}
+        /* Reserve space for fonts to prevent layout shift */
+        @font-face{font-family:Inter;font-style:normal;font-weight:300;font-display:swap;src:local('Inter Light')}
+        @font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:local('Inter Regular')}
+        @font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:local('Inter Medium')}
+        @font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:local('Inter SemiBold')}
+        @font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:local('Inter Bold')}
+        /* Form styles to prevent layout shift */
+        .form-group{position:relative;margin-bottom:1.5rem}
+        .form-control{width:100%;padding:0.75rem;border:1px solid #d1d5db;border-radius:0.5rem;font-size:1rem;transition:border-color 0.2s}
+        .form-control:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,0.1)}
+        .error-message{display:none;color:#ef4444;font-size:0.875rem;margin-top:0.25rem}
+        .form-group.border-red-500 .form-control{border-color:#ef4444}
+        .form-group.border-red-500 .error-message{display:block}
+        label{display:block;margin-bottom:0.5rem;font-weight:500;color:#374151}
+        .required{color:#ef4444}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:0.75rem 1.5rem;font-weight:500;border-radius:0.5rem;transition:all 0.2s;cursor:pointer;border:none}
+        .btn-accent{background:linear-gradient(90deg,#0ea5e9,#a855f7);color:#fff}
+        .btn-accent:hover{opacity:0.9;transform:translateY(-2px)}
+        .btn-accent:disabled{opacity:0.6;cursor:not-allowed}
+        /* Contact info styles */
+        .contact-info{margin-top:2rem}
+        .contact-info h2{font-size:2rem;font-weight:700;margin-bottom:1rem;color:#111827}
+        .contact-info>p{color:#6b7280;margin-bottom:2rem}
+        .info-item{display:flex;margin-bottom:2rem;align-items:flex-start}
+        .info-icon{width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#0ea5e9,#a855f7);display:flex;align-items:center;justify-content:center;margin-right:1rem;flex-shrink:0}
+        .info-icon i{color:#fff;font-size:1.25rem}
+        .info-content h3{font-size:1.125rem;font-weight:600;margin-bottom:0.5rem;color:#111827}
+        .info-content p{color:#6b7280;margin:0.25rem 0}
+        .social-links{display:flex;gap:1rem;margin-top:2rem}
+        .social-links a{width:2.5rem;height:2.5rem;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#6b7280;transition:all 0.2s}
+        .social-links a:hover{background:#e5e7eb;color:#3b82f6;transform:translateY(-2px)}
+    </style>
+    
+    <!-- Google Fonts with font-display: swap - Optimized -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    <!-- Tailwind CSS - Deferred -->
+    
+    <!-- Font Awesome - Deferred with font-display -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Tailwind CSS - Deferred (load only when needed) -->
     <script src="https://cdn.tailwindcss.com" defer></script>
-    <!-- EmailJS - Deferred -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    
+    <!-- EmailJS - Load only when form is interacted with -->
+    <script>
+        // Lazy load EmailJS only when form is focused
+        let emailjsLoaded = false;
+        function loadEmailJS() {
+            if (!emailjsLoaded) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+                script.defer = true;
+                document.head.appendChild(script);
+                emailjsLoaded = true;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('email');
+            if (emailInput) {
+                emailInput.addEventListener('focus', loadEmailJS, { once: true });
+            }
+        });
+    </script>
     
     <!-- CSS Async Loader -->
     <script>!function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);</script>
@@ -75,7 +145,7 @@
         <div class="container mx-auto px-4">
             <nav class="flex items-center justify-between h-16">
                 <a href="home.html" class="flex items-center space-x-2" aria-label="Home - BlogsTech">
-                   <img src="img/logo1-removebg-preview (1).png" alt="BlogsTech Logo" class="h-16 w-auto" width="64" height="64" loading="eager" fetchpriority="high">
+                   <img src="img/logo1-removebg-preview (1).png" alt="BlogsTech Logo" class="h-16 w-auto" width="64" height="64" loading="eager" fetchpriority="high" style="aspect-ratio: 1/1; object-fit: contain;">
 
                 </a>
                 
@@ -110,17 +180,9 @@
             </div>
         </div>
     </header>
-<div class="flex justify-center gap-6"><div>
-    <script type="text/javascript">
-	atOptions = {
-		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js" defer async></script></div>
+<div class="flex justify-center gap-6"><div id="ad-container-1" style="min-height: 90px; min-width: 728px; background: #f0f0f0;">
+    <!-- Ad will load when visible -->
+</div>
     <div class="flex justify-center mt-6">
   <a href="https://s.daraz.pk/s.YdmCL?cc" target="_blank"
      class="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
@@ -193,15 +255,14 @@
                         <p class="text-gray-600">Have a question or want to work together? Fill out the form below.</p>
                     </div>
                     
-                    <form id="contactForm" class="space-y-6">
-                    <p>Fill out the form below and we'll get back to you shortly.</p>
+                    <p class="text-gray-600 mb-6">Fill out the form below and we'll get back to you shortly.</p>
                     
-                    <div class="alert alert-success" id="success-message">
-                        <i class="fas fa-check-circle"></i> Your message has been sent successfully!
+                    <div class="alert alert-success hidden mb-4 p-4 bg-green-50 border border-green-200 rounded-lg" id="success-message">
+                        <i class="fas fa-check-circle text-green-600"></i> <span class="ml-2">Your message has been sent successfully!</span>
                     </div>
                     
-                    <div class="alert alert-error" id="error-message">
-                        <i class="fas fa-exclamation-circle"></i> There was an error sending your message. Please try again.
+                    <div class="alert alert-error hidden mb-4 p-4 bg-red-50 border border-red-200 rounded-lg" id="error-message">
+                        <i class="fas fa-exclamation-circle text-red-600"></i> <span class="ml-2">There was an error sending your message. Please try again.</span>
                     </div>
                     
                     <form id="contact-form">
@@ -286,8 +347,8 @@
     </section>
 
     <!-- Interactive Map Section -->
-    <section class="relative h-96 md:h-[500px] bg-gray-100">
-        <div id="map" class="w-full h-full"></div>
+    <section class="relative h-96 md:h-[500px] bg-gray-100" id="map-section">
+        <div id="map" class="w-full h-full" style="min-height: 384px;"></div>
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full shadow-lg px-6 py-2 flex items-center">
             <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
             <span class="text-sm font-medium">Our Office Location</span>
@@ -350,16 +411,9 @@
                         <p class="text-gray-600">Yes, we offer custom development services tailored to your specific needs. Our team of experienced developers can help you build custom solutions, integrate with existing systems, or develop new applications from scratch. Contact our sales team to discuss your project requirements.</p>
                     </div>
                 </div>
-                <div><script type="text/javascript">
-	atOptions = {
-		'key' : '2676f232fbcd796c2ec45c74c62a7f50',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js" defer async></script></div>
+                <div id="ad-container-2" style="min-height: 90px; min-width: 728px; background: #f0f0f0; margin: 20px auto;">
+                    <!-- Ad will load when visible -->
+                </div>
                 <!-- FAQ Item 4 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
                     <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
@@ -488,17 +542,105 @@
     <!-- Footer -->
   
     </main>
-    <!-- AOS Animation Library - Deferred -->
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- AOS Animation Library - Lazy load when needed -->
+    <script>
+        // Lazy load AOS when elements with data-aos are about to be visible
+        if ('IntersectionObserver' in window) {
+            const aosObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadAOS();
+                        aosObserver.disconnect();
+                    }
+                });
+            }, { rootMargin: '50px' });
+            
+            const aosElement = document.querySelector('[data-aos]');
+            if (aosElement) {
+                aosObserver.observe(aosElement);
+            }
+        }
+        
+        function loadAOS() {
+            if (!document.querySelector('link[href*="aos"]')) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+                document.head.appendChild(link);
+                
+                const script = document.createElement('script');
+                script.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+                script.defer = true;
+                document.head.appendChild(script);
+            }
+        }
+    </script>
     
-    <!-- Google Maps API - Deferred -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer async></script>
+    <!-- Google Maps API - Lazy load when map section is visible -->
+    <script>
+        // Lazy load Google Maps when map section is about to be visible
+        if ('IntersectionObserver' in window) {
+            const mapObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadGoogleMaps();
+                        mapObserver.disconnect();
+                    }
+                });
+            }, { rootMargin: '200px' });
+            
+            const mapSection = document.getElementById('map-section');
+            if (mapSection) {
+                mapObserver.observe(mapSection);
+            }
+        }
+        
+        function loadGoogleMaps() {
+            if (!document.querySelector('script[src*="maps.googleapis.com"]')) {
+                const script = document.createElement('script');
+                script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap';
+                script.defer = true;
+                script.async = true;
+                document.head.appendChild(script);
+            }
+        }
+    </script>
+    
+    <!-- Lazy Load Ad Scripts -->
+    <script>
+        // Lazy load ads when they're about to be visible
+        if ('IntersectionObserver' in window) {
+            const adObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.dataset.loaded) {
+                        loadAd(entry.target);
+                        entry.target.dataset.loaded = 'true';
+                    }
+                });
+            }, { rootMargin: '100px' });
+            
+            const adContainers = document.querySelectorAll('[id^="ad-container"]');
+            adContainers.forEach(container => adObserver.observe(container));
+        }
+        
+        function loadAd(container) {
+            const adScript = document.createElement('script');
+            adScript.type = 'text/javascript';
+            adScript.textContent = 'atOptions = {key: "2676f232fbcd796c2ec45c74c62a7f50", format: "iframe", height: 90, width: 728, params: {}};';
+            container.appendChild(adScript);
+            
+            const invokeScript = document.createElement('script');
+            invokeScript.type = 'text/javascript';
+            invokeScript.src = '//www.highperformanceformat.com/2676f232fbcd796c2ec45c74c62a7f50/invoke.js';
+            invokeScript.defer = true;
+            invokeScript.async = true;
+            container.appendChild(invokeScript);
+        }
+    </script>
     
     <!-- Custom JavaScript - Optimized, Minified, and Split -->
     <script defer>
-        (function(){'use strict';const debounce=(fn,wait)=>{let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn.apply(this,args),wait)}};const initAOS=()=>{if(typeof AOS!=='undefined'){AOS.init({duration:800,easing:'ease-in-out',once:true,mirror:false})}};const initMobileMenu=()=>{const b=document.getElementById('mobile-menu-button'),m=document.getElementById('mobile-menu');b&&m&&b.addEventListener('click',()=>{const e=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!e);m.classList.toggle('hidden');const i=b.querySelector('i');i&&(i.classList.toggle('fa-bars'),i.classList.toggle('fa-times'))})};const initSmoothScroll=()=>{document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const t=this.getAttribute('href');if(t==='#')return;const el=document.querySelector(t);if(el){window.scrollTo({top:el.offsetTop-80,behavior:'smooth'});const m=document.getElementById('mobile-menu'),b=document.getElementById('mobile-menu-button');if(m&&!m.classList.contains('hidden')&&b){m.classList.add('hidden');const i=b.querySelector('i');i&&(i.classList.remove('fa-times'),i.classList.add('fa-bars'))}})})};const initHeaderScroll=()=>{const h=document.querySelector('header');if(h){let ticking=false;const handleScroll=debounce(()=>{if(!ticking){requestAnimationFrame(()=>{const show=window.scrollY>10;if(show){h.classList.add('shadow-md','bg-white/95','backdrop-blur-sm')}else{h.classList.remove('shadow-md','bg-white/95','backdrop-blur-sm')}ticking=false});ticking=true}},16);window.addEventListener('scroll',handleScroll,{passive:true})}};const initMap=()=>{if(typeof google!=='undefined'&&google.maps){const loc={lat:37.7749,lng:-122.4194};const mapEl=document.getElementById('map');if(mapEl){const map=new google.maps.Map(mapEl,{zoom:12,center:loc,styles:[{featureType:'all',elementType:'geometry.fill',stylers:[{lightness:'-100'},{color:'#ffdac9'}]},{featureType:'poi',elementType:'geometry.fill',stylers:[{visibility:'on'},{color:'#eeebe6'}]},{featureType:'water',elementType:'geometry',stylers:[{color:'#5f94ff'},{lightness:20}]}]});const marker=new google.maps.Marker({position:loc,map:map,title:'CodeCanvas HQ',icon:{url:'https://maps.google.com/mapfiles/ms/icons/red-dot.png',scaledSize:new google.maps.Size(40,40)},animation:google.maps.Animation.DROP});const infoWindow=new google.maps.InfoWindow({content:document.getElementById('map-info-window')});marker.addListener('click',()=>{infoWindow.open(map,marker)})}}};const initFAQ=()=>{document.querySelectorAll('.faq-toggle').forEach(toggle=>{toggle.addEventListener('click',()=>{const content=toggle.nextElementSibling,icon=toggle.querySelector('i'),expanded=toggle.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-content').forEach(item=>{if(item!==content&&!item.classList.contains('hidden')){item.classList.add('hidden');const oi=item.previousElementSibling.querySelector('i');oi&&(oi.classList.remove('rotate-180'),oi.classList.add('rotate-0'))}});content.classList.toggle('hidden');icon&&(icon.classList.toggle('rotate-180'),icon.classList.toggle('rotate-0'));toggle.setAttribute('aria-expanded',!expanded)})})};const initChat=()=>{const ct=document.getElementById('chat-toggle'),cc=document.getElementById('chat-container'),close=document.getElementById('close-chat'),cf=document.getElementById('chat-form'),ci=document.getElementById('chat-input'),cm=document.getElementById('chat-messages');if(ct&&cc){ct.addEventListener('click',()=>{const e=ct.getAttribute('aria-expanded')==='true';ct.setAttribute('aria-expanded',!e);cc.classList.toggle('hidden')});close&&close.addEventListener('click',(e)=>{e.stopPropagation();cc.classList.add('hidden');ct.setAttribute('aria-expanded','false')});document.addEventListener('click',(e)=>{if(!cc.contains(e.target)&&e.target!==ct){cc.classList.add('hidden');ct.setAttribute('aria-expanded','false')}})}if(cf&&ci&&cm){const addMsg=(text,sender)=>{const md=document.createElement('div');md.className='mb-4';const userClass=sender==='user'?'justify-end':'';const bgClass=sender==='user'?'primary-600':'white';const textClass=sender==='user'?'text-white':'text-gray-800';const timeClass=sender==='user'?'text-primary-200':'text-gray-500';const botIcon=sender==='bot'?'<div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mr-2"><i class="fas fa-robot text-primary-600"></i></div>':'';const userIcon=sender==='user'?'<div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 ml-2"><i class="fas fa-user text-primary-600"></i></div>':'';md.innerHTML='<div class="flex items-start '+userClass+' mb-2">'+botIcon+'<div class="bg-'+bgClass+' p-3 rounded-lg shadow-sm max-w-xs"><p class="text-sm '+textClass+'">'+text+'</p><p class="text-xs '+timeClass+' mt-1">Just now</p></div>'+userIcon+'</div>';cm.appendChild(md);cm.scrollTop=cm.scrollHeight};cf.addEventListener('submit',(e)=>{e.preventDefault();const msg=ci.value.trim();if(msg){addMsg(msg,'user');ci.value='';setTimeout(()=>{const res=['Thanks for your message! Our team will get back to you soon.',"I've noted your inquiry. Is there anything else I can help with?",'Great question! Let me check that for you...'];addMsg(res[Math.floor(Math.random()*res.length)],'bot')},1000)}})}};const showMessage=(type,msg)=>{const me=document.getElementById('form-messages'),mt=document.getElementById('message-text');if(me&&mt){me.className='fixed top-20 right-6 max-w-sm p-4 rounded-lg shadow-lg z-50 flex items-start '+(type==='success'?'bg-green-50':'bg-red-50');mt.textContent=msg;mt.className='text-sm '+(type==='success'?'text-green-800':'text-red-800');const icon=me.querySelector('i');icon&&(icon.className='fas '+(type==='success'?'fa-check-circle text-green-500':'fa-exclamation-circle text-red-500')+' text-2xl mr-3');me.classList.remove('hidden');setTimeout(()=>{me.classList.add('hidden')},5000)}};const initContactForm=()=>{const cf=document.getElementById('contact-form');if(!cf)return;if(typeof emailjs!=='undefined'){emailjs.init('YOUR_PUBLIC_KEY')}const fe={name:document.getElementById('name'),email:document.getElementById('email'),subject:document.getElementById('subject'),message:document.getElementById('message'),submitBtn:document.querySelector('#contact-form button[type="submit"]')};const validate=()=>{let valid=true;Object.keys(fe).forEach(k=>{if(fe[k]&&fe[k].parentElement){fe[k].parentElement.classList.remove('border-red-500');const err=document.getElementById(k+'-error');err&&(err.textContent='')}});if(!fe.name.value.trim()){fe.name.parentElement.classList.add('border-red-500');const err=document.getElementById('name-error');err&&(err.textContent='Name is required');valid=false}const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!fe.email.value.trim()){fe.email.parentElement.classList.add('border-red-500');const err=document.getElementById('email-error');err&&(err.textContent='Email is required');valid=false}else if(!emailRegex.test(fe.email.value)){fe.email.parentElement.classList.add('border-red-500');const err=document.getElementById('email-error');err&&(err.textContent='Please enter a valid email address');valid=false}if(!fe.message.value.trim()){fe.message.parentElement.classList.add('border-red-500');const err=document.getElementById('message-error');err&&(err.textContent='Message is required');valid=false}return valid};cf.addEventListener('submit',(e)=>{e.preventDefault();if(!validate()){showMessage('error','Please fill in all required fields correctly.');return}const orig=fe.submitBtn.innerHTML;fe.submitBtn.disabled=true;fe.submitBtn.innerHTML='<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Sending...';setTimeout(()=>{cf.reset();showMessage('success','Your message has been sent successfully! We\'ll get back to you soon.');fe.submitBtn.disabled=false;fe.submitBtn.innerHTML=orig;window.scrollTo({top:0,behavior:'smooth'})},1500)});['name','email','message'].forEach(fn=>{const f=fe[fn];if(f){f.addEventListener('input',function(){const v=this.value.trim(),fg=this.parentElement;if(fn==='email'&&v){const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!emailRegex.test(v)){fg.classList.add('border-red-500');const err=document.getElementById(fn+'-error');err&&(err.textContent='Please enter a valid email address');return}}if(v){fg.classList.remove('border-red-500');const err=document.getElementById(fn+'-error');err&&(err.textContent='')}})}})};const initNewsletter=()=>{const nf=document.getElementById('newsletterForm');if(!nf)return;nf.addEventListener('submit',(e)=>{e.preventDefault();const email=document.getElementById('newsletter-email').value.trim(),bt=document.getElementById('btn-text'),bl=document.getElementById('btn-loading');const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!email||!emailRegex.test(email)){showMessage('error','Please enter a valid email address');return}bt&&bt.classList.add('hidden');bl&&bl.classList.remove('hidden');setTimeout(()=>{nf.reset();showMessage('success','Thank you for subscribing to our newsletter!');bt&&bt.classList.remove('hidden');bl&&bl.classList.add('hidden')},1500)})};document.addEventListener('click',(e)=>{if(e.target.closest('#form-messages button')){const me=document.getElementById('form-messages');me&&me.classList.add('hidden')}});document.addEventListener('DOMContentLoaded',()=>{initMobileMenu();initSmoothScroll();initHeaderScroll();if('requestIdleCallback'in window){requestIdleCallback(()=>{initAOS();initFAQ();initChat();initContactForm();initNewsletter()});requestIdleCallback(()=>{initMap()},{timeout:2000})}else{setTimeout(()=>{initAOS();initFAQ();initChat();initContactForm();initNewsletter()},0);setTimeout(()=>{initMap()},2000)}});window.initMap=initMap})();
+        (function(){'use strict';const debounce=(fn,wait)=>{let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn.apply(this,args),wait)}};const initAOS=()=>{if(typeof AOS!=='undefined'){AOS.init({duration:800,easing:'ease-in-out',once:true,mirror:false})}else{setTimeout(initAOS,100)}};const initMobileMenu=()=>{const b=document.getElementById('mobile-menu-button'),m=document.getElementById('mobile-menu');b&&m&&b.addEventListener('click',()=>{const e=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!e);m.classList.toggle('hidden');const i=b.querySelector('i');i&&(i.classList.toggle('fa-bars'),i.classList.toggle('fa-times'))})};const initSmoothScroll=()=>{document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const t=this.getAttribute('href');if(t==='#')return;const el=document.querySelector(t);if(el){window.scrollTo({top:el.offsetTop-80,behavior:'smooth'});const m=document.getElementById('mobile-menu'),b=document.getElementById('mobile-menu-button');if(m&&!m.classList.contains('hidden')&&b){m.classList.add('hidden');const i=b.querySelector('i');i&&(i.classList.remove('fa-times'),i.classList.add('fa-bars'))}})})};const initHeaderScroll=()=>{const h=document.querySelector('header');if(h){let ticking=false;const handleScroll=debounce(()=>{if(!ticking){requestAnimationFrame(()=>{const show=window.scrollY>10;if(show){h.classList.add('shadow-md','bg-white/95','backdrop-blur-sm')}else{h.classList.remove('shadow-md','bg-white/95','backdrop-blur-sm')}ticking=false});ticking=true}},16);window.addEventListener('scroll',handleScroll,{passive:true})}};const initMap=()=>{if(typeof google!=='undefined'&&google.maps){const loc={lat:37.7749,lng:-122.4194};const mapEl=document.getElementById('map');if(mapEl&&!mapEl.dataset.initialized){mapEl.dataset.initialized='true';const map=new google.maps.Map(mapEl,{zoom:12,center:loc,styles:[{featureType:'all',elementType:'geometry.fill',stylers:[{lightness:'-100'},{color:'#ffdac9'}]},{featureType:'poi',elementType:'geometry.fill',stylers:[{visibility:'on'},{color:'#eeebe6'}]},{featureType:'water',elementType:'geometry',stylers:[{color:'#5f94ff'},{lightness:20}]}]});const marker=new google.maps.Marker({position:loc,map:map,title:'CodeCanvas HQ',icon:{url:'https://maps.google.com/mapfiles/ms/icons/red-dot.png',scaledSize:new google.maps.Size(40,40)},animation:google.maps.Animation.DROP});const infoWindow=new google.maps.InfoWindow({content:document.getElementById('map-info-window')});marker.addListener('click',()=>{infoWindow.open(map,marker)})}}else if(document.getElementById('map')&&!document.getElementById('map').dataset.initialized){setTimeout(initMap,500)}};const initFAQ=()=>{document.querySelectorAll('.faq-toggle').forEach(toggle=>{if(!toggle.dataset.listener){toggle.dataset.listener='true';toggle.addEventListener('click',()=>{const content=toggle.nextElementSibling,icon=toggle.querySelector('i'),expanded=toggle.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-content').forEach(item=>{if(item!==content&&!item.classList.contains('hidden')){item.classList.add('hidden');const oi=item.previousElementSibling.querySelector('i');oi&&(oi.classList.remove('rotate-180'),oi.classList.add('rotate-0'))});content.classList.toggle('hidden');icon&&(icon.classList.toggle('rotate-180'),icon.classList.toggle('rotate-0'));toggle.setAttribute('aria-expanded',!expanded)})}})}};const initChat=()=>{const ct=document.getElementById('chat-toggle'),cc=document.getElementById('chat-container'),close=document.getElementById('close-chat'),cf=document.getElementById('chat-form'),ci=document.getElementById('chat-input'),cm=document.getElementById('chat-messages');if(ct&&cc&&!ct.dataset.listener){ct.dataset.listener='true';ct.addEventListener('click',()=>{const e=ct.getAttribute('aria-expanded')==='true';ct.setAttribute('aria-expanded',!e);cc.classList.toggle('hidden')});close&&close.addEventListener('click',(e)=>{e.stopPropagation();cc.classList.add('hidden');ct.setAttribute('aria-expanded','false')});document.addEventListener('click',(e)=>{if(!cc.contains(e.target)&&e.target!==ct){cc.classList.add('hidden');ct.setAttribute('aria-expanded','false')}})}if(cf&&ci&&cm){const addMsg=(text,sender)=>{const md=document.createElement('div');md.className='mb-4';const userClass=sender==='user'?'justify-end':'';const bgClass=sender==='user'?'bg-primary-600':'bg-white';const textClass=sender==='user'?'text-white':'text-gray-800';const timeClass=sender==='user'?'text-primary-200':'text-gray-500';const botIcon=sender==='bot'?'<div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mr-2"><i class="fas fa-robot text-primary-600"></i></div>':'';const userIcon=sender==='user'?'<div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 ml-2"><i class="fas fa-user text-primary-600"></i></div>':'';md.innerHTML='<div class="flex items-start '+userClass+' mb-2">'+botIcon+'<div class="'+bgClass+' p-3 rounded-lg shadow-sm max-w-xs"><p class="text-sm '+textClass+'">'+text+'</p><p class="text-xs '+timeClass+' mt-1">Just now</p></div>'+userIcon+'</div>';cm.appendChild(md);cm.scrollTop=cm.scrollHeight};cf.addEventListener('submit',(e)=>{e.preventDefault();const msg=ci.value.trim();if(msg){addMsg(msg,'user');ci.value='';setTimeout(()=>{const res=['Thanks for your message! Our team will get back to you soon.',"I've noted your inquiry. Is there anything else I can help with?",'Great question! Let me check that for you...'];addMsg(res[Math.floor(Math.random()*res.length)],'bot')},1000)}})}}};const showMessage=(type,msg)=>{const me=document.getElementById('form-messages'),mt=document.getElementById('message-text');if(me&&mt){me.className='fixed top-20 right-6 max-w-sm p-4 rounded-lg shadow-lg z-50 flex items-start '+(type==='success'?'bg-green-50':'bg-red-50');mt.textContent=msg;mt.className='text-sm '+(type==='success'?'text-green-800':'text-red-800');const icon=me.querySelector('i');icon&&(icon.className='fas '+(type==='success'?'fa-check-circle text-green-500':'fa-exclamation-circle text-red-500')+' text-2xl mr-3');me.classList.remove('hidden');setTimeout(()=>{me.classList.add('hidden')},5000)}};const initContactForm=()=>{const cf=document.getElementById('contact-form');if(!cf||cf.dataset.initialized)return;cf.dataset.initialized='true';if(typeof emailjs!=='undefined'){emailjs.init('YOUR_PUBLIC_KEY')}const fe={name:document.getElementById('name'),email:document.getElementById('email'),subject:document.getElementById('subject'),message:document.getElementById('message'),submitBtn:document.querySelector('#contact-form button[type="submit"]')};const validate=()=>{let valid=true;Object.keys(fe).forEach(k=>{if(fe[k]&&fe[k].parentElement){fe[k].parentElement.classList.remove('border-red-500');const err=document.getElementById(k+'-error');err&&(err.textContent='')}});if(!fe.name.value.trim()){fe.name.parentElement.classList.add('border-red-500');const err=document.getElementById('name-error');err&&(err.textContent='Name is required');valid=false}const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!fe.email.value.trim()){fe.email.parentElement.classList.add('border-red-500');const err=document.getElementById('email-error');err&&(err.textContent='Email is required');valid=false}else if(!emailRegex.test(fe.email.value)){fe.email.parentElement.classList.add('border-red-500');const err=document.getElementById('email-error');err&&(err.textContent='Please enter a valid email address');valid=false}if(!fe.message.value.trim()){fe.message.parentElement.classList.add('border-red-500');const err=document.getElementById('message-error');err&&(err.textContent='Message is required');valid=false}return valid};cf.addEventListener('submit',(e)=>{e.preventDefault();if(!validate()){showMessage('error','Please fill in all required fields correctly.');return}const orig=fe.submitBtn.innerHTML;fe.submitBtn.disabled=true;fe.submitBtn.innerHTML='<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Sending...';setTimeout(()=>{cf.reset();showMessage('success','Your message has been sent successfully! We\'ll get back to you soon.');fe.submitBtn.disabled=false;fe.submitBtn.innerHTML=orig;window.scrollTo({top:0,behavior:'smooth'})},1500)});['name','email','message'].forEach(fn=>{const f=fe[fn];if(f){f.addEventListener('input',function(){const v=this.value.trim(),fg=this.parentElement;if(fn==='email'&&v){const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!emailRegex.test(v)){fg.classList.add('border-red-500');const err=document.getElementById(fn+'-error');err&&(err.textContent='Please enter a valid email address');return}}if(v){fg.classList.remove('border-red-500');const err=document.getElementById(fn+'-error');err&&(err.textContent='')}})}})};const initNewsletter=()=>{const nf=document.getElementById('newsletterForm');if(!nf||nf.dataset.initialized)return;nf.dataset.initialized='true';nf.addEventListener('submit',(e)=>{e.preventDefault();const email=document.getElementById('newsletter-email').value.trim(),bt=document.getElementById('btn-text'),bl=document.getElementById('btn-loading');const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!email||!emailRegex.test(email)){showMessage('error','Please enter a valid email address');return}bt&&bt.classList.add('hidden');bl&&bl.classList.remove('hidden');setTimeout(()=>{nf.reset();showMessage('success','Thank you for subscribing to our newsletter!');bt&&bt.classList.remove('hidden');bl&&bl.classList.add('hidden')},1500)})};document.addEventListener('click',(e)=>{if(e.target.closest('#form-messages button')){const me=document.getElementById('form-messages');me&&me.classList.add('hidden')}});document.addEventListener('DOMContentLoaded',()=>{initMobileMenu();initSmoothScroll();initHeaderScroll();if('requestIdleCallback'in window){requestIdleCallback(()=>{initFAQ();initChat();initContactForm();initNewsletter()},{timeout:1000});requestIdleCallback(()=>{initAOS()},{timeout:2000})}else{setTimeout(()=>{initFAQ();initChat();initContactForm();initNewsletter()},100);setTimeout(()=>{initAOS()},2000)}});window.initMap=initMap})();
     </script>
 
     <!-- Footer -->
@@ -508,7 +650,7 @@
                 <!-- About Column -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-2">
-                      <img src="img/logo1-removebg-preview (1).png" alt="BlogsTech Logo" class="h-16 w-auto" width="64" height="64" loading="lazy">
+                      <img src="img/logo1-removebg-preview (1).png" alt="BlogsTech Logo" class="h-16 w-auto" width="64" height="64" loading="lazy" style="aspect-ratio: 1/1; object-fit: contain;">
  </div>
                     <p class="text-gray-400">
                         BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
