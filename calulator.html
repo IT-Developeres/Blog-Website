@@ -35,59 +35,127 @@
         }
         
         /* Header Styles */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-icon {
-            font-size: 2rem;
-            color: #ff6b6b;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #ff6b6b;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #ff6b6b;
-        }
-        
+        .header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.logo img {
+    height: 64px;
+    width: auto;
+}
+
+/* Desktop nav */
+.nav-desktop {
+    display: none;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #4B5563; /* gray-700 */
+    transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.tools-link {
+    color: #6B7280; /* gray-600 */
+}
+
+/* Mobile button */
+.mobile-btn {
+    background: none;
+    border: none;
+    color: #4B5563;
+    font-size: 24px;
+    cursor: pointer;
+    
+}
+
+/* Mobile nav */
+.nav-mobile {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 16px 0;
+}
+
+.mobile-link {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #4B5563;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.2s;
+}
+
+.mobile-link:hover {
+    opacity: 0.7;
+}
+
+/* Tools link in mobile */
+.nav-mobile .tools-link {
+    color: #6B7280;
+}
+
+/* Hover effect for mobile links */
+.mobile-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #F3F4F6; /* gray-100 */
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.mobile-link:hover::before {
+    opacity: 1;
+    z-index: 0;
+}
+
+.mobile-link span {
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .nav-desktop {
+        display: flex;
+    }
+    .mobile-btn,
+    .nav-mobile {
+        display: none;
+    }
+}
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 60px 0 40px;
+            padding: 120px 0 40px;
+            
         }
         
         .hero h1 {
@@ -294,6 +362,123 @@
             color: #ff6b6b;
         }
         
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: #ffffff;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-header h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .close-sidebar {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .sidebar-nav {
+            padding: 1rem 0;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .sidebar-link i {
+            margin-right: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-link:hover {
+            background-color: #f5f5f5;
+            color: #ff6b6b;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Header adjustments */
+        .header {
+            position: relative;
+            z-index: 100;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile menu button */
+        .mobile-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: #333;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                left: -100%;
+                width: 80%;
+            }
+            
+            .sidebar.active {
+                left: 0;
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
         /* Description Section */
         .description-section {
             background-color: white;
@@ -394,36 +579,199 @@
         }
         
         /* Footer */
-        footer {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px 0;
-            text-align: center;
-            color: #666;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: #ff6b6b;
-        }
-        
+       .footer {
+    background-color: #111827; /* gray-900 */
+    color: #D1D5DB; /* gray-300 */
+    padding: 4rem 0 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Footer Grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* About Column */
+.footer-about .footer-logo {
+    height: 64px;
+    width: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.footer-text {
+    color: #9CA3AF; /* gray-400 */
+    margin-top: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    color: #9CA3AF;
+    font-size: 1.125rem; /* lg */
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+/* Links and Categories */
+.footer-links h3,
+.footer-categories h3,
+.footer-newsletter h3 {
+    color: #ffffff;
+    font-size: 1.125rem; /* lg */
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #374151; /* gray-700 */
+}
+
+.footer-links ul,
+.footer-categories ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a,
+.footer-categories a {
+    color: #9CA3AF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-categories a:hover {
+    color: #ffffff;
+}
+
+/* Newsletter */
+.footer-newsletter p {
+    color: #9CA3AF;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+    border: none;
+    outline: none;
+    background-color: #1F2937; /* gray-800 */
+    color: #ffffff;
+}
+
+.newsletter-form button {
+    background-color: #2563EB; /* blue-600 */
+    color: #ffffff;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 0 0.25rem 0.25rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #1D4ED8; /* blue-700 */
+}
+
+.footer-small-text {
+    font-size: 0.75rem;
+    color: #6B7280; /* gray-500 */
+    margin-top: 0.5rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid #1F2937; /* gray-800 */
+    padding-top: 2rem;
+}
+
+.footer-bottom-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-bottom a {
+    color: #9CA3AF;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+}
+
+.footer-credit {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+.footer-credit i {
+    color: #EF4444; /* red-500 */
+}
+
+.footer-credit a {
+    color: #3B82F6; /* blue-400 */
+    text-decoration: none;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+}
+       .adds{
+        width: 100%;
+        display: flex;
+         justify-content: center; 
+         gap: 30px;
+         overflow: hidden;
+         max-width: 1200px;
+         margin: 0 auto;
+       } 
+       .add1{
+        width: 45%;
+       }
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -449,6 +797,13 @@
             .steps {
                 flex-direction: column;
             }
+            .adds{
+                display: flex;
+                flex-direction: column;
+            }
+            .add1{
+                width: 100%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -463,22 +818,71 @@
     </style>
 </head>
 <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+            <button class="close-sidebar" id="close-sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="sidebar-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="sidebar-link">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="contact.html" class="sidebar-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+            <a href="tools-page.html" class="sidebar-link">
+                <i class="fas fa-tools"></i>
+                <span>Tools</span>
+            </a>
+            <a href="posts-page.html" class="sidebar-link">
+                <i class="fas fa-newspaper"></i>
+                <span>Recent Posts</span>
+            </a>
+        </nav>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
     <!-- Header -->
-    <header>
+    <header class="header">
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">❤️</div>
-                    <div class="logo-text">LoveMatch Calculator</div>
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <img src="img/logo1-removebg-preview (1).png" alt="Logo" width="64" height="64">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <a href="home.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="tools-page.html" class="nav-link tools-link">Tools</a>
+                    <a href="posts-page.html" class="nav-link">Recent Posts</a>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="#calculator">Calculator</a></li>
-                        <li><a href="#description">About</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-btn" id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div class="nav-mobile" id="mobile-menu">
+                <a href="home.html" class="mobile-link">Home</a>
+                <a href="about.html" class="mobile-link">About</a>
+                <a href="contact.html" class="mobile-link">Contact</a>
+                <a href="tools-page.html" class="mobile-link tools-link">Tools</a>
+                <a href="posts-page.html" class="mobile-link">Recent Posts</a>
             </div>
         </div>
     </header>
@@ -493,8 +897,8 @@
    onmouseout="this.style.backgroundColor='#007bff'">See More</a>
         </div>
     </section>
-<div style="display: flex; justify-content: center; gap: 30px;">
-    <div><script type="text/javascript">
+<div class="adds">
+    <div class="add1"><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
 		'format' : 'iframe',
@@ -504,7 +908,7 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
-<div><script type="text/javascript">
+<div class="add1"><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
 		'format' : 'iframe',
@@ -581,7 +985,29 @@
             </div>
         </div>
     </section>
-
+<div class="adds">
+    <div class="add1"><script type="text/javascript">
+	atOptions = {
+		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+<div class="add1"><script type="text/javascript">
+	atOptions = {
+		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
+ 
+</div>
     <!-- Description Section -->
     <section id="description" class="description-section">
         <div class="container">
@@ -661,48 +1087,84 @@
             </div>
         </div>
     </section>
-<div style="display: flex; justify-content: center; gap: 30px;">
-    <div><script type="text/javascript">
-	atOptions = {
-		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
-<div><script type="text/javascript">
-	atOptions = {
-		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
- 
-</div>
+
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <div class="logo-icon">❤️</div>
-                    <div class="logo-text">LoveMatch Calculator</div>
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- About Column -->
+            <div class="footer-about">
+                <div class="logo-wrapper">
+                    <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="footer-logo">
                 </div>
-                <p>Discover your compatibility in love, friendship, and beyond</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">About</a>
+                <p class="footer-text">
+                    BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and
+                    Digital Innovation. Learn, build, and grow with the future of technology.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BTCzRpnMr/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammad-imran-972364373" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/IT-Developeres/" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
-                <p>&copy; 2023 LoveMatch Calculator. All rights reserved. For entertainment purposes only.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#recent-posts">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Artificial Intelligence</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Cloud Computing</a></li>
+                    <li><a href="#">Cybersecurity</a></li>
+                    <li><a href="#">Data Science</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get the latest updates and news.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p class="footer-small-text">We'll never share your email with anyone else.</p>
             </div>
         </div>
-    </footer>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 BlogsTech. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <p>Made with <i class="fas fa-heart"></i> by <a href="#">IT Developer</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
     <script>
         document.getElementById('calculate-btn').addEventListener('click', function() {
@@ -805,5 +1267,6 @@
             document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -101,15 +101,53 @@
         const icon = button.querySelector('i');
 
         const toggleMenu = () => {
-            const expanded = button.getAttribute('aria-expanded') === 'true';
-            button.setAttribute('aria-expanded', String(!expanded));
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('block');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            menu.classList.toggle('active');
+            
+            // Toggle between hamburger and close icon
             if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
+                if (isExpanded) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
             }
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isExpanded ? '' : 'hidden';
         };
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!button.contains(e.target) && !menu.contains(e.target)) {
+                if (menu.classList.contains('active')) {
+                    button.setAttribute('aria-expanded', 'false');
+                    menu.classList.remove('active');
+                    document.body.style.overflow = '';
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            }
+        });
+
+        // Close menu when a menu item is clicked
+        const menuItems = menu.querySelectorAll('.mobile-link');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                button.setAttribute('aria-expanded', 'false');
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
 
         button.addEventListener('click', toggleMenu);
     };
@@ -288,6 +326,43 @@
     };
 
     document.addEventListener('DOMContentLoaded', () => {
+        // Initialize sidebar
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeSidebar = document.getElementById('close-sidebar');
+
+        // Toggle sidebar
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Event listeners
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', toggleSidebar);
+        }
+        
+        if (closeSidebar) {
+            closeSidebar.addEventListener('click', toggleSidebar);
+        }
+        
+        if (overlay) {
+            overlay.addEventListener('click', toggleSidebar);
+        }
+
+        // Close sidebar when clicking on a link
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Initialize other components
         annotateIconButtons();
         initMobileMenu();
         initSmoothScroll();
