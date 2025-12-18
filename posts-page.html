@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,113 +13,650 @@
 
   gtag('config', 'G-0W5C8JJV9M');
 </script>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-          animation: {
-            'typewriter': 'typewriter 2s steps(20, end) 0.5s 1 normal both',
-            'blink-caret': 'blink-caret 0.75s step-end infinite',
-            'fade-in': 'fadeIn 1.5s ease-in-out 2s 1 normal both',
-            'float': 'float 15s infinite ease-in-out',
-            'float-1': 'float 20s infinite ease-in-out',
-            'float-2': 'float 25s infinite ease-in-out -5s',
-            'float-3': 'float 30s infinite ease-in-out -10s',
-          },
-          keyframes: {
-            typewriter: {
-              'from': { width: '0' },
-              'to': { width: '100%' },
-            },
-            'blink-caret': {
-              'from, to': { 'border-color': 'transparent' },
-              '50%': { 'border-color': 'white' },
-            },
-            fadeIn: {
-              'to': { opacity: '1' },
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-              '50%': { transform: 'translateY(-10px) rotate(2deg)' },
-            },
-          },
-        },
-      },
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-50: #f0f9ff;
+      --primary-100: #e0f2fe;
+      --primary-200: #bae6fd;
+      --primary-300: #7dd3fc;
+      --primary-400: #38bdf8;
+      --primary-500: #0ea5e9;
+      --primary-600: #0284c7;
+      --primary-700: #0369a1;
+      --primary-800: #075985;
+      --primary-900: #0c4a6e;
+      --secondary-400: #c084fc;
+      --secondary-500: #a855f7;
+      --secondary-600: #9333ea;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --white: #ffffff;
+      --purple-500: #8b5cf6;
+      --purple-600: #7c3aed;
+      --purple-700: #6d28d9;
+      --indigo-500: #6366f1;
+      --blue-500: #3b82f6;
+      --red-500: #ef4444;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
-  </script>
-  <style type="text/tailwindcss">
-    @layer utilities {
-      .transform-style-preserve-3d {
-        transform-style: preserve-3d;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
+      color: var(--gray-800);
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    .header {
+      background-color: var(--white);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo img {
+      height: 4rem;
+      width: auto;
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-600);
+    }
+
+    .nav-link.active {
+      color: var(--primary-600);
+      font-weight: 500;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--gray-600);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding-bottom: 1rem;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      color: var(--gray-600);
+      text-decoration: none;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--primary-600);
+    }
+
+    /* Ad Grid */
+    .ad-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .ad-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .backface-visible {
-        backface-visibility: visible;
+    }
+
+    /* Main Content */
+    .main {
+      padding: 3rem 0 4rem;
+      max-width: 1536px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .page-title {
+        font-size: 2.25rem;
       }
-      /* Add smooth transition for the click effect */
-      .post-card {
-        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .title-underline {
+      height: 0.25rem;
+      width: 5rem;
+      background: linear-gradient(to right, var(--purple-500), var(--indigo-500));
+      margin: 0 auto;
+      border-radius: 9999px;
+    }
+
+    /* Posts Grid */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .post-card.scale-95 {
-        transform: scale(0.98);
+    }
+
+    @media (min-width: 1024px) {
+      .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Post Card */
+    .post-card {
+      background-color: var(--white);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+      border: 1px solid var(--gray-100);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .post-card:hover {
+      transform: translateY(-0.25rem);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .post-card.scale-95 {
+      transform: scale(0.98);
+    }
+
+    .post-image {
+      width: 100%;
+      height: 12rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .post-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .post-card:hover .post-image img {
+      transform: scale(1.1);
+    }
+
+    .post-number {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: linear-gradient(135deg, var(--purple-500), var(--indigo-500));
+      color: var(--white);
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    .post-card:hover .post-number {
+      transform: scale(1.1) rotate(12deg);
+    }
+
+    .post-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .status-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    .status-dot.new {
+      background-color: #10b981;
+    }
+
+    .status-dot.trending {
+      background-color: var(--blue-500);
+    }
+
+    .post-status {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .post-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .post-excerpt {
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .post-footer {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      color: var(--purple-600);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .post-card:hover .read-more {
+      color: var(--purple-700);
+    }
+
+    .read-more svg {
+      width: 1rem;
+      height: 1rem;
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .post-card:hover .read-more svg {
+      transform: translateX(0.25rem);
+    }
+
+    .read-time {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+    }
+
+    /* Load More */
+    .load-more-container {
+      text-align: center;
+    }
+
+    .load-more-btn {
+      background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .load-more-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--gray-900);
+      color: var(--gray-300);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .footer-about {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-logo img {
+      height: 4rem;
+      width: auto;
+    }
+
+    .footer-text {
+      color: var(--gray-400);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      padding-top: 0.5rem;
+    }
+
+    .social-links a {
+      color: var(--gray-400);
+      font-size: 1.125rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-section h3 {
+      color: var(--white);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--gray-700);
+    }
+
+    .footer-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-section a {
+      color: var(--gray-400);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+      color: var(--white);
+    }
+
+    .newsletter-form {
+      display: flex;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem 0 0 0.25rem;
+      background-color: var(--gray-800);
+      color: var(--white);
+      outline: none;
+    }
+
+    .newsletter-form input:focus {
+      outline: 2px solid var(--primary-500);
+    }
+
+    .newsletter-form button {
+      background-color: var(--primary-600);
+      color: var(--white);
+      border: none;
+      padding: 0 1rem;
+      border-radius: 0 0.25rem 0.25rem 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .newsletter-form button:hover {
+      background-color: var(--primary-700);
+    }
+
+    .footer-small-text {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.5rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--gray-800);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--white);
+    }
+
+    .footer-credit {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--gray-600);
+    }
+
+    .footer-credit i {
+      color: var(--red-500);
+    }
+
+    .footer-credit a {
+      color: var(--primary-400);
+      text-decoration: none;
+    }
+
+    .footer-credit a:hover {
+      text-decoration: underline;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--primary-500);
+      color: var(--white);
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--primary-600);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .nav-desktop {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: none;
       }
     }
   </style>
-  <!-- GSAP for animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
-<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800 font-sans">
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center space-x-2">
-                  <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
-
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-primary-600 transition-colors">About</a>
-                    <a href="contact.html" class="text-primary-600 font-medium">Contact</a>
-                                        <a href="tools-page.html" class="text-gray-600 hover:text-primary-600 transition-colors">Tools</a>
-
-                    <a href="posts-page.html" class="text-primary-600 font-medium">
-                        Recent Posts
-                    </a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </nav>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <a href="index.html" class="block py-2 text-gray-600 hover:text-primary-600">Home</a>
-                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary-600">About</a>
-                <a href="contact.html" class="block py-2 text-primary-600 font-medium">Contact</a>
-                                                <a href="tools-page.html" class="block py-2 text-gray-600 hover:text-primary-600">Tools</a>
-
-                <a href="posts-page.html" class="block py-2 text-primary-600 font-medium">
-                    Recent Posts
-                </a>
-            </div>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <img src="img/logo1-removebg-preview (1).png" alt="Logo">
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="nav-desktop">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="tools-page.html" class="nav-link">Tools</a>
+          <a href="posts-page.html" class="nav-link active">Recent Posts</a>
         </div>
-    </header>
-<div class="flex justify-center gap-6">  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center">
+        
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn" id="mobile-menu-button">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+      
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="tools-page.html">Tools</a>
+        <a href="posts-page.html" class="active">Recent Posts</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ad-grid">
     <div><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
@@ -130,7 +667,7 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
-<div><script type="text/javascript">
+    <div><script type="text/javascript">
 	atOptions = {
 		'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
 		'format' : 'iframe',
@@ -140,231 +677,209 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script></div>
- 
-</div>    
-</div> <main class="py-12 md:py-16 px-4 container mx-auto max-w-7xl">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">AI Articles</h2>
-      <div class="h-1 w-20 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
-    </div>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-      <article class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 flex flex-col h-full relative group hover:-translate-y-1 hover:shadow-xl border border-gray-100" 
-               style="transform-style: preserve-3d; will-change: transform;"
-               onmousemove="handleCardHover(this, event)"
-               onmouseleave="handleCardLeave(this)">
-        <div class="w-full h-48 overflow-hidden relative">
-          <img src="img/ai.avif" alt="AI History" loading="lazy" 
-               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">1</div>
-        <div class="p-6 flex flex-col flex-grow">
-          <div class="flex items-center mb-3">
-            <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-            <span class="text-sm text-gray-500">New Article</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">History of AI</h3>
-          <p class="text-gray-600 mb-4 flex-grow">Explore the fascinating journey of Artificial Intelligence from its early concepts to modern breakthroughs that are shaping our future.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <a href="ai-history.html" class="inline-flex items-center text-purple-600 font-medium transition-colors duration-300 group-hover:text-purple-700">
-              <span>Read full post</span>
-              <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
-            <span class="text-xs text-gray-400">5 min read</span>
-          </div>
-        </div>
-      </article>
+  <main class="main">
+    <div class="container">
+      <div class="page-header">
+        <h2 class="page-title">AI Articles</h2>
+        <div class="title-underline"></div>
+      </div>
 
-      <article class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 flex flex-col h-full relative group hover:-translate-y-1 hover:shadow-xl border border-gray-100"
-               style="transform-style: preserve-3d; will-change: transform;"
-               onmousemove="handleCardHover(this, event)"
-               onmouseleave="handleCardLeave(this)">
-        <div class="w-full h-48 overflow-hidden relative">
-          <img src="img/gen-vs-agen.jpeg" alt="Machine Learning" loading="lazy" 
-               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">2</div>
-        <div class="p-6 flex flex-col flex-grow">
-          <div class="flex items-center mb-3">
-            <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-            <span class="text-sm text-gray-500">Trending</span>
+      <div class="posts-grid">
+        <article class="post-card" onmousemove="handleCardHover(this, event)" onmouseleave="handleCardLeave(this)">
+          <div class="post-image">
+            <img src="img/ai.avif" alt="AI History" loading="lazy">
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Types of AI Launched in Market</h3>
-          <p class="text-gray-600 mb-4 flex-grow">Discover the various types of Artificial Intelligence technologies currently available in the market and their real-world applications.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <a href="types-ai.html" class="inline-flex items-center text-purple-600 font-medium transition-colors duration-300 group-hover:text-purple-700">
-              <span>Read full post</span>
-              <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
-            <span class="text-xs text-gray-400">8 min read</span>
+          <div class="post-number">1</div>
+          <div class="post-content">
+            <div class="post-meta">
+              <div class="status-dot new"></div>
+              <span class="post-status">New Article</span>
+            </div>
+            <h3 class="post-title">History of AI</h3>
+            <p class="post-excerpt">Explore the fascinating journey of Artificial Intelligence from its early concepts to modern breakthroughs that are shaping our future.</p>
+            <div class="post-footer">
+              <a href="ai-history.html" class="read-more">
+                <span>Read full post</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+              <span class="read-time">5 min read</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 flex flex-col h-full relative group hover:-translate-y-1 hover:shadow-xl border border-gray-100"
-               style="transform-style: preserve-3d; will-change: transform;"
-               onmousemove="handleCardHover(this, event)"
-               onmouseleave="handleCardLeave(this)">
-        <div class="w-full h-48 overflow-hidden relative">
-          <img src="img/opp-python.gif" alt="Machine Learning" loading="lazy" 
-               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">3</div>
-        <div class="p-6 flex flex-col flex-grow">
-          <div class="flex items-center mb-3">
-            <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-            <span class="text-sm text-gray-500">Trending</span>
+        </article>
+
+        <article class="post-card" onmousemove="handleCardHover(this, event)" onmouseleave="handleCardLeave(this)">
+          <div class="post-image">
+            <img src="img/gen-vs-agen.jpeg" alt="Machine Learning" loading="lazy">
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Diffrence b/w python or c++ in oop</h3>
-          <p class="text-gray-600 mb-4 flex-grow">Both C++ and Python are powerful Object-Oriented Programming (OOP) languages — but they differ in how they apply OOP principles like encapsulation, inheritance, polymorphism, and abstraction.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <a href="oop-concepts.html" class="inline-flex items-center text-purple-600 font-medium transition-colors duration-300 group-hover:text-purple-700">
-              <span>Read full post</span>
-              <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
-            <span class="text-xs text-gray-400">8 min read</span>
+          <div class="post-number">2</div>
+          <div class="post-content">
+            <div class="post-meta">
+              <div class="status-dot trending"></div>
+              <span class="post-status">Trending</span>
+            </div>
+            <h3 class="post-title">Types of AI Launched in Market</h3>
+            <p class="post-excerpt">Discover the various types of Artificial Intelligence technologies currently available in the market and their real-world applications.</p>
+            <div class="post-footer">
+              <a href="types-ai.html" class="read-more">
+                <span>Read full post</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+              <span class="read-time">8 min read</span>
+            </div>
           </div>
-        </div>
-      </article>
-        <article class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 flex flex-col h-full relative group hover:-translate-y-1 hover:shadow-xl border border-gray-100"
-               style="transform-style: preserve-3d; will-change: transform;"
-               onmousemove="handleCardHover(this, event)"
-               onmouseleave="handleCardLeave(this)">
-        <div class="w-full h-48 overflow-hidden relative">
-          <img src="img/C-VS-C.webp" alt="Machine Learning" loading="lazy" 
-               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        </div>
-        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">4</div>
-        <div class="p-6 flex flex-col flex-grow">
-          <div class="flex items-center mb-3">
-            <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-            <span class="text-sm text-gray-500">Trending</span>
+        </article>
+
+        <article class="post-card" onmousemove="handleCardHover(this, event)" onmouseleave="handleCardLeave(this)">
+          <div class="post-image">
+            <img src="img/opp-python.gif" alt="Machine Learning" loading="lazy">
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Diffrence b/w c or c++</h3>
-          <p class="text-gray-600 mb-4 flex-grow">C is a procedural programming language focused on functions and structured programming, while C++ is an extension of C that supports object-oriented programming with classes, inheritance, and polymorphism. Essentially, C++ adds more features for complex and reusable code while retaining C’s efficiency.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <a href="c-vs-cpp.html" class="inline-flex items-center text-purple-600 font-medium transition-colors duration-300 group-hover:text-purple-700">
-              <span>Read full post</span>
-              <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
-            <span class="text-xs text-gray-400">8 min read</span>
+          <div class="post-number">3</div>
+          <div class="post-content">
+            <div class="post-meta">
+              <div class="status-dot trending"></div>
+              <span class="post-status">Trending</span>
+            </div>
+            <h3 class="post-title">Difference b/w python or c++ in oop</h3>
+            <p class="post-excerpt">Both C++ and Python are powerful Object-Oriented Programming (OOP) languages — but they differ in how they apply OOP principles like encapsulation, inheritance, polymorphism, and abstraction.</p>
+            <div class="post-footer">
+              <a href="oop-concepts.html" class="read-more">
+                <span>Read full post</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+              <span class="read-time">8 min read</span>
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
-    
-    <div class="load-more-container">
-      <button class="load-more-btn">Load More Posts</button>
+        </article>
+
+        <article class="post-card" onmousemove="handleCardHover(this, event)" onmouseleave="handleCardLeave(this)">
+          <div class="post-image">
+            <img src="img/C-VS-C.webp" alt="Machine Learning" loading="lazy">
+          </div>
+          <div class="post-number">4</div>
+          <div class="post-content">
+            <div class="post-meta">
+              <div class="status-dot trending"></div>
+              <span class="post-status">Trending</span>
+            </div>
+            <h3 class="post-title">Difference b/w c or c++</h3>
+            <p class="post-excerpt">C is a procedural programming language focused on functions and structured programming, while C++ is an extension of C that supports object-oriented programming with classes, inheritance, and polymorphism.</p>
+            <div class="post-footer">
+              <a href="c-vs-cpp.html" class="read-more">
+                <span>Read full post</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+              <span class="read-time">8 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      
+      <div class="load-more-container">
+        <button class="load-more-btn">Load More Posts</button>
+      </div>
     </div>
   </main>
   
- <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <!-- About Column -->
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-2">
-                        <img src="img/logo1-removebg-preview (1).png" alt="Logo" class="h-16 w-auto">
- </div>
-                    <p class="text-gray-400">
-                        BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
-                        Learn, build, and grow with the future of technology.
-                    </p>
-                    <div class="flex space-x-4 pt-2">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook">
-                            <i class="fab fa-facebook-f text-lg"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
-                            <i class="fab fa-twitter text-lg"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Instagram">
-                            <i class="fab fa-instagram text-lg"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in text-lg"></i>
-                        </a>
-                        <a href="https://github.com/IT-Developeres/" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="GitHub">
-                            <i class="fab fa-github text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
-                        <li><a href="index.html#recent-posts" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
-                    </ul>
-                </div>
-
-                <!-- Categories -->
-                <div>
-                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Categories</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Artificial Intelligence</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cloud Computing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cybersecurity</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Data Science</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div>
-                    <h3 class="text-white text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Newsletter</h3>
-                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" required 
-                            class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-500 bg-gray-800 text-white">
-                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-4 rounded-r-md transition-colors duration-300">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                    <p class="text-xs text-gray-500 mt-2">We'll never share your email with anyone else.</p>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm">
-                        &copy; 2025 BlogsTech. All rights reserved.
-                    </p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
-                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
-                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Sitemap</a>
-                    </div>
-                </div>
-                <div class="text-center mt-6">
-                    <p class="text-xs text-gray-600">
-                        Made with <i class="fas fa-heart text-red-500"></i> by <a href="#" class="text-primary-400 hover:underline">IT Developer</a>
-                    </p>
-                </div>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- About Column -->
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="img/logo1-removebg-preview (1).png" alt="Logo">
+          </div>
+          <p class="footer-text">
+            BlogsTech brings you the latest insights in Artificial Intelligence, Web Development, and Digital Innovation. 
+            Learn, build, and grow with the future of technology.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/IT-Developeres/" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
         </div>
-    </footer>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#recent-posts">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div class="footer-section">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Artificial Intelligence</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Mobile Apps</a></li>
+            <li><a href="#">Cloud Computing</a></li>
+            <li><a href="#">Cybersecurity</a></li>
+            <li><a href="#">Data Science</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p class="footer-text">Subscribe to get the latest updates and news.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <p class="footer-small-text">We'll never share your email with anyone else.</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 BlogsTech. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+      <div class="footer-credit">
+        <p>Made with <i class="fas fa-heart"></i> by <a href="#">IT Developer</a></p>
+      </div>
+    </div>
+  </footer>
   
   <!-- Back to top button -->
-  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary-600 transition-colors duration-300 opacity-0 invisible" aria-label="Back to top">
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <script>
     // 3D Tilt Effect for Cards
@@ -388,18 +903,30 @@
     
     // Initialize animations and effects
     document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+        });
+      }
+      
       // Back to top button
       const backToTopButton = document.getElementById('back-to-top');
       
       if (backToTopButton) {
         window.addEventListener('scroll', () => {
           if (window.pageYOffset > 300) {
-            backToTopButton.classList.remove('opacity-0', 'invisible');
-            backToTopButton.classList.add('opacity-100', 'visible');
+            backToTopButton.classList.add('visible');
           } else {
-            backToTopButton.classList.remove('opacity-100', 'visible');
-            backToTopButton.classList.add('opacity-0', 'invisible');
+            backToTopButton.classList.remove('visible');
           }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
       
@@ -407,31 +934,26 @@
       const cards = document.querySelectorAll('.post-card');
       cards.forEach(card => {
         card.addEventListener('click', function(e) {
-          // Don't trigger if clicking on links, buttons, or form elements inside the card
           if (e.target.matches('a, a *, button, button *, input, textarea, select') || 
               e.target.closest('a, button, [role="button"], [tabindex]')) {
             return;
           }
           
-          // Add click effect using class instead of inline styles
           this.classList.add('scale-95');
           
-          // Find the first link in the card
           const link = this.querySelector('a[href]');
           if (link) {
-            // Navigate to the post page after a short delay for the animation
             setTimeout(() => {
               window.location.href = link.href;
             }, 200);
           }
         });
         
-        // Remove the scale class when mouse leaves the card
         card.addEventListener('mouseleave', function() {
           this.classList.remove('scale-95');
         });
-   
-  
+      });
+    });
   </script>
 </body>
 </html>
