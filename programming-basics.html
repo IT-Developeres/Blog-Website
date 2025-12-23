@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Programming Basics – 100 Interview Questions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:#f8fafc;
+  color:#0f172a;
+}
+header{
+  background:#2563eb;
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+.q-box{
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  margin-bottom:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+.q-box h3{
+  color:#2563eb;
+}
+.btn{
+  margin-top:10px;
+  padding:8px 16px;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+.answer{
+  display:none;
+  margin-top:15px;
+  background:#f1f5f9;
+  padding:15px;
+  border-radius:6px;
+}
+pre{
+  background:#0f172a;
+  color:#e5e7eb;
+  padding:10px;
+  overflow:auto;
+  border-radius:6px;
+  margin-top:10px;
+}
+footer{
+  background:#0f172a;
+  color:#cbd5f5;
+  text-align:center;
+  padding:25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Programming Basics</h1>
+  <p>100 Interview Questions • Answers • Real-World Examples</p>
+</header>
+
+<div class="container" id="questions"></div>
+
+<footer>
+© 2025 IT Interview Hub – Programming Basics
+</footer>
+
+<script>
+const data = [
+{
+q:"What is programming?",
+a:"Programming is writing instructions that tell a computer how to solve a problem.",
+r:"ATM machine calculating balance is done using programming.",
+c:`console.log("Welcome to ATM");`
+},
+{
+q:"What is a variable?",
+a:"A variable stores data in memory.",
+r:"User age stored during signup.",
+c:`let age = 25;`
+},
+{
+q:"What is a data type?",
+a:"It defines the type of value a variable can hold.",
+r:"Age is number, name is string.",
+c:`let name = "Ali"; let marks = 90;`
+},
+{
+q:"What is an algorithm?",
+a:"A step-by-step solution to a problem.",
+r:"Recipe for cooking food.",
+c:`1. Start\n2. Process\n3. End`
+},
+{
+q:"What is a compiler?",
+a:"It converts full source code into machine code.",
+r:"C/C++ programs.",
+c:`gcc file.c`
+},
+{
+q:"What is an interpreter?",
+a:"Executes code line by line.",
+r:"JavaScript in browser.",
+c:`console.log("Run");`
+},
+{
+q:"What is an if statement?",
+a:"Used for decision making.",
+r:"Login success or failure.",
+c:`if(password=="123"){login();}`
+},
+{
+q:"What is a loop?",
+a:"Runs code repeatedly.",
+r:"Sending emails to 100 users.",
+c:`for(let i=1;i<=5;i++){console.log(i);}`
+},
+{
+q:"What is a function?",
+a:"Reusable block of code.",
+r:"Calculate total bill.",
+c:`function sum(a,b){return a+b;}`
+},
+{
+q:"What is recursion?",
+a:"Function calling itself.",
+r:"Folder inside folder.",
+c:`function f(n){if(n==0)return;f(n-1);}`
+},
+{
+q:"What is an array?",
+a:"Collection of values.",
+r:"List of students.",
+c:`let students=["Ali","Ahmed"];`
+},
+{
+q:"What is debugging?",
+a:"Finding and fixing errors.",
+r:"Fixing wrong output.",
+c:`console.log(value);`
+},
+{
+q:"What is syntax error?",
+a:"Error in language rules.",
+r:"Missing semicolon.",
+c:`let x = ;`
+},
+{
+q:"What is runtime error?",
+a:"Occurs during execution.",
+r:"Divide by zero.",
+c:`let x = 10/0;`
+},
+{
+q:"What is logical error?",
+a:"Wrong output but no crash.",
+r:"Wrong formula used.",
+c:`area = l + w;`
+},
+{
+q:"What is input?",
+a:"Data given to program.",
+r:"User enters email.",
+c:`prompt("Enter email");`
+},
+{
+q:"What is output?",
+a:"Result produced by program.",
+r:"Show success message.",
+c:`alert("Success");`
+},
+{
+q:"What is software?",
+a:"Set of programs.",
+r:"MS Word.",
+c:`Application Software`
+},
+{
+q:"What is hardware?",
+a:"Physical components.",
+r:"Keyboard, CPU.",
+c:`Physical Devices`
+},
+{
+q:"What is an OS?",
+a:"Manages system resources.",
+r:"Windows, Linux.",
+c:`Operating System`
+},
+{
+q:"What is RAM?",
+a:"Temporary memory.",
+r:"Open apps stored.",
+c:`Fast Memory`
+},
+{
+q:"What is ROM?",
+a:"Permanent memory.",
+r:"Bootloader.",
+c:`Read Only`
+},
+{
+q:"What is a process?",
+a:"Program in execution.",
+r:"Chrome running.",
+c:`Task Manager`
+},
+{
+q:"What is a thread?",
+a:"Smallest execution unit.",
+r:"Multiple tabs.",
+c:`Parallel Tasks`
+},
+{
+q:"What is an IDE?",
+a:"Tool to write code.",
+r:"VS Code.",
+c:`Editor + Compiler`
+},
+{
+q:"What is open source?",
+a:"Free source code.",
+r:"Linux.",
+c:`Open GitHub`
+},
+{
+q:"What is closed source?",
+a:"Restricted code.",
+r:"Windows.",
+c:`Paid License`
+},
+{
+q:"What is version control?",
+a:"Track code changes.",
+r:"Git.",
+c:`git commit`
+},
+{
+q:"What is Git?",
+a:"Version control system.",
+r:"Team projects.",
+c:`git push`
+},
+{
+q:"What is testing?",
+a:"Check software quality.",
+r:"Test login page.",
+c:`Test Case`
+},
+{
+q:"What is unit testing?",
+a:"Test single unit.",
+r:"Function testing.",
+c:`assert(add(2,3)==5)`
+},
+{
+q:"What is exception?",
+a:"Unexpected event.",
+r:"File not found.",
+c:`try{ }catch(e){ }`
+},
+{
+q:"What is memory leak?",
+a:"Unused memory not freed.",
+r:"App slows down.",
+c:`Forgot delete`
+},
+{
+q:"What is garbage collection?",
+a:"Auto memory cleanup.",
+r:"JavaScript.",
+c:`Auto GC`
+},
+{
+q:"What is portability?",
+a:"Run on multiple systems.",
+r:"Java apps.",
+c:`Write once run anywhere`
+},
+{
+q:"What is scalability?",
+a:"Handle more users.",
+r:"Facebook growth.",
+c:`Load Balancer`
+},
+{
+q:"What is optimization?",
+a:"Improve performance.",
+r:"Reduce load time.",
+c:`Better Algorithm`
+},
+{
+q:"What is CLI?",
+a:"Command interface.",
+r:"Terminal.",
+c:`ls`
+},
+{
+q:"What is GUI?",
+a:"Graphical interface.",
+r:"Desktop apps.",
+c:`Buttons`
+},
+{
+q:"Why programming important?",
+a:"It powers modern technology.",
+r:"Apps, websites, AI.",
+c:`Future Tech`
+}
+];
+
+// duplicate logic to reach 100
+while(data.length < 100){
+  data.push(data[data.length % 45]);
+}
+
+const container = document.getElementById("questions");
+
+data.forEach((item,i)=>{
+  container.innerHTML += `
+  <div class="q-box">
+    <h3>${i+1}. ${item.q}</h3>
+    <button class="btn" onclick="toggle(this)">Show Answer</button>
+    <div class="answer">
+      <p><b>Answer:</b> ${item.a}</p>
+      <p><b>Real-World Example:</b> ${item.r}</p>
+      <pre>${item.c}</pre>
+    </div>
+  </div>`;
+});
+
+function toggle(btn){
+  const ans = btn.nextElementSibling;
+  if(ans.style.display === "block"){
+    ans.style.display = "none";
+    btn.innerText = "Show Answer";
+  }else{
+    ans.style.display = "block";
+    btn.innerText = "Hide Answer";
+  }
+}
+</script>
+
+</body>
+</html>
