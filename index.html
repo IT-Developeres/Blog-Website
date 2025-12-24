@@ -1,76 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<title>IT Interview Hub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive IT interview preparation hub with 75+ topics including programming, web development, system design, and more. Prepare for your next tech interview with our structured learning paths.">
+    <meta name="keywords" content="IT interview, programming interview, coding interview, technical interview, web development, system design, data structures, algorithms, interview preparation">
+    <meta name="author" content="IT Interview Hub">
+    <meta name='impact-site-verification' value='9a79b705-3be7-46b2-8195-338fb01b1665'>
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="IT Interview Hub - Master Your Tech Interview">
+    <meta property="og:description" content="Prepare for your next tech interview with 75+ IT topics including programming, system design, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <link rel="canonical" href="https://yourdomain.com">
+    <title>IT Interview Hub - Master Your Tech Interview | 75+ Topics</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
 :root {
-  --primary:#2563eb;
-  --dark:#0f172a;
-  --light:#f8fafc;
-  --gray:#64748b;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --gray-light: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:var(--light);color:var(--dark)}
-
-header{
-  background:#fff;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid #e2e8f0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero{
-  background:linear-gradient(135deg,#2563eb,#1e40af);
-  color:#fff;
-  padding:80px 40px;
-  text-align:center;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  background: var(--light);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-section{padding:70px 40px;max-width:1300px;margin:auto}
-
-.section-title{text-align:center;margin-bottom:40px}
-.section-title h3{font-size:32px}
-.section-title p{color:var(--gray)}
-
-.courses{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
+header {
+  background: #fff;
+  padding: 1rem 5%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.course{
-  background:#fff;
-  padding:18px;
-  border-radius:8px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.05);
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.course i{color:var(--primary);font-size:22px}
-
-.show-more{
-  margin-top:40px;
-  text-align:center;
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.show-more button{
-  padding:12px 30px;
-  font-size:15px;
-  border:none;
-  background:var(--primary);
-  color:#fff;
-  border-radius:6px;
-  cursor:pointer;
+.hero {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  min-height: 100vh;
+  padding: 6rem 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,10L50,30L70,10L90,30L70,50L90,70L70,90L50,70L30,90L30,70L10,50L30,30L10,10L30,10Z" fill="rgba(255,255,255,0.05)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2), 0 2px 4px -1px rgba(37, 99, 235, 0.1);
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3), 0 4px 6px -2px rgba(37, 99, 235, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: rgba(37, 99, 235, 0.05);
+  box-shadow: none;
+}
+
+main {
+  padding: 5rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title h2 {
+  font-size: 2.25rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.section-title p {
+  color: var(--gray);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.bg-light {
+  background: #f8fafc;
+  padding: 5rem 0;
+  margin: 5rem 0;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.topic-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--gray-light);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card a {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.topic-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  color: var(--primary);
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.topic-card:hover .topic-icon {
+  background: var(--primary);
+  color: white;
+}
+
+.topic-content {
+  flex: 1;
+}
+
+.topic-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--dark);
+  transition: var(--transition);
+}
+
+.topic-card:hover .topic-title {
+  color: var(--primary);
+}
+
+.topic-meta {
+  font-size: 0.85rem;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topic-meta i {
+  font-size: 0.75rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid var(--gray-light);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--primary);
+  font-size: 1.75rem;
+  transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.feature-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.load-more {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.load-more .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.load-more .btn i {
+  transition: transform 0.3s ease;
+}
+
+.load-more .btn:hover i {
+  transform: translateY(2px);
 }
 
 footer{
@@ -85,119 +383,228 @@ footer{
 <body>
 
 <header>
-  <h2 style="color:#2563eb">IT Interview Hub</h2>
+  <div class="header-container">
+    <a href="/" class="logo">
+      <i class="fas fa-laptop-code"></i>
+      IT Interview Hub
+    </a>
+    <nav>
+      <a href="#topics" class="btn btn-outline">Browse Topics</a>
+    </nav>
+  </div>
 </header>
 
-<div class="hero">
-  <h1>All IT Interview Topics in One Place</h1>
-  <p>75+ IT domains, interview & concept questions — fast & lightweight</p>
-</div>
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Master Your Next Tech Interview</h1>
+      <p>Comprehensive preparation with 75+ IT topics including programming, system design, algorithms, and more. Learn, practice, and succeed in your tech career.</p>
+      <a href="#topics" class="btn">Explore Topics</a>
+    </div>
+  </section>
 
-<section>
-  <div class="section-title">
-    <h3>IT Topics & Courses</h3>
-    <p>Click to explore interview questions</p>
-  </div>
+  <section id="topics" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Explore Interview Topics</h2>
+        <p>Click on any topic to access comprehensive interview preparation materials, questions, and answers.</p>
+      </div>
 
-  <div class="courses" id="courseContainer"></div>
+      <div class="topics-grid" id="topicsContainer"></div>
 
-  <div class="show-more">
-    <button id="showMoreBtn">Show More Topics</button>
-  </div>
-</section>
-<a href="programming-basics.html">sdzxcvbnm,.</a>
+      <div class="load-more">
+        <button id="loadMoreBtn" class="btn btn-outline">
+          <i class="fas fa-arrow-down"></i> Load More Topics
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Our Interview Prep?</h2>
+        <p>We provide the most comprehensive and up-to-date interview preparation resources</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Comprehensive Content</h3>
+          <p>75+ topics covering all aspects of technical interviews, from coding to system design.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-sync"></i>
+          </div>
+          <h3>Regular Updates</h3>
+          <p>Content is regularly updated to reflect the latest interview trends and technologies.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Hands-on Practice</h3>
+          <p>Practical coding exercises and real-world interview questions with solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 <footer>
 © 2025 IT Interview Hub
 </footer>
 
 <script>
 const topics = [
-  ["fa-code","Programming Basics"],
-  ["fa-cubes","OOP Concepts"],
-  ["fa-layer-group","Data Structures"],
-  ["fa-diagram-project","Algorithms"],
-  ["fa-stopwatch","Time Complexity"],
-  ["fa-laptop-code","Web Development"],
-  ["fa-html5","HTML"],
-  ["fa-css3-alt","CSS"],
-  ["fa-js","JavaScript"],
-  ["fa-react","React JS"],
-  ["fa-server","Backend Development"],
-  ["fa-node-js","Node.js"],
-  ["fa-network-wired","REST API"],
-  ["fa-database","SQL"],
-  ["fa-leaf","MongoDB"],
-  ["fa-sitemap","System Design"],
-  ["fa-cloud","Cloud Computing"],
-  ["fa-aws","AWS"],
-  ["fa-gear","DevOps"],
-  ["fa-docker","Docker"],
-  ["fa-shield-halved","Cyber Security"],
-  ["fa-bug","Testing"],
-  ["fa-terminal","Linux"],
-  ["fa-code-branch","Git & GitHub"],
-  ["fa-user-tie","HR Interview"],
-  ["fa-brain","Problem Solving"],
-  ["fa-mobile","Android Development"],
-  ["fa-apple","iOS Development"],
-  ["fa-database","MySQL"],
-  ["fa-python","Python"],
-  ["fa-java","Java"],
-  ["fa-php","PHP"],
-  ["fa-c","C / C++"],
-  ["fa-flutter","Flutter"],
-  ["fa-gamepad","Game Development"],
-  ["fa-link","Blockchain"],
-  ["fa-robot","AI Concepts"],
-  ["fa-chart-line","Data Science"],
-  ["fa-microchip","Machine Learning"],
-  ["fa-network-wired","Computer Networks"],
-  ["fa-desktop","Operating Systems"],
-  ["fa-vial","Manual Testing"],
-  ["fa-gear","Automation Testing"],
-  ["fa-lock","API Security"],
-  ["fa-user-shield","Authentication"],
-  ["fa-key","JWT & OAuth"],
-  ["fa-project-diagram","Low Level Design"],
-  ["fa-building","High Level Design"],
-  ["fa-clipboard-check","SDLC"],
-  ["fa-people-group","Agile & Scrum"],
-  ["fa-search","MCQs"],
-  ["fa-file-lines","Resume Preparation"],
-  ["fa-comments","Behavioral Questions"],
-  ["fa-laptop","Scenario Based Questions"],
-  ["fa-code","Coding Practice"],
-  ["fa-terminal","Shell Scripting"],
-  ["fa-server","Microservices"],
-  ["fa-cloud-arrow-up","CI / CD"],
-  ["fa-server","Nginx"],
-  ["fa-shield","Ethical Hacking"],
-  ["fa-wifi","IoT"],
-  ["fa-globe","Web Security"],
-  ["fa-database","Database Design"],
-  ["fa-layer-group","Design Patterns"],
-  ["fa-memory","Caching"],
-  ["fa-diagram-project","Software Architecture"]
+  { icon: "fa-code", title: "Programming Basics", slug: "programming-basics", questions: 120, category: "Fundamentals" },
+  { icon: "fa-cubes", title: "OOP Concepts", slug: "oop-concepts", questions: 85, category: "Fundamentals" },
+  { icon: "fa-layer-group", title: "Data Structures", slug: "data-structures", questions: 150, category: "Algorithms" },
+  { icon: "fa-diagram-project", title: "Algorithms", slug: "algorithms", questions: 200, category: "Algorithms" },
+  { icon: "fa-laptop-code", title: "Web Development", slug: "web-development", questions: 95, category: "Web" },
+  { icon: "fa-html5", title: "HTML5", slug: "html5", questions: 60, category: "Web" },
+  { icon: "fa-css3-alt", title: "CSS3", slug: "css3", questions: 75, category: "Web" },
+  { icon: "fa-js", title: "JavaScript", slug: "javascript", questions: 180, category: "Programming" },
+  { icon: "fa-react", title: "React JS", slug: "react-js", questions: 150, category: "Frontend" },
+  { icon: "fa-server", title: "Backend Development", slug: "backend-development", questions: 110, category: "Backend" },
+  { icon: "fa-node-js", title: "Node.js", slug: "nodejs", questions: 130, category: "Backend" },
+  { icon: "fa-database", title: "SQL", slug: "sql", questions: 95, category: "Database" },
+  { icon: "fa-leaf", title: "MongoDB", slug: "mongodb", questions: 80, category: "Database" },
+  { icon: "fa-sitemap", title: "System Design", slug: "system-design", questions: 120, category: "Architecture" },
+  { icon: "fa-cloud", title: "Cloud Computing", slug: "cloud-computing", questions: 75, category: "DevOps" },
+  { icon: "fa-aws", title: "AWS", slug: "aws", questions: 110, category: "Cloud" },
+  { icon: "fa-docker", title: "Docker", slug: "docker", questions: 65, category: "DevOps" },
+  { icon: "fa-shield-halved", title: "Cyber Security", slug: "cyber-security", questions: 90, category: "Security" },
+  { icon: "fa-terminal", title: "Linux", slug: "linux", questions: 85, category: "DevOps" },
+  { icon: "fa-code-branch", title: "Git & GitHub", slug: "git-github", questions: 70, category: "Tools" },
+  { icon: "fa-user-tie", title: "HR Interview", slug: "hr-interview", questions: 60, category: "Interview" },
+  { icon: "fa-brain", title: "Problem Solving", slug: "problem-solving", questions: 150, category: "Algorithms" },
+  { icon: "fa-python", title: "Python", slug: "python", questions: 140, category: "Programming" },
+  { icon: "fa-java", title: "Java", slug: "java", questions: 120, category: "Programming" },
+  { icon: "fa-php", title: "PHP", slug: "php", questions: 80, category: "Backend" },
+  { icon: "fa-c", title: "C / C++", slug: "c-cpp", questions: 95, category: "Programming" },
+  { icon: "fa-flutter", title: "Flutter", slug: "flutter", questions: 70, category: "Mobile" },
+  { icon: "fa-link", title: "Blockchain", slug: "blockchain", questions: 55, category: "Emerging Tech" },
+  { icon: "fa-robot", title: "AI Concepts", slug: "ai-concepts", questions: 85, category: "AI/ML" },
+  { icon: "fa-chart-line", title: "Data Science", slug: "data-science", questions: 95, category: "AI/ML" },
+  { icon: "fa-microchip", title: "Machine Learning", slug: "machine-learning", questions: 110, category: "AI/ML" },
+  { icon: "fa-network-wired", title: "Computer Networks", slug: "computer-networks", questions: 75, category: "Networking" },
+  { icon: "fa-desktop", title: "Operating Systems", slug: "operating-systems", questions: 85, category: "Fundamentals" },
+  { icon: "fa-vial", title: "Manual Testing", slug: "manual-testing", questions: 65, category: "Testing" },
+  { icon: "fa-gear", title: "Automation Testing", slug: "automation-testing", questions: 70, category: "Testing" },
+  { icon: "fa-lock", title: "API Security", slug: "api-security", questions: 60, category: "Security" },
+  { icon: "fa-user-shield", title: "Authentication", slug: "authentication", questions: 55, category: "Security" },
+  { icon: "fa-key", title: "JWT & OAuth", slug: "jwt-oauth", questions: 50, category: "Security" },
+  { icon: "fa-project-diagram", title: "Low Level Design", slug: "low-level-design", questions: 90, category: "Design" },
+  { icon: "fa-building", title: "High Level Design", slug: "high-level-design", questions: 100, category: "Design" },
+  { icon: "fa-clipboard-check", title: "SDLC", slug: "sdlc", questions: 65, category: "Process" },
+  { icon: "fa-people-group", title: "Agile & Scrum", slug: "agile-scrum", questions: 60, category: "Process" },
+  { icon: "fa-search", title: "MCQs", slug: "mcqs", questions: 200, category: "Practice" },
+  { icon: "fa-file-lines", title: "Resume Preparation", slug: "resume-preparation", questions: 45, category: "Career" },
+  { icon: "fa-comments", title: "Behavioral Questions", slug: "behavioral-questions", questions: 80, category: "Interview" },
+  { icon: "fa-laptop", title: "Scenario Based Questions", slug: "scenario-questions", questions: 90, category: "Interview" },
+  { icon: "fa-terminal", title: "Shell Scripting", slug: "shell-scripting", questions: 70, category: "DevOps" },
+  { icon: "fa-server", title: "Microservices", slug: "microservices", questions: 85, category: "Architecture" },
+  { icon: "fa-cloud-arrow-up", title: "CI / CD", slug: "ci-cd", questions: 75, category: "DevOps" },
+  { icon: "fa-database", title: "Database Design", slug: "database-design", questions: 80, category: "Database" },
+  { icon: "fa-layer-group", title: "Design Patterns", slug: "design-patterns", questions: 95, category: "Design" },
+  { icon: "fa-memory", title: "Caching", slug: "caching", questions: 65, category: "Performance" },
+  { icon: "fa-diagram-project", title: "Software Architecture", slug: "software-architecture", questions: 85, category: "Architecture" }
 ];
 
-const container = document.getElementById("courseContainer");
-const btn = document.getElementById("showMoreBtn");
-
-let index = 0;
-const LOAD_COUNT = 25;
-
-function loadTopics(){
-  for(let i=0;i<LOAD_COUNT && index<topics.length;i++,index++){
-    const div = document.createElement("div");
-    div.className = "course";
-    div.innerHTML = `<i class="fa-solid ${topics[index][0]}"></i>${topics[index][1]}`;
-    container.appendChild(div);
+// Group topics by category for better organization
+const categories = {};
+topics.forEach(topic => {
+  if (!categories[topic.category]) {
+    categories[topic.category] = [];
   }
+  categories[topic.category].push(topic);
+});
 
-  if(index >= topics.length){
-    btn.style.display = "none";
+const topicsContainer = document.getElementById("topicsContainer");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+let visibleTopics = 12; // Number of topics to show initially
+const TOPICS_PER_LOAD = 12; // Number of topics to load on each "Load More" click
+
+// Function to create topic card HTML
+function createTopicCard(topic) {
+  return `
+    <div class="topic-card" data-category="${topic.category}">
+      <a href="${topic.slug}.html" title="${topic.title} Interview Questions">
+        <div class="topic-icon">
+          <i class="fa-solid ${topic.icon}"></i>
+        </div>
+        <div class="topic-content">
+          <h3 class="topic-title">${topic.title}</h3>
+          <div class="topic-meta">
+            <span>${topic.questions} Questions</span>
+            <i class="fas fa-circle"></i>
+            <span>${topic.category}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  `;
+}
+
+// Function to render topics
+function renderTopics() {
+  const fragment = document.createDocumentFragment();
+  const topicsToShow = topics.slice(0, visibleTopics);
+  
+  topicsToShow.forEach(topic => {
+    const div = document.createElement('div');
+    div.innerHTML = createTopicCard(topic);
+    fragment.appendChild(div.firstElementChild);
+  });
+  
+  topicsContainer.innerHTML = '';
+  topicsContainer.appendChild(fragment);
+  
+  // Show/hide load more button
+  if (visibleTopics >= topics.length) {
+    loadMoreBtn.style.display = 'none';
+  } else {
+    loadMoreBtn.style.display = 'inline-flex';
   }
 }
+
+// Load more topics
+loadMoreBtn.addEventListener('click', () => {
+  visibleTopics += TOPICS_PER_LOAD;
+  renderTopics();
+  
+  // Smooth scroll to show newly loaded topics
+  if (visibleTopics > TOPICS_PER_LOAD) {
+    window.scrollBy({
+      top: 300,
+      behavior: 'smooth'
+    });
+  }
+});
+
+// Initialize
+renderTopics();
+
+// Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 100,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
 btn.addEventListener("click", loadTopics);
 loadTopics();
