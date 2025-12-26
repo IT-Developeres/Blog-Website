@@ -1310,183 +1310,195 @@
             },
             {
                 q: "What is the difference between a class and an object in OOP?",
-                a: "HTML (HyperText Markup Language) is the standard markup language for creating web pages. It provides the structure and content of web documents using elements and tags. HTML is fundamental because it's the foundation of all websites, defining headings, paragraphs, links, images, and other content that browsers render as web pages.",
-                r: "Every website uses HTML for its basic structure, even if it's generated dynamically.",
-                tags: ["html", "web", "fundamentals"]
+                a: "A class is a blueprint or template that defines properties and behaviors for objects. An object is an instance of a class with actual data and state. Classes define structure, objects are concrete entities. Classes are static definitions, objects are dynamic instances. You create multiple objects from one class, each with its own state.",
+                r: "Class: blueprint for creating objects. Object: instance of a class with actual data.",
+                tags: ["class", "object", "instance", "blueprint", "template", "oop-basics"]
             },
             {
-                q: "What are the key differences between HTML, CSS, and JavaScript?",
-                a: "HTML provides structure and content (what's on the page). CSS provides styling and layout (how it looks). JavaScript provides interactivity and behavior (what it does). HTML defines the skeleton, CSS adds appearance, and JavaScript adds functionality. They work together to create modern web experiences.",
-                r: "HTML = structure, CSS = style, JavaScript = behavior.",
-                tags: ["html", "css", "javascript", "web-stack"]
+                q: "What is the difference between access modifiers public, private, and protected?",
+                a: "Public allows access from anywhere, private restricts access to within the same class only, and protected allows access within the same class and subclasses. Public provides maximum accessibility, private provides maximum encapsulation, protected balances accessibility with inheritance needs. These modifiers implement encapsulation and control data access.",
+                r: "Public: accessible everywhere. Private: only within class. Protected: class + subclasses.",
+                tags: ["access-modifiers", "public", "private", "protected", "encapsulation", "visibility"]
             },
             {
-                q: "What are HTML semantic elements and why do they matter?",
-                a: "Semantic elements like <header>, <nav>, <main>, <article>, <section>, <aside>, and <footer> describe their meaning to both browsers and developers. They improve accessibility, SEO, and code maintainability compared to generic <div> elements. Semantic HTML helps screen readers understand content structure and search engines better index pages.",
-                r: "Use <nav> for navigation, <main> for primary content, <article> for independent content.",
-                tags: ["html", "semantic", "accessibility", "seo"]
+                q: "What is the difference between a base class and a derived class?",
+                a: "A base class (parent class) is the class being inherited from, providing common attributes and methods. A derived class (child class) inherits from the base class and can extend or override its functionality. Base classes define common behavior, derived classes provide specialized behavior. This enables code reuse and hierarchical relationships.",
+                r: "Base class: parent class being inherited. Derived class: child class that inherits.",
+                tags: ["base-class", "derived-class", "inheritance", "parent-class", "child-class", "hierarchy"]
             },
             {
-                q: "What are HTML attributes and how are they used?",
-                a: "Attributes provide additional information about HTML elements. Common attributes include class (for styling), id (unique identifier), src (source for images/media), href (link destination), alt (alternative text), and data-* (custom data). Attributes are written as name-value pairs within opening tags and modify element behavior or appearance.",
-                r: "class for CSS styling, id for JavaScript hooks, src/href for resources.",
-                tags: ["html", "attributes", "elements"]
+                q: "What is the difference between method signature and method body?",
+                a: "Method signature defines the method's name, parameters, and return type - it's the interface. Method body contains the actual implementation code - it's the logic. Signature is for identification and calling, body is for execution. Signatures must be unique for overloading, bodies can vary while keeping same signature.",
+                r: "Signature: method name + parameters. Body: actual implementation code.",
+                tags: ["method-signature", "method-body", "interface", "implementation", "overloading"]
             },
             {
-                q: "What is the difference between block-level and inline elements in HTML?",
-                a: "Block-level elements (div, p, h1-h6, ul, li) take up full width available and start on new lines. Inline elements (span, a, img, strong, em) only take up necessary width and don't force line breaks. Understanding this difference is crucial for layout and CSS styling. Block elements can contain other block and inline elements; inline elements typically contain only other inline elements.",
-                r: "Use block elements for layout structure, inline elements within text content.",
-                tags: ["html", "elements", "layout", "css"]
+                q: "What is the difference between runtime polymorphism and compile-time polymorphism?",
+                a: "Compile-time polymorphism (static) is resolved during compilation via method overloading and operator overloading. Runtime polymorphism (dynamic) is resolved during execution via method overriding and virtual functions. Compile-time is faster but less flexible, runtime is slower but enables true polymorphic behavior. Both achieve polymorphism through different mechanisms.",
+                r: "Compile-time: overloading (fast). Runtime: overriding (flexible).",
+                tags: ["runtime-polymorphism", "compile-time-polymorphism", "overloading", "overriding", "dynamic-binding"]
             },
             {
-                q: "What are HTML forms and how do they work?",
-                a: "HTML forms collect user input using <form> elements containing various input types (text, email, password, checkbox, radio, select, textarea). Forms specify action (where to send data) and method (GET/POST). When submitted, form data is sent to servers for processing. Forms are essential for user interaction, login, registration, and data collection.",
-                r: "Forms enable user interaction: login, search, contact, and data submission.",
-                tags: ["html", "forms", "input", "user-interaction"]
+                q: "What is the difference between object state and object behavior?",
+                a: "Object state refers to the data or attributes stored in an object at any given time. Object behavior refers to the methods or operations an object can perform. State represents what an object knows, behavior represents what an object does. State changes over time through method calls, behavior remains consistent. State is data, behavior is functionality.",
+                r: "State: object's data/attributes. Behavior: object's methods/operations.",
+                tags: ["object-state", "object-behavior", "attributes", "methods", "data", "functionality"]
             },
             {
-                q: "What are HTML5 semantic input types and their benefits?",
-                a: "HTML5 introduced specialized input types: email, url, tel, number, date, time, range, color, and search. These provide better user experience with native controls, built-in validation, and mobile-optimized keyboards. They improve accessibility and reduce JavaScript validation needs while providing clear semantic meaning to browsers and assistive technologies.",
-                r: "Use type='email' for email validation, type='date' for calendar pickers, type='number' for numeric input.",
-                tags: ["html5", "forms", "input-types", "validation"]
+                q: "What is the difference between object identity and object equality?",
+                a: "Object identity refers to whether two references point to the exact same object in memory (== operator). Object equality refers to whether two objects have the same content or value (.equals() method). Identity is about memory location, equality is about logical equivalence. Two objects can be equal but have different identities.",
+                r: "Identity: same memory location. Equality: same content/value.",
+                tags: ["object-identity", "object-equality", "equals", "hashcode", "memory", "comparison"]
             },
             {
-                q: "What are HTML multimedia elements and how are they used?",
-                a: "HTML5 provides native multimedia support with <img>, <audio>, <video>, and <canvas> elements. <img> displays images with src, alt, and responsive attributes. <audio> and <video> embed media with controls, sources, and fallbacks. <canvas> enables dynamic graphics and animations. These elements eliminate the need for plugins like Flash.",
-                r: "Use <video> for video content, <audio> for sound, <canvas> for graphics/animations.",
-                tags: ["html5", "multimedia", "video", "audio", "canvas"]
+                q: "What is the difference between object collaboration and object composition?",
+                a: "Object collaboration refers to objects working together by sending messages and calling methods. Object composition is a specific relationship where one object contains or owns other objects. Collaboration is about interaction, composition is about ownership. All composition involves collaboration, but not all collaboration involves composition.",
+                r: "Collaboration: objects working together. Composition: object contains other objects.",
+                tags: ["object-collaboration", "object-composition", "interaction", "ownership", "has-a-relationship"]
             },
             {
-                q: "What is responsive web design and how does HTML support it?",
-                a: "Responsive design ensures websites work well on all devices and screen sizes. HTML supports this through viewport meta tag, semantic structure, flexible images, and media queries (in CSS). The viewport meta tag tells mobile browsers how to handle dimensions. Responsive HTML provides the foundation for CSS media queries to adapt layouts.",
-                r: "Include <meta name='viewport' content='width=device-width, initial-scale=1'> for mobile responsiveness.",
-                tags: ["html", "responsive", "mobile", "viewport"]
+                q: "What is the difference between object lifecycle and object scope?",
+                a: "Object lifecycle refers to the phases from creation to destruction: instantiation, usage, and garbage collection. Object scope refers to where and when an object can be accessed in the program. Lifecycle is about time duration, scope is about accessibility. Objects can have different scopes (local, instance, static) but all follow the same lifecycle pattern.",
+                r: "Lifecycle: creation to destruction. Scope: where object is accessible.",
+                tags: ["object-lifecycle", "object-scope", "creation", "destruction", "accessibility", "garbage-collection"]
             },
             {
-                q: "What are HTML data attributes and when should you use them?",
-                a: "Data attributes (data-*) store custom data private to the page or application. They're useful for storing information needed by JavaScript, like configuration values, element states, or identifiers. Data attributes don't affect styling or behavior directly but provide a clean way to pass data between HTML and JavaScript without using non-standard attributes or hidden elements.",
-                r: "Use data-user-id='123' to store user ID, data-state='active' for component state.",
-                tags: ["html", "data-attributes", "javascript", "custom-data"]
+                q: "What is the difference between object responsibility and object capability?",
+                a: "Object responsibility refers to what an object should do according to its design and Single Responsibility Principle. Object capability refers to what an object can do based on its available methods and properties. Responsibility is about design intent, capability is about implementation. Objects should have focused responsibilities but broad capabilities through collaboration.",
+                r: "Responsibility: what object should do. Capability: what object can do.",
+                tags: ["object-responsibility", "object-capability", "srp", "design-intent", "implementation"]
             },
             {
-                q: "What are HTML accessibility features and best practices?",
-                a: "HTML accessibility includes using semantic elements, providing alt text for images, proper form labels, ARIA attributes, and keyboard navigation. Use <label> for form inputs, alt for images, proper heading hierarchy, and ARIA roles when needed. Accessible HTML works better with screen readers, keyboards, and assistive technologies, improving user experience for everyone.",
-                r: "Always provide alt text for images and use <label> elements for form inputs.",
-                tags: ["html", "accessibility", "aria", "a11y", "screen-reader"]
+                q: "What is the difference between object interface and object implementation?",
+                a: "Object interface defines what operations an object provides (public methods and properties). Object implementation contains the actual code that performs those operations. Interface is the contract, implementation is the fulfillment. Interface focuses on 'what', implementation focuses on 'how'. Good design separates interface from implementation.",
+                r: "Interface: what object does. Implementation: how object does it.",
+                tags: ["object-interface", "object-implementation", "contract", "abstraction", "encapsulation"]
             },
             {
-                q: "What are HTML meta tags and why are they important?",
-                a: "Meta tags provide metadata about the HTML document. Key meta tags include charset (character encoding), viewport (responsive design), description (SEO), keywords (SEO), and robots (search engine crawling). Meta tags don't display content but control page behavior, SEO, and browser rendering. They're placed in the <head> section.",
-                r: "Include charset='UTF-8', viewport meta tag, and description for every page.",
-                tags: ["html", "meta-tags", "seo", "head"]
+                q: "What is the difference between object messaging and object invocation?",
+                a: "Object messaging refers to the conceptual communication between objects where one object sends a message to another. Object invocation is the actual mechanism of calling a method on an object. Messaging is about the design pattern, invocation is about the technical implementation. Messaging emphasizes loose coupling, invocation is the concrete action.",
+                r: "Messaging: conceptual communication. Invocation: actual method call.",
+                tags: ["object-messaging", "object-invocation", "communication", "method-call", "loose-coupling"]
             },
             {
-                q: "What is the difference between HTML and XHTML?",
-                a: "XHTML is HTML reformulated as XML, with stricter syntax rules: all tags must be closed, attributes must be quoted, tags must be lowercase, and documents must be well-formed. HTML5 is more forgiving and has relaxed syntax rules. XHTML was designed for stricter parsing and better integration with XML tools, but HTML5 became the standard due to its flexibility.",
-                r: "HTML5 is the current standard; XHTML is rarely used in new projects.",
-                tags: ["html", "xhtml", "syntax", "standards"]
+                q: "What is the difference between object persistence and object serialization?",
+                a: "Object persistence refers to keeping objects alive beyond program execution through storage in databases or files. Object serialization is the process of converting objects to a stream of bytes for storage or transmission. Persistence is about long-term storage, serialization is about data format conversion. Serialization is often used to achieve persistence.",
+                r: "Persistence: keeping objects alive. Serialization: converting to bytes.",
+                tags: ["object-persistence", "object-serialization", "storage", "database", "byte-conversion"]
             },
             {
-                q: "What are HTML web components and how do they work?",
-                a: "Web Components are a set of web platform APIs allowing creation of custom, reusable elements. They include Custom Elements (define new HTML tags), Shadow DOM (encapsulated styling), and HTML Templates (reusable markup). Web Components enable framework-independent component development, better encapsulation, and reusable UI elements across projects.",
-                r: "Create custom elements like <my-card> or <user-profile> using Web Components APIs.",
-                tags: ["html", "web-components", "custom-elements", "shadow-dom"]
+                q: "What is the difference between object cloning and object copying?",
+                a: "Object cloning creates an exact duplicate of an object, typically using a clone() method. Object copying can be shallow (copying references) or deep (copying nested objects). Cloning is usually a specific operation, copying is a general concept. Cloning preserves type and state, copying may lose type information in shallow copies.",
+                r: "Cloning: exact duplicate. Copying: may be shallow or deep.",
+                tags: ["object-cloning", "object-copying", "duplicate", "shallow-copy", "deep-copy"]
             },
             {
-                q: "What are HTML best practices for performance and SEO?",
-                a: "Performance best practices include minimizing HTTP requests, optimizing images, using appropriate image formats, lazy loading, and minimizing DOM size. SEO best practices include semantic HTML, proper heading structure, meta descriptions, alt text, and clean URLs. Fast, well-structured HTML improves both user experience and search engine rankings.",
-                r: "Optimize images, use semantic HTML, and include meta descriptions for better performance and SEO.",
-                tags: ["html", "performance", "seo", "optimization", "best-practices"]
+                q: "What is the difference between object pooling and object caching?",
+                a: "Object pooling maintains a set of reusable objects to avoid frequent creation/destruction. Object caching stores frequently accessed objects for quick retrieval. Pooling manages object lifecycle, caching manages object accessibility. Pooling is for performance optimization, caching is for data access optimization. Both improve performance but solve different problems.",
+                r: "Pooling: reusable objects. Caching: quick object retrieval.",
+                tags: ["object-pooling", "object-caching", "performance", "optimization", "reuse"]
             },
             {
-                q: "What is the Document Object Model (DOM) and how does HTML relate to it?",
-                a: "The DOM is a programming interface for HTML documents, representing the page structure as a tree of objects. When browsers parse HTML, they create a DOM tree that JavaScript can manipulate. Each HTML element becomes a DOM node with properties and methods. Understanding the DOM is crucial for dynamic web development and JavaScript interactions.",
-                r: "JavaScript uses the DOM to dynamically change HTML content, structure, and style.",
-                tags: ["html", "dom", "javascript", "tree-structure", "api"]
+                q: "What is the difference between object graph and object hierarchy?",
+                a: "Object graph represents the network of interconnected objects through references, showing relationships. Object hierarchy represents the inheritance structure showing parent-child relationships. Graph is about runtime connections, hierarchy is about design relationships. Graph can be complex and cyclical, hierarchy is typically tree-like and acyclic.",
+                r: "Graph: network of references. Hierarchy: inheritance structure.",
+                tags: ["object-graph", "object-hierarchy", "references", "inheritance", "relationships"]
             },
             {
-                q: "What are HTML validation and why is it important?",
-                a: "HTML validation checks that markup follows HTML specifications using validators like the W3C Markup Validation Service. Valid HTML ensures cross-browser compatibility, better SEO, accessibility, and maintainability. Invalid HTML can cause rendering issues, accessibility problems, and poor search engine rankings. Validation catches syntax errors, unclosed tags, and structural problems.",
-                r: "Validate HTML using W3C validator to ensure compatibility and best practices.",
-                tags: ["html", "validation", "w3c", "compatibility", "best-practices"]
+                q: "What is the difference between object identity and object mutability?",
+                a: "Object identity refers to whether two references point to the same object. Object mutability refers to whether an object's state can be changed after creation. Identity is about reference equality, mutability is about state changeability. Immutable objects maintain identity but can't change state, mutable objects can change state while maintaining identity.",
+                r: "Identity: reference equality. Mutability: state changeability.",
+                tags: ["object-identity", "object-mutability", "immutable", "mutable", "state-change"]
             },
             {
-                q: "What are HTML security considerations and best practices?",
-                a: "HTML security includes preventing XSS attacks by properly escaping user input, using HTTPS, implementing Content Security Policy (CSP), validating form data, and avoiding inline JavaScript. Use secure attributes like sandbox for iframes, and be careful with user-generated content. Security-focused HTML protects against common web vulnerabilities.",
-                r: "Always escape user input, use HTTPS, and implement CSP headers for security.",
-                tags: ["html", "security", "xss", "csp", "https", "best-practices"]
+                q: "What is the difference between object initialization and object instantiation?",
+                a: "Object instantiation is the process of creating an object instance using 'new' or similar mechanisms. Object initialization is the process of setting up the object's initial state through constructors or initialization methods. Instantiation allocates memory, initialization sets values. Instantiation happens first, then initialization completes object setup.",
+                r: "Instantiation: creating object. Initialization: setting up object state.",
+                tags: ["object-initialization", "object-instantiation", "constructor", "memory-allocation", "setup"]
             },
             {
-                q: "What is CSS and how does it work with HTML?",
-                a: "CSS (Cascading Style Sheets) is a stylesheet language that describes the presentation of HTML documents. It controls colors, fonts, layout, spacing, and responsive design. CSS works by selecting HTML elements and applying style rules. The 'cascading' nature means styles can inherit and override based on specificity, source order, and importance.",
-                r: "CSS separates presentation from content, making websites maintainable and consistent.",
-                tags: ["css", "styling", "presentation", "html"]
+                q: "What is the difference between object delegation and object inheritance?",
+                a: "Object inheritance creates 'is-a' relationships where subclasses inherit from superclasses. Object delegation creates 'has-a' relationships where objects forward requests to other objects. Inheritance is static at compile time, delegation is dynamic at runtime. Inheritance creates tight coupling, delegation creates loose coupling. Delegation is more flexible than inheritance.",
+                r: "Inheritance: is-a relationship. Delegation: has-a relationship.",
+                tags: ["object-delegation", "object-inheritance", "is-a", "has-a", "composition", "flexibility"]
             },
             {
-                q: "What are the different ways to include CSS in HTML documents?",
-                a: "CSS can be included in three ways: 1) Inline styles using style attribute directly on elements, 2) Internal styles using <style> tags in the <head> section, 3) External stylesheets using <link> tags to separate .css files. External stylesheets are preferred for maintainability, caching, and separation of concerns.",
-                r: "Use external CSS for production, internal for quick tests, inline only for rare exceptions.",
-                tags: ["css", "inclusion", "inline", "internal", "external"]
+                q: "What is the difference between object coupling and object cohesion?",
+                a: "Object cohesion measures how well elements within an object belong together. Object coupling measures how dependent objects are on each other. High cohesion means focused responsibilities, low coupling means independence. Good design has high cohesion and low coupling. Cohesion is internal quality, coupling is external relationship.",
+                r: "Cohesion: internal focus. Coupling: external dependency.",
+                tags: ["object-coupling", "object-cohesion", "design-quality", "independence", "focus"]
             },
             {
-                q: "What are CSS selectors and how do they work?",
-                a: "CSS selectors are patterns used to select and style HTML elements. Types include: element selectors (div, p), class selectors (.classname), ID selectors (#idname), attribute selectors ([type='text']), pseudo-classes (:hover, :active), and pseudo-elements (::before, ::after). Selectors can be combined for specificity and targeting.",
-                r: "Use classes for reusable styles, IDs for unique elements, and element selectors for base styles.",
-                tags: ["css", "selectors", "specificity", "targeting"]
+                q: "What is the difference between object granularity and object abstraction?",
+                a: "Object granularity refers to the size and scope of an object's responsibilities. Object abstraction refers to hiding implementation details while showing essential features. Granularity is about how much an object does, abstraction is about how much it reveals. Fine-grained objects have specific responsibilities, coarse-grained objects have broad responsibilities.",
+                r: "Granularity: object size/scope. Abstraction: hiding details.",
+                tags: ["object-granularity", "object-abstraction", "scope", "size", "responsibility"]
             },
             {
-                q: "What is the CSS Box Model and why is it important?",
-                a: "The CSS Box Model describes how elements are rendered as rectangular boxes consisting of: content (actual content), padding (space around content), border (around padding), and margin (space outside border). Understanding this model is crucial for layout, spacing, and sizing. The box-sizing property can change how width/height are calculated.",
-                r: "Remember: content → padding → border → margin (from inside out).",
-                tags: ["css", "box-model", "layout", "spacing"]
+                q: "What is the difference between object autonomy and object collaboration?",
+                a: "Object autonomy refers to an object's ability to operate independently with self-contained logic and state. Object collaboration refers to objects working together to achieve common goals. Autonomy emphasizes independence, collaboration emphasizes cooperation. Autonomous objects make decisions locally, collaborative objects coordinate with others.",
+                r: "Autonomy: independent operation. Collaboration: working together.",
+                tags: ["object-autonomy", "object-collaboration", "independence", "cooperation", "self-contained"]
             },
             {
-                q: "What are CSS Flexbox and when should you use it?",
-                a: "Flexbox is a one-dimensional layout method for arranging items in rows or columns. It provides powerful alignment, distribution, and ordering capabilities. Use Flexbox for navigation bars, card layouts, centering content, and any linear arrangement. It solves many common layout problems that were difficult with older methods.",
-                r: "Use Flexbox for 1D layouts (rows/columns), Grid for 2D layouts (rows and columns).",
-                tags: ["css", "flexbox", "layout", "alignment"]
+                q: "What is the difference between interface and abstract class in OOP?",
+                a: "An interface defines a contract that must be implemented by any class that implements it. An abstract class provides a partial implementation that can be shared by subclasses. Interfaces are used for defining a common set of methods that must be implemented, while abstract classes are used for providing a basic implementation that can be extended.",
+                r: "Interface: defines a contract. Abstract class: provides a partial implementation.",
+                tags: ["interface", "abstract-class", "oop", "contract", "implementation"]
             },
             {
-                q: "What is CSS Grid and how does it differ from Flexbox?",
-                a: "CSS Grid is a two-dimensional layout system for creating complex grid-based layouts. Unlike Flexbox (1D), Grid handles both rows and columns simultaneously. Grid is ideal for overall page layouts, card grids, and complex arrangements. Flexbox is better for component-level layouts and single-axis alignment.",
-                r: "Grid for page layout, Flexbox for component layout.",
-                tags: ["css", "grid", "layout", "flexbox", "2d-layout"]
+                q: "What is the difference between object encapsulation and object abstraction?",
+                a: "Object encapsulation bundles data and methods together and restricts access to internal state. Object abstraction hides implementation details while showing essential features. Encapsulation is about bundling and protection, abstraction is about hiding complexity. Encapsulation is the mechanism, abstraction is the principle.",
+                r: "Encapsulation: bundling data + methods. Abstraction: hiding implementation details.",
+                tags: ["object-encapsulation", "object-abstraction", "bundling", "hiding", "protection"]
             },
             {
-                q: "What are CSS media queries and responsive design?",
-                a: "Media queries apply CSS styles based on device characteristics like screen width, height, orientation, and resolution. They enable responsive design by allowing different layouts for different devices. Common breakpoints target mobile, tablet, and desktop sizes. Media queries are essential for modern web development.",
-                r: "Use min-width for mobile-first design, max-width for desktop-first design.",
-                tags: ["css", "media-queries", "responsive", "mobile", "breakpoints"]
+                q: "What is the difference between inheritance and polymorphism in OOP?",
+                a: "Inheritance is a mechanism where a subclass inherits properties and methods from a parent class. Polymorphism is the ability of an object to take on multiple forms, depending on the context. Inheritance is about creating a new class based on an existing one, while polymorphism is about objects behaving differently in different situations.",
+                r: "Inheritance: creating a new class from an existing one. Polymorphism: objects behaving differently.",
+                tags: ["inheritance", "polymorphism", "oop", "subclass", "parent-class"]
             },
             {
-                q: "What is CSS specificity and how does it work?",
-                a: "CSS specificity determines which styles are applied when multiple rules target the same element. Specificity is calculated as: inline styles (1000), IDs (100), classes/attributes/pseudo-classes (10), elements/pseudo-elements (1). More specific selectors override less specific ones. !important overrides normal specificity but should be used sparingly.",
-                r: "Higher specificity wins: ID > class > element. Avoid !important when possible.",
-                tags: ["css", "specificity", "cascade", "precedence"]
+                q: "What is the difference between composition and aggregation in OOP?",
+                a: "Composition is a strong 'part-of' relationship where the child cannot exist without the parent. Aggregation is a weak 'has-a' relationship where the child can exist independently. Composition implies ownership and lifecycle dependency, aggregation implies loose association. Composition destroys child when parent is destroyed.",
+                r: "Composition: strong ownership. Aggregation: loose association.",
+                tags: ["composition", "aggregation", "has-a", "part-of", "ownership", "lifecycle"]
             },
             {
-                q: "What are CSS pseudo-classes and pseudo-elements?",
-                a: "Pseudo-classes target elements based on state (:hover, :active, :focus, :visited) or position (:first-child, :nth-child). Pseudo-elements create virtual elements (::before, ::after, ::first-line). They enable styling based on user interaction and document structure without adding extra HTML elements.",
-                r: "Use :hover for mouse effects, ::before/::after for decorative content.",
-                tags: ["css", "pseudo-classes", "pseudo-elements", "states", "generated-content"]
+                q: "What is the difference between association and dependency in OOP?",
+                a: "Association is a structural relationship between objects where one object uses another. Dependency is a weaker relationship where one object requires another to function. Association implies ongoing relationship, dependency implies temporary usage. Association can be bidirectional, dependency is typically unidirectional.",
+                r: "Association: structural relationship. Dependency: usage requirement.",
+                tags: ["association", "dependency", "relationship", "usage", "structure"]
             },
             {
-                q: "What are CSS animations and transitions?",
-                a: "Transitions provide smooth changes between property states over time. Animations allow complex multi-step keyframe animations. Both enhance user experience with smooth interactions. Transitions are simpler for state changes, while animations offer more control for complex sequences. Performance is best with transform and opacity properties.",
-                r: "Use transitions for simple hover effects, animations for complex sequences.",
-                tags: ["css", "animations", "transitions", "motion", "user-experience"]
+                q: "What is the difference between SOLID principles and design patterns?",
+                a: "SOLID principles are fundamental guidelines for writing maintainable, scalable code (SRP, OCP, LSP, ISP, DIP). Design patterns are specific solutions to common problems (Singleton, Factory, Observer, etc.). SOLID provides principles, patterns provide implementations. SOLID is about 'what' to avoid, patterns are about 'how' to solve.",
+                r: "SOLID: design principles. Patterns: specific solutions.",
+                tags: ["solid-principles", "design-patterns", "srp", "ocp", "lsp", "isp", "dip"]
             },
             {
-                q: "What are CSS custom properties (variables) and how do they work?",
-                a: "CSS custom properties allow storing values that can be reused throughout stylesheets. Defined with --prefix (--) and accessed with var(). They enable theming, consistent values, and dynamic updates via JavaScript. Variables cascade and can be scoped to specific elements, making CSS more maintainable and flexible.",
-                r: "Define variables in :root for global use, or specific selectors for local scope.",
-                tags: ["css", "variables", "custom-properties", "theming", "maintainability"]
+                q: "What is the difference between tight coupling and loose coupling in OOP?",
+                a: "Tight coupling means classes are highly dependent on each other, making changes difficult. Loose coupling means classes have minimal dependencies, making changes easier. Tight coupling creates fragile systems, loose coupling creates flexible systems. Good design aims for loose coupling through interfaces, dependency injection, and abstraction.",
+                r: "Tight coupling: high dependency. Loose coupling: low dependency.",
+                tags: ["tight-coupling", "loose-coupling", "dependency", "flexibility", "maintainability"]
             },
             {
-                q: "What is CSS positioning and how do different position values work?",
-                a: "CSS positioning controls element placement: static (default), relative (positioned relative to normal position), absolute (positioned relative to nearest positioned ancestor), fixed (positioned relative to viewport), and sticky (hybrid of relative and fixed). Understanding positioning is crucial for overlays, modals, and complex layouts.",
-                r: "Use relative for minor adjustments, absolute for precise placement within containers.",
-                tags: ["css", "positioning", "layout", "absolute", "relative", "fixed"]
+                q: "What is the difference between high cohesion and low cohesion in OOP?",
+                a: "High cohesion means elements within a class are closely related and focused on a single responsibility. Low cohesion means elements are unrelated and scattered across multiple responsibilities. High cohesion creates maintainable, understandable classes. Low cohesion creates confusing, hard-to-maintain classes. Good design aims for high cohesion.",
+                r: "High cohesion: focused responsibility. Low cohesion: scattered responsibilities.",
+                tags: ["high-cohesion", "low-cohesion", "responsibility", "focus", "maintainability"]
+            },
+            {
+                q: "What is the difference between dependency injection and service locator?",
+                a: "Dependency injection passes dependencies to objects through constructors or methods. Service locator requires objects to request dependencies from a central registry. DI makes dependencies explicit and testable, service locator hides dependencies and creates tight coupling. DI promotes loose coupling, service locator can become a hidden dependency.",
+                r: "DI: dependencies given to object. Service locator: object requests dependencies.",
+                tags: ["dependency-injection", "service-locator", "di-container", "ioc", "loose-coupling"]
+            },
+            {
+                q: "What is the difference between inversion of control and dependency injection?",
+                a: "Inversion of Control (IoC) is a principle where control flow is inverted compared to procedural programming. Dependency Injection (DI) is a specific implementation of IoC for managing dependencies. IoC is the broader concept, DI is one way to achieve it. IoC includes DI, service locator, and other patterns.",
+                r: "IoC: general principle. DI: specific implementation.",
+                tags: ["inversion-of-control", "dependency-injection", "ioc", "di", "control-flow"]
             },
             {
                 q: "What are CSS preprocessors and why use them?",
