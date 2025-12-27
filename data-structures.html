@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures - 150+ Essential Interview Questions & Answers</title>
+    <meta name="description" content="Master data structures with 150+ essential interview questions, detailed answers, and coding examples. Perfect for FAANG interviews, competitive programming, and software engineering preparation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9fafb;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search Box */
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            align-self: flex-start;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar h2 i {
+            color: var(--primary);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            color: var(--gray);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+        }
+
+        .toc-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .toc-hidden {
+            display: none;
+        }
+
+        .toc-toggle-btn {
+            margin-left: auto;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .toc-toggle-btn:hover {
+            background: rgba(37, 99, 235, 0.15);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .breadcrumbs {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs span {
+            color: var(--gray);
+        }
+
+        /* Question Box Styles */
+        .q-box {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            transition: var(--transition);
+        }
+
+        .q-box:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .q-box h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .q-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .q-number {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .q-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .q-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn i {
+            font-size: 0.9em;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Answer Styles */
+        .answer {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .answer.show {
+            display: block;
+        }
+
+        .answer-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .answer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .answer-section h4 i {
+            color: var(--primary);
+        }
+
+        .answer-section p {
+            margin-bottom: 1rem;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        /* Code Block Styles */
+        pre {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        pre code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #e2e8f0;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: 6px 6px 0 0;
+            margin: 0;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #94a3b8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .copy-btn.copied {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            gap: 1rem;
+        }
+
+        .page-info {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+
+            .sidebar {
+                position: static;
+                margin-bottom: 2rem;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            header p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            .search-box input {
+                padding: 0.75rem 1rem 0.75rem 2.25rem;
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .main-content, .sidebar {
+                padding: 1rem;
+            }
+
+            .q-box {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .q-box h3 {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+
+            .q-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .q-tags {
+                margin-bottom: 0.75rem;
+            }
+
+            .q-tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .pagination {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1.5rem 0.75rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 0.75rem;
+            }
+
+            .main-content, .sidebar {
+                padding: 0.75rem;
+            }
+
+            .q-box {
+                padding: 0.75rem;
+            }
+
+            .q-box h3 {
+                font-size: 1rem;
+            }
+
+            .sidebar h2 {
+                font-size: 1rem;
+            }
+
+            .toc-link {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.85rem;
+            }
+
+            .q-number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.7rem;
+            }
+
+            .q-tag {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.5rem;
+            }
+
+            pre {
+                padding: 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .code-header {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.7rem;
+            }
+
+            .copy-btn {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100%;
+            background: white;
+            z-index: 1001;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-sidebar-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mobile-sidebar-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-sidebar-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-sidebar-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-sidebar .sidebar {
+                display: block;
+                position: static;
+                margin: 0;
+                padding: 1rem;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn, .toc-link, .copy-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .toc-link {
+                padding: 0.75rem;
+            }
+
+            .q-tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Improved mobile typography */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .q-box p, .answer-section p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* Better mobile spacing */
+        @media (max-width: 768px) {
+            .q-box {
+                border-radius: 8px;
+            }
+
+            .main-content {
+                border-radius: 8px;
+            }
+
+            .sidebar {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Programming Basics</h1>
+            <p>Master the fundamentals with 100+ essential questions, detailed answers, and real-world code examples</p>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search questions...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <h3><i class="fas fa-list"></i> Menu</h3>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h2><i class="fas fa-list"></i> Table of Contents <button class="toc-toggle-btn" id="tocToggleBtn" type="button" aria-label="Toggle table of contents"><i class="fas fa-bars"></i></button></h2>
+                <ul class="toc-list toc-hidden" id="tocList">
+                    <!-- Filled by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar with Table of Contents -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2><i class="fas fa-list"></i> Table of Contents <button class="toc-toggle-btn" id="tocToggleBtn" type="button" aria-label="Toggle table of contents"><i class="fas fa-bars"></i></button></h2>
+                <ul class="toc-list toc-hidden" id="tocList">
+                    <!-- Filled by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumbs">
+                <a href="/">Home</a>
+                <span>/</span>
+                <a href="#">Topics</a>
+                <span>/</span>
+                <span>Programming Basics</span>
+            </div>
+            
+            <h2 style="margin-bottom: 2rem;">100 Essential Programming Questions</h2>
+            
+            <div id="questionsContainer">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="pagination">
+                <button class="btn" id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="pageInfo" class="page-info">Page 1 of 12</span>
+                <button class="btn" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="footer-content">
+            <p> 2025 IT Interview Hub – Programming Basics</p>
+            <p>Your go-to resource for technical interview preparation</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="#">Topics</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Initialize syntax highlighting
+        if (typeof hljs !== 'undefined') {
+            hljs.highlightAll();
+        }
+
+        // Pagination variables
+        let currentPage = 1;
+        const questionsPerPage = 10; // Changed to show 10 questions per page
+        let currentQuestions = [];
+
+        // Questions data
+        const data = [
+            {
+                q: "What is Data Structure?",
+                a: "Data Structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently. It defines the relationship between data, and the operations that can be performed on the data. Data structures are the foundation for building efficient algorithms and software systems.",
+                r: "Data structures are like containers that organize data in specific ways for efficient access and manipulation.",
+                tags: ["basics", "introduction", "definition"]
+            },
+            {
+                q: "What are the different types of Data Structures?",
+                a: "Data structures are broadly classified into: 1) Primitive types (integers, floats, characters, booleans), 2) Non-primitive types: Linear (Arrays, Linked Lists, Stacks, Queues) and Non-linear (Trees, Graphs, Heaps). Each type has specific characteristics and use cases based on access patterns and memory requirements.",
+                r: "Linear structures have sequential access, non-linear have hierarchical or network-based access.",
+                tags: ["basics", "types", "classification"]
+            },
+            {
+                q: "What is the difference between Linear and Non-linear Data Structures?",
+                a: "Linear data structures arrange elements in sequential order where each element has exactly one predecessor and one successor (except first and last). Examples: Arrays, Linked Lists, Stacks, Queues. Non-linear structures don't follow sequential order, elements can have multiple predecessors/successors. Examples: Trees, Graphs.",
+                r: "Linear: one after another like a line. Non-linear: branched like a tree or network.",
+                tags: ["basics", "linear", "non-linear", "comparison"]
+            },
+            {
+                q: "What is the difference between Static and Dynamic Data Structures?",
+                a: "Static data structures have fixed size determined at compile time and memory is allocated before execution. Examples: Arrays. Dynamic structures can grow or shrink during runtime with flexible memory allocation. Examples: Linked Lists, Trees, Graphs. Static structures offer predictable memory usage, dynamic structures offer flexibility.",
+                r: "Static: fixed size, Dynamic: resizable during runtime.",
+                tags: ["basics", "static", "dynamic", "memory-allocation"]
+            },
+            {
+                q: "What is an Abstract Data Type (ADT)?",
+                a: "ADT is a mathematical model for data types that defines a set of values and operations without specifying implementation details. It focuses on what operations can be performed rather than how they're implemented. Examples: Stack ADT (push, pop, peek), Queue ADT (enqueue, dequeue). ADTs provide abstraction and modularity.",
+                r: "ADT defines what operations exist, not how they work internally.",
+                tags: ["basics", "adt", "abstraction", "interface"]
+            },
+            {
+                q: "What is Time Complexity and why is it important?",
+                a: "Time complexity measures how the runtime of an algorithm grows with input size. It's expressed using Big-O notation (O(n), O(log n), O(n²), etc.). It helps predict algorithm performance, compare different approaches, and choose optimal solutions. Lower time complexity means better performance for large inputs.",
+                r: "Time complexity tells how algorithm runtime scales with input size.",
+                tags: ["basics", "complexity", "big-o", "performance"]
+            },
+            {
+                q: "What is Space Complexity and how is it calculated?",
+                a: "Space complexity measures how much additional memory an algorithm needs as input size grows. It includes both auxiliary space (extra memory used) and input space. Calculated by counting memory usage of variables, data structures, and recursive calls. Helps optimize memory usage and prevent stack overflow.",
+                r: "Space complexity measures memory usage as input size increases.",
+                tags: ["basics", "complexity", "space", "memory"]
+            },
+            {
+                q: "What is an Array and how does it work?",
+                a: "An Array is a collection of elements of the same type stored in contiguous memory locations. Elements are accessed using zero-based indices. Arrays provide O(1) random access but have fixed size. Memory is allocated as a single block, making cache-friendly. Used for storing sequential data and implementing other data structures.",
+                r: "Arrays store elements in consecutive memory locations for fast random access.",
+                tags: ["arrays", "basics", "memory", "access"]
+            },
+            {
+                q: "What are the different types of Arrays?",
+                a: "Arrays come in several types: 1) 1D Array (single dimension), 2) 2D Array (matrix-like, rows and columns), 3) Multi-dimensional Array (3D, 4D, etc.), 4) Dynamic Array (resizable), 5) Jagged Array (array of arrays with different lengths). Each type serves different data organization needs.",
+                r: "1D: line of elements, 2D: grid, Multi-D: hypercube of elements.",
+                tags: ["arrays", "types", "1d", "2d", "multi-dimensional"]
+            },
+            {
+                q: "How do you perform insertion in an Array? What is the complexity?",
+                a: "Array insertion requires shifting elements from the insertion point to the right to make space. For inserting at position i in array of size n, time complexity is O(n) due to shifting. Insertion at end is O(1) if space available. In dynamic arrays, insertion may trigger resizing (O(n) amortized). Space complexity is O(1).",
+                r: "Insertion needs shifting elements, making it O(n) except at the end.",
+                tags: ["arrays", "operations", "insertion", "complexity", "algorithm"]
+            },
+            {
+                q: "How do you perform deletion in an Array? What is the complexity?",
+                a: "Array deletion removes an element and shifts subsequent elements left to fill the gap. For deleting at position i in array of size n, time complexity is O(n) due to shifting. Deletion at end is O(1). Space complexity is O(1). After deletion, array size reduces by 1.",
+                r: "Deletion needs shifting elements left, making it O(n) except at the end.",
+                tags: ["arrays", "operations", "deletion", "complexity", "algorithm"]
+            },
+            {
+                q: "What are the advantages and disadvantages of Arrays?",
+                a: "Advantages: O(1) random access, cache-friendly due to contiguous memory, simple implementation, memory efficient for fixed size. Disadvantages: fixed size (static arrays), expensive insertion/deletion (O(n)), memory wastage if underutilized, difficult to insert in middle.",
+                r: "Arrays are fast for access but slow for modifications when size changes.",
+                tags: ["arrays", "advantages", "disadvantages", "comparison"]
+            },
+            {
+                q: "What are the real-world applications of Arrays?",
+                a: "Arrays are used in: 1) Image processing (pixel matrices), 2) Database records, 3) Scheduling systems, 4) Mathematical computations (matrices), 5) Buffer management, 6) Lookup tables, 7) Implementing other data structures, 8) Sorting algorithms, 9) Game development (grids, boards).",
+                r: "Arrays are fundamental building blocks used in almost every software application.",
+                tags: ["arrays", "applications", "real-world", "use-cases"]
+            },
+            {
+                q: "What is a String data structure and how is it implemented?",
+                a: "String is a sequence of characters stored as an array of characters. In most languages, strings are immutable objects with length property. Implementation varies: null-terminated (C), length-prefixed (Pascal), object-based (Java, Python). Strings support operations like concatenation, substring, search, and comparison.",
+                r: "Strings are essentially character arrays with additional operations and properties.",
+                tags: ["strings", "basics", "implementation", "character-array"]
+            },
+            {
+                q: "What are the common String operations and their complexities?",
+                a: "Common operations: 1) Length - O(1), 2) Character access - O(1), 3) Concatenation - O(n+m), 4) Substring - O(k), 5) Search/Find - O(n*m) naive, O(n+m) KMP, 6) Comparison - O(min(n,m)), 7) Replace - O(n). Complexity depends on implementation and algorithm used.",
+                r: "String operations vary from O(1) for access to O(n) for modification and search.",
+                tags: ["strings", "operations", "complexity", "algorithms"]
+            },
+            {
+                q: "What is the difference between String comparison and String manipulation?",
+                a: "String comparison checks if two strings are equal or determines their ordering (lexicographical). String manipulation modifies strings through operations like concatenation, substring, replacement, case conversion. Comparison returns boolean/ordering, manipulation returns new string.",
+                r: "Comparison checks equality/order, manipulation changes string content.",
+                tags: ["strings", "comparison", "manipulation", "operations"]
+            },
+            {
+                q: "What are the applications of Strings in programming?",
+                a: "Strings are used in: 1) Text processing and editing, 2) Web development (HTML, JSON), 3) Database queries, 4) User interfaces, 5) File paths and names, 6) Network protocols, 7) Cryptography, 8) Pattern matching, 9) Natural language processing, 10) Configuration files.",
+                r: "Strings are essential for handling text-based data in all applications.",
+                tags: ["strings", "applications", "text-processing", "real-world"]
+            },
+            {
+                q: "What is a Linked List and how does it differ from an Array?",
+                a: "Linked List is a linear data structure where elements (nodes) are linked using pointers. Each node contains data and reference to next node. Unlike arrays, elements are not stored contiguously. Linked Lists allow dynamic size and efficient insertion/deletion (O(1) at known position), but have O(n) access time.",
+                r: "Linked lists use pointers instead of contiguous memory like arrays.",
+                tags: ["linked-lists", "basics", "comparison", "vs-array"]
+            },
+            {
+                q: "What are the different types of Linked Lists?",
+                a: "Types: 1) Singly Linked List (one-way traversal), 2) Doubly Linked List (bidirectional traversal), 3) Circular Linked List (last node points to first), 4) Circular Doubly Linked List (bidirectional circular). Each type serves different traversal and manipulation needs.",
+                r: "Singly: one direction, Doubly: both directions, Circular: continuous loop.",
+                tags: ["linked-lists", "types", "singly", "doubly", "circular"]
+            },
+            {
+                q: "How do you implement a Singly Linked List?",
+                a: "Implementation involves Node class with data and next pointer, and LinkedList class with head reference. Operations: insertAtBeginning, insertAtEnd, insertAtPosition, deleteFromBeginning, deleteFromEnd, deleteFromPosition, search, traverse. Each operation manipulates pointers to maintain list structure.",
+                r: "Singly linked list uses nodes with data and next pointer only.",
+                tags: ["linked-lists", "singly", "implementation", "node-structure"]
+            },
+            {
+                q: "What are the advantages and disadvantages of Linked Lists?",
+                a: "Advantages: dynamic size, efficient insertion/deletion (O(1) at known position), flexible memory allocation. Disadvantages: slower access time (O(n)), extra memory for pointers, more complex implementation.",
+                r: "Linked lists are flexible but slower than arrays for access.",
+                tags: ["linked-lists", "advantages", "disadvantages", "comparison"]
+            },
+            {
+                q: "What are the real-world applications of Linked Lists?",
+                a: "Linked Lists are used in: 1) Database query results, 2) Browser history, 3) Dynamic memory allocation, 4) Implementing stacks and queues, 5) Graph and tree traversals, 6) Compilers, 7) Text editors, 8) Network protocols.",
+                r: "Linked lists are used in applications requiring dynamic memory allocation and efficient insertion/deletion.",
+                tags: ["linked-lists", "applications", "real-world", "use-cases"]
+            },
+            {
+                q: "What is a Stack data structure and how does it work?",
+                a: "Stack is a linear data structure that follows LIFO (Last In First Out) principle. Elements are added and removed from the top. Stack operations: push (add), pop (remove), peek (top element). Used for parsing, evaluating postfix expressions, and implementing recursive algorithms.",
+                r: "Stacks follow LIFO, adding and removing from the top.",
+                tags: ["stacks", "basics", "lifo", "operations"]
+            },
+            {
+                q: "What are the different types of Stacks?",
+                a: "Types: 1) Array-based Stack, 2) Linked List-based Stack. Array-based stacks have fixed size, while linked list-based stacks have dynamic size.",
+                r: "Array-based: fixed size, Linked List-based: dynamic size.",
+                tags: ["stacks", "types", "array-based", "linked-list-based"]
+            },
+            {
+                q: "How do you implement a Stack using an Array?",
+                a: "Implementation involves array to store elements and top index to keep track of the top element. Operations: push (add), pop (remove), peek (top element). Array-based stacks have fixed size, which can lead to overflow errors if not handled properly.",
+                r: "Array-based stacks use a fixed-size array to store elements.",
+                tags: ["stacks", "array-based", "implementation", "operations"]
+            },
+            {
+                q: "What are the advantages and disadvantages of Stacks?",
+                a: "Advantages: efficient implementation, fast access and modification (O(1)), simple to implement. Disadvantages: limited size (array-based), overflow errors if not handled properly.",
+                r: "Stacks are efficient but have limited size and overflow risks.",
+                tags: ["stacks", "advantages", "disadvantages", "comparison"]
+            },
+            {
+                q: "What are the real-world applications of Stacks?",
+                a: "Stacks are used in: 1) Evaluating postfix expressions, 2) Parsing, 3) Implementing recursive algorithms, 4) Browser history, 5) Text editors, 6) Compilers, 7) Network protocols.",
+                r: "Stacks are used in applications requiring efficient parsing and evaluation.",
+                tags: ["stacks", "applications", "real-world", "use-cases"]
+            },
+            {
+                q: "What is a Queue data structure and how does it work?",
+                a: "Queue is a linear data structure that follows FIFO (First In First Out) principle. Elements are added at rear and removed from front. Queue operations: enqueue (add), dequeue (remove), front (front element), rear (rear element). Used in scheduling, buffering, and breadth-first search.",
+                r: "Queues follow FIFO, adding at rear and removing from front.",
+                tags: ["queues", "basics", "fifo", "operations"]
+            },
+            {
+                q: "What are the different types of Queues?",
+                a: "Types: 1) Simple Queue (basic FIFO), 2) Circular Queue (circular buffer), 3) Priority Queue (elements with priority), 4) Deque (double-ended queue). Each type serves different ordering and access needs.",
+                r: "Simple: FIFO, Circular: wraps around, Priority: by importance, Deque: both ends.",
+                tags: ["queues", "types", "circular", "priority", "deque"]
+            },
+            {
+                q: "How do you implement a Queue using an Array?",
+                a: "Implementation involves array to store elements, front and rear indices. Operations: enqueue (add at rear), dequeue (remove from front). Array-based queues can lead to inefficient space usage if not implemented as circular queue.",
+                r: "Array-based queues use front and rear indices to manage elements.",
+                tags: ["queues", "array-based", "implementation", "operations"]
+            },
+            {
+                q: "What are the advantages and disadvantages of Queues?",
+                a: "Advantages: fair ordering (FIFO), efficient for scheduling, simple to understand. Disadvantages: inefficient access to middle elements, potential for inefficient space usage (array-based).",
+                r: "Queues provide fair ordering but have limited access patterns.",
+                tags: ["queues", "advantages", "disadvantages", "comparison"]
+            },
+            {
+                q: "What are the real-world applications of Queues?",
+                a: "Queues are used in: 1) Job scheduling, 2) Print spooling, 3) Call center systems, 4) Network packet routing, 5) Breadth-first search, 6) Buffer management, 7) Operating system task scheduling.",
+                r: "Queues are essential for fair scheduling and buffering systems.",
+                tags: ["queues", "applications", "real-world", "use-cases"]
+            },
+            {
+                q: "What is Recursion and how does it work?",
+                a: "Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. It requires base case (termination condition) and recursive case (function calls itself). Used for problems with natural recursive structure like tree traversal, factorial, Fibonacci.",
+                r: "Recursion breaks problems into smaller versions until reaching base case.",
+                tags: ["recursion", "basics", "base-case", "recursive-case"]
+            },
+            {
+                q: "What is the difference between Recursive and Iterative approaches?",
+                a: "Recursive approach uses function calls to solve subproblems, elegant but may have overhead. Iterative approach uses loops, generally more efficient but can be more complex. Recursive is natural for tree-like problems, iterative is better for linear problems.",
+                r: "Recursive: function calls itself, Iterative: uses loops.",
+                tags: ["recursion", "iteration", "comparison", "performance"]
+            },
+            {
+                q: "What are Base Case and Recursive Case in Recursion?",
+                a: "Base case is the condition that stops recursion (termination point). Recursive case is where function calls itself with modified parameters. Every recursive algorithm must have at least one base case to prevent infinite recursion.",
+                r: "Base case stops recursion, recursive case continues it.",
+                tags: ["recursion", "base-case", "recursive-case", "termination"]
+            },
+            {
+                q: "How is Recursion used in Data Structures?",
+                a: "Recursion is used in: 1) Tree traversals (inorder, preorder, postorder), 2) Graph traversals (DFS), 3) Sorting algorithms (quick sort, merge sort), 4) Linked list operations, 5) Dynamic programming. Recursion naturally fits hierarchical data structures.",
+                r: "Recursion is ideal for traversing and manipulating tree-like structures.",
+                tags: ["recursion", "data-structures", "algorithms", "traversal"]
+            },
+            {
+                q: "What are the advantages and limitations of Recursion?",
+                a: "Advantages: elegant code, natural for recursive problems, divide and conquer. Limitations: stack overflow risk, overhead, difficult to debug. Iterative solutions are often more efficient for simple problems.",
+                r: "Recursion provides elegant solutions but has performance and stack limitations.",
+                tags: ["recursion", "advantages", "limitations", "performance"]
+            },
+            {
+                q: "What is a Tree data structure and how does it work?",
+                a: "Tree is a non-linear hierarchical data structure with root node and child nodes. Each node can have multiple children except leaf nodes. Used for representing hierarchical relationships like file systems, organization charts, XML/JSON structures.",
+                r: "Trees represent hierarchical relationships with parent-child connections.",
+                tags: ["trees", "basics", "hierarchical", "nodes"]
+            },
+            {
+                q: "What are the basic Tree terminology and concepts?",
+                a: "Key terms: Root (top node), Node (element with data), Edge (connection between nodes), Parent (node with children), Child (node with parent), Leaf (node without children), Siblings (nodes with same parent), Height (longest path to leaf), Depth (path from root), Level (depth + 1).",
+                r: "Tree terminology defines relationships between nodes in hierarchical structure.",
+                tags: ["trees", "terminology", "root", "node", "leaf", "height"]
+            },
+            {
+                q: "What are the different types of Trees?",
+                a: "Types: 1) Binary Tree (max 2 children), 2) Binary Search Tree (ordered binary tree), 3) AVL Tree (self-balancing BST), 4) Heap (complete binary tree with heap property), 5) B-Tree (multi-way search tree), 6) Trie (prefix tree). Each type serves specific search and balance needs.",
+                r: "Binary: 2 children, BST: ordered, AVL: balanced, Heap: priority-based.",
+                tags: ["trees", "types", "binary", "bst", "avl", "heap"]
+            },
+            {
+                q: "What is a Binary Tree and how does it differ from other trees?",
+                a: "Binary Tree is a tree where each node has at most two children (left and right). Unlike general trees, binary trees have fixed maximum children, making them suitable for efficient searching and sorting operations.",
+                r: "Binary trees limit each node to maximum two children.",
+                tags: ["trees", "binary-tree", "children", "structure"]
+            },
+            {
+                q: "What is a Binary Search Tree (BST) and how does it work?",
+                a: "BST is a binary tree with ordering property: left child < parent < right child. Enables efficient search (O(log n) if balanced), insertion, and deletion. Used for implementing sets, maps, and priority queues.",
+                r: "BST maintains order: left smaller, right larger than parent.",
+                tags: ["trees", "bst", "searching", "ordering", "complexity"]
+            },
+            {
+                q: "What is an AVL Tree and how does it maintain balance?",
+                a: "AVL Tree is a self-balancing BST where height difference between left and right subtrees of any node is at most 1. Uses rotations (left, right, left-right, right-left) to maintain balance after insertions/deletions. Guarantees O(log n) operations.",
+                r: "AVL trees use rotations to maintain balance factor within [-1, 1].",
+                tags: ["trees", "avl", "balancing", "rotations", "complexity"]
+            },
+            {
+                q: "What is a Heap data structure and how does it work?",
+                a: "Heap is a complete binary tree with heap property: max-heap (parent ≥ children) or min-heap (parent ≤ children). Used for implementing priority queues and heap sort. Supports insert (O(log n)) and extract-min/max (O(log n)) operations.",
+                r: "Heap maintains complete binary tree with ordering property between parent and children.",
+                tags: ["trees", "heap", "priority-queue", "max-heap", "min-heap"]
+            },
+            {
+                q: "What are the different Tree traversal methods?",
+                a: "Traversal methods: 1) Inorder (Left, Root, Right) - sorted order for BST, 2) Preorder (Root, Left, Right) - prefix notation, 3) Postorder (Left, Right, Root) - postfix notation, 4) Level-order (BFS) - breadth-first. Each serves different purposes.",
+                r: "Inorder: L-R, Preorder: R-L-R, Postorder: L-R-R, Level-order: by levels.",
+                tags: ["trees", "traversal", "inorder", "preorder", "postorder", "bfs"]
+            },
+            {
+                q: "What are the real-world applications of Trees?",
+                a: "Trees are used in: 1) File systems, 2) Database indexing, 3) Compilers (syntax trees), 4) Network routing, 5) XML/JSON parsing, 6) Decision trees in ML, 7) Organization hierarchies, 8) Game AI.",
+                r: "Trees are fundamental for representing hierarchical data in many applications.",
+                tags: ["trees", "applications", "real-world", "use-cases"]
+            },
+            {
+                q: "What is a Graph data structure and how does it work?",
+                a: "Graph is a non-linear data structure consisting of vertices (nodes) and edges (connections). Can be directed (edges have direction) or undirected, weighted (edges have values) or unweighted. Used for representing networks, relationships, and paths.",
+                r: "Graphs represent networks of interconnected nodes with edges.",
+                tags: ["graphs", "basics", "vertices", "edges", "networks"]
+            },
+            {
+                q: "What are the different types of Graphs?",
+                a: "Types: 1) Directed Graph (edges have direction), 2) Undirected Graph (edges bidirectional), 3) Weighted Graph (edges have values), 4) Unweighted Graph (edges equal weight), 5) Cyclic Graph (contains cycles), 6) Acyclic Graph (no cycles), 7) Connected Graph (all vertices reachable), 8) Disconnected Graph (separate components).",
+                r: "Graphs vary by direction, weight, cycles, and connectivity.",
+                tags: ["graphs", "types", "directed", "undirected", "weighted", "cyclic"]
+            },
+            {
+                q: "How are Graphs represented in memory?",
+                a: "Common representations: 1) Adjacency Matrix (2D array, O(1) edge lookup, O(n²) space), 2) Adjacency List (array of linked lists, O(deg(v)) lookup, O(V+E) space), 3) Edge List (list of edge pairs), 4) Incidence Matrix. Choice depends on graph density and operations needed.",
+                r: "Adjacency Matrix for dense graphs, Adjacency List for sparse graphs.",
+                tags: ["graphs", "representation", "adjacency-matrix", "adjacency-list", "memory"]
+            },
+            {
+                q: "What is the difference between BFS and DFS?",
+                a: "BFS (Breadth-First Search) explores level by level using queue, finds shortest path in unweighted graphs, uses more memory. DFS (Depth-First Search) explores deep paths using stack/recursion, uses less memory, good for cycle detection and topological sort.",
+                r: "BFS: level-by-level, DFS: deep dive first.",
+                tags: ["graphs", "traversal", "bfs", "dfs", "comparison"]
+            },
+            {
+                q: "What are the real-world applications of Graphs?",
+                a: "Graphs are used in: 1) Social networks (friend connections), 2) GPS navigation (shortest paths), 3) Network routing, 4) Dependency management, 5) Recommendation systems, 6) Circuit design, 7) Bioinformatics, 8) Supply chain optimization.",
+                r: "Graphs model relationships and networks in many domains.",
+                tags: ["graphs", "applications", "real-world", "networks", "social-media"]
+            },
+            {
+                q: "What is Hashing and how does it work?",
+                a: "Hashing is a technique that maps data of arbitrary size to fixed-size values using hash functions. Used for fast data retrieval, password storage, and data integrity. Good hash functions distribute keys uniformly and minimize collisions.",
+                r: "Hashing converts data to fixed-size keys for fast access.",
+                tags: ["hashing", "basics", "hash-function", "collision"]
+            },
+            {
+                q: "What is a Hash Table and how does it work?",
+                a: "Hash Table stores key-value pairs using hash function to compute index into array of buckets. Supports O(1) average case insertion, deletion, and search. Uses collision resolution techniques like chaining (linked lists) or open addressing (probing).",
+                r: "Hash tables use hash functions for O(1) average operations.",
+                tags: ["hashing", "hash-table", "key-value", "collision-resolution"]
+            },
+            {
+                q: "What are the different collision resolution techniques?",
+                a: "Techniques: 1) Chaining (linked lists at each bucket), 2) Linear Probing (next available slot), 3) Quadratic Probing (quadratic function for next slot), 4) Double Hashing (second hash function). Each has different performance characteristics and clustering issues.",
+                r: "Chaining uses linked lists, probing finds alternate slots.",
+                tags: ["hashing", "collision-resolution", "chaining", "probing", "clustering"]
+            },
+            {
+                q: "What are the advantages and disadvantages of Hash Tables?",
+                a: "Advantages: O(1) average operations, flexible key types, efficient for large datasets. Disadvantages: worst-case O(n) operations, collision overhead, memory usage, not ordered, poor cache locality.",
+                r: "Hash tables offer fast average performance but have worst-case issues.",
+                tags: ["hashing", "hash-table", "advantages", "disadvantages", "performance"]
+            },
+            {
+                q: "What are the real-world applications of Hashing?",
+                a: "Hashing is used in: 1) Database indexing, 2) Caching systems, 3) Password storage (salted hashes), 4) File integrity verification, 5) Load balancing, 6) Compilers (symbol tables), 7) Blockchain, 8) Data deduplication.",
+                r: "Hashing is essential for fast data access and security.",
+                tags: ["hashing", "applications", "real-world", "security", "caching"]
+            },
+            {
+                q: "What is Linear Search and how does it work?",
+                a: "Linear Search sequentially checks each element until target found or end reached. Time complexity O(n), space O(1). Simple but inefficient for large sorted datasets. Used when data is unsorted or dataset is small.",
+                r: "Linear search checks elements one by one until finding the target.",
+                tags: ["searching", "linear-search", "algorithms", "complexity"]
+            },
+            {
+                q: "What is a Graph data structure and how does it work?",
+                a: "Graph is a non-linear data structure consisting of vertices (nodes) and edges (connections). Can be directed (edges have direction) or undirected, weighted (edges have values) or unweighted. Used for representing networks, relationships, and paths.",
+                r: "Graphs represent networks of interconnected nodes with edges.",
+                tags: ["graphs", "basics", "vertices", "edges", "networks"]
+            },
+            {
+                q: "What are the different types of Graphs?",
+                a: "Types: 1) Directed Graph (edges have direction), 2) Undirected Graph (edges bidirectional), 3) Weighted Graph (edges have values), 4) Unweighted Graph (edges equal weight), 5) Cyclic Graph (contains cycles), 6) Acyclic Graph (no cycles), 7) Connected Graph (all vertices reachable), 8) Disconnected Graph (separate components).",
+                r: "Graphs vary by direction, weight, cycles, and connectivity.",
+                tags: ["graphs", "types", "directed", "undirected", "weighted", "cyclic"]
+            },
+            {
+                q: "How are Graphs represented in memory?",
+                a: "Common representations: 1) Adjacency Matrix (2D array, O(1) edge lookup, O(n²) space), 2) Adjacency List (array of linked lists, O(deg(v)) lookup, O(V+E) space), 3) Edge List (list of edge pairs), 4) Incidence Matrix. Choice depends on graph density and operations needed.",
+                r: "Adjacency Matrix for dense graphs, Adjacency List for sparse graphs.",
+                tags: ["graphs", "representation", "adjacency-matrix", "adjacency-list", "memory"]
+            },
+            {
+                q: "What is the difference between BFS and DFS?",
+                a: "BFS (Breadth-First Search) explores level by level using queue, finds shortest path in unweighted graphs, uses more memory. DFS (Depth-First Search) explores deep paths using stack/recursion, uses less memory, good for cycle detection and topological sort.",
+                r: "BFS: level-by-level, DFS: deep dive first.",
+                tags: ["graphs", "traversal", "bfs", "dfs", "comparison"]
+            },
+            {
+                q: "What are the real-world applications of Graphs?",
+                a: "Graphs are used in: 1) Social networks (friend connections), 2) GPS navigation (shortest paths), 3) Network routing, 4) Dependency management, 5) Recommendation systems, 6) Circuit design, 7) Bioinformatics, 8) Supply chain optimization.",
+                r: "Graphs model relationships and networks in many domains.",
+                tags: ["graphs", "applications", "real-world", "networks", "social-media"]
+            },
+            {
+                q: "What is Hashing and how does it work?",
+                a: "Hashing is a technique that maps data of arbitrary size to fixed-size values using hash functions. Used for fast data retrieval, password storage, and data integrity. Good hash functions distribute keys uniformly and minimize collisions.",
+                r: "Hashing converts data to fixed-size keys for fast access.",
+                tags: ["hashing", "basics", "hash-function", "collision"]
+            },
+            {
+                q: "What is a Hash Table and how does it work?",
+                a: "Hash Table stores key-value pairs using hash function to compute index into array of buckets. Supports O(1) average case insertion, deletion, and search. Uses collision resolution techniques like chaining (linked lists) or open addressing (probing).",
+                r: "Hash tables use hash functions for O(1) average operations.",
+                tags: ["hashing", "hash-table", "key-value", "collision-resolution"]
+            },
+            {
+                q: "What are the different collision resolution techniques?",
+                a: "Techniques: 1) Chaining (linked lists at each bucket), 2) Linear Probing (next available slot), 3) Quadratic Probing (quadratic function for next slot), 4) Double Hashing (second hash function). Each has different performance characteristics and clustering issues.",
+                r: "Chaining uses linked lists, probing finds alternate slots.",
+                tags: ["hashing", "collision-resolution", "chaining", "probing", "clustering"]
+            },
+            {
+                q: "What are the advantages and disadvantages of Hash Tables?",
+                a: "Advantages: O(1) average operations, flexible key types, efficient for large datasets. Disadvantages: worst-case O(n) operations, collision overhead, memory usage, not ordered, poor cache locality.",
+                r: "Hash tables offer fast average performance but have worst-case issues.",
+                tags: ["hashing", "hash-table", "advantages", "disadvantages", "performance"]
+            },
+            {
+                q: "What are the real-world applications of Hashing?",
+                a: "Hashing is used in: 1) Database indexing, 2) Caching systems, 3) Password storage (salted hashes), 4) File integrity verification, 5) Load balancing, 6) Compilers (symbol tables), 7) Blockchain, 8) Data deduplication.",
+                r: "Hashing is essential for fast data access and security.",
+                tags: ["hashing", "applications", "real-world", "security", "caching"]
+            },
+            {
+                q: "What is Linear Search and how does it work?",
+                a: "Linear Search sequentially checks each element until target found or end reached. Time complexity O(n), space O(1). Simple but inefficient for large sorted datasets. Used when data is unsorted or dataset is small.",
+                r: "Linear search checks elements one by one until finding the target.",
+                tags: ["searching", "linear-search", "algorithms", "complexity"]
+            },
+            {
+                q: "What is Binary Search and how does it work?",
+                a: "Binary Search finds target in sorted array by repeatedly dividing search interval in half. Time complexity O(log n), space O(1). Efficient for large sorted datasets.",
+                r: "Binary search divides search space in half at each step.",
+                tags: ["searching", "binary-search", "algorithms", "complexity"]
+            },
+            {
+                q: "What is Depth-First Search (DFS) and how does it work?",
+                a: "DFS explores graph or tree by visiting a node and then visiting all of its neighbors before backtracking. Uses stack or recursion to keep track of nodes to visit.",
+                r: "DFS explores deep paths first, using stack or recursion.",
+                tags: ["searching", "dfs", "algorithms", "graph-traversal"]
+            },
+            {
+                q: "What is Breadth-First Search (BFS) and how does it work?",
+                a: "BFS explores graph or tree by visiting all nodes at current depth before moving to next depth level. Uses queue to keep track of nodes to visit.",
+                r: "BFS explores level by level, using queue.",
+                tags: ["searching", "bfs", "algorithms", "graph-traversal"]
+            },
+            {
+                q: "What is Dijkstra's algorithm and how does it work?",
+                a: "Dijkstra's algorithm finds shortest path between two nodes in weighted graph. Uses priority queue to keep track of nodes to visit, with priority based on minimum distance from start node.",
+                r: "Dijkstra's algorithm finds shortest path using priority queue.",
+                tags: ["searching", "dijkstra", "algorithms", "shortest-path"]
+            },
+            {
+                q: "What is A* search algorithm and how does it work?",
+                a: "A* search algorithm finds shortest path between two nodes in weighted graph, using heuristic function to guide search. Uses priority queue to keep track of nodes to visit, with priority based on estimated total cost.",
+                r: "A* search uses heuristic to guide search towards goal.",
+                tags: ["searching", "a-star", "algorithms", "heuristic"]
+            },
+            {
+                q: "What is the difference between Greedy algorithm and Dynamic Programming?",
+                a: "Greedy algorithm makes locally optimal choices, hoping to find global optimum. Dynamic Programming breaks problem into smaller subproblems, solving each only once and storing results to avoid redundant computation.",
+                r: "Greedy: locally optimal, Dynamic Programming: globally optimal.",
+                tags: ["searching", "greedy", "dynamic-programming", "algorithms"]
+            },
+            {
+                q: "What is the time complexity of Binary Search?",
+                a: "Time complexity of Binary Search is O(log n), where n is the number of elements in the search space.",
+                r: "Binary search has logarithmic time complexity.",
+                tags: ["searching", "binary-search", "time-complexity", "algorithms"]
+            },
+            {
+                q: "What is the space complexity of Depth-First Search (DFS)?",
+                a: "Space complexity of DFS is O(h), where h is the maximum height of the recursion call stack.",
+                r: "DFS has linear space complexity.",
+                tags: ["searching", "dfs", "space-complexity", "algorithms"]
+            },
+            {
+                q: "What is the time complexity of Breadth-First Search (BFS)?",
+                a: "Time complexity of BFS is O(V + E), where V is the number of vertices and E is the number of edges in the graph.",
+                r: "BFS has linear time complexity.",
+                tags: ["searching", "bfs", "time-complexity", "algorithms"]
+            },
+            {
+                q: "What is the space complexity of Dijkstra's algorithm?",
+                a: "Space complexity of Dijkstra's algorithm is O(V + E), where V is the number of vertices and E is the number of edges in the graph.",
+                r: "Dijkstra's algorithm has linear space complexity.",
+                tags: ["searching", "dijkstra", "space-complexity", "algorithms"]
+            },
+            {
+                q: "What is the time complexity of A* search algorithm?",
+                a: "Time complexity of A* search algorithm is O(b^d), where b is the branching factor and d is the depth of the search tree.",
+                r: "A* search has exponential time complexity.",
+                tags: ["searching", "a-star", "time-complexity", "algorithms"]
+            },
+            {
+                q: "What is the space complexity of A* search algorithm?",
+                a: "Space complexity of A* search algorithm is O(b^d), where b is the branching factor and d is the depth of the search tree.",
+                r: "A* search has exponential space complexity.",
+                tags: ["searching", "a-star", "space-complexity", "algorithms"]
+            },
+            {
+                q: "What is Bubble Sort and how does it work?",
+                a: "Bubble Sort repeatedly steps through the list, compares adjacent elements and swaps them if they're in wrong order. Time complexity O(n²), space O(1). Simple but inefficient for large datasets. Stable sort that works well for nearly sorted data.",
+                r: "Bubble sort repeatedly swaps adjacent out-of-order elements.",
+                tags: ["sorting", "bubble-sort", "algorithms", "complexity"]
+            },
+            {
+                q: "What is Selection Sort and how does it work?",
+                a: "Selection Sort divides array into sorted and unsorted regions, repeatedly finds minimum element in unsorted region and moves it to sorted region. Time complexity O(n²), space O(1). Unstable sort with fewer swaps than bubble sort.",
+                r: "Selection sort finds minimum and moves to sorted position.",
+                tags: ["sorting", "selection-sort", "algorithms", "complexity"]
+            },
+            {
+                q: "What is Insertion Sort and how does it work?",
+                a: "Insertion Sort builds final sorted array one item at a time, inserting each element into its correct position. Time complexity O(n²) worst case, O(n) best case, space O(1). Efficient for small or nearly sorted datasets.",
+                r: "Insertion sort builds sorted array by inserting elements in correct position.",
+                tags: ["sorting", "insertion-sort", "algorithms", "complexity"]
+            },
+            {
+                q: "What is Merge Sort and how does it work?",
+                a: "Merge Sort divides array into halves, recursively sorts them, then merges sorted halves. Time complexity O(n log n), space O(n). Stable divide-and-conquer algorithm with consistent performance.",
+                r: "Merge sort divides, sorts, then merges halves.",
+                tags: ["sorting", "merge-sort", "algorithms", "divide-and-conquer"]
+            },
+            {
+                q: "What is Quick Sort and how does it work?",
+                a: "Quick Sort picks pivot element, partitions array around pivot, then recursively sorts subarrays. Time complexity O(n log n) average, O(n²) worst case, space O(log n). Fast in-place sorting algorithm.",
+                r: "Quick sort partitions around pivot and recursively sorts.",
+                tags: ["sorting", "quick-sort", "algorithms", "partitioning"]
+            },
+            {
+                q: "What is Heap Sort and how does it work?",
+                a: "Heap Sort builds max heap from array, repeatedly extracts maximum element and rebuilds heap. Time complexity O(n log n), space O(1). In-place sorting algorithm with consistent performance.",
+                r: "Heap sort uses heap data structure for sorting.",
+                tags: ["sorting", "heap-sort", "algorithms", "heap"]
+            },
+            {
+                q: "What is the difference between stable and unstable sorting algorithms?",
+                a: "Stable sort preserves relative order of equal elements (e.g., Merge Sort, Insertion Sort). Unstable sort may change relative order (e.g., Quick Sort, Heap Sort). Stability matters when sorting by multiple criteria.",
+                r: "Stable: maintains order of equals, Unstable: may reorder equals.",
+                tags: ["sorting", "stability", "algorithms", "comparison"]
+            },
+            {
+                q: "What is the difference between in-place and out-of-place sorting algorithms?",
+                a: "In-place sort sorts using constant extra space (O(1)) by modifying input array (e.g., Quick Sort, Heap Sort). Out-of-place sort requires additional memory proportional to input size (e.g., Merge Sort, Counting Sort).",
+                r: "In-place: O(1) extra space, Out-of-place: O(n) extra space.",
+                tags: ["sorting", "space-complexity", "algorithms", "comparison"]
+            },
+            {
+                q: "What are the real-world applications of Sorting Algorithms?",
+                a: "Sorting is used in: 1) Database query results, 2) Search optimization, 3) Data analysis, 4) File systems, 5) E-commerce product listings, 6) Leaderboards, 7) Data compression, 8) Computer graphics.",
+                r: "Sorting is fundamental for organizing data in many applications.",
+                tags: ["sorting", "applications", "real-world", "data-organization"]
+            },
+            {
+                q: "What is Counting Sort and when is it used?",
+                a: "Counting Sort counts occurrences of each distinct element, then reconstructs sorted array. Time complexity O(n+k), space O(k), where k is range of values. Used for integers with limited range, stable sort.",
+                r: "Counting sort counts elements for linear-time sorting of limited range data.",
+                tags: ["sorting", "counting-sort", "algorithms", "linear-time"]
+            }
+        ]
+        // Function to download all questions as PDF
+        function downloadPDF() {
+            // Show loading message
+            const originalText = event.target.innerHTML;
+            event.target.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            event.target.disabled = true;
+            
+            setTimeout(() => {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Set font size and style
+                doc.setFontSize(20);
+                doc.text('Data Structures - Interview Questions', 20, 20);
+                
+                doc.setFontSize(12);
+                doc.text('Complete collection of data structures interview questions and answers', 20, 30);
+                
+                let yPosition = 50;
+                const pageHeight = doc.internal.pageSize.height;
+                const lineHeight = 7;
+                const margin = 20;
+                
+                // Add all questions to PDF
+                data.forEach((item, index) => {
+                    // Check if we need a new page
+                    if (yPosition > pageHeight - 40) {
+                        doc.addPage();
+                        yPosition = 30;
+                    }
+                    
+                    // Question number and title
+                    doc.setFontSize(14);
+                    doc.setFont(undefined, 'bold');
+                    const questionText = `Q${index + 1}: ${item.q}`;
+                    const questionLines = doc.splitTextToSize(questionText, 170);
+                    
+                    questionLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Answer
+                    doc.setFontSize(11);
+                    doc.setFont(undefined, 'normal');
+                    const answerText = `Answer: ${item.a}`;
+                    const answerLines = doc.splitTextToSize(answerText, 170);
+                    
+                    answerLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Real-world example (if exists)
+                    if (item.r) {
+                        doc.setFont(undefined, 'italic');
+                        const exampleText = `Example: ${item.r}`;
+                        const exampleLines = doc.splitTextToSize(exampleText, 170);
+                        
+                        exampleLines.forEach(line => {
+                            if (yPosition > pageHeight - 20) {
+                                doc.addPage();
+                                yPosition = 30;
+                            }
+                            doc.text(line, margin, yPosition);
+                            yPosition += lineHeight;
+                        });
+                    }
+                    
+                    // Add spacing between questions
+                    yPosition += lineHeight * 2;
+                    
+                    // Add separator line
+                    if (yPosition < pageHeight - 20) {
+                        doc.setLineWidth(0.1);
+                        doc.line(margin, yPosition, 190, yPosition);
+                        yPosition += lineHeight;
+                    }
+                });
+                
+                // Add footer
+                const totalPages = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= totalPages; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(10);
+                    doc.setFont(undefined, 'normal');
+                    doc.text(`Page ${i} of ${totalPages}`, 105, pageHeight - 10, { align: 'center' });
+                    doc.text('Generated from IT Interview Hub', 105, pageHeight - 5, { align: 'center' });
+                }
+                
+                // Save the PDF
+                doc.save('Data-Structures-Interview-Questions.pdf');
+                
+                // Restore button state
+                event.target.innerHTML = originalText;
+                event.target.disabled = false;
+            }, 100);
+        }
+
+        // Function to copy code to clipboard
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+
+            if (!codeElement) return;
+
+            const code = codeElement.innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                // Show copied feedback
+                const copyBtn = codeElement.closest('.code-container').querySelector('.copy-btn');
+                if (copyBtn) {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                }
+            }).catch(err => {
+                console.error('Failed to copy code: ', err);
+            });
+        }
+    
+
+        // Function to render table of contents
+        function renderTOC() {
+            const tocList = document.getElementById('tocList');
+            if (!tocList) return;
+
+            const source = currentQuestions && currentQuestions.length ? currentQuestions : data;
+            const start = (currentPage - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+
+            const pageItems = source.slice(start, end);
+
+            tocList.innerHTML = pageItems.map((item, index) => {
+                const number = start + index + 1;
+                const shortQ = item.q.substring(0, 50) + (item.q.length > 50 ? '...' : '');
+                return `
+                    <li class="toc-item">
+                        <a href="#q-${number}" class="toc-link">
+                            <span class="toc-number">${number}.</span>
+                            <span class="toc-question">${shortQ}</span>
+                        </a>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        // Function to handle search with highlighting
+        function filterQuestions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (!searchTerm) {
+                currentQuestions = [...data];
+                currentPage = 1;
+                updatePagination();
+                return;
+            }
+            
+            currentQuestions = data.filter(item => 
+                item.q.toLowerCase().includes(searchTerm) || 
+                item.a.toLowerCase().includes(searchTerm) ||
+                (item.r && item.r.toLowerCase().includes(searchTerm)) ||
+                (item.tags && item.tags.some(tag => tag.toLowerCase().includes(searchTerm)))
+            );
+            
+            currentPage = 1;
+            updatePagination();
+            
+            // Highlight search terms after rendering
+            setTimeout(() => highlightSearchTerms(searchTerm), 100);
+        }
+
+        // Function to highlight search terms
+        function highlightSearchTerms(searchTerm) {
+            if (!searchTerm) return;
+            
+            const questionsContainer = document.getElementById('questionsContainer');
+            const questionBoxes = questionsContainer.querySelectorAll('.q-box');
+            
+            questionBoxes.forEach(box => {
+                const h3 = box.querySelector('h3');
+                const paragraphs = box.querySelectorAll('p');
+                
+                // Highlight in question title
+                if (h3) {
+                    h3.innerHTML = highlightText(h3.textContent, searchTerm);
+                }
+                
+                // Highlight in paragraphs
+                paragraphs.forEach(p => {
+                    p.innerHTML = highlightText(p.textContent, searchTerm);
+                });
+            });
+        }
+
+        // Function to highlight text
+        function highlightText(text, searchTerm) {
+            if (!searchTerm) return text;
+            
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+        }
+
+        // Add CSS for search highlighting
+        const searchHighlightStyle = document.createElement('style');
+        searchHighlightStyle.textContent = `
+            .search-highlight {
+                background-color: #fef08a;
+                color: #713f12;
+                padding: 2px 4px;
+                border-radius: 3px;
+                font-weight: 500;
+            }
+        `;
+        document.head.appendChild(searchHighlightStyle);
+
+        // Function to render questions with pagination
+        function renderQuestions(questionsToRender = data) {
+            currentQuestions = [...questionsToRender];
+            currentPage = 1; // Reset to first page when filtering
+            updatePagination();
+        }
+
+        // Function to update pagination
+        function updatePagination() {
+            const questionsContainer = document.getElementById('questionsContainer');
+            const pageInfo = document.getElementById('pageInfo');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+
+            // Calculate pagination details
+            const start = (currentPage - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
+
+            // Render questions for the current page
+            const questionsHTML = currentQuestions.slice(start, end).map((item, index) => {
+                const questionNumber = (currentPage - 1) * questionsPerPage + index + 1;
+                return `
+                    <div class="q-box" id="q-${questionNumber}">
+                        <h3>${item.q}</h3>
+                        <div class="q-meta">
+                            <span class="q-number">${questionNumber}</span>
+                            <span class="q-tags">
+                                ${item.tags.map(tag => `<span class="q-tag">${tag}</span>`).join('')}
+                            </span>
+                        </div>
+                        <p>${item.a}</p>
+                        ${item.r ? `<p class="q-result">${item.r}</p>` : ''}
+                        ${item.c ? `
+                            <div class="code-container">
+                                <div class="code-header">
+                                    <span class="code-title">Example Code</span>
+                                    <button class="copy-btn" onclick="copyCode('code-${questionNumber}')">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <pre><code id="code-${questionNumber}" class="language-javascript">${item.c}</code></pre>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            questionsContainer.innerHTML = questionsHTML;
+
+            renderTOC();
+
+            // Update page info
+            if (pageInfo) {
+                pageInfo.textContent = `Page ${currentPage} of ${pageCount} (${currentQuestions.length} questions)`;
+            }
+
+            // Update navigation buttons
+            if (prevPageBtn) {
+                prevPageBtn.disabled = currentPage === 1;
+            }
+            if (nextPageBtn) {
+                nextPageBtn.disabled = currentPage === pageCount || pageCount === 0;
+            }
+
+            // Highlight code blocks
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        }
+
+        // Pagination functions
+        function nextPage() {
+            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
+            if (currentPage < pageCount) {
+                currentPage++;
+                updatePagination();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderQuestions();
+
+            // Pagination button event listeners
+            const nextPageBtn = document.getElementById('nextPage');
+            if (nextPageBtn) {
+                nextPageBtn.addEventListener('click', nextPage);
+            }
+            const prevPageBtn = document.getElementById('prevPage');
+            if (prevPageBtn) {
+                prevPageBtn.addEventListener('click', prevPage);
+            }
+
+            const tocToggleBtn = document.getElementById('tocToggleBtn');
+            const tocList = document.getElementById('tocList');
+            if (tocToggleBtn && tocList) {
+                tocToggleBtn.addEventListener('click', function() {
+                    tocList.classList.toggle('toc-hidden');
+                });
+            }
+            
+            // Add search event listener
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterQuestions);
+            }
+
+            // Mobile menu functionality
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+            const mobileSidebarClose = document.getElementById('mobileSidebarClose');
+
+            function openMobileMenu() {
+                mobileSidebar.classList.add('active');
+                mobileSidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileSidebar.classList.remove('active');
+                mobileSidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', openMobileMenu);
+            }
+
+            if (mobileSidebarClose) {
+                mobileSidebarClose.addEventListener('click', closeMobileMenu);
+            }
+
+            if (mobileSidebarOverlay) {
+                mobileSidebarOverlay.addEventListener('click', closeMobileMenu);
+            }
+
+            // Close mobile menu when clicking on TOC links
+            const mobileTocLinks = mobileSidebar?.querySelectorAll('.toc-link');
+            if (mobileTocLinks) {
+                mobileTocLinks.forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+            }
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileSidebar?.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

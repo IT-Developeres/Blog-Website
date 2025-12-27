@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming Basics - 140 Essential Questions & Answers</title>
-    <meta name="description" content="Master programming fundamentals with 140 essential questions, detailed answers, and real-world code examples. Perfect for interview preparation and skill building.">
+    <title>Programming Basics - 100 Essential Questions & Answers</title>
+    <meta name="description" content="Master programming fundamentals with 100 essential questions, detailed answers, and real-world code examples. Perfect for interview preparation and skill building.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         :root {
             --primary: #2563eb;
@@ -823,7 +824,7 @@
     <header>
         <div class="header-content">
             <h1>Programming Basics</h1>
-            <p>Master the fundamentals with 140+ essential questions, detailed answers, and real-world code examples</p>
+            <p>Master the fundamentals with 100+ essential questions, detailed answers, and real-world code examples</p>
             <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Search questions...">
@@ -860,7 +861,7 @@
                 <ul class="toc-list">
                     <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
                     <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
-                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
                     <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
                 </ul>
             </div>
@@ -882,7 +883,7 @@
                 <ul class="toc-list">
                     <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
                     <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
-                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
                     <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
                 </ul>
             </div>
@@ -898,7 +899,7 @@
                 <span>Programming Basics</span>
             </div>
             
-            <h2 style="margin-bottom: 2rem;">140 Essential Programming Questions</h2>
+            <h2 style="margin-bottom: 2rem;">100 Essential Programming Questions</h2>
             
             <div id="questionsContainer">
                 <!-- Questions will be inserted here by JavaScript -->
@@ -1501,774 +1502,152 @@
                 tags: ["inversion-of-control", "dependency-injection", "ioc", "di", "control-flow"]
             },
             {
-                q: "What are CSS preprocessors and why use them?",
-                a: "CSS preprocessors like Sass, Less, and Stylus extend CSS with variables, nesting, mixins, functions, and other programming features. They improve maintainability, reduce repetition, and enable more efficient development. Preprocessors compile to standard CSS that browsers understand.",
-                r: "Sass is the most popular preprocessor, offering variables, nesting, and mixins.",
-                tags: ["css", "preprocessors", "sass", "less", "nesting", "mixins"]
+                q: "What is the difference between factory pattern and abstract factory pattern?",
+                a: "Factory pattern creates objects without specifying exact classes. Abstract factory pattern provides interface for creating families of related objects. Factory creates one type of product, abstract factory creates multiple related products. Factory is simpler, abstract factory is more complex but provides consistency.",
+                r: "Factory: creates one product type. Abstract factory: creates related product families.",
+                tags: ["factory-pattern", "abstract-factory-pattern", "creational-patterns", "design-patterns", "object-creation"]
             },
             {
-                q: "What are CSS methodology and naming conventions?",
-                a: "CSS methodologies like BEM (Block, Element, Modifier), OOCSS (Object-Oriented CSS), and SMACSS provide structured approaches to writing maintainable CSS. They establish naming conventions and organizational patterns that reduce specificity conflicts, improve scalability, and make codebases easier to understand and modify.",
-                r: "BEM: .block__element--modifier for clear, predictable naming.",
-                tags: ["css", "methodology", "bem", "oocss", "naming-conventions", "architecture"]
+                q: "What is the difference between singleton pattern and static class?",
+                a: "Singleton pattern ensures only one instance exists and provides global access point. Static class has all static members and cannot be instantiated. Singleton can be instantiated once, static class cannot be instantiated. Singleton can implement interfaces, static class cannot. Singleton supports inheritance, static class does not.",
+                r: "Singleton: one instance. Static class: no instances, all members static.",
+                tags: ["singleton-pattern", "static-class", "creational-patterns", "global-access", "instance-control"]
             },
             {
-                q: "What is CSS-in-JS and how does it differ from traditional CSS?",
-                a: "CSS-in-JS writes CSS directly in JavaScript files using libraries like styled-components, Emotion, or CSS Modules. It offers scoped styles, dynamic styling based on props, and better JavaScript integration. Traditional CSS uses separate .css files with global scope. CSS-in-JS is popular in React ecosystems.",
-                r: "Use CSS-in-JS for component-based frameworks, traditional CSS for static sites.",
-                tags: ["css", "css-in-js", "styled-components", "emotion", "javascript", "components"]
+                q: "What is the difference between observer pattern and publisher-subscriber pattern?",
+                a: "Observer pattern has direct coupling between subject and observers. Publisher-subscriber uses message broker for loose coupling. Observer knows about observers, pub-sub doesn't know about subscribers. Observer is simpler, pub-sub is more scalable. Observer is synchronous, pub-sub can be asynchronous.",
+                r: "Observer: direct coupling. Pub-sub: message broker, loose coupling.",
+                tags: ["observer-pattern", "publisher-subscriber-pattern", "behavioral-patterns", "events", "messaging"]
             },
             {
-                q: "What are CSS performance optimization techniques?",
-                a: "CSS optimization includes minimizing file size, reducing selectors, avoiding expensive properties, using efficient animations (transform/opacity), optimizing critical CSS for above-the-fold content, and leveraging browser caching. Performance impacts page load speed and user experience, especially on mobile devices.",
-                r: "Optimize critical CSS first, use transform/opacity for animations, minimize selector complexity.",
-                tags: ["css", "performance", "optimization", "critical-css", "loading"]
+                q: "What is the difference between strategy pattern and state pattern?",
+                a: "Strategy pattern encapsulates algorithms and makes them interchangeable. State pattern allows object to change behavior when state changes. Strategy is about algorithm selection, state is about behavior based on state. Strategy is chosen by client, state changes internally. Strategy has multiple algorithms, state has multiple behaviors.",
+                r: "Strategy: interchangeable algorithms. State: behavior changes with state.",
+                tags: ["strategy-pattern", "state-pattern", "behavioral-patterns", "algorithms", "behavior"]
+            },
+            {
+                q: "What is the difference between command pattern and template method pattern?",
+                a: "Command pattern encapsulates requests as objects for undo/redo and queueing. Template method pattern defines algorithm skeleton with subclasses implementing steps. Command is about request encapsulation, template method is about algorithm structure. Command is object-oriented callback, template method is inheritance-based.",
+                r: "Command: encapsulated request. Template method: algorithm skeleton.",
+                tags: ["command-pattern", "template-method-pattern", "behavioral-patterns", "requests", "algorithms"]
             },
             {
                 tags: ["css", "debugging", "devtools", "troubleshooting", "browser-tools"]
             },
             {
-                q: "What is JavaScript and how does it enable dynamic web pages?",
-                a: "JavaScript is a high-level, interpreted programming language that enables interactive web pages. It runs in browsers, manipulates the DOM, responds to user events, and communicates with servers. JavaScript transforms static HTML into dynamic applications by adding behavior, animations, form validation, and real-time updates.",
-                r: "JavaScript makes websites interactive: forms validate, content updates dynamically, and users get immediate feedback.",
-                tags: ["javascript", "web-development", "dynamic", "dom", "interactivity"]
-            },
-            {
-                q: "What are the different ECMAScript editions and their key features?",
-                a: "ECMAScript (ES) is the JavaScript standard. Key editions: ES5 (2009) added strict mode and array methods; ES6/ES2015 added classes, arrow functions, let/const, promises, modules; ES2016-2022 added async/await, optional chaining, nullish coalescing. Each edition adds features while maintaining backward compatibility.",
-                r: "ES6 revolutionized JavaScript with modern syntax; ES2020+ adds quality-of-life improvements.",
-                tags: ["javascript", "ecmascript", "es6", "es2020", "standards", "features"]
-            },
-            {
-                q: "What are JavaScript data types and type coercion?",
-                a: "JavaScript has primitive types (string, number, boolean, undefined, null, symbol, bigint) and object types. Type coercion automatically converts values between types, which can cause unexpected results. Understanding implicit coercion, explicit conversion, and equality operators (== vs ===) is crucial for writing predictable code.",
-                r: "Use === for strict equality to avoid type coercion surprises.",
-                tags: ["javascript", "data-types", "coercion", "equality", "type-conversion"]
-            },
-            {
-                q: "What are JavaScript functions, closures, and scope?",
-                a: "Functions are reusable blocks of code that can be defined as declarations, expressions, or arrow functions. Closures allow functions to access variables from their outer scope even after the outer function returns. Scope determines variable accessibility (global, function, block scope with let/const).",
-                r: "Closures enable powerful patterns like data privacy and function factories.",
-                tags: ["javascript", "functions", "closures", "scope", "hoisting"]
-            },
-            {
-                q: "What is the Document Object Model (DOM) and how does JavaScript manipulate it?",
-                a: "The DOM is a tree-like representation of HTML elements that JavaScript can query and modify. DOM manipulation includes selecting elements (querySelector, getElementById), changing content (textContent, innerHTML), modifying attributes, creating/removing elements, and handling events. DOM updates trigger browser reflows/repaints.",
-                r: "Use querySelector for modern element selection,textContent for safe content updates.",
-                tags: ["javascript", "dom", "manipulation", "events", "browser-api"]
-            },
-            {
-                q: "What are JavaScript promises and async programming?",
-                a: "Promises represent eventual completion (or failure) of asynchronous operations. They have states (pending, fulfilled, rejected) and methods (then, catch, finally). Async/await syntax makes asynchronous code look synchronous. Promises solve callback hell and enable better error handling for async operations like API calls.",
-                r: "Use async/await for readable async code, promises for complex async workflows.",
-                tags: ["javascript", "promises", "async", "await", "callbacks", "asynchronous"]
-            },
-            {
-                q: "What are JavaScript modules and import/export?",
-                a: "Modules enable code organization and reuse by splitting code into separate files. ES6 modules use import/export syntax. CommonJS (Node.js) uses require/module.exports. Modules have their own scope, prevent global pollution, and enable static analysis for better tooling and tree-shaking.",
-                r: "Use ES6 modules for browsers, CommonJS for Node.js projects.",
-                tags: ["javascript", "modules", "import", "export", "commonjs", "esm"]
-            },
-            {
-                q: "What are popular JavaScript frameworks and libraries?",
-                a: "React (component-based UI library), Vue (progressive framework), Angular (full-featured framework), Svelte (compiler-based). Libraries include jQuery (DOM manipulation), Lodash (utilities), Axios (HTTP client), D3.js (data visualization). Frameworks provide structure and tools for building complex applications.",
-                r: "Choose React for component architecture, Vue for gradual adoption, Angular for enterprise apps.",
-                tags: ["javascript", "frameworks", "react", "vue", "angular", "libraries"]
-            },
-            {
-                q: "What is Node.js and how does it enable server-side JavaScript?",
-                a: "Node.js is a JavaScript runtime built on Chrome's V8 engine. It enables JavaScript outside browsers for server-side development, CLI tools, and desktop apps. Node.js provides APIs for file system, networking, OS interaction, and has a massive npm package ecosystem. It uses an event-driven, non-blocking I/O model.",
-                r: "Node.js lets you use JavaScript for backend APIs, build tools, and command-line tools.",
-                tags: ["javascript", "nodejs", "backend", "npm", "server-side", "runtime"]
-            },
-            {
-                q: "What are JavaScript build tools and bundlers?",
-                a: "Build tools automate development workflows: bundlers (Webpack, Rollup, Vite) combine modules, transpilers (Babel) convert modern JS to compatible versions, minifiers reduce file size. Tools like npm scripts, ESLint, Prettier improve code quality and development experience.",
-                r: "Use Vite for fast development, Webpack for complex configurations, Babel for browser compatibility.",
-                tags: ["javascript", "build-tools", "webpack", "vite", "babel", "bundler"]
-            },
-            {
-                q: "What is TypeScript and why use it with JavaScript?",
-                a: "TypeScript is a superset of JavaScript that adds static typing, interfaces, enums, and better tooling. It compiles to plain JavaScript and provides early error detection, improved IDE support, and better code documentation. TypeScript enhances JavaScript development for large applications and teams.",
-                r: "TypeScript catches type errors at compile time, improving code reliability and developer experience.",
-                tags: ["javascript", "typescript", "static-typing", "types", "tooling"]
-            },
-            {
-                q: "What are JavaScript testing frameworks and approaches?",
-                a: "Testing frameworks include Jest (unit testing), Cypress (E2E testing), Playwright (browser automation), Mocha (flexible testing). Testing approaches: unit tests (isolated functions), integration tests (component interactions), E2E tests (full user workflows). Testing ensures code quality and prevents regressions.",
-                r: "Use Jest for unit tests, Cypress for E2E testing, testing libraries for component testing.",
-                tags: ["javascript", "testing", "jest", "cypress", "unit-tests", "e2e"]
-            },
-            {
-                q: "What are JavaScript design patterns and best practices?",
-                a: "Common patterns include Module (encapsulation), Observer (event handling), Factory (object creation), Singleton (single instance). Best practices: use const/let, avoid global variables, handle errors properly, use meaningful names, write modular code, follow style guides (ESLint, Prettier).",
-                r: "Use modules instead of globals, const by default, proper error handling with try/catch.",
-                tags: ["javascript", "design-patterns", "best-practices", "module-pattern", "error-handling"]
-            },
-            {
-                q: "What is JavaScript performance optimization?",
-                a: "Performance optimization includes minimizing DOM manipulation, using efficient algorithms, debouncing/throttling events, lazy loading, code splitting, caching, and using requestAnimationFrame for animations. Tools like Lighthouse and DevTools help identify bottlenecks. Memory management prevents leaks.",
-                r: "Use requestAnimationFrame for smooth animations, debounce input events, lazy load resources.",
-                tags: ["javascript", "performance", "optimization", "memory", "animation", "lazy-loading"]
-            },
-            {
-                q: "What are JavaScript security considerations?",
-                a: "Security includes preventing XSS attacks (input sanitization, output encoding), avoiding eval() and unsafe dynamic code, implementing Content Security Policy (CSP), using HTTPS, validating inputs, and securing authentication tokens. JavaScript security protects both users and applications.",
-                r: "Always sanitize user inputs, use CSP headers, avoid eval() and innerHTML with untrusted content.",
-                tags: ["javascript", "security", "xss", "csp", "authentication", "input-validation"]
-            },
-            {
-                q: "What are modern JavaScript APIs and browser capabilities?",
-                a: "Modern APIs include Web Components (custom elements), Service Workers (offline support), WebSockets (real-time communication), WebAssembly (high-performance code), Geolocation, LocalStorage, IndexedDB, Canvas/WebGL (graphics), and Web Audio API. These enable powerful web applications without plugins.",
-                r: "Service Workers enable PWAs, WebAssembly runs near-native performance, WebSockets handle real-time data.",
-                tags: ["javascript", "web-apis", "service-workers", "webassembly", "websockets", "browser-features"]
-            },
-            {
-                q: "What is JavaScript error handling and debugging?",
-                a: "Error handling uses try/catch/finally blocks, throw statements, and error objects. Debugging involves browser DevTools (breakpoints, console, debugger statement), source maps for debugging minified code, and logging strategies. Proper error handling improves user experience and debugging.",
-                r: "Use try/catch for expected errors, DevTools breakpoints for debugging, console.log for quick inspection.",
-                tags: ["javascript", "error-handling", "debugging", "devtools", "try-catch", "source-maps"]
-            },
-            {
-                q: "What is the JavaScript ecosystem and package management?",
-                a: "The JavaScript ecosystem includes npm (package manager), yarn (alternative package manager), countless packages for every need, package.json for project configuration, and tools for development, testing, and deployment. The ecosystem enables rapid development by leveraging community packages.",
-                r: "npm is the default package manager, use package.json to manage dependencies and scripts.",
-                tags: ["javascript", "npm", "package-management", "ecosystem", "dependencies", "package-json"]
-            },
-            {
-                q: "What makes JavaScript so powerful and versatile?",
-                a: "JavaScript's power comes from its ubiquity (runs everywhere), dynamic nature, massive ecosystem, single-threaded event loop for non-blocking I/O, first-class functions, and ability to handle both frontend and backend development. It powers everything from simple websites to complex enterprise applications, mobile apps, and IoT devices.",
-                r: "JavaScript's 'write once, run everywhere' capability makes it uniquely powerful in modern development.",
-                tags: ["javascript", "power", "versatility", "ubiquity", "ecosystem", "full-stack"]
-            },
-            {
-                q: "What are the main JavaScript frontend frameworks and their strengths?",
-                a: "React excels in component architecture and ecosystem, Vue offers progressive enhancement and gentle learning curve, Angular provides enterprise-grade structure and TypeScript integration, Svelte compiles away for optimal performance, and Next.js adds server-side rendering to React. Each framework solves different problems and team needs.",
-                r: "Choose React for ecosystem, Vue for simplicity, Angular for enterprise, Svelte for performance.",
-                tags: ["javascript", "frontend", "frameworks", "react", "vue", "angular", "svelte", "nextjs"]
-            },
-            {
-                q: "How do JavaScript frontend frameworks handle state management?",
-                a: "State management approaches include React's useState/useContext, Redux (predictable state container), MobX (observable state), Vuex (Vue's state management), and Angular's services/services pattern. Modern frameworks offer built-in solutions while external libraries handle complex state scenarios across large applications.",
-                r: "Use local state for simple cases, Redux/MobX for complex shared state across components.",
-                tags: ["javascript", "frontend", "state-management", "redux", "mobx", "vuex", "react-state"]
-            },
-            {
-                q: "What are JavaScript backend frameworks and how do they compare?",
-                a: "Express.js is minimal and flexible, NestJS provides TypeScript and structure, Koa focuses on modern async/await, Fastify emphasizes performance, and Meteor offers full-stack isomorphic development. Backend frameworks enable JavaScript to handle APIs, databases, authentication, and server-side logic with the same language as frontend.",
-                r: "Express for simplicity, NestJS for enterprise structure, Fastify for performance-critical APIs.",
-                tags: ["javascript", "backend", "frameworks", "express", "nestjs", "koa", "fastify", "meteor"]
-            },
-            {
-                q: "How does JavaScript enable full-stack development with a single language?",
-                a: "JavaScript's full-stack capability comes from Node.js (backend), browser APIs (frontend), shared libraries (validation, utilities), isomorphic frameworks (Next.js, Nuxt.js), and TypeScript for type safety across the stack. Developers can use the same language, tools, and even share code between frontend and backend, reducing context switching.",
-                r: "Full-stack JavaScript means one language for frontend, backend, and even mobile/desktop apps.",
-                tags: ["javascript", "full-stack", "isomorphic", "nodejs", "universal", "code-sharing"]
-            },
-            {
-                q: "What are JavaScript framework ecosystems and their tooling?",
-                a: "Framework ecosystems include React's Create React App, Next.js, and extensive npm packages; Vue's Vue CLI, Nuxt.js, and official plugins; Angular's Angular CLI and enterprise-grade tooling; and Svelte's SvelteKit. Each ecosystem provides routing, state management, testing, deployment, and development tools.",
-                r: "Framework ecosystems provide everything needed for production applications beyond just the core library.",
-                tags: ["javascript", "frameworks", "ecosystem", "tooling", "cli", "routing", "testing"]
-            },
-            {
-                q: "How do JavaScript frameworks handle component architecture and reusability?",
-                a: "Component approaches include React's functional components with hooks, Vue's single-file components, Angular's TypeScript classes with decorators, and Svelte's compile-time components. All emphasize reusable, composable UI pieces with props/events for communication and lifecycle methods for initialization/cleanup.",
-                r: "Components are the building blocks: encapsulated, reusable, and composable UI elements.",
-                tags: ["javascript", "frontend", "components", "architecture", "reusability", "composition"]
-            },
-            {
-                q: "What are the performance advantages of JavaScript frameworks and optimization techniques?",
-                a: "Modern frameworks optimize through virtual DOM (React, Vue), compile-time optimization (Svelte), code splitting, lazy loading, tree shaking, and server-side rendering. Techniques include memoization, useCallback/useMemo, efficient state updates, and bundle optimization. Performance monitoring tools help identify bottlenecks.",
-                r: "Virtual DOM minimizes actual DOM updates, code splitting reduces initial load time.",
-                tags: ["javascript", "performance", "optimization", "virtual-dom", "code-splitting", "ssr", "memoization"]
-            },
-            {
-                q: "How has JavaScript evolved from simple scripts to powering the modern web?",
-                a: "JavaScript evolved from basic DOM manipulation to complex applications through ES6+ features, powerful frameworks, Node.js backend capabilities, Web APIs, WebAssembly integration, and massive ecosystem growth. It now powers Progressive Web Apps, real-time applications, machine learning in browsers, and cross-platform development.",
-                r: "From simple form validation to complex applications: JavaScript's evolution mirrors web's growth.",
-                tags: ["javascript", "evolution", "history", "modern-web", "pwa", "webassembly", "cross-platform"]
-            },
-            {
-                q: "What are JavaScript framework patterns for data flow and architecture?",
-                a: "Data flow patterns include React's unidirectional data flow, Vue's two-way binding with computed properties, Angular's services and dependency injection, and state management patterns like Redux (actions, reducers, store). Architectural patterns include MVC, MVP, MVVM, and component-based architectures.",
-                r: "Unidirectional flow (React) vs two-way binding (Vue) vs dependency injection (Angular).",
-                tags: ["javascript", "architecture", "data-flow", "patterns", "mvc", "mvp", "mvvm", "redux"]
-            },
-            {
-                q: "How do JavaScript frameworks handle routing and navigation?",
-                a: "Routing solutions include React Router (declarative routing), Vue Router (nested routes), Angular Router (feature-rich routing), and Next.js file-based routing. All support client-side routing, route guards, lazy loading, code splitting, and server-side rendering for optimal performance and SEO.",
-                r: "Client-side routing enables SPA navigation without page reloads, improving user experience.",
-                tags: ["javascript", "routing", "navigation", "spa", "react-router", "vue-router", "angular-router"]
-            },
-            {
-                q: "What are the testing strategies for JavaScript framework applications?",
-                a: "Testing includes unit tests (Jest, Mocha), component tests (React Testing Library, Vue Test Utils), integration tests, and E2E tests (Cypress, Playwright). Framework-specific testing tools and strategies ensure component reliability, user interaction testing, and application stability across different environments.",
-                r: "Test components in isolation, integrate them together, then test full user workflows.",
-                tags: ["javascript", "testing", "unit-tests", "component-tests", "e2e", "jest", "cypress", "playwright"]
-            },
-            {
-                q: "How do JavaScript frameworks enable cross-platform development?",
-                a: "JavaScript enables cross-platform through React Native (mobile), Electron (desktop), Progressive Web Apps (web-to-native), Expo (React Native platform), and frameworks like NativeScript. Write once in JavaScript and deploy to web, iOS, Android, and desktop with platform-specific optimizations.",
-                r: "One JavaScript codebase can target web, mobile, and desktop platforms simultaneously.",
-                tags: ["javascript", "cross-platform", "react-native", "electron", "pwa", "expo", "nativescript"]
-            },
-            {
-                q: "What are the security considerations in JavaScript framework applications?",
-                a: "Security includes XSS prevention (framework sanitization), CSRF protection, secure authentication, content security policy, dependency vulnerability scanning, and secure API communication. Frameworks provide built-in protections but developers must implement proper security practices and keep dependencies updated.",
-                r: "Frameworks help with security, but developers must implement proper authentication and input validation.",
-                tags: ["javascript", "security", "xss", "csrf", "authentication", "csp", "dependency-security"]
-            },
-            {
-                q: "How do JavaScript frameworks handle real-time data and WebSocket integration?",
-                a: "Real-time capabilities include WebSocket APIs, libraries like Socket.IO, GraphQL subscriptions, and framework-specific solutions. Applications can handle live chat, real-time collaboration, live updates, and streaming data. Frameworks provide reactive patterns for updating UI when data changes.",
-                r: "WebSockets enable bidirectional real-time communication between client and server.",
-                tags: ["javascript", "real-time", "websockets", "socket.io", "graphql", "live-updates", "collaboration"]
-            },
-            {
-                tags: ["javascript", "deployment", "production", "build-tools", "ci-cd", "docker", "serverless", "monitoring"]
-            },
-            {
-                q: "How does JavaScript's type system evolution enhance framework development?",
-                a: "TypeScript brings static typing, interfaces, generics, and better tooling to JavaScript. Frameworks increasingly adopt TypeScript for better developer experience, error detection, and code documentation. JSDoc and runtime type checking provide alternatives for pure JavaScript projects.",
-                r: "TypeScript catches errors at compile time, improving framework development and maintenance.",
-                tags: ["javascript", "typescript", "static-typing", "interfaces", "generics", "tooling", "frameworks"]
-            },
-            {
-                q: "What is React.js and why is it so popular for frontend development?",
-                a: "React is a JavaScript library for building user interfaces, created by Facebook. It uses a component-based architecture, virtual DOM for performance, and unidirectional data flow. React's popularity comes from its flexibility, large ecosystem, reusability, strong community support, and ability to handle complex UI state efficiently.",
-                r: "React's component model and virtual DOM make it ideal for dynamic, interactive user interfaces.",
-                tags: ["react", "frontend", "components", "virtual-dom", "javascript", "ui"]
-            },
-            {
-                q: "What are React components and how do they work?",
-                a: "React components are reusable building blocks that return JSX to describe UI. They can be functional (with hooks) or class-based. Components manage their own state, receive props for data, and re-render when state or props change. Components can be composed to create complex UIs.",
-                r: "Functional components with hooks are the modern standard; class components are legacy.",
-                tags: ["react", "components", "functional-components", "hooks", "props", "state"]
-            },
-            {
-                q: "What are React Hooks and how do they enhance functional components?",
-                a: "Hooks are functions that let functional components use state and lifecycle features. Key hooks include useState (state management), useEffect (side effects), useContext (context access), useCallback (memoized callbacks), and useMemo (memoized values). Hooks enable cleaner code and better composition than class components.",
-                r: "Hooks revolutionized React by enabling stateful logic in functional components.",
-                tags: ["react", "hooks", "usestate", "useeffect", "usecontext", "functional-components"]
-            },
-            {
-                q: "What is the React Virtual DOM and how does it improve performance?",
-                a: "The Virtual DOM is a JavaScript representation of the real DOM. React creates a virtual tree, compares it with the previous version, and only updates changed elements (reconciliation). This minimizes expensive DOM operations, making React apps faster than direct DOM manipulation.",
-                r: "Virtual DOM updates only what changed, avoiding full page re-renders for better performance.",
-                tags: ["react", "virtual-dom", "performance", "reconciliation", "optimization"]
-            },
-            {
-                q: "What are React state management solutions and when to use them?",
-                a: "State management includes useState (local state), useContext (global state), Redux (predictable state container), MobX (observable state), and Zustand (minimal state). Use local state for component-specific data, context for app-wide state, and Redux/MobX for complex state sharing across many components.",
-                r: "useState for simple state, Context for moderate sharing, Redux for complex app state.",
-                tags: ["react", "state-management", "redux", "mobx", "context", "zustand"]
-            },
-            {
-                q: "What is Node.js and how does it enable server-side JavaScript?",
-                a: "Node.js is a JavaScript runtime built on Chrome's V8 engine that executes JavaScript outside browsers. It provides APIs for file system, networking, HTTP servers, and OS interaction. Node.js uses an event-driven, non-blocking I/O model, making it efficient for scalable network applications and APIs.",
-                r: "Node.js lets you use JavaScript for backend development, APIs, and command-line tools.",
-                tags: ["nodejs", "backend", "javascript", "runtime", "server-side", "v8"]
-            },
-            {
-                q: "What is the Node.js event loop and how does it handle concurrency?",
-                a: "The Node.js event loop is a single-threaded mechanism that handles asynchronous operations efficiently. It uses a queue system to process events, callbacks, and I/O operations without blocking. This allows Node.js to handle many concurrent connections with high performance, making it ideal for I/O-bound applications.",
-                r: "Event loop enables non-blocking I/O: handle thousands of connections on a single thread.",
-                tags: ["nodejs", "event-loop", "asynchronous", "concurrency", "non-blocking"]
-            },
-            {
-                q: "What are Node.js modules and how does the module system work?",
-                a: "Node.js uses CommonJS modules with require() for importing and module.exports for exporting. Each module has its own scope, preventing global pollution. Node.js also supports ES6 modules with import/export syntax. The module system enables code organization, reusability, and dependency management.",
-                r: "Use require() for CommonJS (traditional Node.js), import/export for ES6 modules.",
-                tags: ["nodejs", "modules", "commonjs", "esm", "require", "exports"]
-            },
-            {
-                q: "What are popular Node.js frameworks and their use cases?",
-                a: "Express.js is minimal and flexible for APIs and web apps. NestJS provides TypeScript and structure for enterprise applications. Koa focuses on modern async/await middleware. Fastify emphasizes high performance. Meteor offers full-stack isomorphic development. Each framework serves different architectural needs and performance requirements.",
-                r: "Express for simplicity, NestJS for enterprise structure, Fastify for performance-critical APIs.",
-                tags: ["nodejs", "frameworks", "express", "nestjs", "koa", "fastify", "meteor"]
-            },
-            {
-                q: "How does Node.js handle file system operations and streams?",
-                a: "Node.js provides fs module for file operations (readFile, writeFile, mkdir, etc.) with both synchronous and asynchronous versions. Streams enable processing data in chunks without loading everything into memory. Streams are used for file processing, HTTP requests, and real-time data handling with better memory efficiency.",
-                r: "Use streams for large files or real-time data to avoid memory issues and improve performance.",
-                tags: ["nodejs", "file-system", "streams", "fs-module", "async", "memory-efficiency"]
-            },
-            {
-                q: "What is npm and how does it manage Node.js packages?",
-                a: "npm (Node Package Manager) is the default package manager for Node.js. It handles dependency installation, version management, scripts, and publishing. package.json defines project dependencies and scripts, package-lock.json locks exact versions. npm enables sharing and consuming reusable code through the npm registry.",
-                r: "npm install adds dependencies, npm run executes scripts, package.json manages project configuration.",
-                tags: ["nodejs", "npm", "package-manager", "dependencies", "package-json", "registry"]
-            },
-            {
-                q: "How do React and Node.js work together in full-stack applications?",
-                a: "React handles the frontend UI and user interactions, while Node.js provides backend APIs, database operations, and server-side logic. They communicate via HTTP/HTTPS requests (REST APIs or GraphQL). Node.js can also serve React applications, handle authentication, and provide real-time features through WebSockets.",
-                r: "React for UI, Node.js for API: full-stack JavaScript with consistent language and tooling.",
-                tags: ["react", "nodejs", "full-stack", "api", "mern", "mean", "javascript"]
-            },
-            {
-                q: "What is React Router and how does it handle client-side routing?",
-                a: "React Router is a library that enables client-side routing in React applications. It maps URLs to components, handles navigation without page reloads, supports nested routes, route guards, and programmatic navigation. This creates single-page applications (SPAs) with fast, smooth user experiences.",
-                r: "React Router enables SPA navigation: change URL and content without full page reloads.",
-                tags: ["react", "react-router", "routing", "spa", "navigation", "client-side"]
-            },
-            {
-                q: "What is Express.js middleware and how does it work?",
-                a: "Express middleware functions process requests before they reach route handlers. They handle authentication, logging, error handling, body parsing, and custom logic. Middleware runs in sequence, with next() passing control to the next function. This modular approach enables reusable request processing logic.",
-                r: "Middleware functions are the building blocks of Express applications for request processing.",
-                tags: ["nodejs", "express", "middleware", "request-handling", "authentication", "logging"]
-            },
-            {
-                q: "How does React handle forms and user input?",
-                a: "React forms can be controlled (component state manages input values) or uncontrolled (DOM manages values). Controlled forms provide better validation and state management. React handles form events (onChange, onSubmit), input validation, and state updates. Libraries like Formik and React Hook Form simplify complex form handling.",
-                r: "Controlled components give React full control over form values and validation.",
-                tags: ["react", "forms", "user-input", "controlled-components", "validation", "formik"]
-            },
-            {
-                q: "What are REST APIs and how does Node.js implement them?",
-                a: "REST APIs use HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations on resources. Node.js implements REST APIs using Express.js with route handlers, middleware, and database integration. REST APIs return JSON data, handle status codes, and follow stateless principles for scalability.",
-                r: "REST APIs enable React frontend to communicate with Node.js backend via HTTP requests.",
-                tags: ["nodejs", "rest-api", "express", "http", "crud", "json", "api-design"]
-            },
-            {
-                q: "What are React lifecycle methods and their modern equivalents?",
-                a: "Class components use lifecycle methods (componentDidMount, componentDidUpdate, componentWillUnmount). Functional components use hooks: useEffect replaces all lifecycle methods, useLayoutEffect for DOM measurements, and custom hooks for reusable lifecycle logic. Hooks provide better composition and cleaner code.",
-                r: "useEffect with dependency array replaces componentDidMount, componentDidUpdate, and componentWillUnmount.",
-                tags: ["react", "lifecycle", "useeffect", "componentdidmount", "hooks", "class-components"]
-            },
-            {
-                q: "How does Node.js handle database operations and connections?",
-                a: "Node.js connects to databases through drivers and ORMs. MongoDB (Mongoose), PostgreSQL (pg, Sequelize), MySQL (mysql2, Prisma), and Redis (ioredis) are popular choices. Connection pooling manages database connections efficiently. ORMs provide object-oriented database access with validation and relationships.",
-                r: "Use Mongoose for MongoDB, Sequelize for SQL databases, Prisma for type-safe database access.",
-                tags: ["nodejs", "database", "mongodb", "postgresql", "orm", "mongoose", "sequelize", "prisma"]
-            },
-            {
-                q: "What is React Context API and when should you use it?",
-                a: "React Context provides a way to pass data through the component tree without prop drilling. It's useful for global state like themes, user authentication, or language preferences. Context consists of createContext(), Provider, and useContext hook. Avoid overusing Context for frequently changing state.",
-                r: "Use Context for global data that doesn't change frequently, not for high-frequency state updates.",
-                tags: ["react", "context", "usecontext", "provider", "global-state", "prop-drilling"]
-            },
-            {
-                q: "What is JWT authentication and how do React and Node.js implement it?",
-                a: "JWT (JSON Web Tokens) are tokens that contain user information for authentication. Node.js generates JWTs on login, signs them with a secret key, and sends them to clients. React stores JWTs (localStorage, cookies) and sends them with API requests. Middleware on Node.js validates JWTs for protected routes.",
-                r: "JWT enables stateless authentication: server verifies token without storing session state.",
-                tags: ["react", "nodejs", "authentication", "jwt", "security", "tokens", "api"]
-            },
-            {
-                q: "How do React and Node.js handle real-time communication with WebSockets?",
-                a: "WebSockets enable bidirectional real-time communication. Node.js uses libraries like Socket.IO or ws to handle WebSocket connections. React connects to WebSocket servers, sends/receives messages, and updates UI in real-time. Use cases include chat apps, live notifications, and collaborative features.",
-                r: "Socket.IO simplifies WebSockets with fallbacks and room-based messaging.",
-                tags: ["react", "nodejs", "websockets", "socket.io", "real-time", "communication", "live-updates"]
-            },
-            {
-                q: "What are React performance optimization techniques?",
-                a: "React optimization includes React.memo for component memoization, useMemo for expensive calculations, useCallback for function memoization, code splitting with lazy loading, virtualization for long lists, and avoiding unnecessary re-renders. DevTools Profiler helps identify performance bottlenecks.",
-                r: "Use React.memo to prevent re-renders, useMemo for expensive calculations, lazy loading for code splitting.",
-                tags: ["react", "performance", "optimization", "react-memo", "usememo", "usecallback", "code-splitting"]
-            },
-            {
-                q: "How does Node.js handle error handling and debugging?",
-                a: "Node.js error handling uses try/catch for synchronous code, .catch() for promises, and error-first callbacks for legacy code. Global error handlers catch uncaught errors. Debugging uses Node.js debugger, Chrome DevTools, console.log, and source maps. Proper error handling prevents crashes and improves debugging.",
-                r: "Use try/catch for sync operations, .catch() for promises, and process.on('uncaughtException') for global errors.",
-                tags: ["nodejs", "error-handling", "debugging", "try-catch", "promises", "callbacks", "devtools"]
-            },
-            {
-                q: "What is deployment for React and Node.js applications?",
-                a: "React apps deploy to static hosting (Netlify, Vercel, S3) after building. Node.js apps deploy to cloud platforms (Heroku, AWS, DigitalOcean), containers (Docker), or serverless functions. CI/CD pipelines automate testing and deployment. Environment variables manage configuration across environments.",
-                r: "Build React for static hosting, deploy Node.js to cloud platforms with proper environment configuration.",
-                tags: ["react", "nodejs", "deployment", "hosting", "docker", "ci-cd", "environment-variables"]
-            },
-            {
-                q: "What is programming and why is it important in modern society?",
-                a: "Programming is the process of creating instructions for computers to perform specific tasks. It's fundamental to modern technology, enabling software development, automation, data analysis, and digital innovation. Programming drives everything from websites and mobile apps to artificial intelligence and scientific research.",
-                r: "Programming transforms ideas into functional technology that powers our digital world.",
-                tags: ["programming", "concepts", "fundamentals", "technology", "society"]
-            },
-            {
-                q: "What are the core programming paradigms and their differences?",
-                a: "Main paradigms include procedural (step-by-step instructions), object-oriented (objects with properties and methods), functional (pure functions and immutability), and logic programming (rules and facts). Each paradigm offers different approaches to problem-solving, code organization, and thinking about computation.",
-                r: "Choose paradigms based on problem complexity: procedural for simple tasks, OOP for complex systems, functional for data processing.",
-                tags: ["programming", "paradigms", "procedural", "object-oriented", "functional", "logic"]
-            },
-            {
-                q: "What is computational thinking and how does it relate to programming?",
-                a: "Computational thinking involves breaking down complex problems, identifying patterns, abstracting key concepts, and creating step-by-step solutions. It's the foundation of programming, teaching logical reasoning, problem decomposition, and algorithmic thinking essential for writing effective code.",
-                r: "Computational thinking is the mental framework for approaching programming problems systematically.",
-                tags: ["programming", "computational-thinking", "problem-solving", "algorithms", "logic"]
-            },
-            {
-                q: "What are algorithms and why are they fundamental to programming?",
-                a: "Algorithms are step-by-step procedures for solving problems or accomplishing tasks. They're the core of programming, determining how efficiently problems are solved. Understanding algorithms involves time/space complexity, optimization, and choosing the right approach for specific problems.",
-                r: "Good algorithms solve problems efficiently; poor algorithms waste resources and time.",
-                tags: ["programming", "algorithms", "complexity", "optimization", "problem-solving"]
-            },
-            {
-                q: "What is abstraction in programming and why is it important?",
-                a: "Abstraction hides complex implementation details while exposing essential functionality. It enables programmers to work with high-level concepts without worrying about low-level details. Abstraction appears in functions, classes, APIs, and interfaces, making code manageable and reusable.",
-                r: "Abstraction lets you use complex systems without understanding their internal workings.",
-                tags: ["programming", "abstraction", "encapsulation", "interfaces", "complexity-management"]
-            },
-            {
-                q: "What are data structures and their role in programming?",
-                a: "Data structures organize and store data efficiently for specific operations. Common structures include arrays, linked lists, stacks, queues, trees, graphs, and hash tables. Choosing the right data structure dramatically impacts algorithm performance and code efficiency.",
-                r: "Data structures are to programs what organizational systems are to libraries: they make finding and using data efficient.",
-                tags: ["programming", "data-structures", "arrays", "trees", "graphs", "efficiency"]
-            },
-            {
-                q: "What is software architecture and why does it matter?",
-                a: "Software architecture is the high-level structure of software systems, including components, relationships, and design principles. Good architecture ensures maintainability, scalability, and reliability. It involves patterns like MVC, MVP, MVVM, and component-based architectures.",
-                r: "Architecture is the blueprint that determines how software components work together.",
-                tags: ["programming", "architecture", "design", "scalability", "patterns", "structure"]
-            },
-            {
-                q: "What is the difference between compiled and interpreted languages?",
-                a: "Compiled languages (C++, Java) translate source code to machine code before execution, resulting in faster performance. Interpreted languages (Python, JavaScript) execute code line-by-line at runtime, offering flexibility and easier debugging. Some languages use hybrid approaches (JIT compilation).",
-                r: "Compiled for performance, interpreted for flexibility; modern languages often combine both approaches.",
-                tags: ["programming", "languages", "compilation", "interpretation", "performance", "execution"]
-            },
-            {
-                q: "What is version control and why is it essential for programming?",
-                a: "Version control systems (like Git) track changes to code over time, enabling collaboration, rollback to previous versions, and parallel development. They provide history, branching, merging, and conflict resolution. Version control is fundamental to team development and code management.",
-                r: "Version control is like a time machine for code: you can go back, branch out, and merge changes safely.",
-                tags: ["programming", "version-control", "git", "collaboration", "code-management"]
-            },
-            {
-                q: "What are programming design patterns and their benefits?",
-                a: "Design patterns are reusable solutions to common programming problems. Patterns like Singleton, Factory, Observer, and MVC provide proven approaches to object creation, structural organization, and behavior management. They improve code quality, maintainability, and developer communication.",
-                r: "Design patterns are battle-tested solutions that save time and prevent common mistakes.",
-                tags: ["programming", "design-patterns", "singleton", "factory", "observer", "mvc", "solutions"]
-            },
-            {
-                q: "What is debugging and how do programmers approach it?",
-                a: "Debugging is the process of finding and fixing code errors. Approaches include reading code carefully, adding logging, using debuggers, reproducing issues systematically, and testing hypotheses. Good debugging combines analytical thinking, systematic investigation, and understanding of system behavior.",
-                r: "Debugging is detective work: gather evidence, form hypotheses, and test them systematically.",
-                tags: ["programming", "debugging", "troubleshooting", "problem-solving", "testing"]
-            },
-            {
-                q: "What is code optimization and when should it be done?",
-                a: "Code optimization improves performance, memory usage, or efficiency. It should be done after correct functionality is achieved, guided by profiling data. Premature optimization can lead to complex, hard-to-maintain code. Focus on algorithms, data structures, and bottlenecks identified through measurement.",
-                r: "First make it work, then make it right, then make it fast - but only if measurements show it's needed.",
-                tags: ["programming", "optimization", "performance", "profiling", "efficiency", "premature-optimization"]
-            },
-            {
-                q: "What is software testing and why does it matter?",
-                a: "Testing verifies that software works correctly and meets requirements. Types include unit tests (individual components), integration tests (component interactions), and system tests (complete functionality). Testing prevents bugs, ensures reliability, and enables confident code changes and refactoring.",
-                r: "Testing is quality assurance: it catches bugs before users do and enables safe code evolution.",
-                tags: ["programming", "testing", "quality", "unit-tests", "integration-tests", "reliability"]
-            },
-            {
-                q: "What is code readability and why does it matter?",
-                a: "Code readability refers to how easily humans can understand code. It's crucial for maintenance, collaboration, and debugging. Readable code uses clear naming, consistent style, appropriate comments, and logical structure. Good readability reduces bugs and development time.",
-                r: "Code is read more often than it's written, so prioritize readability over cleverness.",
-                tags: ["programming", "readability", "maintainability", "style", "naming", "documentation"]
-            },
-            {
-                q: "What is software development lifecycle (SDLC) and its phases?",
-                a: "SDLC describes the process of creating software: requirements analysis, design, implementation, testing, deployment, and maintenance. Different models include Waterfall (sequential), Agile (iterative), and DevOps (continuous). SDLC provides structure for managing complex software projects.",
-                r: "SDLC provides a roadmap from idea to working software and ongoing maintenance.",
-                tags: ["programming", "sdlc", "development-process", "agile", "waterfall", "project-management"]
-            },
-            {
-                q: "What is API design and what makes a good API?",
-                a: "APIs (Application Programming Interfaces) define how software components communicate. Good APIs are intuitive, consistent, well-documented, and handle errors gracefully. They balance simplicity with power, provide clear contracts, and consider versioning and backward compatibility.",
-                r: "Good APIs are like good user interfaces: they're intuitive, consistent, and handle errors gracefully.",
-                tags: ["programming", "api", "interface-design", "documentation", "contracts", "communication"]
-            },
-            {
-                q: "What is error handling and how should it be implemented?",
-                a: "Error handling anticipates and manages unexpected situations gracefully. Approaches include try-catch blocks, error codes, logging, and user-friendly messages. Good error handling prevents crashes, provides useful debugging information, and maintains system stability.",
-                r: "Handle errors at the appropriate level: catch what you can handle, let what you can't bubble up.",
-                tags: ["programming", "error-handling", "exceptions", "robustness", "stability", "logging"]
-            },
-            {
-                q: "What is code modularity and why is it important?",
-                a: "Modularity breaks code into independent, reusable components with clear interfaces. It improves maintainability, reusability, testing, and collaboration. Modular code isolates changes, reduces complexity, and enables parallel development. Modules can be functions, classes, or entire applications.",
-                r: "Modularity is like building with LEGO blocks: each piece is independent but works with others.",
-                tags: ["programming", "modularity", "components", "reusability", "maintainability", "separation-of-concerns"]
-            },
-            {
-                q: "What is technical debt and how should programmers manage it?",
-                a: "Technical debt refers to the cost of rework caused by choosing easy solutions now instead of better ones that would take longer. It accumulates through shortcuts, poor design, and outdated code. Manage it by tracking, prioritizing, and gradually paying it down through refactoring.",
-                r: "Technical debt is like financial debt: borrow when necessary, but have a plan to pay it back.",
-                tags: ["programming", "technical-debt", "refactoring", "code-quality", "maintenance", "tradeoffs"]
-            },
-            {
-                q: "What is continuous integration and deployment (CI/CD)?",
-                a: "CI/CD automates the software delivery process: CI automatically builds and tests code changes, CD automatically deploys successful changes to production. This enables rapid, reliable releases, early bug detection, and consistent deployment processes. Tools include Jenkins, GitHub Actions, and GitLab CI.",
-                r: "CI/CD transforms manual, error-prone deployments into automated, reliable processes.",
-                tags: ["programming", "cicd", "automation", "deployment", "testing", "devops"]
-            },
-            {
-                q: "What is code documentation and why is it essential?",
-                a: "Documentation explains code purpose, usage, and design. It includes comments, README files, API docs, and architectural diagrams. Good documentation enables knowledge sharing, onboarding, maintenance, and effective collaboration. Documentation should be accurate, concise, and targeted to different audiences.",
-                r: "Documentation is the user manual for your code: it helps others (and future you) understand and use it effectively.",
-                tags: ["programming", "documentation", "comments", "knowledge-sharing", "maintenance", "collaboration"]
-            },
-            {
-                q: "What is software scalability and how is it achieved?",
-                a: "Scalability is the ability to handle increased load through growth. Types include vertical scaling (more resources) and horizontal scaling (more machines). Achieve it through efficient algorithms, distributed systems, load balancing, caching, and database optimization. Design for scalability from the start.",
-                r: "Scalability means your software can grow with your users without falling apart.",
-                tags: ["programming", "scalability", "performance", "distributed-systems", "load-balancing", "growth"]
-            },
-            {
-                q: "What is software security and fundamental security principles?",
-                a: "Software security protects systems from threats and vulnerabilities. Principles include least privilege, defense in depth, secure by default, and fail safely. Key practices include input validation, authentication, authorization, encryption, and regular security audits. Security must be considered throughout development.",
-                r: "Security is not an afterthought: build it in from the beginning and assume nothing is trusted.",
-                tags: ["programming", "security", "authentication", "encryption", "vulnerabilities", "secure-coding"]
-            },
-            {
-                q: "What is software maintenance and why does it dominate development costs?",
-                a: "Software maintenance includes bug fixes, feature additions, performance improvements, and compatibility updates. It typically consumes 60-80% of total software costs over its lifetime. Good design, documentation, and testing reduce maintenance burden and extend software usefulness.",
-                r: "Writing code is just the beginning; maintaining it is the long-term commitment.",
-                tags: ["programming", "maintenance", "support", "lifecycle", "costs", "longevity"]
-            },
-            {
-                q: "What are programming best practices and how do they emerge?",
-                a: "Best practices are proven approaches that improve code quality, maintainability, and development efficiency. They emerge from collective experience, testing, and refinement over time. Examples include DRY (Don't Repeat Yourself), SOLID principles, and consistent coding standards. Adapt practices to your specific context.",
-                r: "Best practices are guidelines, not rules: understand the principles behind them and adapt thoughtfully.",
-                tags: ["programming", "best-practices", "dry", "solid", "standards", "quality", "experience"]
-            },
-            {
-                q: "What is software performance and how do programmers optimize it?",
-                a: "Software performance measures speed, responsiveness, and resource usage. Optimization involves profiling to identify bottlenecks, choosing efficient algorithms, optimizing data structures, reducing memory allocation, and leveraging caching. Measure before optimizing and focus on user-noticeable improvements.",
-                r: "Performance optimization requires measurement: don't optimize what isn't actually slow.",
-                tags: ["programming", "performance", "optimization", "profiling", "bottlenecks", "efficiency"]
-            },
-            {
-                q: "What is code refactoring and when should it be done?",
-                a: "Refactoring improves code structure without changing functionality. It's done when code becomes hard to maintain, contains duplication, or needs design improvements. Safe refactoring requires comprehensive tests, small incremental changes, and verification after each change.",
-                r: "Refactoring is cleaning up the house: make small improvements while keeping everything working.",
-                tags: ["programming", "refactoring", "code-quality", "maintenance", "structure", "clean-code"]
-            },
-            {
-                q: "What is software quality and how is it measured?",
-                a: "Software quality includes functionality, reliability, performance, usability, security, and maintainability. It's measured through testing, code reviews, metrics (complexity, coverage), user feedback, and monitoring. Quality is built through processes, standards, and continuous improvement.",
-                r: "Quality is multidimensional: good software works reliably, performs well, and is maintainable.",
-                tags: ["programming", "quality", "metrics", "testing", "code-reviews", "standards"]
-            },
-            {
-                q: "What is programming language evolution and selection criteria?",
-                a: "Programming languages evolve to address new problems, incorporate research advances, and improve developer experience. Selection criteria include problem domain, performance needs, ecosystem support, team expertise, and long-term maintenance. Choose languages based on specific project requirements and constraints.",
-                r: "No perfect language exists: choose the right tool for the specific job and context.",
-                tags: ["programming", "languages", "evolution", "selection", "tradeoffs", "ecosystem"]
-            },
-            {
-                q: "What is software engineering vs programming?",
-                a: "Programming focuses on writing code, while software engineering encompasses the entire lifecycle: requirements, design, testing, deployment, and maintenance. Software engineering applies systematic, disciplined, quantifiable approaches to software development, considering scale, teams, and long-term evolution.",
-                r: "Programming is building; software engineering is engineering entire systems that last and evolve.",
-                tags: ["programming", "software-engineering", "discipline", "methodology", "scale", "lifecycle"]
-            },
-            {
-                q: "What is collaborative programming and how does it work effectively?",
-                a: "Collaborative programming involves multiple developers working together on codebases. Effective collaboration requires clear communication, coding standards, version control, code reviews, shared understanding, and conflict resolution. Practices include pair programming, mob programming, and distributed team coordination.",
-                r: "Good collaboration turns individual programmers into high-performing teams.",
-                tags: ["programming", "collaboration", "teamwork", "code-reviews", "communication", "version-control"]
-            },
-            {
-                q: "What is software portability and why does it matter?",
-                a: "Portability is the ability of software to run across different platforms, operating systems, or environments. It reduces development effort, increases user base, and provides flexibility. Achieve portability through standard APIs, platform abstraction, avoiding platform-specific code, and thorough testing.",
-                r: "Portable software reaches more users with less platform-specific development effort.",
-                tags: ["programming", "portability", "cross-platform", "compatibility", "standards", "abstraction"]
-            },
-            {
-                q: "What is software accessibility and inclusive programming?",
-                a: "Accessibility ensures software works for people with disabilities, including visual, auditory, motor, and cognitive impairments. Inclusive programming considers diverse users, follows WCAG guidelines, provides alternative input methods, and ensures compatibility with assistive technologies.",
-                r: "Accessible software serves all users, regardless of their abilities or circumstances.",
-                tags: ["programming", "accessibility", "inclusive-design", "wcag", "assistive-technology", "universal-access"]
-            },
-            {
-                q: "What is software ethics and responsible programming?",
-                a: "Software ethics considers the impact of code on users, society, and stakeholders. It includes privacy protection, data security, algorithmic fairness, transparency, and avoiding harmful applications. Responsible programming requires considering consequences, biases, and long-term societal effects.",
-                r: "Programmers have ethical responsibilities: consider how your code affects people and society.",
-                tags: ["programming", "ethics", "responsibility", "privacy", "fairness", "social-impact"]
-            },
-            {
-                q: "What is software internationalization and localization?",
-                a: "Internationalization (i18n) designs software to support multiple languages and regions without code changes. Localization (l10n) adapts software for specific markets through translation, cultural adaptation, and regional formatting. Both enable global software distribution and user experience.",
-                r: "Internationalization prepares software for the world; localization adapts it for specific regions.",
-                tags: ["programming", "internationalization", "localization", "globalization", "translation", "cultural-adaptation"]
-            },
-            {
-                q: "What is software observability and monitoring?",
-                a: "Observability is the ability to understand system internal states through external outputs. It includes logging, metrics, tracing, and alerting. Monitoring helps detect issues, understand performance, and make data-driven decisions about system behavior and improvements.",
-                r: "Observability lets you understand what your software is doing, especially when things go wrong.",
-                tags: ["programming", "observability", "monitoring", "logging", "metrics", "tracing", "operations"]
-            },
-            {
-                q: "What is software resilience and fault tolerance?",
-                a: "Resilience enables systems to continue operating despite failures. Techniques include redundancy, circuit breakers, retry mechanisms, graceful degradation, and disaster recovery. Fault-tolerant systems anticipate failures and have strategies to handle them without complete service interruption.",
-                r: "Resilient systems expect failures and have plans to handle them gracefully.",
-                tags: ["programming", "resilience", "fault-tolerance", "redundancy", "reliability", "disaster-recovery"]
-            },
-            {
-                q: "What is software configuration management?",
-                a: "Configuration management controls and tracks changes to software, infrastructure, and environments. It includes version control, environment management, deployment automation, and change tracking. Proper configuration management ensures consistency, reproducibility, and traceability across development and production.",
-                r: "Configuration management ensures everyone works with the same setup and changes are tracked properly.",
-                tags: ["programming", "configuration-management", "version-control", "environments", "automation", "consistency"]
-            },
-            {
-                q: "What is software capacity planning and scaling strategies?",
-                a: "Capacity planning anticipates future resource needs based on growth projections and usage patterns. Scaling strategies include vertical scaling (upgrading resources) and horizontal scaling (adding instances). Effective planning prevents performance issues and ensures system availability during growth.",
-                r: "Plan for growth before you need it; scaling is harder when you're already at capacity.",
-                tags: ["programming", "capacity-planning", "scaling", "performance", "growth", "resource-management"]
-            },
-            {
-                q: "What is software compliance and regulatory requirements?",
-                a: "Compliance ensures software meets legal, industry, and regulatory requirements like GDPR, HIPAA, and PCI-DSS. It involves data protection, security standards, audit trails, and documentation. Compliance protects organizations from legal risks and builds user trust.",
-                r: "Compliance isn't optional: understand and implement requirements for your industry and region.",
-                tags: ["programming", "compliance", "regulations", "gdpr", "security", "legal-requirements"]
-            },
-            {
-                q: "What is software innovation and emerging technologies?",
-                a: "Software innovation involves applying new technologies and approaches to solve problems better. Emerging technologies include AI/ML, blockchain, quantum computing, edge computing, and IoT. Successful innovation balances new possibilities with practical implementation and user needs.",
-                r: "Innovation combines new technology with real problems to create valuable solutions.",
-                tags: ["programming", "innovation", "emerging-tech", "ai", "blockchain", "quantum", "future-trends"]
-            },
-            {
-                q: "What is software sustainability and green programming?",
-                a: "Software sustainability considers environmental impact, resource efficiency, and long-term maintainability. Green programming optimizes for energy efficiency, reduces computational waste, and considers carbon footprint. Sustainable software is maintainable, efficient, and environmentally responsible.",
-                r: "Sustainable software considers not just users, but also environmental impact and long-term viability.",
-                tags: ["programming", "sustainability", "green-computing", "environmental-impact", "efficiency", "responsibility"]
-            },
-            {
-                q: "What is software documentation and knowledge management?",
-                a: "Documentation captures and shares knowledge about software design, implementation, and usage. Knowledge management ensures information is accessible, current, and useful. Good documentation includes API docs, architecture diagrams, setup guides, and troubleshooting information.",
-                r: "Documentation preserves knowledge and enables effective collaboration and maintenance.",
-                tags: ["programming", "documentation", "knowledge-management", "sharing", "collaboration", "preservation"]
-            },
-            {
-                q: "What is software risk management and mitigation?",
-                a: "Risk management identifies, assesses, and mitigates potential software project risks. Risks include technical challenges, timeline delays, budget overruns, and security threats. Mitigation strategies include contingency planning, regular assessment, and proactive problem-solving.",
-                r: "Good risk management anticipates problems and has plans before they become crises.",
-                tags: ["programming", "risk-management", "mitigation", "planning", "contingency", "project-management"]
-            },
-            {
-                q: "What is software user experience and human-centered design?",
-                a: "User experience (UX) focuses on making software usable, efficient, and enjoyable for humans. Human-centered design involves understanding user needs, iterative testing, and continuous improvement based on feedback. Good UX leads to higher adoption and satisfaction.",
-                r: "Technical excellence matters, but user experience determines whether software succeeds.",
-                tags: ["programming", "ux", "user-experience", "human-centered-design", "usability", "design-thinking"]
-            },
-            {
-                q: "What is software analytics and data-driven development?",
-                a: "Software analytics collect and analyze usage data to inform development decisions. Data-driven development uses metrics, user behavior analysis, and A/B testing to guide feature development, bug fixes, and improvements. Analytics help prioritize work based on real user needs.",
-                r: "Data-driven decisions replace assumptions with evidence about what users actually need and do.",
-                tags: ["programming", "analytics", "data-driven", "metrics", "user-behavior", "evidence-based"]
-            },
-            {
-                q: "What is software interoperability and integration?",
-                a: "Interoperability enables different software systems to work together effectively. Integration connects disparate systems through APIs, data formats, and communication protocols. Good interoperability reduces silos, enables data flow, and creates cohesive user experiences across systems.",
-                r: "Interoperability turns isolated systems into integrated ecosystems that work together seamlessly.",
-                tags: ["programming", "interoperability", "integration", "apis", "systems-thinking", "connectivity"]
-            },
-            {
-                q: "What is software testing automation and quality assurance?",
-                a: "Testing automation uses tools to run tests automatically, improving coverage and efficiency. Quality assurance encompasses processes, tools, and practices to ensure software meets requirements. Automated testing includes unit tests, integration tests, and UI tests run continuously.",
-                r: "Automated testing catches regressions quickly and enables confident, rapid development.",
-                tags: ["programming", "testing", "automation", "quality-assurance", "continuous-testing", "regression-testing"]
-            },
-            {
-                q: "What is software deployment strategies and release management?",
-                a: "Deployment strategies include blue-green deployments, canary releases, rolling updates, and feature flags. Release management coordinates software delivery, testing, and deployment. Good strategies minimize downtime, reduce risk, and enable quick rollbacks if issues arise.",
-                r: "Smart deployment strategies release software confidently while minimizing user impact.",
-                tags: ["programming", "deployment", "release-management", "blue-green", "canary", "feature-flags"]
-            },
-            {
-                q: "What is software performance engineering and optimization?",
-                a: "Performance engineering focuses on building fast, efficient software from the start rather than optimizing later. It involves understanding system bottlenecks, choosing appropriate algorithms, optimizing database queries, and implementing caching strategies. Performance is a feature, not an afterthought.",
-                r: "Performance engineering builds speed in from the beginning rather than adding it later.",
-                tags: ["programming", "performance", "engineering", "optimization", "bottlenecks", "efficiency"]
-            },
-            {
-                q: "What is software legacy modernization and migration?",
-                a: "Legacy modernization updates outdated software systems to modern architectures and technologies. Migration strategies include gradual refactoring, re-platforming, or complete rewrites. Modernization improves maintainability, performance, and security while preserving business value.",
-                r: "Modernization balances preserving existing value with adopting modern practices and technologies.",
-                tags: ["programming", "legacy-modernization", "migration", "refactoring", "technical-debt", "modernization"]
-            },
-            {
-                q: "What is software team organization and collaboration patterns?",
-                a: "Team organization affects software development effectiveness. Patterns include cross-functional teams, pair programming, mob programming, and guilds. Good organization balances autonomy with coordination, enables knowledge sharing, and aligns team structure with project needs.",
-                r: "Effective team organization turns individual programmers into collaborative, high-performing units.",
-                tags: ["programming", "team-organization", "collaboration", "agile", "cross-functional", "knowledge-sharing"]
-            },
-            {
-                q: "What is software cost estimation and project planning?",
-                a: "Cost estimation predicts resources needed for software projects. Planning involves scope definition, timeline creation, resource allocation, and risk assessment. Techniques include story points, function points, and historical data. Accurate estimation requires experience and iterative refinement.",
-                r: "Good estimation balances optimism with realism based on experience and historical data.",
-                tags: ["programming", "cost-estimation", "project-planning", "resource-management", "timeline", "budgeting"]
-            },
-            {
-                q: "What is software requirements engineering and analysis?",
-                a: "Requirements engineering captures, analyzes, validates, and manages software requirements. It includes stakeholder analysis, requirement gathering, specification, and verification. Good requirements prevent misunderstandings and ensure the software solves the right problems.",
-                r: "Clear requirements are the foundation: building the wrong thing perfectly is still failure.",
-                tags: ["programming", "requirements", "analysis", "specification", "stakeholders", "validation"]
-            },
-            {
-                q: "What is software prototyping and iterative development?",
-                a: "Prototyping creates early versions to gather feedback and validate ideas. Iterative development builds software incrementally through repeated cycles of development and feedback. Both approaches reduce risk, improve user satisfaction, and enable course correction based on real user input.",
-                r: "Prototypes and iterations reduce the risk of building the wrong thing by getting early feedback.",
-                tags: ["programming", "prototyping", "iterative-development", "feedback", "agile", "user-validation"]
-            },
-            {
-                q: "What is software benchmarking and performance measurement?",
-                a: "Benchmarking measures software performance against standards or competitors. Performance metrics include response time, throughput, resource usage, and scalability. Regular benchmarking identifies performance regressions and guides optimization efforts.",
-                r: "You can't improve what you don't measure: benchmarking provides the data for performance decisions.",
-                tags: ["programming", "benchmarking", "performance-measurement", "metrics", "optimization", "comparison"]
-            },
-            {
-                q: "What is software vendor management and third-party integration?",
-                a: "Vendor management evaluates, selects, and manages third-party software and services. Integration connects external systems through APIs, data exchange, and workflow coordination. Good vendor management balances benefits with risks like dependencies and security.",
-                r: "Third-party software can accelerate development but creates dependencies that must be managed carefully.",
-                tags: ["programming", "vendor-management", "third-party", "integration", "dependencies", "risk-management"]
-            },
-            {
-                q: "What is software disaster recovery and business continuity?",
-                a: "Disaster recovery plans restore systems after catastrophic failures. Business continuity ensures essential operations continue during disruptions. Strategies include backups, redundant systems, emergency procedures, and regular testing. Planning minimizes downtime and data loss.",
-                r: "Disaster recovery planning prepares for the worst case to ensure business survival.",
-                tags: ["programming", "disaster-recovery", "business-continuity", "backup", "redundancy", "emergency-planning"]
-            },
-            {
-                q: "What is software knowledge sharing and technical communication?",
-                a: "Knowledge sharing distributes expertise across teams and organizations. Technical communication conveys complex concepts clearly through documentation, presentations, and code reviews. Effective sharing accelerates learning, prevents knowledge silos, and improves team capability.",
-                r: "Shared knowledge multiplies team effectiveness and prevents critical information from being lost.",
-                tags: ["programming", "knowledge-sharing", "communication", "documentation", "mentoring", "team-learning"]
-            },
-            {
-                q: "What is software career development and skill advancement?",
-                a: "Career development in programming involves continuous learning, skill diversification, and specialization. Areas include technical depth, architectural thinking, leadership, and domain expertise. Advancement requires staying current with technologies and understanding business context.",
-                r: "Programming careers grow through continuous learning and expanding beyond pure technical skills.",
-                tags: ["programming", "career-development", "skills", "learning", "advancement", "professional-growth"]
-            },
-            {
-                q: "What is software community involvement and open source contribution?",
-                a: "Community involvement includes participating in open source projects, attending conferences, and sharing knowledge. Contributing to open source builds skills, reputation, and network. Community engagement drives innovation and collective problem-solving in software development.",
-                r: "Open source contribution builds skills, reputation, and gives back to the programming community.",
-                tags: ["programming", "open-source", "community", "contribution", "networking", "knowledge-sharing"]
-            },
-            {
-                q: "What is software mentoring and knowledge transfer?",
-                a: "Mentoring accelerates learning through guidance from experienced practitioners. Knowledge transfer ensures critical expertise spreads across teams. Effective mentoring pairs experienced developers with learners, provides constructive feedback, and builds organizational capability.",
-                r: "Mentoring multiplies organizational expertise by developing talent and sharing experience.",
-                tags: ["programming", "mentoring", "knowledge-transfer", "coaching", "talent-development", "organizational-learning"]
-            },
-            {
-                q: "What is software innovation culture and experimentation?",
-                a: "Innovation culture encourages experimentation, learning from failure, and continuous improvement. It requires psychological safety, time for exploration, and support for trying new approaches. Innovation cultures balance stability with creative exploration.",
-                r: "Innovation cultures treat failure as learning and provide space for creative experimentation.",
-                tags: ["programming", "innovation-culture", "experimentation", "learning", "creativity", "psychological-safety"]
-            },
-            {
-                q: "What is software work-life balance and sustainable development?",
-                a: "Sustainable development maintains productivity without burnout through reasonable work hours, adequate rest, and stress management. Work-life balance prevents fatigue, maintains code quality, and supports long-term career sustainability. Healthy teams produce better software consistently.",
-                r: "Sustainable pace prevents burnout and maintains consistent quality over the long term.",
-                tags: ["programming", "work-life-balance", "sustainability", "burnout-prevention", "health", "productivity"]
-            },
-            {
-                q: "What is software future trends and emerging paradigms?",
-                a: "Future trends include AI-assisted programming, quantum computing, edge computing, serverless architectures, and low-code/no-code platforms. Emerging paradigms like reactive programming, event-driven architectures, and distributed systems shape how software will be built and deployed.",
-                r: "Stay curious about emerging trends but adopt them based on real value, not just novelty.",
-                tags: ["programming", "future-trends", "emerging-paradigms", "ai-programming", "quantum", "evolution"]
+                q: "What is the difference between decorator pattern and adapter pattern?",
+                a: "Decorator pattern adds functionality to objects dynamically without changing class structure. Adapter pattern makes incompatible interfaces work together. Decorator enhances existing interface, adapter bridges incompatible interfaces. Decorator adds responsibilities, adapter converts interface. Decorator is transparent, adapter is explicit.",
+                r: "Decorator: adds functionality. Adapter: makes interfaces compatible.",
+                tags: ["decorator-pattern", "adapter-pattern", "structural-patterns", "functionality", "interfaces"]
             }
-        ];
+                  ];
+
+        // Function to download all questions as PDF
+        function downloadPDF() {
+            // Show loading message
+            const originalText = event.target.innerHTML;
+            event.target.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            event.target.disabled = true;
+            
+            setTimeout(() => {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Set font size and style
+                doc.setFontSize(20);
+                doc.text('OOP Concepts - Interview Questions', 20, 20);
+                
+                doc.setFontSize(12);
+                doc.text('Complete collection of OOP interview questions and answers', 20, 30);
+                
+                let yPosition = 50;
+                const pageHeight = doc.internal.pageSize.height;
+                const lineHeight = 7;
+                const margin = 20;
+                
+                // Add all questions to PDF
+                data.forEach((item, index) => {
+                    // Check if we need a new page
+                    if (yPosition > pageHeight - 40) {
+                        doc.addPage();
+                        yPosition = 30;
+                    }
+                    
+                    // Question number and title
+                    doc.setFontSize(14);
+                    doc.setFont(undefined, 'bold');
+                    const questionText = `Q${index + 1}: ${item.q}`;
+                    const questionLines = doc.splitTextToSize(questionText, 170);
+                    
+                    questionLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Answer
+                    doc.setFontSize(11);
+                    doc.setFont(undefined, 'normal');
+                    const answerText = `Answer: ${item.a}`;
+                    const answerLines = doc.splitTextToSize(answerText, 170);
+                    
+                    answerLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Real-world example (if exists)
+                    if (item.r) {
+                        doc.setFont(undefined, 'italic');
+                        const exampleText = `Example: ${item.r}`;
+                        const exampleLines = doc.splitTextToSize(exampleText, 170);
+                        
+                        exampleLines.forEach(line => {
+                            if (yPosition > pageHeight - 20) {
+                                doc.addPage();
+                                yPosition = 30;
+                            }
+                            doc.text(line, margin, yPosition);
+                            yPosition += lineHeight;
+                        });
+                    }
+                    
+                    // Add spacing between questions
+                    yPosition += lineHeight * 2;
+                    
+                    // Add separator line
+                    if (yPosition < pageHeight - 20) {
+                        doc.setLineWidth(0.1);
+                        doc.line(margin, yPosition, 190, yPosition);
+                        yPosition += lineHeight;
+                    }
+                });
+                
+                // Add footer
+                const totalPages = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= totalPages; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(10);
+                    doc.setFont(undefined, 'normal');
+                    doc.text(`Page ${i} of ${totalPages}`, 105, pageHeight - 10, { align: 'center' });
+                    doc.text('Generated from IT Interview Hub', 105, pageHeight - 5, { align: 'center' });
+                }
+                
+                // Save the PDF
+                doc.save('OOP-Concepts-Interview-Questions.pdf');
+                
+                // Restore button state
+                event.target.innerHTML = originalText;
+                event.target.disabled = false;
+            }, 100);
+        }
 
         // Function to copy code to clipboard
         function copyCode(codeId) {
