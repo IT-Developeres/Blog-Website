@@ -2415,6 +2415,23 @@
         }
     
 
+        // Function to scroll to specific question
+        function scrollToQuestion(questionId) {
+            const element = document.getElementById(questionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active TOC link
+                const tocLinks = document.querySelectorAll('.toc-link');
+                tocLinks.forEach(link => link.classList.remove('active'));
+                
+                const activeLink = document.querySelector(`.toc-link[href="#${questionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
         // Function to render table of contents
         function renderTOC() {
             const tocList = document.getElementById('tocList');
@@ -2431,7 +2448,7 @@
                 const shortQ = item.q.substring(0, 50) + (item.q.length > 50 ? '...' : '');
                 return `
                     <li class="toc-item">
-                        <a href="#q-${number}" class="toc-link">
+                        <a href="#q-${number}" class="toc-link" onclick="scrollToQuestion('q-${number}'); return false;">
                             <span class="toc-number">${number}.</span>
                             <span class="toc-question">${shortQ}</span>
                         </a>
