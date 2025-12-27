@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming Basics - 100 Essential Questions & Answers</title>
-    <meta name="description" content="Master programming fundamentals with 100 essential questions, detailed answers, and real-world code examples. Perfect for interview preparation and skill building.">
+    <title>OOP Concepts - 25 Essential Interview Questions & Answers</title>
+    <meta name="description" content="Master Object-Oriented Programming with 25 essential interview questions, detailed answers, and real-world code examples. Perfect for interview preparation and skill building.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
@@ -823,8 +823,8 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>Programming Basics</h1>
-            <p>Master the fundamentals with 100+ essential questions, detailed answers, and real-world code examples</p>
+            <h1>OOP Concepts</h1>
+            <p>Master Object-Oriented Programming with 100 essential interview questions, detailed answers, and real-world code examples</p>
             <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Search questions...">
@@ -896,10 +896,10 @@
                 <span>/</span>
                 <a href="#">Topics</a>
                 <span>/</span>
-                <span>Programming Basics</span>
+                <span>OOP Concepts</span>
             </div>
             
-            <h2 style="margin-bottom: 2rem;">100 Essential Programming Questions</h2>
+            <h2 style="margin-bottom: 2rem;">100 Essential OOP Interview Questions</h2>
             
             <div id="questionsContainer">
                 <!-- Questions will be inserted here by JavaScript -->
@@ -920,7 +920,7 @@
 
     <footer>
         <div class="footer-content">
-            <p> 2025 IT Interview Hub – Programming Basics</p>
+            <p> 2025 IT Interview Hub – OOP Concepts</p>
             <p>Your go-to resource for technical interview preparation</p>
             <div class="footer-links">
                 <a href="/">Home</a>
@@ -1674,6 +1674,23 @@
         }
     
 
+        // Function to scroll to specific question
+        function scrollToQuestion(questionId) {
+            const element = document.getElementById(questionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active TOC link
+                const tocLinks = document.querySelectorAll('.toc-link');
+                tocLinks.forEach(link => link.classList.remove('active'));
+                
+                const activeLink = document.querySelector(`.toc-link[href="#${questionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
         // Function to render table of contents
         function renderTOC() {
             const tocList = document.getElementById('tocList');
@@ -1690,7 +1707,7 @@
                 const shortQ = item.q.substring(0, 50) + (item.q.length > 50 ? '...' : '');
                 return `
                     <li class="toc-item">
-                        <a href="#q-${number}" class="toc-link">
+                        <a href="#q-${number}" class="toc-link" onclick="scrollToQuestion('q-${number}'); return false;">
                             <span class="toc-number">${number}.</span>
                             <span class="toc-question">${shortQ}</span>
                         </a>

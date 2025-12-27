@@ -823,8 +823,8 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>Programming Basics</h1>
-            <p>Master the fundamentals with 100+ essential questions, detailed answers, and real-world code examples</p>
+            <h1>Data Structures</h1>
+            <p>Master data structures with 150+ essential interview questions, detailed answers, and coding examples</p>
             <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Search questions...">
@@ -896,10 +896,10 @@
                 <span>/</span>
                 <a href="#">Topics</a>
                 <span>/</span>
-                <span>Programming Basics</span>
+                <span>Data Structures</span>
             </div>
             
-            <h2 style="margin-bottom: 2rem;">100 Essential Programming Questions</h2>
+            <h2 style="margin-bottom: 2rem;">150+ Essential Data Structures Interview Questions</h2>
             
             <div id="questionsContainer">
                 <!-- Questions will be inserted here by JavaScript -->
@@ -920,7 +920,7 @@
 
     <footer>
         <div class="footer-content">
-            <p> 2025 IT Interview Hub – Programming Basics</p>
+            <p> 2025 IT Interview Hub – Data Structures</p>
             <p>Your go-to resource for technical interview preparation</p>
             <div class="footer-links">
                 <a href="/">Home</a>
@@ -1619,6 +1619,23 @@
         }
     
 
+        // Function to scroll to specific question
+        function scrollToQuestion(questionId) {
+            const element = document.getElementById(questionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active TOC link
+                const tocLinks = document.querySelectorAll('.toc-link');
+                tocLinks.forEach(link => link.classList.remove('active'));
+                
+                const activeLink = document.querySelector(`.toc-link[href="#${questionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
         // Function to render table of contents
         function renderTOC() {
             const tocList = document.getElementById('tocList');
@@ -1635,7 +1652,7 @@
                 const shortQ = item.q.substring(0, 50) + (item.q.length > 50 ? '...' : '');
                 return `
                     <li class="toc-item">
-                        <a href="#q-${number}" class="toc-link">
+                        <a href="#q-${number}" class="toc-link" onclick="scrollToQuestion('q-${number}'); return false;">
                             <span class="toc-number">${number}.</span>
                             <span class="toc-question">${shortQ}</span>
                         </a>
