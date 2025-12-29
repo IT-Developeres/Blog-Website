@@ -904,8 +904,19 @@
             <!-- Adsterra Ad Placement - Top -->
             <!-- Ad Placeholder -->
             <div style="text-align: center; margin: 2rem 0; padding: 1rem; background: #f3f4f6; border-radius: 8px; color: #6b7280;">
-                <p>Advertisement Space</p>
-            </div>
+  <!-- Adsterra Ad Placement - Top -->
+            <div style="text-align: center; margin: 2rem 0;">
+                <script>
+  atOptions = {
+    'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script> </div>
+                     </div>
             
             <div id="questionsContainer">
                 <!-- Questions will be inserted here by JavaScript -->
@@ -969,32 +980,32 @@
             },
             {
                 q: "What new tags were introduced in HTML5?",
-                a: "New semantic tags: <header>, <nav>, <main>, <article>, <section>, <aside>, <figure>, <figcaption>, <footer>, <time>, <mark>, <details>, <summary>. Multimedia: <audio>, <video>, <source>, <track>. Graphics: <canvas>, <svg>. Form: <datalist>, <output>, <progress>, <meter>.",
+                a: "New semantic tags provide meaningful structure: <header> (page/section header), <nav> (navigation links), <main> (main content), <article> (self-contained content), <section> (thematic grouping), <aside> (sidebar/tangential content), <figure>/<figcaption> (images with captions), <footer> (page/section footer), <time> (date/time), <mark> (highlighted text), <details>/<summary> (expandable content). Multimedia tags: <audio>, <video>, <source>, <track> (captions/subtitles). Graphics: <canvas> (JavaScript drawing), <svg> (vector graphics). Form enhancements: <datalist>, <output>, <progress>, <meter>. Other: <embed>, <wbr>, <rp>, <rt>, <ruby>.",
                 tags: ["html5", "tags", "new-elements"]
             },
             {
                 q: "What HTML5 tags replaced older deprecated tags?",
-                a: "<header> replaces <div id='header'>, <nav> replaces navigation divs, <section> replaces <div class='section'>, <article> replaces content divs, <aside> replaces sidebar divs, <footer> replaces <div id='footer'>. <mark> replaces <font color>, <time> replaces date spans, <figure>/<figcaption> replace image captions.",
+                a: "Semantic HTML5 tags replaced generic div-based structures: <header> replaces <div id='header'> or <div class='header'> for top sections, <nav> replaces <div class='navigation'> for menu items, <main> replaces <div id='content'> for primary content, <section> replaces <div class='section'> for thematic content groups, <article> replaces <div class='article'> for standalone content pieces, <aside> replaces <div class='sidebar'> for secondary content, <footer> replaces <div id='footer'> for bottom sections. <mark> replaces <font color='yellow'> or <span style='background-color: yellow'>, <time> replaces <span class='date'> for semantic dates, <figure>/<figcaption> replace <div class='image-container'> with <p class='caption'> for images with descriptions.",
                 tags: ["html5", "deprecated", "replacement"]
             },
             {
                 q: "What is the purpose of the <canvas> element in HTML5?",
-                a: "<canvas> provides a drawable surface for graphics, animations, and image manipulation using JavaScript. It's used for games, data visualization, photo editing, and complex graphics. It has a 2D context and can be extended with WebGL for 3D graphics.",
+                a: "<canvas> element provides a blank drawing surface controlled via JavaScript API for dynamic graphics, animations, and real-time image processing. Key features: 2D rendering context (getContext('2d')), pixel-level manipulation, path drawing, text rendering, image filtering, and animation frames. Common uses: interactive games (using requestAnimationFrame), data visualization (charts, graphs), photo editing applications, particle systems, and complex visual effects. Canvas can be extended with WebGL for 3D graphics and GPU acceleration. Unlike SVG, canvas is raster-based (pixel-based) and better for complex animations with many objects.",
                 tags: ["html5", "canvas", "graphics", "javascript"]
             },
             {
                 q: "How do you embed video in HTML5?",
-                a: "Use <video> element with <source> tags for different formats: <video controls><source src='video.mp4' type='video/mp4'><source src='video.webm' type='video/webm'>Your browser doesn't support video.</video>. Attributes: controls, autoplay, loop, muted, poster, width, height.",
+                a: "HTML5 video embedding uses <video> element with multiple <source> tags for cross-browser compatibility: <video controls width='640' height='360' poster='poster.jpg'><source src='video.mp4' type='video/mp4'><source src='video.webm' type='video/webm'><source src='video.ogg' type='video/ogg'>Your browser doesn't support HTML5 video.</video>. Key attributes: controls (show playback controls), autoplay (start automatically), loop (repeat playback), muted (audio off), poster (placeholder image), width/height (dimensions), preload (how to load video). Supported formats: MP4 (H.264), WebM (VP8/VP9), Ogg (Theora). JavaScript API provides methods: play(), pause(), load(), canPlayType(). Events: play, pause, ended, timeupdate, progress.",
                 tags: ["html5", "video", "multimedia"]
             },
             {
                 q: "How do you embed audio in HTML5?",
-                a: "Use <audio> element: <audio controls><source src='audio.mp3' type='audio/mpeg'><source src='audio.ogg' type='audio/ogg'>Your browser doesn't support audio.</audio>. Attributes: controls, autoplay, loop, muted, preload.",
+                a: "HTML5 audio embedding uses <audio> element with fallback sources: <audio controls preload='metadata'><source src='audio.mp3' type='audio/mpeg'><source src='audio.ogg' type='audio/ogg'><source src='audio.wav' type='audio/wav'>Your browser doesn't support HTML5 audio.</audio>. Key attributes: controls (show player), autoplay (start automatically), loop (repeat), muted (silent), preload (none/metadata/auto), volume (0.0-1.0). Supported formats: MP3 (MPEG-1 Audio Layer 3), Ogg Vorbis, WAV, AAC. JavaScript API: play(), pause(), load(), volume property, currentTime property, duration property. Audio events: play, pause, ended, timeupdate, loadedmetadata. Can be styled with CSS and enhanced with Web Audio API for advanced processing.",
                 tags: ["html5", "audio", "multimedia"]
             },
             {
                 q: "What are HTML5 form input types?",
-                a: "New input types: email, url, tel, search, number, range, date, month, week, time, datetime-local, color. These provide built-in validation and specialized UI controls. Example: <input type='email' required>.",
+                a: "HTML5 introduced 13 new input types for better user experience and validation: email (email validation), url (URL validation), tel (telephone number), search (search field styling), number (numeric input with min/max/step), range (slider control), date (calendar picker), month (month/year picker), week (week/year picker), time (time picker), datetime-local (date and time), color (color picker). Example: <input type='email' placeholder='Enter email' required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'>. These provide: built-in validation, specialized mobile keyboards, native UI controls, accessibility improvements, and reduced JavaScript dependency. Not all types are supported in all browsers, so always provide fallbacks.",
                 tags: ["html5", "forms", "input-types"]
             },
             {
@@ -1284,7 +1295,7 @@
             },
             {
                 q: "What is HTML5 structured data?",
-                a: "Structured data helps search engines understand content: JSON-LD scripts, microdata, or RDFa. Example: <script type=&quot;application/ld+json&quot;>{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Article&quot;}</script>. Improves rich snippets in search results.",
+                a: "Structured data helps search engines understand content: JSON-LD scripts, microdata, or RDFa. Example: script with JSON-LD format containing context and type. Improves rich snippets in search results.",
                 tags: ["html5", "structured-data", "seo", "json-ld"]
             },
             {
@@ -1563,20 +1574,20 @@
             const questionsHTML = currentQuestions.slice(start, end).map((item, index) => {
                 const questionNumber = (currentPage - 1) * questionsPerPage + index + 1;
                 return '<div class="q-box" id="q-' + questionNumber + '">' +
-                        '<h3>' + escapeHtml(item.q) + '</h3>' +
+                        '<h3>' + item.q + '</h3>' +
                         '<div class="q-meta">' +
                             '<span class="q-number">' + questionNumber + '</span>' +
                             '<span class="q-tags">' +
-                                item.tags.map(tag => '<span class="q-tag">' + escapeHtml(tag) + '</span>').join('') +
+                                item.tags.map(tag => '<span class="q-tag">' + tag + '</span>').join('') +
                             '</span>' +
                         '</div>' +
-                        '<p>' + escapeHtml(item.a) + '</p>' +
-                        (item.r ? '<p class="q-result">' + escapeHtml(item.r) + '</p>' : '') +
+                        '<p>' + item.a + '</p>' +
+                        (item.r ? '<p class="q-result">' + item.r + '</p>' : '') +
                         (item.c ? 
                             '<div class="code-container">' +
                                 '<div class="code-header">' +
                                     '<span class="code-title">Example Code</span>' +
-                                    '<button class="copy-btn" onclick="copyCode(\"code-' + questionNumber + '\")">' +
+                                    '<button class="copy-btn" onclick="copyCode(\'code-' + questionNumber + '\')">' +
                                         '<i class="fas fa-copy"></i> Copy' +
                                     '</button>' +
                                 '</div>' +
@@ -1587,7 +1598,8 @@
 
             questionsContainer.innerHTML = questionsHTML;
 
-            renderTOC();
+            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
+            
             // Update page info
             if (pageInfo) {
                 pageInfo.textContent = `Page ${currentPage} of ${pageCount} (${currentQuestions.length} questions)`;
