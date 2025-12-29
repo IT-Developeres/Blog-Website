@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 - 70+ Essential Interview Questions & Answers</title>
+    <meta name="description" content="Master HTML5 with 70+ essential interview questions, detailed answers, and real-world code examples. Perfect for school, college, university, and job interview preparation at national and international levels.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9fafb;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search Box */
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            align-self: flex-start;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar h2 i {
+            color: var(--primary);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            color: var(--gray);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+        }
+
+        .toc-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .toc-hidden {
+            display: none;
+        }
+
+        .toc-toggle-btn {
+            margin-left: auto;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .toc-toggle-btn:hover {
+            background: rgba(37, 99, 235, 0.15);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .breadcrumbs {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs span {
+            color: var(--gray);
+        }
+
+        /* Question Box Styles */
+        .q-box {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            transition: var(--transition);
+        }
+
+        .q-box:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .q-box h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .q-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .q-number {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .q-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .q-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn i {
+            font-size: 0.9em;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Answer Styles */
+        .answer {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .answer.show {
+            display: block;
+        }
+
+        .answer-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .answer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .answer-section h4 i {
+            color: var(--primary);
+        }
+
+        .answer-section p {
+            margin-bottom: 1rem;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        /* Code Block Styles */
+        pre {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        pre code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #e2e8f0;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: 6px 6px 0 0;
+            margin: 0;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #94a3b8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .copy-btn.copied {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            gap: 1rem;
+        }
+
+        .page-info {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+
+            .sidebar {
+                position: static;
+                margin-bottom: 2rem;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            header p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            .search-box input {
+                padding: 0.75rem 1rem 0.75rem 2.25rem;
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .main-content, .sidebar {
+                padding: 1rem;
+            }
+
+            .q-box {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .q-box h3 {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+
+            .q-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .q-tags {
+                margin-bottom: 0.75rem;
+            }
+
+            .q-tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .pagination {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1.5rem 0.75rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 0.75rem;
+            }
+
+            .main-content, .sidebar {
+                padding: 0.75rem;
+            }
+
+            .q-box {
+                padding: 0.75rem;
+            }
+
+            .q-box h3 {
+                font-size: 1rem;
+            }
+
+            .sidebar h2 {
+                font-size: 1rem;
+            }
+
+            .toc-link {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.85rem;
+            }
+
+            .q-number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.7rem;
+            }
+
+            .q-tag {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.5rem;
+            }
+
+            pre {
+                padding: 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .code-header {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.7rem;
+            }
+
+            .copy-btn {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100%;
+            background: white;
+            z-index: 1001;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-sidebar-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mobile-sidebar-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-sidebar-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-sidebar-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-sidebar .sidebar {
+                display: block;
+                position: static;
+                margin: 0;
+                padding: 1rem;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn, .toc-link, .copy-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .toc-link {
+                padding: 0.75rem;
+            }
+
+            .q-tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Improved mobile typography */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .q-box p, .answer-section p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* Better mobile spacing */
+        @media (max-width: 768px) {
+            .q-box {
+                border-radius: 8px;
+            }
+
+            .main-content {
+                border-radius: 8px;
+            }
+
+            .sidebar {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>HTML5</h1>
+            <p>Master Modern HTML5 with 70+ essential interview questions, detailed answers, and real-world code examples for school, college, university students, and national & international job interviews</p>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search questions...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <h3><i class="fas fa-list"></i> Menu</h3>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h2><i class="fas fa-list"></i> Table of Contents <button class="toc-toggle-btn" id="tocToggleBtn" type="button" aria-label="Toggle table of contents"><i class="fas fa-bars"></i></button></h2>
+                <ul class="toc-list toc-hidden" id="tocList">
+                    <!-- Filled by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar with Table of Contents -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2><i class="fas fa-list"></i> Table of Contents <button class="toc-toggle-btn" id="tocToggleBtn" type="button" aria-label="Toggle table of contents"><i class="fas fa-bars"></i></button></h2>
+                <ul class="toc-list toc-hidden" id="tocList">
+                    <!-- Filled by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumbs">
+                <a href="/">Home</a>
+                <span>/</span>
+                <a href="#">Topics</a>
+                <span>/</span>
+                <span>HTML5</span>
+            </div>
+            
+            <h2 style="margin-bottom: 2rem;">70+ Essential HTML5 Interview Questions</h2>
+            
+            <!-- Adsterra Ad Placement - Top -->
+            <!-- Ad Placeholder -->
+            <div style="text-align: center; margin: 2rem 0; padding: 1rem; background: #f3f4f6; border-radius: 8px; color: #6b7280;">
+                <p>Advertisement Space</p>
+            </div>
+            
+            <div id="questionsContainer">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="pagination">
+                <button class="btn" id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="pageInfo" class="page-info">Page 1 of 12</span>
+                <button class="btn" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 IT Interview Hub – HTML5</p>
+            <p>Your go-to resource for technical interview preparation</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="#">Topics</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Initialize syntax highlighting
+        if (typeof hljs !== 'undefined') {
+            hljs.highlightAll();
+        }
+
+        // Pagination variables
+        let currentPage = 1;
+        const questionsPerPage = 5; // Changed to show 5 questions per page
+        let currentQuestions = [];
+
+        // Questions data
+        const data = [
+            {
+                q: "What is HTML5 and how does it differ from previous HTML versions?",
+                a: "HTML5 is the latest evolution of the HTML standard. It introduces semantic elements, multimedia support (audio/video), canvas/SVG graphics, local storage, geolocation, and better form controls. It has a simpler doctype (<!DOCTYPE html>) and focuses on web applications rather than just documents.",
+                tags: ["html5", "basics", "evolution"]
+            },
+            {
+                q: "What is the basic syntax structure of HTML5?",
+                a: "HTML5 uses element tags with opening <tag> and closing </tag> syntax. Elements can have attributes in opening tags. Some elements are self-closing. The basic structure includes <!DOCTYPE html>, <html>, <head>, and <body> elements. All elements must be properly nested.",
+                tags: ["html5", "syntax", "structure"]
+            },
+            {
+                q: "What are semantic HTML5 elements and why are they important?",
+                a: "Semantic elements clearly describe their meaning: <header>, <nav>, <main>, <article>, <section>, <aside>, <figure>, <figcaption>, <footer>, <time>, <mark>. They improve accessibility, SEO, code readability, and provide better structure for assistive technologies and search engines.",
+                tags: ["html5", "semantic", "accessibility", "seo"]
+            },
+            {
+                q: "What new tags were introduced in HTML5?",
+                a: "New semantic tags: <header>, <nav>, <main>, <article>, <section>, <aside>, <figure>, <figcaption>, <footer>, <time>, <mark>, <details>, <summary>. Multimedia: <audio>, <video>, <source>, <track>. Graphics: <canvas>, <svg>. Form: <datalist>, <output>, <progress>, <meter>.",
+                tags: ["html5", "tags", "new-elements"]
+            },
+            {
+                q: "What HTML5 tags replaced older deprecated tags?",
+                a: "<header> replaces <div id='header'>, <nav> replaces navigation divs, <section> replaces <div class='section'>, <article> replaces content divs, <aside> replaces sidebar divs, <footer> replaces <div id='footer'>. <mark> replaces <font color>, <time> replaces date spans, <figure>/<figcaption> replace image captions.",
+                tags: ["html5", "deprecated", "replacement"]
+            },
+            {
+                q: "What is the purpose of the <canvas> element in HTML5?",
+                a: "<canvas> provides a drawable surface for graphics, animations, and image manipulation using JavaScript. It's used for games, data visualization, photo editing, and complex graphics. It has a 2D context and can be extended with WebGL for 3D graphics.",
+                tags: ["html5", "canvas", "graphics", "javascript"]
+            },
+            {
+                q: "How do you embed video in HTML5?",
+                a: "Use <video> element with <source> tags for different formats: <video controls><source src='video.mp4' type='video/mp4'><source src='video.webm' type='video/webm'>Your browser doesn't support video.</video>. Attributes: controls, autoplay, loop, muted, poster, width, height.",
+                tags: ["html5", "video", "multimedia"]
+            },
+            {
+                q: "How do you embed audio in HTML5?",
+                a: "Use <audio> element: <audio controls><source src='audio.mp3' type='audio/mpeg'><source src='audio.ogg' type='audio/ogg'>Your browser doesn't support audio.</audio>. Attributes: controls, autoplay, loop, muted, preload.",
+                tags: ["html5", "audio", "multimedia"]
+            },
+            {
+                q: "What are HTML5 form input types?",
+                a: "New input types: email, url, tel, search, number, range, date, month, week, time, datetime-local, color. These provide built-in validation and specialized UI controls. Example: <input type='email' required>.",
+                tags: ["html5", "forms", "input-types"]
+            },
+            {
+                q: "What are HTML5 form attributes?",
+                a: "New attributes: placeholder, required, pattern, min, max, step, autocomplete, autofocus, multiple, formnovalidate, formaction, formenctype, formmethod, formtarget, list (for datalist). These enhance form validation and user experience.",
+                tags: ["html5", "forms", "attributes"]
+            },
+            {
+                q: "What is the <datalist> element in HTML5?",
+                a: "<datalist> provides predefined options for input elements: <input list='browsers'><datalist id='browsers'><option value='Chrome'><option value='Firefox'></datalist>. It creates autocomplete functionality without JavaScript.",
+                tags: ["html5", "forms", "datalist"]
+            },
+            {
+                q: "What is HTML5 local storage and how does it work?",
+                a: "Local storage allows storing data locally in the browser (up to 5MB). Use localStorage.setItem('key', 'value') and localStorage.getItem('key'). Data persists across sessions. Unlike cookies, it's not sent with HTTP requests.",
+                tags: ["html5", "storage", "localStorage"]
+            },
+            {
+                q: "What is sessionStorage in HTML5?",
+                a: "sessionStorage stores data for one session only (until tab is closed). Same API as localStorage: sessionStorage.setItem(), sessionStorage.getItem(). Data is isolated per tab and cleared when tab closes.",
+                tags: ["html5", "storage", "sessionStorage"]
+            },
+            {
+                q: "What is the difference between localStorage and sessionStorage?",
+                a: "localStorage persists across browser sessions with no expiration. sessionStorage lasts only for current session and is cleared when tab closes. Both have ~5MB limit and same API. Use localStorage for persistence, sessionStorage for temporary tab data.",
+                tags: ["html5", "storage", "comparison"]
+            },
+            {
+                q: "What is HTML5 Geolocation API?",
+                a: "Geolocation API gets user's geographical position: navigator.geolocation.getCurrentPosition(showPosition, showError). Provides latitude, longitude, accuracy, altitude, speed. Requires user permission. Used for location-based services.",
+                tags: ["html5", "geolocation", "api"]
+            },
+            {
+                q: "What are HTML5 Web Workers?",
+                a: "Web Workers allow running JavaScript in background threads: var worker = new Worker('worker.js'). They prevent blocking the main UI thread for heavy computations. Communication via postMessage() and onmessage events.",
+                tags: ["html5", "web-workers", "javascript"]
+            },
+            {
+                q: "What is HTML5 Drag and Drop API?",
+                a: "Drag and Drop API allows dragging elements: draggable='true' with events: dragstart, dragover, drop. Use dataTransfer.setData() and getData() to transfer data. Enables file uploads and custom drag interactions.",
+                tags: ["html5", "drag-drop", "api"]
+            },
+            {
+                q: "What is the HTML5 history API?",
+                a: "History API manipulates browser history: history.pushState(state, title, url), history.replaceState(), history.back(), history.forward(). Enables single-page applications with proper URL management without page reloads.",
+                tags: ["html5", "history", "spa"]
+            },
+            {
+                q: "What are HTML5 Web Sockets?",
+                a: "WebSockets provide full-duplex communication: var socket = new WebSocket('ws://server'). Events: onopen, onmessage, onclose, onerror. Enables real-time bidirectional communication for chat, gaming, live updates.",
+                tags: ["html5", "websockets", "real-time"]
+            },
+            {
+                q: "What is the Server-Sent Events (SSE) API in HTML5?",
+                a: "SSE allows server to push data to client: var eventSource = new EventSource('/events'). One-way communication from server to client. Used for live feeds, notifications, stock updates. Simpler than WebSockets for server-to-client only.",
+                tags: ["html5", "sse", "api"]
+            },
+            {
+                q: "What is HTML5 Application Cache?",
+                a: "Application Cache enables offline web applications: <html manifest='app.cache'). Manifest file defines cached, network, and fallback resources. Largely replaced by Service Workers but still useful for simple offline functionality.",
+                tags: ["html5", "offline", "cache"]
+            },
+            {
+                q: "What are HTML5 microdata and why is it important?",
+                a: "Microdata adds machine-readable semantics to HTML: itemscope, itemtype, itemprop. Helps search engines understand content structure. Example: <div itemscope itemtype='http://schema.org/Person'><span itemprop='name'>John</span></div>.",
+                tags: ["html5", "microdata", "seo", "semantics"]
+            },
+            {
+                q: "What is the role of the <main> element in HTML5?",
+                a: "<main> contains the dominant content of the document. There should be only one <main> element per page, excluding those hidden in templates or dialogs. It improves accessibility and semantic structure.",
+                tags: ["html5", "semantic", "main"]
+            },
+            {
+                q: "How do you use the <figure> and <figcaption> elements?",
+                a: "<figure> wraps self-contained content like images, diagrams, code snippets. <figcaption> provides caption: <figure><img src='chart.png' alt='Sales chart'><figcaption>Figure 1: Monthly sales data</figcaption></figure>.",
+                tags: ["html5", "figure", "figcaption", "semantic"]
+            },
+            {
+                q: "What is the <time> element used for in HTML5?",
+                a: "<time> represents dates/times in machine-readable format: <time datetime='2023-12-25'>Christmas Day</time>. Helps calendars, search engines, and assistive technologies understand temporal content.",
+                tags: ["html5", "time", "semantic"]
+            },
+            {
+                q: "What are HTML5 data attributes?",
+                a: "Custom data attributes store private data: data-role, data-id, data-options. Accessed via JavaScript: element.dataset.role or element.getAttribute('data-role'). Used for JavaScript functionality without polluting class/ID attributes.",
+                tags: ["html5", "data-attributes", "javascript"]
+            },
+            {
+                q: "What is the <progress> element in HTML5?",
+                a: "<progress> shows completion progress: <progress value='75' max='100'>75%</progress>. Used for file uploads, form completion, loading states. Has value, max attributes and indeterminate state when value is not set.",
+                tags: ["html5", "progress", "forms"]
+            },
+            {
+                q: "What is the <meter> element in HTML5?",
+                a: "<meter> displays scalar measurement within known range: <meter value='0.6' min='0' max='1'>60%</meter>. Used for disk usage, scores, polls. Has value, min, max, low, high, optimum attributes.",
+                tags: ["html5", "meter", "forms"]
+            },
+            {
+                q: "What are the <details> and <summary> elements?",
+                a: "<details> creates disclosure widget with <summary> as visible label: <details><summary>More info</summary><p>Hidden content here</p></details>. Native accordion without JavaScript. Has open attribute.",
+                tags: ["html5", "details", "summary", "interactive"]
+            },
+            {
+                q: "What is the <mark> element used for?",
+                a: "<mark> highlights text for reference or notation: <p>The <mark>important</mark> part is highlighted</p>. Different from <em> or <strong> - used for highlighting rather than emphasis.",
+                tags: ["html5", "mark", "semantic"]
+            },
+            {
+                q: "How does HTML5 handle cross-origin resource sharing (CORS)?",
+                a: "HTML5 supports CORS through headers and attributes. <img crossorigin>, <script crossorigin>, <video crossorigin>. Server must send appropriate CORS headers like Access-Control-Allow-Origin. Enables secure cross-origin requests.",
+                tags: ["html5", "cors", "security"]
+            },
+            {
+                q: "What is the contenteditable attribute in HTML5?",
+                a: "contenteditable makes elements editable: <div contenteditable='true'>Edit this text</div>. Used for rich text editors, inline editing. Works with designMode and execCommand for advanced editing features.",
+                tags: ["html5", "contenteditable", "editing"]
+            },
+            {
+                q: "What are HTML5 web components?",
+                a: "Web Components are reusable custom elements: Custom Elements, Shadow DOM, HTML Templates, ES Modules. Create custom tags like <my-component>. Enable encapsulated, reusable UI components without frameworks.",
+                tags: ["html5", "web-components", "custom-elements"]
+            },
+            {
+                q: "What is the Shadow DOM in HTML5?",
+                a: "Shadow DOM provides encapsulation for custom elements: element.attachShadow({mode: 'open'}). Styles and DOM are scoped to component, preventing conflicts. Essential for web components and framework-like behavior.",
+                tags: ["html5", "shadow-dom", "web-components"]
+            },
+            {
+                q: "What are HTML5 templates?",
+                a: "<template> holds inert HTML fragments: <template><div>Content here</div></template>. Content is not rendered until activated with JavaScript. Used for reusable content, web components, dynamic content insertion.",
+                tags: ["html5", "templates", "web-components"]
+            },
+            {
+                q: "What is the HTML5 slot element?",
+                a: "<slot> creates placeholder in web components: <template><slot name='title'></slot></template>. Content distributed via slot attribute: <my-component><span slot='title'>Title</span></my-component>. Enables composition of components.",
+                tags: ["html5", "slot", "web-components"]
+            },
+            {
+                q: "What are HTML5 media queries?",
+                a: "Media queries apply CSS based on device characteristics: @media (max-width: 768px) { ... }. Essential for responsive design. Check width, height, orientation, resolution, color, aspect-ratio.",
+                tags: ["html5", "media-queries", "responsive"]
+            },
+            {
+                q: "What is the viewport meta tag in HTML5?",
+                a: "Viewport controls mobile display: <meta name='viewport' content='width=device-width, initial-scale=1.0'>. Essential for responsive design. Controls width, height, initial-scale, maximum-scale, user-scalable.",
+                tags: ["html5", "viewport", "mobile", "responsive"]
+            },
+            {
+                q: "What are HTML5 responsive images techniques?",
+                a: "Use srcset attribute: <img src='small.jpg' srcset='medium.jpg 1000w, large.jpg 2000w' sizes='(max-width: 1000px) 100vw, 50vw'>. Also picture element for art direction: <picture><source media='(min-width: 800px)' srcset='large.jpg'><img src='small.jpg'></picture>.",
+                tags: ["html5", "responsive", "images", "srcset"]
+            },
+            {
+                q: "What is the picture element in HTML5?",
+                a: "<picture> provides art direction for responsive images: <picture><source media='(min-width: 800px)' srcset='large.jpg'><source media='(min-width: 400px)' srcset='medium.jpg'><img src='small.jpg' alt='Description'></picture>. Different images for different screen sizes.",
+                tags: ["html5", "picture", "responsive", "images"]
+            },
+            {
+                q: "What is HTML5 Web Storage API?",
+                a: "Web Storage includes localStorage and sessionStorage. API: setItem(key, value), getItem(key), removeItem(key), clear(), key(index), length. Stores only strings (use JSON.stringify/parse for objects). More secure and larger than cookies.",
+                tags: ["html5", "web-storage", "api"]
+            },
+            {
+                q: "What is IndexedDB in HTML5?",
+                a: "IndexedDB is client-side database for large structured data: indexedDB.open('database', version). Supports transactions, indexes, cursors. Better than localStorage for complex data, larger storage needs, and querying capabilities.",
+                tags: ["html5", "indexeddb", "database", "storage"]
+            },
+            {
+                q: "What are HTML5 File API capabilities?",
+                a: "File API allows reading files: <input type='file' onchange='readFile(event)'. Use FileReader to read as text, data URL, or ArrayBuffer. Supports drag-drop file uploads, file validation, and client-side processing.",
+                tags: ["html5", "file-api", "javascript"]
+            },
+            {
+                q: "What is HTML5 Notification API?",
+                a: "Notification API shows system notifications: Notification.requestPermission().then(() => new Notification('Title')). Used for web apps to show alerts even when tab is not active. Requires user permission.",
+                tags: ["html5", "notifications", "api"]
+            },
+            {
+                q: "What is HTML5 Fullscreen API?",
+                a: "Fullscreen API enables fullscreen mode: element.requestFullscreen(). Exit with document.exitFullscreen(). Used for videos, presentations, immersive experiences. Events: fullscreenchange, fullscreenerror.",
+                tags: ["html5", "fullscreen", "api"]
+            },
+            {
+                q: "What are HTML5 performance best practices?",
+                a: "Best practices: use semantic HTML, optimize images (WebP, AVIF), lazy loading, minify HTML, use CDN, enable compression, reduce HTTP requests, use async/defer for scripts, implement caching strategies, optimize critical rendering path.",
+                tags: ["html5", "performance", "optimization"]
+            },
+            {
+                q: "What is HTML5 accessibility (a11y) importance?",
+                a: "HTML5 improves accessibility with semantic elements, ARIA attributes, alt text, form labels, keyboard navigation. Screen readers better understand content structure. Use proper heading hierarchy, landmark elements, and ARIA roles when needed.",
+                tags: ["html5", "accessibility", "a11y", "aria"]
+            },
+            {
+                q: "What are ARIA attributes in HTML5?",
+                a: "ARIA (Accessible Rich Internet Applications) attributes enhance accessibility: aria-label, aria-describedby, aria-expanded, aria-hidden, role='navigation'. Use when semantic HTML5 elements aren't sufficient or for custom components.",
+                tags: ["html5", "aria", "accessibility"]
+            },
+            {
+                q: "What is HTML5 validation features?",
+                a: "Built-in form validation: required, pattern, min, max, step, type-specific validation. Use :valid, :invalid CSS pseudo-classes. Constraint validation API: element.checkValidity(), element.setCustomValidity().",
+                tags: ["html5", "validation", "forms"]
+            },
+            {
+                q: "What are HTML5 security considerations?",
+                a: "Security: use HTTPS, validate input, sanitize user content, use CSP headers, secure cookies, CORS properly. Avoid eval(), use textContent instead of innerHTML. Be careful with postMessage and cross-origin iframes.",
+                tags: ["html5", "security", "best-practices"]
+            },
+            {
+                q: "What is HTML5 Content Security Policy (CSP)?",
+                a: "CSP prevents XSS attacks: <meta http-equiv='Content-Security-Policy' content='default-src 'self'; script-src 'self' https://trusted.com'>. Controls resource loading, inline scripts, eval(). Essential for modern web security.",
+                tags: ["html5", "csp", "security"]
+            },
+            {
+                q: "What are HTML5 progressive enhancement principles?",
+                a: "Progressive Enhancement builds basic functionality that works everywhere, then enhances for capable browsers. Start with semantic HTML, add CSS for styling, JavaScript for enhancement. Ensures accessibility and graceful degradation.",
+                tags: ["html5", "progressive-enhancement", "best-practices"]
+            },
+            {
+                q: "What is HTML5 mobile-first design?",
+                a: "Mobile-first designs for small screens first, then enhances for larger screens using media queries. Use viewport meta tag, touch-friendly interfaces, responsive images. Improves performance and user experience on mobile devices.",
+                tags: ["html5", "mobile-first", "responsive"]
+            },
+            {
+                q: "What are HTML5 semantic sectioning elements?",
+                a: "Sectioning elements create document outline: <body>, <article>, <section>, <nav>, <aside>. Each creates new document context. <h1>-<h6> headings scoped to sectioning element. Improves document structure and accessibility.",
+                tags: ["html5", "sectioning", "semantic", "outline"]
+            },
+            {
+                q: "What is HTML5 document outline algorithm?",
+                a: "Outline algorithm creates document structure from sectioning elements and headings. Tools like HTML5 Outliner can validate. Proper outline improves SEO and accessibility. Use <h1> per section, avoid skipping heading levels.",
+                tags: ["html5", "outline", "semantic", "seo"]
+            },
+            {
+                q: "What are HTML5 embed and object elements?",
+                a: "<embed> for external content (plugins): <embed src='content.swf' type='application/x-shockwave-flash'>. <object> more flexible: <object data='content.pdf' type='application/pdf'><param name='param1' value='value1'></object>. Both being replaced by modern alternatives.",
+                tags: ["html5", "embed", "object", "multimedia"]
+            },
+            {
+                q: "What is HTML5 iframe sandbox attribute?",
+                a: "sandbox attribute restricts iframe content: <iframe sandbox='allow-scripts allow-same-origin'>. Options: allow-scripts, allow-same-origin, allow-forms, allow-popups, allow-top-navigation. Improves security when embedding third-party content.",
+                tags: ["html5", "iframe", "sandbox", "security"]
+            },
+            {
+                q: "What are HTML5 script loading attributes?",
+                a: "async and defer attributes: <script async src='script.js'> (download async, execute when ready), <script defer src='script.js'> (download async, execute after parsing). Improve page load performance. Regular scripts block rendering.",
+                tags: ["html5", "script", "async", "defer", "performance"]
+            },
+            {
+                q: "What is HTML5 preloading resources?",
+                a: "Preload critical resources: <link rel='preload' href='font.woff2' as='font' crossorigin>. Preconnect for external domains: <link rel='preconnect' href='https://fonts.googleapis.com'>. Improves performance by loading resources earlier.",
+                tags: ["html5", "preload", "performance", "optimization"]
+            },
+            {
+                q: "What are HTML5 internationalization features?",
+                a: "i18n support: lang attribute, dir attribute (ltr/rtl), Unicode support, logical properties (margin-inline-start). Use <html lang='en'>, proper character encoding UTF-8. Essential for global applications.",
+                tags: ["html5", "internationalization", "i18n", "global"]
+            },
+            {
+                q: "What is HTML5 manifest for web apps?",
+                a: "Web App Manifest: manifest.json file with name, icons, theme_color, start_url, display mode. Enables 'Add to Home Screen' and PWA features: <link rel='manifest' href='manifest.json'>.",
+                tags: ["html5", "manifest", "pwa", "mobile"]
+            },
+            {
+                q: "What are HTML5 service workers?",
+                a: "Service workers intercept network requests: navigator.serviceWorker.register('/sw.js'). Enable offline functionality, push notifications, background sync. Essential for PWAs. Run separately from main thread.",
+                tags: ["html5", "service-workers", "pwa", "offline"]
+            },
+            {
+                q: "What is HTML5 cache API?",
+                a: "Cache API stores network responses: caches.open('v1').then(cache => cache.add('/styles.css')). Used by service workers for offline functionality. More granular control than application cache.",
+                tags: ["html5", "cache-api", "service-workers", "offline"]
+            },
+            {
+                q: "What are HTML5 background sync API?",
+                a: "Background Sync defers actions until connectivity: self.registration.sync.register('sync-tag'). Used by service workers for offline-first apps. Handles failed network requests when connection restored.",
+                tags: ["html5", "background-sync", "service-workers", "offline"]
+            },
+            {
+                q: "What is HTML5 push notification API?",
+                a: "Push API enables server-triggered notifications: self.addEventListener('push', event => { showNotification(event.data.text()) }). Used by service workers. Requires user permission and subscription.",
+                tags: ["html5", "push-api", "notifications", "service-workers"]
+            },
+            {
+                q: "What are HTML5 best practices for SEO?",
+                a: "SEO best practices: use semantic HTML5, proper heading hierarchy, meta descriptions, title tags, alt text, structured data (microdata/JSON-LD), clean URLs, fast loading, mobile-friendly design, proper use of canonical tags.",
+                tags: ["html5", "seo", "best-practices", "semantic"]
+            },
+            {
+                q: "What is HTML5 structured data?",
+                a: "Structured data helps search engines understand content: JSON-LD scripts, microdata, or RDFa. Example: <script type=&quot;application/ld+json&quot;>{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Article&quot;}</script>. Improves rich snippets in search results.",
+                tags: ["html5", "structured-data", "seo", "json-ld"]
+            },
+            {
+                q: "What are HTML5 web standards compliance?",
+                a: "Validate HTML5 with W3C validator. Use proper DOCTYPE, valid markup, semantic elements. Ensure accessibility (WCAG), performance (Core Web Vitals), and security (HTTPS, CSP). Follow web standards for compatibility.",
+                tags: ["html5", "standards", "validation", "compliance"]
+            },
+            {
+                q: "What is HTML5 future development trends?",
+                a: "Future trends: Web Components, WebAssembly, WebGPU, WebCodecs, Privacy Sandbox, Enhanced PWA capabilities, AI/ML integration, Web3/blockchain, AR/VR support, better performance APIs, improved accessibility standards.",
+                tags: ["html5", "future", "trends", "webassembly"]
+            }
+        ];
+
+        // Function to download all questions as PDF
+        function downloadPDF() {
+            // Show loading message
+            const originalText = event.target.innerHTML;
+            event.target.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            event.target.disabled = true;
+            
+            setTimeout(() => {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Set font size and style
+                doc.setFontSize(20);
+                doc.text('HTML5 - Interview Questions', 20, 20);
+                
+                doc.setFontSize(12);
+                doc.text('Complete collection of HTML5 interview questions and answers', 20, 30);
+                
+                let yPosition = 50;
+                const pageHeight = doc.internal.pageSize.height;
+                const lineHeight = 7;
+                const margin = 20;
+                
+                // Add all questions to PDF
+                data.forEach((item, index) => {
+                    // Check if we need a new page
+                    if (yPosition > pageHeight - 40) {
+                        doc.addPage();
+                        yPosition = 30;
+                    }
+                    
+                    // Question number and title
+                    doc.setFontSize(14);
+                    doc.setFont(undefined, 'bold');
+                    const questionText = `Q${index + 1}: ${item.q}`;
+                    const questionLines = doc.splitTextToSize(questionText, 170);
+                    
+                    questionLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Answer
+                    doc.setFontSize(11);
+                    doc.setFont(undefined, 'normal');
+                    const answerText = `Answer: ${item.a}`;
+                    const answerLines = doc.splitTextToSize(answerText, 170);
+                    
+                    answerLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Real-world example (if exists)
+                    if (item.r) {
+                        doc.setFont(undefined, 'italic');
+                        const exampleText = `Example: ${item.r}`;
+                        const exampleLines = doc.splitTextToSize(exampleText, 170);
+                        
+                        exampleLines.forEach(line => {
+                            if (yPosition > pageHeight - 20) {
+                                doc.addPage();
+                                yPosition = 30;
+                            }
+                            doc.text(line, margin, yPosition);
+                            yPosition += lineHeight;
+                        });
+                    }
+                    
+                    // Add spacing between questions
+                    yPosition += lineHeight * 2;
+                    
+                    // Add separator line
+                    if (yPosition < pageHeight - 20) {
+                        doc.setLineWidth(0.1);
+                        doc.line(margin, yPosition, 190, yPosition);
+                        yPosition += lineHeight;
+                    }
+                });
+                
+                // Add footer
+                const totalPages = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= totalPages; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(10);
+                    doc.setFont(undefined, 'normal');
+                    doc.text(`Page ${i} of ${totalPages}`, 105, pageHeight - 10, { align: 'center' });
+                    doc.text('Generated from IT Interview Hub', 105, pageHeight - 5, { align: 'center' });
+                }
+                
+                // Save the PDF
+                doc.save('HTML5-Interview-Questions.pdf');
+                
+                // Restore button state
+                event.target.innerHTML = originalText;
+                event.target.disabled = false;
+            }, 100);
+        }
+
+        // Function to escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Function to copy code to clipboard
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+
+            if (!codeElement) return;
+
+            const code = codeElement.innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                // Show copied feedback
+                const copyBtn = codeElement.closest('.code-container').querySelector('.copy-btn');
+                if (copyBtn) {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                }
+            }).catch(err => {
+                console.error('Failed to copy code: ', err);
+            });
+        }
+    
+
+        // Function to scroll to specific question
+        function scrollToQuestion(questionId) {
+            const element = document.getElementById(questionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active TOC link
+                const tocLinks = document.querySelectorAll('.toc-link');
+                tocLinks.forEach(link => link.classList.remove('active'));
+                
+                const activeLink = document.querySelector('.toc-link[href="#' + questionId + '"]');
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Function to render table of contents
+        function renderTOC() {
+            const tocList = document.getElementById('tocList');
+            if (!tocList) return;
+
+            const source = currentQuestions && currentQuestions.length ? currentQuestions : data;
+            const start = (currentPage - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+
+            const pageItems = source.slice(start, end);
+
+            tocList.innerHTML = pageItems.map((item, index) => {
+                const number = start + index + 1;
+                const shortQ = item.q.substring(0, 50) + (item.q.length > 50 ? '...' : '');
+                return '<li class="toc-item"><a href="#q-' + number + '" class="toc-link"><span class="toc-number">' + number + '.</span><span class="toc-question">' + escapeHtml(shortQ) + '</span></a></li>';
+            }).join('');
+        }
+
+        // Function to handle search with highlighting
+        function filterQuestions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (!searchTerm) {
+                currentQuestions = [...data];
+                currentPage = 1;
+                updatePagination();
+                return;
+            }
+            
+            currentQuestions = data.filter(item => 
+                item.q.toLowerCase().includes(searchTerm) || 
+                item.a.toLowerCase().includes(searchTerm) ||
+                (item.r && item.r.toLowerCase().includes(searchTerm)) ||
+                (item.tags && item.tags.some(tag => tag.toLowerCase().includes(searchTerm)))
+            );
+            
+            currentPage = 1;
+            updatePagination();
+            
+            // Highlight search terms after rendering
+            setTimeout(() => highlightSearchTerms(searchTerm), 100);
+        }
+
+        // Function to highlight search terms
+        function highlightSearchTerms(searchTerm) {
+            if (!searchTerm) return;
+            
+            const questionsContainer = document.getElementById('questionsContainer');
+            const questionBoxes = questionsContainer.querySelectorAll('.q-box');
+            
+            questionBoxes.forEach(box => {
+                const h3 = box.querySelector('h3');
+                const paragraphs = box.querySelectorAll('p');
+                
+                // Highlight in question title
+                if (h3) {
+                    h3.innerHTML = highlightText(h3.textContent, searchTerm);
+                }
+                
+                // Highlight in paragraphs
+                paragraphs.forEach(p => {
+                    p.innerHTML = highlightText(p.textContent, searchTerm);
+                });
+            });
+        }
+
+        // Function to highlight text
+        function highlightText(text, searchTerm) {
+            if (!searchTerm) return text;
+            
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+        }
+
+        // Add CSS for search highlighting
+        const searchHighlightStyle = document.createElement('style');
+        searchHighlightStyle.textContent = `
+            .search-highlight {
+                background-color: #fef08a;
+                color: #713f12;
+                padding: 2px 4px;
+                border-radius: 3px;
+                font-weight: 500;
+            }
+        `;
+        document.head.appendChild(searchHighlightStyle);
+
+        // Function to render questions with pagination
+        function renderQuestions(questionsToRender = data) {
+            currentQuestions = [...questionsToRender];
+            currentPage = 1; // Reset to first page when filtering
+            updatePagination();
+        }
+
+        // Function to update pagination
+        function updatePagination() {
+            const questionsContainer = document.getElementById('questionsContainer');
+            const pageInfo = document.getElementById('pageInfo');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+
+            // Calculate pagination details
+            const start = (currentPage - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+            // Render questions for the current page
+            const questionsHTML = currentQuestions.slice(start, end).map((item, index) => {
+                const questionNumber = (currentPage - 1) * questionsPerPage + index + 1;
+                return '<div class="q-box" id="q-' + questionNumber + '">' +
+                        '<h3>' + escapeHtml(item.q) + '</h3>' +
+                        '<div class="q-meta">' +
+                            '<span class="q-number">' + questionNumber + '</span>' +
+                            '<span class="q-tags">' +
+                                item.tags.map(tag => '<span class="q-tag">' + escapeHtml(tag) + '</span>').join('') +
+                            '</span>' +
+                        '</div>' +
+                        '<p>' + escapeHtml(item.a) + '</p>' +
+                        (item.r ? '<p class="q-result">' + escapeHtml(item.r) + '</p>' : '') +
+                        (item.c ? 
+                            '<div class="code-container">' +
+                                '<div class="code-header">' +
+                                    '<span class="code-title">Example Code</span>' +
+                                    '<button class="copy-btn" onclick="copyCode(\"code-' + questionNumber + '\")">' +
+                                        '<i class="fas fa-copy"></i> Copy' +
+                                    '</button>' +
+                                '</div>' +
+                                '<pre><code id="code-' + questionNumber + '" class="language-javascript">' + escapeHtml(item.c) + '</code></pre>' +
+                            '</div>' : '') +
+                    '</div>';
+            }).join('');
+
+            questionsContainer.innerHTML = questionsHTML;
+
+            renderTOC();
+            // Update page info
+            if (pageInfo) {
+                pageInfo.textContent = `Page ${currentPage} of ${pageCount} (${currentQuestions.length} questions)`;
+            }
+
+            // Update navigation buttons
+            if (prevPageBtn) {
+                prevPageBtn.disabled = currentPage === 1;
+            }
+            if (nextPageBtn) {
+                nextPageBtn.disabled = currentPage === pageCount || pageCount === 0;
+            }
+
+            // Highlight code blocks
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        }
+
+        // Pagination functions
+        function nextPage() {
+            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
+            if (currentPage < pageCount) {
+                currentPage++;
+                updatePagination();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderQuestions();
+
+            // Pagination button event listeners
+            const nextPageBtn = document.getElementById('nextPage');
+            if (nextPageBtn) {
+                nextPageBtn.addEventListener('click', nextPage);
+            }
+            const prevPageBtn = document.getElementById('prevPage');
+            if (prevPageBtn) {
+                prevPageBtn.addEventListener('click', prevPage);
+            }
+
+            const tocToggleBtn = document.getElementById('tocToggleBtn');
+            const tocList = document.getElementById('tocList');
+            if (tocToggleBtn && tocList) {
+                tocToggleBtn.addEventListener('click', function() {
+                    tocList.classList.toggle('toc-hidden');
+                });
+            }
+            
+            // Add search event listener
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterQuestions);
+            }
+
+            // Mobile menu functionality
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+            const mobileSidebarClose = document.getElementById('mobileSidebarClose');
+
+            function openMobileMenu() {
+                mobileSidebar.classList.add('active');
+                mobileSidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileSidebar.classList.remove('active');
+                mobileSidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', openMobileMenu);
+            }
+
+            if (mobileSidebarClose) {
+                mobileSidebarClose.addEventListener('click', closeMobileMenu);
+            }
+
+            if (mobileSidebarOverlay) {
+                mobileSidebarOverlay.addEventListener('click', closeMobileMenu);
+            }
+
+            // Close mobile menu when clicking on TOC links
+            const mobileTocLinks = mobileSidebar && mobileSidebar.querySelectorAll('.toc-link');
+            if (mobileTocLinks) {
+                mobileTocLinks.forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+            }
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileSidebar && mobileSidebar.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

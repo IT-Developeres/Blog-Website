@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms - 200+ Essential Interview Questions & Answers</title>
+    <meta name="description" content="Master Algorithms with 200+ essential interview questions, detailed answers, and real-world code examples. Perfect for interview preparation and skill building for students and professionals.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9fafb;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search Box */
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            align-self: flex-start;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar h2 i {
+            color: var(--primary);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            color: var(--gray);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+        }
+
+        .toc-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .toc-hidden {
+            display: none;
+        }
+
+        .toc-toggle-btn {
+            margin-left: auto;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .toc-toggle-btn:hover {
+            background: rgba(37, 99, 235, 0.15);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .breadcrumbs {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs span {
+            color: var(--gray);
+        }
+
+        /* Question Box Styles */
+        .q-box {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            transition: var(--transition);
+        }
+
+        .q-box:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .q-box h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .q-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .q-number {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .q-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .q-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn i {
+            font-size: 0.9em;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Answer Styles */
+        .answer {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .answer.show {
+            display: block;
+        }
+
+        .answer-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .answer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .answer-section h4 i {
+            color: var(--primary);
+        }
+
+        .answer-section p {
+            margin-bottom: 1rem;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        /* Code Block Styles */
+        pre {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        pre code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #e2e8f0;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: 6px 6px 0 0;
+            margin: 0;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #94a3b8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .copy-btn.copied {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            gap: 1rem;
+        }
+
+        .page-info {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+
+            .sidebar {
+                position: static;
+                margin-bottom: 2rem;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            header p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            .search-box input {
+                padding: 0.75rem 1rem 0.75rem 2.25rem;
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .main-content, .sidebar {
+                padding: 1rem;
+            }
+
+            .q-box {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .q-box h3 {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+
+            .q-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .q-tags {
+                margin-bottom: 0.75rem;
+            }
+
+            .q-tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .pagination {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1.5rem 0.75rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 0.75rem;
+            }
+
+            .main-content, .sidebar {
+                padding: 0.75rem;
+            }
+
+            .q-box {
+                padding: 0.75rem;
+            }
+
+            .q-box h3 {
+                font-size: 1rem;
+            }
+
+            .sidebar h2 {
+                font-size: 1rem;
+            }
+
+            .toc-link {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.85rem;
+            }
+
+            .q-number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.7rem;
+            }
+
+            .q-tag {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.5rem;
+            }
+
+            pre {
+                padding: 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .code-header {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.7rem;
+            }
+
+            .copy-btn {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100%;
+            background: white;
+            z-index: 1001;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-sidebar-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mobile-sidebar-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-sidebar-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-sidebar-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-sidebar .sidebar {
+                display: block;
+                position: static;
+                margin: 0;
+                padding: 1rem;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn, .toc-link, .copy-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .toc-link {
+                padding: 0.75rem;
+            }
+
+            .q-tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Improved mobile typography */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .q-box p, .answer-section p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* Better mobile spacing */
+        @media (max-width: 768px) {
+            .q-box {
+                border-radius: 8px;
+            }
+
+            .main-content {
+                border-radius: 8px;
+            }
+
+            .sidebar {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Algorithms</h1>
+            <p>Master Algorithm Design and Analysis with 200+ essential interview questions, detailed answers, and real-world code examples for students and professionals</p>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search questions...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <h3><i class="fas fa-list"></i> Menu</h3>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h2><i class="fas fa-list"></i> Table of Contents <button class="toc-toggle-btn" id="tocToggleBtn" type="button" aria-label="Toggle table of contents"><i class="fas fa-bars"></i></button></h2>
+                <ul class="toc-list toc-hidden" id="tocList">
+                    <!-- Filled by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar with Table of Contents -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2><i class="fas fa-list"></i> Table of Contents <button class="toc-toggle-btn" id="tocToggleBtn" type="button" aria-label="Toggle table of contents"><i class="fas fa-bars"></i></button></h2>
+                <ul class="toc-list toc-hidden" id="tocList">
+                    <!-- Filled by JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="/" class="toc-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-book"></i> All Topics</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link" onclick="downloadPDF()"><i class="fas fa-download"></i> Download PDF</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link"><i class="fas fa-question-circle"></i> About</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumbs">
+                <a href="/">Home</a>
+                <span>/</span>
+                <a href="#">Topics</a>
+                <span>/</span>
+                <span>Algorithms</span>
+            </div>
+            
+            <h2 style="margin-bottom: 2rem;">200+ Essential Algorithm Interview Questions</h2>
+            
+            <!-- Adsterra Ad Placement - Top -->
+            <div style="text-align: center; margin: 2rem 0;">
+                <script>
+  atOptions = {
+    'key' : '30e0f65d6b0b49e9f4a86a454e6d5a48',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script> </div>
+            
+            <div id="questionsContainer">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="pagination">
+                <button class="btn" id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="pageInfo" class="page-info">Page 1 of 12</span>
+                <button class="btn" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="footer-content">
+            <p> 2025 IT Interview Hub – Algorithms</p>
+            <p>Your go-to resource for technical interview preparation</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="#">Topics</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Initialize syntax highlighting
+        if (typeof hljs !== 'undefined') {
+            hljs.highlightAll();
+        }
+
+        // Pagination variables
+        let currentPage = 1;
+        const questionsPerPage = 10; // Changed to show 10 questions per page
+        let currentQuestions = [];
+
+        // Questions data
+        const data = [
+            {
+                q: "What is an algorithm and why is it important in computer science?",
+                a: "An algorithm is a finite sequence of well-defined instructions to solve a specific problem or perform a computation. It's fundamental to computer science because it provides systematic approaches to problem-solving, enables efficient program design, and forms the basis for software development and data processing.",
+                r: "A recipe is a real-world algorithm - it provides step-by-step instructions to transform ingredients into a finished dish.",
+                tags: ["basics", "introduction", "fundamentals"]
+            },
+            {
+                q: "What is the difference between time complexity and space complexity?",
+                a: "Time complexity measures how the runtime of an algorithm grows with input size, typically expressed using Big O notation. Space complexity measures how the memory usage grows with input size. Both are crucial for evaluating algorithm efficiency and performance.",
+                r: "Time complexity is like how long it takes to cook a recipe, while space complexity is like how much counter space you need.",
+                tags: ["complexity", "analysis", "performance"]
+            },
+            {
+                q: "Explain Big O notation and its significance in algorithm analysis.",
+                a: "Big O notation describes the upper bound of an algorithm's growth rate, representing the worst-case scenario. It helps compare algorithm efficiency, predict performance for large inputs, and choose appropriate algorithms for specific problems. Common notations include O(1), O(n), O(log n), O(n log n), O(n²), and O(2^n).",
+                r: "Big O is like estimating the maximum time you'll wait in line - it gives you the worst-case scenario.",
+                tags: ["big-o", "notation", "analysis"]
+            },
+            {
+                q: "What is the difference between best-case, average-case, and worst-case complexity?",
+                a: "Best-case complexity represents the minimum time/space required (ideal conditions), worst-case represents the maximum (adverse conditions), and average-case represents expected performance over all possible inputs. Worst-case analysis is most commonly used as it provides guaranteed performance bounds.",
+                r: "Best-case is like finding a parking spot immediately, worst-case is circling the lot multiple times, average-case is the typical experience.",
+                tags: ["complexity", "analysis", "cases"]
+            },
+            {
+                q: "What are sorting algorithms and why are they important?",
+                a: "Sorting algorithms arrange data elements in a specific order (ascending, descending, or custom). They're fundamental because many other algorithms rely on sorted data, they improve search efficiency, and they're essential for data organization, database operations, and user interface design.",
+                r: "Sorting is like organizing books on a shelf by title - it makes finding specific books much easier.",
+                tags: ["sorting", "algorithms", "data-organization"]
+            },
+            {
+                q: "Explain Bubble Sort algorithm and its time complexity.",
+                a: "Bubble Sort repeatedly steps through the list, compares adjacent elements, and swaps them if they're in wrong order. It continues until no swaps are needed. Time complexity: O(n²) worst and average case, O(n) best case. Space complexity: O(1). It's simple but inefficient for large datasets.",
+                r: "Bubble Sort is like bubbles rising to the surface - larger elements 'bubble up' to their correct positions.",
+                tags: ["sorting", "bubble-sort", "complexity"]
+            },
+            {
+                q: "How does Selection Sort work and what are its characteristics?",
+                a: "Selection Sort divides the array into sorted and unsorted portions, repeatedly finding the minimum element from the unsorted portion and moving it to the sorted portion. Time complexity: O(n²) for all cases. Space complexity: O(1). It performs fewer swaps than Bubble Sort but has the same time complexity.",
+                r: "Selection Sort is like picking the shortest person repeatedly to form a line in ascending height order.",
+                tags: ["sorting", "selection-sort", "algorithms"]
+            },
+            {
+                q: "What is Insertion Sort and when is it most efficient?",
+                a: "Insertion Sort builds the final sorted array one item at a time, inserting each element into its correct position among the previously sorted elements. Time complexity: O(n²) worst and average, O(n) best case. Space complexity: O(1). It's efficient for small datasets and nearly sorted data.",
+                r: "Insertion Sort is like sorting playing cards in your hand - you insert each new card into its proper position.",
+                tags: ["sorting", "insertion-sort", "efficiency"]
+            },
+            {
+                q: "Explain Merge Sort algorithm and its divide-and-conquer approach.",
+                a: "Merge Sort divides the array into halves, recursively sorts each half, and then merges the sorted halves. It uses the divide-and-conquer paradigm. Time complexity: O(n log n) for all cases. Space complexity: O(n). It's stable and efficient but requires additional memory.",
+                r: "Merge Sort is like organizing a large group by splitting into smaller teams, sorting each team, then merging them back together in order.",
+                tags: ["sorting", "merge-sort", "divide-conquer"]
+            },
+            // Student Level Questions (Beginner)
+            {
+                q: "What is Linear Search and how does it work?",
+                a: "Linear Search sequentially checks each element in a list until the target is found or the list ends. Time complexity: O(n). Space complexity: O(1). It's simple and works on unsorted data but inefficient for large datasets.",
+                r: "Linear Search is like looking for your keys by checking every pocket in your bag one by one.",
+                tags: ["searching", "linear-search", "beginner"]
+            },
+            {
+                q: "Explain Binary Search algorithm and its requirements.",
+                a: "Binary Search efficiently finds items in sorted arrays by repeatedly dividing the search interval in half. Time complexity: O(log n). Space complexity: O(1). Requires sorted data and random access. Much faster than linear search for large datasets.",
+                r: "Binary Search is like finding a word in a dictionary by opening to the middle, then narrowing down the section.",
+                tags: ["searching", "binary-search", "efficiency"]
+            },
+            {
+                q: "What is the difference between array and linked list?",
+                a: "Arrays store elements in contiguous memory locations with O(1) random access but fixed size. Linked lists store elements in nodes with pointers, allowing dynamic size but O(n) access. Arrays are cache-friendly, while linked lists excel at insertions/deletions.",
+                r: "Arrays are like numbered parking spots, linked lists are like a treasure hunt with clues to the next location.",
+                tags: ["data-structures", "arrays", "linked-lists", "beginner"]
+            },
+            {
+                q: "How does Quick Sort algorithm work?",
+                a: "Quick Sort picks a pivot element and partitions the array around it, then recursively sorts subarrays. Average time complexity: O(n log n), worst case: O(n²). Space complexity: O(log n). It's in-place and cache-friendly but can be unstable.",
+                r: "Quick Sort is like organizing books by picking one as reference, placing smaller books left and larger books right.",
+                tags: ["sorting", "quick-sort", "divide-conquer"]
+            },
+            {
+                q: "What is a stack data structure and its applications?",
+                a: "A stack is a LIFO (Last In, First Out) data structure with push and pop operations. Applications include function call management, expression evaluation, undo/redo operations, and browser history. Time complexity: O(1) for all operations.",
+                r: "A stack is like a stack of plates - you can only add or remove from the top.",
+                tags: ["data-structures", "stack", "lifo", "applications"]
+            },
+            // School/College Level Questions (Intermediate)
+            {
+                q: "Explain Heap Sort algorithm and its time complexity analysis.",
+                a: "Heap Sort builds a max heap from the array, repeatedly extracts the maximum element and reconstructs the heap. Time complexity: O(n log n) for all cases. Space complexity: O(1). It's in-place and has guaranteed O(n log n) performance but not cache-friendly.",
+                r: "Heap Sort is like organizing a tournament where the strongest (largest) always wins and is removed first.",
+                tags: ["sorting", "heap-sort", "priority-queues", "intermediate"]
+            },
+            {
+                q: "What is the difference between BFS and DFS?",
+                a: "BFS (Breadth-First Search) explores level by level using a queue, guaranteeing shortest path in unweighted graphs. DFS (Depth-First Search) explores as deep as possible using a stack, using less memory. BFS: O(V+E) time, O(V) space. DFS: O(V+E) time, O(h) space.",
+                r: "BFS is like ripples spreading in water, DFS is like exploring a maze by always taking the first available turn.",
+                tags: ["graph-algorithms", "bfs", "dfs", "traversal"]
+            },
+            {
+                q: "How does Dijkstra's algorithm work?",
+                a: "Dijkstra's finds shortest paths from a source vertex to all other vertices in weighted graphs with non-negative edges. Uses a priority queue to select the unvisited vertex with minimum distance. Time complexity: O((V+E) log V) with binary heap.",
+                r: "Dijkstra's is like GPS navigation finding the shortest route by always choosing the closest unexplored intersection.",
+                tags: ["graph-algorithms", "shortest-path", "dijkstra", "weighted-graphs"]
+            },
+            {
+                q: "What is dynamic programming and its key principles?",
+                a: "Dynamic programming solves complex problems by breaking them into overlapping subproblems, solving each once, and storing results. Key principles: optimal substructure and overlapping subproblems. Bottom-up (tabulation) and top-down (memoization) approaches.",
+                r: "Dynamic programming is like solving a big puzzle by solving smaller pieces and remembering the solutions.",
+                tags: ["dynamic-programming", "optimization", "memoization", "tabulation"]
+            },
+            {
+                q: "Explain the Fibonacci sequence using dynamic programming.",
+                a: "Fibonacci sequence: F(n) = F(n-1) + F(n-2) with F(0) = 0, F(1) = 1. Recursive solution has O(2^n) time. DP solution uses memoization or tabulation to achieve O(n) time and O(n) space. Can be optimized to O(1) space using iterative approach.",
+                r: "Fibonacci is like rabbit reproduction - each generation depends on the previous two.",
+                tags: ["dynamic-programming", "fibonacci", "recursion", "optimization"]
+            },
+            {
+                q: "What is a hash table and how does it handle collisions?",
+                a: "Hash tables store key-value pairs using hash functions for O(1) average operations. Collision handling techniques: chaining (linked lists), open addressing (linear/quadratic probing), and double hashing. Load factor affects performance. Time complexity: O(1) average, O(n) worst.",
+                r: "Hash tables are like smart filing cabinets that know exactly where to put each document based on its name.",
+                tags: ["data-structures", "hash-table", "hashing", "collisions"]
+            },
+            // University Level Questions (Advanced)
+            {
+                q: "Explain the Knapsack problem and its dynamic programming solution.",
+                a: "Knapsack problem: maximize value of items with weight constraints. 0/1 Knapsack: each item can be taken once or not at all. DP solution: O(nW) time and space where n=items, W=capacity. Can be optimized to O(W) space. Variation: unbounded knapsack allows unlimited quantities.",
+                r: "Knapsack is like packing for a trip with limited luggage space - choose items with maximum value within weight limit.",
+                tags: ["dynamic-programming", "knapsack", "optimization", "advanced"]
+            },
+            {
+                q: "How does the A* algorithm work and when is it used?",
+                a: "A* is a graph traversal algorithm that finds shortest paths using heuristics. Combines Dijkstra's algorithm (cost to reach) and greedy best-first search (estimated cost to goal). Uses f(n) = g(n) + h(n). Optimal if heuristic is admissible. Used in pathfinding, AI, and game development.",
+                r: "A* is like smart navigation that considers both distance traveled and estimated remaining distance.",
+                tags: ["graph-algorithms", "a-star", "pathfinding", "heuristics", "ai"]
+            },
+            {
+                q: "Explain Red-Black Trees and their properties.",
+                a: "Red-Black Trees are self-balancing binary search trees with O(log n) operations. Properties: every node is red/black, root is black, all leaves are black, red nodes have black children, every path to leaf has same number of black nodes. Used in Java TreeMap, Linux kernel scheduler.",
+                r: "Red-Black Trees are like traffic lights that maintain balance by following strict color rules.",
+                tags: ["data-structures", "trees", "red-black-trees", "balancing", "advanced"]
+            },
+            {
+                q: "What is the Traveling Salesman Problem (TSP) and its approaches?",
+                a: "TSP finds the shortest route visiting each city exactly once and returning to start. NP-hard problem. Exact solutions: brute force O(n!), dynamic programming O(n²2^n). Approximations: nearest neighbor, minimum spanning tree, Christofides algorithm. Used in logistics, circuit board drilling.",
+                r: "TSP is like a delivery driver finding the shortest route to visit all customers exactly once.",
+                tags: ["np-hard", "optimization", "tsp", "approximation", "advanced"]
+            },
+            {
+                q: "Explain segment trees and their applications.",
+                a: "Segment trees support point updates and prefix sum queries in O(log n) time. More memory-efficient than segment trees. Uses binary representation to navigate tree. Applications: frequency counting, inversion counting, range sum queries. Space: O(n).",
+                r: "Segment trees are like a clever calculator that can quickly update values and calculate sums of ranges.",
+                tags: ["data-structures", "trees", "range-queries", "competitive-programming"]
+            },
+            {
+                q: "How does the Bellman-Ford algorithm work?",
+                a: "Bellman-Ford finds shortest paths from a source vertex, handling negative edge weights. Relax edges repeatedly for V-1 iterations, then check for negative cycles. Time complexity: O(VE). Space complexity: O(V). Used in network routing, currency arbitrage detection.",
+                r: "Bellman-Ford is like Dijkstra's but more cautious - it checks all paths multiple times to ensure optimality.",
+                tags: ["graph-algorithms", "shortest-path", "negative-weights", "bellman-ford"]
+            },
+            // National Competition Level Questions
+            {
+                q: "Explain suffix arrays and their construction.",
+                a: "Suffix arrays are sorted arrays of all suffixes of a string. Enable efficient pattern matching, longest common substring, and string compression. Construction: O(n log n) using sorting, O(n) using advanced algorithms. Space: O(n). Used in bioinformatics and text processing.",
+                r: "Suffix arrays are like indexes for a book that list all possible starting points of words.",
+                tags: ["strings", "suffix-arrays", "pattern-matching", "bioinformatics", "national"]
+            },
+            {
+                q: "What is the Maximum Flow problem and Ford-Fulkerson algorithm?",
+                a: "Maximum Flow finds maximum flow from source to sink in a flow network. Ford-Fulkerson uses augmenting paths until no more exist. Time complexity: O(E * max_flow). Edmonds-Karp (BFS-based) achieves O(VE²). Applications: network routing, bipartite matching, supply chain optimization.",
+                r: "Maximum flow is like finding how much water can flow through a pipe network from source to destination.",
+                tags: ["graph-algorithms", "max-flow", "ford-fulkerson", "network-flow", "national"]
+            },
+            {
+                q: "Explain the concept of amortized analysis with examples.",
+                a: "Amortized analysis shows average cost per operation over a sequence, even when individual operations vary. Examples: dynamic array expansion, hash table resizing, splay trees. Mathematical tools: aggregate method, accounting method, potential method. Provides performance guarantees.",
+                r: "Amortized analysis is like budgeting - some operations cost more, but the average over time is predictable.",
+                tags: ["analysis", "amortized-analysis", "performance", "data-structures", "national"]
+            },
+            {
+                q: "How does the KMP algorithm for pattern matching work?",
+                a: "Knuth-Morris-Pratt (KMP) algorithm finds pattern occurrences in text efficiently using preprocessing. Builds LPS (Longest Prefix Suffix) array in O(m) time, then searches in O(n+m) time. Avoids redundant comparisons by using previously computed information.",
+                r: "KMP is like smart searching that remembers where patterns matched before to avoid rechecking.",
+                tags: ["strings", "pattern-matching", "kmp", "algorithms", "national"]
+            },
+            {
+                q: "What is a Binary Indexed Tree (Fenwick Tree) and its operations?",
+                a: "Binary Indexed Tree supports point updates and prefix sum queries in O(log n) time. More memory-efficient than segment trees. Uses binary representation to navigate tree. Applications: frequency counting, inversion counting, range sum queries. Space: O(n).",
+                r: "BIT is like a clever calculator that can quickly update values and calculate sums of ranges.",
+                tags: ["data-structures", "trees", "bit", "fenwick-tree", "range-queries", "national"]
+            },
+            {
+                q: "Explain the concept of NP-Completeness and examples.",
+                a: "NP-Complete problems are in NP and as hard as any NP problem. If any NP-complete problem has polynomial solution, P=NP. Examples: SAT, 3-SAT, Hamiltonian Cycle, Vertex Cover, Subset Sum. Proved through polynomial-time reductions. Fundamental to theoretical computer science.",
+                r: "NP-Complete problems are like puzzles that seem to require trying all possibilities but might have clever solutions.",
+                tags: ["complexity-theory", "np-complete", "computational-theory", "national"]
+            },
+            // International Competition Level Questions
+            {
+                q: "Explain the concept of suffix automata and their applications.",
+                a: "Suffix automata are minimal deterministic finite automata accepting all substrings of a string. Size: O(2n-1) states, O(3n-4) transitions. Construction: O(n) time. Applications: substring counting, pattern matching, longest common substring of multiple strings. Used in advanced string processing.",
+                r: "Suffix automata are like compact machines that can recognize any substring of a text efficiently.",
+                tags: ["strings", "suffix-automata", "automata-theory", "advanced-algorithms", "international"]
+            },
+            {
+                q: "What is the concept of persistent data structures?",
+                a: "Persistent data structures preserve previous versions when modified. Fully persistent: all versions accessible. Partially persistent: only latest version modifiable. Examples: persistent linked lists, persistent segment trees. Time overhead: O(log n) typically. Used in functional programming.",
+                r: "Persistent structures are like time travel for data - you can access any previous version.",
+                tags: ["data-structures", "persistence", "functional-programming", "advanced", "international"]
+            },
+            {
+                q: "Explain the concept of randomized algorithms and their analysis.",
+                a: "Randomized algorithms use random numbers to make decisions. Types: Las Vegas (always correct, random runtime) and Monte Carlo (bounded runtime, probability of error). Analysis uses expected values and probability. Examples: QuickSort, randomized MST, Miller-Rabin primality test.",
+                r: "Randomized algorithms are like making decisions by coin flips - often simpler and surprisingly effective.",
+                tags: ["algorithms", "randomization", "probability", "analysis", "international"]
+            },
+            {
+                q: "What is the concept of online algorithms and competitive analysis?",
+                a: "Online algorithms make decisions without future information. Competitive analysis compares online algorithm performance to optimal offline algorithm. Examples: paging, caching, load balancing. Competitive ratio measures worst-case performance. Used in real-time systems and resource allocation.",
+                r: "Online algorithms are like chess players who must move without knowing opponent's future moves.",
+                tags: ["algorithms", "online-algorithms", "competitive-analysis", "optimization", "international"]
+            },
+            {
+                q: "Explain the concept of approximation algorithms and guarantees.",
+                a: "Approximation algorithms find near-optimal solutions for NP-hard optimization problems. Performance ratio: algorithm solution / optimal solution. Types: constant-factor, PTAS (Polynomial Time Approximation Scheme), FPTAS. Examples: vertex cover (2-approx), set cover (ln n-approx), TSP (1.5-approx).",
+                r: "Approximation algorithms are like finding good enough solutions when perfect solutions are too expensive.",
+                tags: ["algorithms", "approximation", "optimization", "np-hard", "international"]
+            },
+            {
+                q: "What is the concept of parameterized complexity and FPT algorithms?",
+                a: "Parameterized complexity analyzes problems based on input size and additional parameters. FPT (Fixed-Parameter Tractable) problems have algorithms with f(k)·poly(n) complexity. Examples: vertex cover (O(2^k·n)), k-path, feedback vertex set. Used for exact exponential-time algorithms.",
+                r: "Parameterized algorithms are like specialized tools that work efficiently when certain aspects are small.",
+                tags: ["complexity-theory", "parameterized-complexity", "fpt", "exact-algorithms", "international"]
+            },
+            // Additional Advanced Topics
+            {
+                q: "Explain the concept of parallel algorithms and their design.",
+                a: "Parallel algorithms solve problems using multiple processors simultaneously. Design paradigms: divide-and-conquer, pipeline, map-reduce. Analysis includes work, span, and parallelism. Models: PRAM, distributed memory, shared memory. Examples: parallel merge sort, parallel prefix sum.",
+                r: "Parallel algorithms are like teamwork - multiple processors work together to solve problems faster.",
+                tags: ["parallel-algorithms", "concurrency", "distributed-computing", "advanced"]
+            },
+            {
+                q: "What is the concept of streaming algorithms?",
+                a: "Streaming algorithms process large data streams with limited memory. Use techniques like sampling, sketching, and sliding windows. Examples: frequency moments, heavy hitters, distinct elements. Memory sublinear in input size. Used in big data and network monitoring.",
+                r: "Streaming algorithms are like summarizing a long speech while only remembering key points.",
+                tags: ["streaming", "big-data", "memory-efficient", "advanced"]
+            },
+            {
+                q: "Explain the concept of geometric algorithms and computational geometry.",
+                a: "Geometric algorithms solve problems involving geometric objects. Topics: convex hull, line segment intersection, nearest neighbors, range searching. Data structures: KD-trees, R-trees, Voronoi diagrams. Applications: computer graphics, robotics, GIS, pattern recognition.",
+                r: "Geometric algorithms are like solving puzzles with shapes, lines, and spaces.",
+                tags: ["computational-geometry", "geometric-algorithms", "spatial-data", "advanced"]
+            },
+            {
+                q: "What is the concept of quantum algorithms?",
+                a: "Quantum algorithms use quantum mechanical phenomena like superposition and entanglement. Famous examples: Shor's algorithm (integer factorization), Grover's algorithm (unstructured search). Offer exponential or quadratic speedups for specific problems. Still largely theoretical with practical challenges.",
+                r: "Quantum algorithms are like using quantum physics to solve certain problems much faster than classical computers.",
+                tags: ["quantum-computing", "quantum-algorithms", "theoretical", "advanced"]
+            },
+            // Additional Sorting Algorithms
+            {
+                q: "What is Radix Sort and how does it work?",
+                a: "Radix Sort is a non-comparative sorting algorithm that sorts integers by processing individual digits. It sorts numbers digit by digit from least significant to most significant. Time complexity: O(d·(n+b)) where d=digits, n=numbers, b=base. Space complexity: O(n+b). Stable and efficient for large datasets with limited digit range.",
+                r: "Radix Sort is like organizing library books by call number - first by the last digit, then by the second last, and so on.",
+                tags: ["sorting", "radix-sort", "non-comparative", "linear-time"]
+            },
+            {
+                q: "Explain Counting Sort algorithm and its applications.",
+                a: "Counting Sort is a non-comparative sorting algorithm that counts occurrences of each distinct element. Time complexity: O(n+k) where n=elements, k=range. Space complexity: O(k). Efficient for small integer ranges. Used in histogram creation, frequency counting, and as subroutine in Radix Sort.",
+                r: "Counting Sort is like sorting test papers by grade - count how many got each grade, then place them in order.",
+                tags: ["sorting", "counting-sort", "non-comparative", "frequency"]
+            },
+            {
+                q: "What is Bucket Sort and when is it used?",
+                a: "Bucket Sort distributes elements into buckets, sorts each bucket individually, then concatenates. Time complexity: O(n+k) average, O(n²) worst. Space complexity: O(n+k). Works best with uniformly distributed data. Used in floating-point sorting and other specialized applications.",
+                r: "Bucket Sort is like sorting different types of fruit into baskets and then arranging the baskets.",
+                tags: ["sorting", "bucket-sort", "distribution", "floating-point"]
+            },
+            {
+                q: "Explain Shell Sort and its gap sequence.",
+                a: "Shell Sort is an optimization of Insertion Sort that sorts elements at specific gaps, gradually reducing gap size. Time complexity depends on gap sequence: O(n^(3/2)) for Shell's original, O(n log n) for better sequences. Space complexity: O(1). More efficient than Insertion Sort for larger datasets.",
+                r: "Shell Sort is like sorting cards by first sorting every 5th card, then every 3rd, then finally adjacent cards.",
+                tags: ["sorting", "shell-sort", "gap-sequence", "optimization"]
+            },
+            // Advanced Data Structures
+            {
+                q: "What is a Trie data structure and its applications?",
+                a: "A Trie (prefix tree) is a tree data structure for storing strings where common prefixes share nodes. Time complexity: O(m) for search/insert/delete where m=string length. Space complexity: O(total characters). Used in autocomplete, spell checking, IP routing, and dictionary implementations.",
+                r: "A Trie is like a family tree where each generation represents the next letter in a word.",
+                tags: ["data-structures", "trie", "prefix-tree", "strings", "applications"]
+            },
+            {
+                q: "Explain Skip Lists and their advantages.",
+                a: "Skip Lists are probabilistic data structures that allow fast search, insertion, and deletion. Use multiple layers of linked lists with skip pointers. Average time complexity: O(log n) for all operations. Space complexity: O(n). Simpler than balanced trees and support concurrent operations well.",
+                r: "Skip Lists are like express highways with multiple levels - you can skip many stops on higher levels.",
+                tags: ["data-structures", "skip-list", "probabilistic", "concurrent"]
+            },
+            {
+                q: "What are B-Trees and their use in databases?",
+                a: "B-Trees are self-balancing search trees designed for disk storage. Each node can have many children (order m). Time complexity: O(log n) for search/insert/delete. Optimized for disk I/O with large nodes. Used in databases, file systems, and indexing structures.",
+                r: "B-Trees are like filing cabinets with many drawers - each drawer holds many folders to minimize trips.",
+                tags: ["data-structures", "b-trees", "databases", "disk-storage", "indexing"]
+            },
+            {
+                q: "Explain AVL Trees and their balancing mechanism.",
+                a: "AVL Trees are self-balancing binary search trees where height difference of subtrees is at most 1. Rotations (LL, RR, LR, RL) maintain balance. Time complexity: O(log n) for all operations. Space complexity: O(n). Stricter balancing than Red-Black Trees but more rotations.",
+                r: "AVL Trees are like perfectly balanced mobile sculptures - any imbalance is immediately corrected.",
+                tags: ["data-structures", "avl-trees", "balancing", "rotations", "search-trees"]
+            },
+            {
+                q: "What is a Disjoint Set Union (DSU) data structure?",
+                a: "DSU (Union-Find) maintains a collection of disjoint sets with union and find operations. Uses path compression and union by rank for efficiency. Time complexity: O(α(n)) amortized, where α is inverse Ackermann function. Used in graph connectivity, Kruskal's algorithm, and dynamic connectivity.",
+                r: "DSU is like managing social networks - quickly find if two people are connected and merge friend groups.",
+                tags: ["data-structures", "dsu", "union-find", "disjoint-sets", "graph-algorithms"]
+            },
+            // Graph Algorithms
+            {
+                q: "What is Minimum Spanning Tree (MST) and Kruskal's algorithm?",
+                a: "MST is a subset of edges connecting all vertices with minimum total weight. Kruskal's algorithm sorts edges by weight and adds them if they don't create cycles. Time complexity: O(E log E) using DSU. Used in network design, clustering, and circuit design.",
+                r: "MST is like building the cheapest road network connecting all cities without creating loops.",
+                tags: ["graph-algorithms", "mst", "kruskal", "spanning-tree", "optimization"]
+            },
+            {
+                q: "Explain Prim's algorithm for Minimum Spanning Tree.",
+                a: "Prim's algorithm grows MST by adding the cheapest edge connecting the tree to a new vertex. Uses a priority queue to select minimum weight edge. Time complexity: O(E log V) with binary heap. More efficient for dense graphs than Kruskal's. Used in network design and clustering.",
+                r: "Prim's is like building a road network by always extending from the current network with the cheapest connection.",
+                tags: ["graph-algorithms", "mst", "prim", "spanning-tree", "priority-queue"]
+            },
+            {
+                q: "What is Topological Sorting and its applications?",
+                a: "Topological sorting produces a linear ordering of vertices in a directed acyclic graph (DAG). Uses DFS or Kahn's algorithm. Time complexity: O(V+E). Used in task scheduling, dependency resolution, build systems, and course prerequisites.",
+                r: "Topological sort is like creating a reading order where each book only references earlier books.",
+                tags: ["graph-algorithms", "topological-sort", "dag", "scheduling", "dependencies"]
+            },
+            {
+                q: "Explain Floyd-Warshall algorithm for all-pairs shortest paths.",
+                a: "Floyd-Warshall finds shortest paths between all vertex pairs using dynamic programming. Time complexity: O(V³). Space complexity: O(V²). Handles negative edges but not negative cycles. Used in network routing, distance matrices, and transitive closure.",
+                r: "Floyd-Warshall is like calculating the shortest route between every pair of cities in a country.",
+                tags: ["graph-algorithms", "shortest-path", "all-pairs", "dynamic-programming", "floyd-warshall"]
+            },
+            {
+                q: "What is Tarjan's algorithm for Strongly Connected Components?",
+                a: "Tarjan's algorithm finds SCCs in directed graphs using DFS with low-link values. Time complexity: O(V+E). Space complexity: O(V). Uses a stack to track current path. Used in graph analysis, social network analysis, and compiler optimization.",
+                r: "SCCs are like finding groups of people who can all reach each other through mutual connections.",
+                tags: ["graph-algorithms", "scc", "tarjan", "connectivity", "dfs"]
+            },
+            {
+                q: "Explain Kosaraju's algorithm for Strongly Connected Components.",
+                a: "Kosaraju's algorithm finds SCCs using two DFS passes. First pass on original graph, second on reversed graph. Time complexity: O(V+E). Space complexity: O(V). Simpler than Tarjan's but requires graph reversal. Used in graph decomposition and analysis.",
+                r: "Kosaraju's is like finding friend circles by first seeing who can reach whom, then who can reach back.",
+                tags: ["graph-algorithms", "scc", "kosaraju", "connectivity", "dfs"]
+            },
+            {
+                q: "What is the difference between Prim's and Kruskal's algorithm?",
+                a: "Prim's grows MST from a starting vertex using minimum edge, while Kruskal's sorts all edges and adds non-cyclic ones. Prim's: O(E log V) with heap, better for dense graphs. Kruskal's: O(E log E) with DSU, better for sparse graphs. Both find minimum spanning tree.",
+                r: "Prim's is like building a road network from one city, Kruskal's is like connecting all cities with cheapest roads.",
+                tags: ["graph-algorithms", "mst", "comparison", "algorithms"]
+            },
+            {
+                q: "Explain the concept of greedy algorithms and their characteristics.",
+                a: "Greedy algorithms make locally optimal choices at each step, hoping for global optimum. Characteristics: greedy choice property, optimal substructure. Examples: Dijkstra's, Prim's, Kruskal's, Huffman coding. Not always optimal but often efficient and simple.",
+                r: "Greedy algorithms are like always taking the biggest piece of cake - might work, might not.",
+                tags: ["algorithms", "greedy", "optimization", "paradigm"]
+            },
+            {
+                q: "What is Huffman coding and how does it work?",
+                a: "Huffman coding is a lossless data compression algorithm that assigns variable-length codes based on character frequency. Builds optimal prefix code tree. Time complexity: O(n log n). Space complexity: O(n). Used in file compression, data transmission, and JPEG compression.",
+                r: "Huffman coding is like giving shorter codes to common letters and longer codes to rare ones.",
+                tags: ["algorithms", "compression", "greedy", "huffman"]
+            },
+            {
+                q: "Explain the concept of backtracking algorithms.",
+                a: "Backtracking explores all possible solutions by building candidates incrementally and abandoning those that cannot lead to valid solutions. Uses recursion and pruning. Examples: N-Queens, Sudoku, graph coloring, subset sum. Time complexity varies by problem.",
+                r: "Backtracking is like exploring a maze by trying paths and backtracking when hitting dead ends.",
+                tags: ["algorithms", "backtracking", "recursion", "search"]
+            },
+            {
+                q: "What is the N-Queens problem and how is it solved?",
+                a: "N-Queens places N queens on N×N chessboard so none attack each other. Solved using backtracking with pruning. Check conflicts in rows, columns, and diagonals. Time complexity: O(N!) worst case. Used in constraint satisfaction and AI problems.",
+                r: "N-Queens is like arranging N guards in a grid where no guard can see another.",
+                tags: ["backtracking", "n-queens", "constraint-satisfaction", "ai"]
+            },
+            {
+                q: "Explain the concept of branch and bound algorithms.",
+                a: "Branch and bound explores solution space using bounds to eliminate subproblems. Uses lower/upper bounds for pruning. Examples: Traveling Salesman, knapsack, assignment problems. More efficient than brute force but exponential worst case.",
+                r: "Branch and bound is like smart exploration - cutting off paths that can't possibly be better.",
+                tags: ["algorithms", "branch-bound", "optimization", "search"]
+            },
+            {
+                q: "What is the difference between recursive and iterative algorithms?",
+                a: "Recursive algorithms call themselves with modified inputs, using call stack. Iterative use loops. Recursive: elegant, stack overhead, risk of stack overflow. Iterative: explicit stack control, often more memory efficient. Time complexity similar, space differs.",
+                r: "Recursive is like Russian dolls - each contains a smaller version. Iterative is like climbing stairs step by step.",
+                tags: ["algorithms", "recursion", "iteration", "comparison"]
+            },
+            {
+                q: "Explain the concept of memoization in dynamic programming.",
+                a: "Memoization stores results of expensive function calls and returns cached results when same inputs occur. Top-down DP approach. Uses hash maps or arrays. Reduces time complexity from exponential to polynomial. Trade-off: time vs space.",
+                r: "Memoization is like writing down answers to math problems so you don't recalculate them.",
+                tags: ["dynamic-programming", "memoization", "optimization", "caching"]
+            },
+            {
+                q: "What is the difference between memoization and tabulation?",
+                a: "Memoization is top-down recursive with caching, tabulation is bottom-up iterative filling of table. Memoization: computes on demand, easier to implement. Tabulation: computes all subproblems, often more efficient, no recursion overhead.",
+                r: "Memoization is like looking up answers when needed, tabulation is like filling a complete answer sheet.",
+                tags: ["dynamic-programming", "memoization", "tabulation", "comparison"]
+            },
+            {
+                q: "Explain the concept of optimal substructure in dynamic programming.",
+                a: "Optimal substructure means optimal solution contains optimal solutions to subproblems. Key DP requirement. If problem lacks this property, DP may not apply. Examples: shortest paths, knapsack, matrix chain multiplication.",
+                r: "Optimal substructure is like building with LEGOs - best big structure made of best small pieces.",
+                tags: ["dynamic-programming", "optimal-substructure", "theory", "design"]
+            },
+            {
+                q: "What is the Matrix Chain Multiplication problem?",
+                a: "Matrix Chain finds optimal parenthesization for matrix multiplication to minimize scalar multiplications. DP solution: O(n³) time, O(n²) space. Uses optimal substructure and overlapping subproblems. Used in compiler optimization and scientific computing.",
+                r: "Matrix Chain is like finding the best order to multiply matrices to minimize calculations.",
+                tags: ["dynamic-programming", "matrix-chain", "optimization", "linear-algebra"]
+            },
+            {
+                q: "Explain the concept of overlapping subproblems in dynamic programming.",
+                a: "Overlapping subproblems means same subproblems are solved multiple times. DP solves each once and stores results. Essential for DP efficiency. Examples: Fibonacci, longest common subsequence, coin change problems.",
+                r: "Overlapping subproblems are like calculating the same math problem repeatedly in different contexts.",
+                tags: ["dynamic-programming", "overlapping-subproblems", "theory", "efficiency"]
+            },
+            {
+                q: "What is the Longest Common Subsequence (LCS) problem?",
+                a: "LCS finds longest sequence present in both given sequences. DP solution: O(m×n) time, O(m×n) space. Can be optimized to O(min(m,n)) space. Used in version control, bioinformatics, and plagiarism detection.",
+                r: "LCS is like finding the longest shared story between two books.",
+                tags: ["dynamic-programming", "lcs", "strings", "sequence-analysis"]
+            },
+            {
+                q: "Explain the Edit Distance problem and its applications.",
+                a: "Edit Distance (Levenshtein) finds minimum operations to transform one string to another. Operations: insert, delete, replace. DP solution: O(m×n) time, O(m×n) space. Used in spell checking, DNA analysis, and natural language processing.",
+                r: "Edit distance is like counting changes needed to turn one word into another.",
+                tags: ["dynamic-programming", "edit-distance", "strings", "applications"]
+            },
+            {
+                q: "What is the Coin Change problem and its approaches?",
+                a: "Coin Change finds minimum coins to make given amount. DP solution: O(n×amount) time, O(amount) space. Unbounded knapsack variant. Can also count combinations. Used in currency systems and resource allocation.",
+                r: "Coin change is like finding the fewest bills to pay exact amount.",
+                tags: ["dynamic-programming", "coin-change", "knapsack", "optimization"]
+            },
+            {
+                q: "Explain the concept of sliding window technique.",
+                a: "Sliding window maintains a window over array/data stream, moving it to process subarrays efficiently. Reduces O(n²) to O(n). Used in fixed-size subarray problems, streaming data, and substring searches. Two-pointer technique variant.",
+                r: "Sliding window is like looking through a moving frame to examine parts of a picture.",
+                tags: ["algorithms", "sliding-window", "optimization", "two-pointers"]
+            },
+            {
+                q: "What is the Two Sum problem and its solutions?",
+                a: "Two Sum finds two numbers that sum to target. Brute force: O(n²). Hash table: O(n) time, O(n) space. Two pointers (sorted): O(n log n) time, O(1) space. Common interview problem with multiple solution approaches.",
+                r: "Two sum is like finding two friends whose ages add up to a specific number.",
+                tags: ["algorithms", "two-sum", "hash-table", "interview"]
+            },
+            {
+                q: "Explain the concept of prefix sums and their applications.",
+                a: "Prefix sums are cumulative sums of array elements. Enable O(1) range sum queries after O(n) preprocessing. Used in range queries, subarray problems, and streaming analytics. Can be extended to 2D for matrix queries.",
+                r: "Prefix sums are like running totals that help quickly calculate sums of any range.",
+                tags: ["algorithms", "prefix-sums", "range-queries", "optimization"]
+            },
+            {
+                q: "What is the difference between BFS and DFS in terms of memory usage?",
+                a: "BFS uses queue, stores all nodes at current level. Memory: O(b^d) where b=branching factor, d=depth. DFS uses stack, stores path from root to current node. Memory: O(d). BFS better for shallow solutions, DFS for deep solutions.",
+                r: "BFS memory grows like a widening circle, DFS memory grows like a deep line.",
+                tags: ["graph-algorithms", "bfs", "dfs", "memory", "comparison"]
+            },
+            {
+                q: "Explain the concept of bipartite graphs and their testing.",
+                a: "Bipartite graphs can be divided into two disjoint sets with edges only between sets. Test using BFS/DFS with graph coloring. Time complexity: O(V+E). Applications: matching problems, scheduling, social networks analysis.",
+                r: "Bipartite graphs are like two groups where people only talk across groups, not within their own group.",
+                tags: ["graph-algorithms", "bipartite", "graph-coloring", "applications"]
+            },
+            {
+                q: "What is the difference between directed and undirected graphs?",
+                a: "Undirected graphs have bidirectional edges, directed graphs have one-way edges. Undirected: symmetric adjacency, degree counts all connections. Directed: asymmetric, in-degree/out-degree. Different algorithms and applications for each type.",
+                r: "Undirected is like two-way streets, directed is like one-way streets.",
+                tags: ["graph-algorithms", "directed-graphs", "undirected-graphs", "basics"]
+            },
+            {
+                q: "Explain the concept of graph representations and their trade-offs.",
+                a: "Adjacency matrix: O(V²) space, O(1) edge operations, good for dense graphs. Adjacency list: O(V+E) space, O(degree) operations, good for sparse graphs. Edge list: O(E) space, linear search for edges. Choice depends on graph density and operations.",
+                r: "Matrix is like complete contact list, list is like phonebook of friends only.",
+                tags: ["data-structures", "graph-representation", "adjacency-matrix", "adjacency-list"]
+            },
+            {
+                q: "What is the difference between tree and graph data structures?",
+                a: "Trees are connected acyclic graphs with hierarchical structure. Exactly one path between any two nodes. Graphs can have cycles, multiple paths, and no hierarchy. Trees are subset of graphs with additional constraints.",
+                r: "Trees are like family trees, graphs are like social networks.",
+                tags: ["data-structures", "trees", "graphs", "comparison"]
+            },
+            {
+                q: "Explain the concept of binary search trees and their properties.",
+                a: "BST is binary tree where left subtree < node < right subtree. Enables O(log n) search/insert/delete average case. Worst case O(n) for unbalanced. Properties: in-order traversal yields sorted sequence. Foundation for balanced trees.",
+                r: "BST is like a smart filing system where left folder has smaller items, right has larger.",
+                tags: ["data-structures", "bst", "search-trees", "properties"]
+            },
+            {
+                q: "What is the difference between complete binary tree and full binary tree?",
+                a: "Full binary tree: every node has 0 or 2 children. Complete binary tree: all levels except possibly last are full, last level left-filled. Complete trees are efficiently stored in arrays, used in heaps. Full trees have specific node count properties.",
+                r: "Full is like every person has either no children or exactly two. Complete is like filling levels from left to right.",
+                tags: ["data-structures", "binary-trees", "tree-properties", "comparison"]
+            },
+            {
+                q: "Explain the concept of heap data structure and its operations.",
+                a: "Heap is complete binary tree with heap property. Max-heap: parent ≥ children, Min-heap: parent ≤ children. Operations: insert O(log n), extract O(log n), peek O(1). Used in priority queues, heap sort, and Dijkstra's algorithm.",
+                r: "Heap is like a tournament bracket where winner (max) or loser (min) is always on top.",
+                tags: ["data-structures", "heap", "priority-queue", "operations"]
+            },
+            {
+                q: "What is the difference between min-heap and max-heap?",
+                a: "Min-heap has smallest element at root, parent ≤ children. Max-heap has largest at root, parent ≥ children. Same operations, different comparison. Min-heap used for finding minimums, max-heap for maximums. Both support priority queue operations.",
+                r: "Min-heap is like finding the lightest person, max-heap is like finding the heaviest.",
+                tags: ["data-structures", "min-heap", "max-heap", "comparison"]
+            },
+            {
+                q: "Explain the concept of priority queue and its implementations.",
+                a: "Priority queue stores elements with priorities, supports insert and extract-max/min. Implementations: unsorted array (O(1) insert, O(n) extract), sorted array (O(n) insert, O(1) extract), heap (O(log n) both). Used in Dijkstra's, Huffman coding, OS scheduling.",
+                r: "Priority queue is like emergency room - most critical patients treated first.",
+                tags: ["data-structures", "priority-queue", "heap", "implementations"]
+            },
+            {
+                q: "What is the difference between queue and priority queue?",
+                a: "Queue follows FIFO order, priority queue orders by priority. Queue: O(1) enqueue/dequeue. Priority queue: O(log n) insert/extract with heap. Queue for fair scheduling, priority queue for urgency-based processing.",
+                r: "Queue is like regular line, priority queue is like VIP line.",
+                tags: ["data-structures", "queue", "priority-queue", "comparison"]
+            },
+            {
+                q: "Explain the concept of deque (double-ended queue) and its operations.",
+                a: "Deque allows insertion/deletion at both ends. Operations: push_front, push_back, pop_front, pop_back - all O(1). Used in sliding window problems, palindrome checking, and implementing other data structures. More flexible than queue or stack.",
+                r: "Deque is like a hallway with doors at both ends - can enter/exit from either side.",
+                tags: ["data-structures", "deque", "queue", "operations"]
+            },
+            {
+                q: "What is the difference between array and dynamic array?",
+                a: "Fixed array has constant size, dynamic array can grow/shrink. Dynamic array uses amortized analysis for resizing. When full, creates larger array and copies elements. Provides random access with flexibility. Used in most programming languages.",
+                r: "Fixed array is like small box, dynamic array is like expandable suitcase.",
+                tags: ["data-structures", "arrays", "dynamic-arrays", "comparison"]
+            },
+            {
+                q: "Explain the concept of amortized analysis with dynamic arrays.",
+                a: "Dynamic array resize is O(n) occasionally, but O(1) amortized over sequence. When array fills, double size and copy. Average cost per insertion remains constant. Amortized analysis provides performance guarantees for varying operation costs.",
+                r: "Amortized is like budgeting - expensive operations balanced by cheap ones.",
+                tags: ["analysis", "amortized-analysis", "dynamic-arrays", "performance"]
+            },
+            {
+                q: "What is the difference between singly linked list and doubly linked list?",
+                a: "Singly linked list has one direction pointer, doubly has both. Singly: less memory, simpler. Doubly: O(1) delete given node, reverse traversal. Singly: O(n) delete given node. Choice depends on operation requirements.",
+                r: "Singly is like one-way street, doubly is like two-way street.",
+                tags: ["data-structures", "linked-lists", "singly", "doubly"]
+            },
+            {
+                q: "Explain the concept of circular linked list and its applications.",
+                a: "Circular linked list has last node pointing to first, forming circle. No null pointers. Used in round-robin scheduling, circular buffers, and implementing other data structures. Can be singly or doubly. Efficient for cyclic operations.",
+                r: "Circular list is like endless loop where last element connects back to first.",
+                tags: ["data-structures", "circular-linked-list", "applications", "variations"]
+            },
+            {
+                q: "What is the difference between stack and queue?",
+                a: "Stack follows LIFO (Last In, First Out), queue follows FIFO (First In, First Out). Stack: push/pop operations. Queue: enqueue/dequeue. Stack for function calls, undo operations. Queue for task scheduling, breadth-first search.",
+                r: "Stack is like plate stack, queue is like checkout line.",
+                tags: ["data-structures", "stack", "queue", "comparison"]
+            },
+            {
+                q: "Explain the concept of hash function and its properties.",
+                a: "Hash function maps keys to array indices. Good properties: deterministic, uniform distribution, efficient computation. Collisions inevitable due to pigeonhole principle. Used in hash tables, cryptography, and data integrity verification.",
+                r: "Hash function is like smart organizer that assigns each item a specific shelf.",
+                tags: ["data-structures", "hash-function", "hashing", "properties"]
+            },
+            {
+                q: "What is the difference between open addressing and chaining in hash tables?",
+                a: "Open addressing stores all elements in array, uses probing for collisions. Chaining uses linked lists at each bucket. Open addressing: better cache locality, no extra pointers. Chaining: handles high load factors, simpler deletion. Choice depends on expected load.",
+                r: "Open addressing is like finding empty seat in classroom, chaining is like forming lines at each desk.",
+                tags: ["data-structures", "hash-table", "collision-resolution", "comparison"]
+            },
+            {
+                q: "Explain the concept of load factor in hash tables.",
+                a: "Load factor = number of elements / table capacity. Affects performance and collision probability. High load factor: more collisions, better space usage. Low load factor: fewer collisions, wasted space. Typical threshold: 0.7-0.8 for resizing.",
+                r: "Load factor is like how full a parking lot is before it becomes inefficient.",
+                tags: ["data-structures", "hash-table", "load-factor", "performance"]
+            },
+            {
+                q: "What is the difference between linear probing and quadratic probing?",
+                a: "Linear probing checks sequential slots (i+1, i+2...). Quadratic uses quadratic function (i+1², i+2²...). Linear: simpler, primary clustering. Quadratic: reduces clustering, more complex computation. Both are open addressing techniques.",
+                r: "Linear is like checking next door, quadratic is like checking houses in expanding squares.",
+                tags: ["data-structures", "hash-table", "probing", "collision-resolution"]
+            },
+            {
+                q: "Explain the concept of perfect hashing and its applications.",
+                a: "Perfect hashing eliminates collisions for known key set. Uses two-level hashing scheme. O(1) lookup time, O(n) space. Used when key set is static and lookup speed critical. Applications: compilers, routers, database indexes.",
+                r: "Perfect hashing is like assigning unique parking spots to every known car.",
+                tags: ["data-structures", "perfect-hashing", "hash-table", "optimization"]
+            },
+            {
+                q: "What is the difference between Bloom filter and hash table?",
+                a: "Bloom filter is probabilistic, can have false positives but no false negatives. Hash table is exact. Bloom filter: more space efficient, no deletion. Hash table: precise, supports deletion. Bloom filter for membership testing, hash table for storage.",
+                r: "Bloom filter is like bouncer who might mistakenly let someone in, hash table is like exact guest list.",
+                tags: ["data-structures", "bloom-filter", "hash-table", "probabilistic"]
+            },
+            {
+                q: "Explain the concept of Bloom filter and its operations.",
+                a: "Bloom filter tests membership in set with false positives. Uses multiple hash functions and bit array. Operations: add O(k), lookup O(k) where k=hash functions. Cannot delete items. Used in spell checking, network filtering, and cache filtering.",
+                r: "Bloom filter is like very efficient but occasionally mistaken security guard.",
+                tags: ["data-structures", "bloom-filter", "probabilistic", "membership"]
+            },
+            {
+                q: "What is the difference between AVL tree and Red-Black tree?",
+                a: "AVL maintains stricter balance (height difference ≤ 1), more rotations but faster lookups. Red-Black allows less strict balance, fewer rotations but slightly slower lookups. Both O(log n) operations. AVL for read-heavy, Red-Black for frequent modifications.",
+                r: "AVL is like perfectly balanced scale, Red-Black is like slightly wobbly but functional scale.",
+                tags: ["data-structures", "avl-trees", "red-black-trees", "comparison"]
+            },
+            {
+                q: "Explain the concept of tree rotations in balanced trees.",
+                a: "Tree rotations rebalance binary search trees while maintaining BST property. Left rotation: makes right child new root. Right rotation: makes left child new root. Used in AVL, Red-Black trees. O(1) operation, preserves in-order sequence.",
+                r: "Tree rotation is like rearranging bookshelf while keeping books in alphabetical order.",
+                tags: ["data-structures", "tree-rotations", "balanced-trees", "operations"]
+            },
+            {
+                q: "What is the difference between B-tree and B+ tree?",
+                a: "B-tree stores keys and data in all nodes. B+ tree stores data only in leaves, internal nodes only keys. B+ tree: better range queries, sequential access. B-tree: better for random access. Both used in databases and file systems.",
+                r: "B-tree is like filing cabinet with folders everywhere, B+ tree is like index at top, files at bottom.",
+                tags: ["data-structures", "b-trees", "b-plus-trees", "databases"]
+            },
+            // School Level Questions
+            {
+                q: "What is an algorithm and why is it important?",
+                a: "An algorithm is a step-by-step procedure to solve a problem. It's important because it provides systematic approach to problem-solving, ensures correctness, and enables efficient computation. Algorithms form the foundation of computer programming and problem-solving.",
+                r: "Algorithm is like a recipe - it tells you exactly what steps to follow to get the desired result.",
+                tags: ["basics", "algorithm-definition", "school", "introduction"]
+            },
+            {
+                q: "What is the difference between algorithm and program?",
+                a: "Algorithm is a step-by-step solution design, while program is the actual implementation in a programming language. Algorithm is language-independent, focuses on logic. Program is language-specific, includes syntax and follows algorithm's logic.",
+                r: "Algorithm is like blueprint, program is like the actual building constructed from that blueprint.",
+                tags: ["basics", "algorithm-vs-program", "school", "comparison"]
+            },
+            {
+                q: "What are the characteristics of a good algorithm?",
+                a: "Good algorithm should be: correct (produces right output), efficient (uses minimal resources), clear (easy to understand), finite (terminates), and general (works for various inputs). These ensure reliability and usability.",
+                r: "Good algorithm is like a good student - correct, efficient, clear, and always completes their work.",
+                tags: ["basics", "algorithm-characteristics", "school", "quality"]
+            },
+            {
+                q: "What is linear search and how does it work?",
+                a: "Linear search sequentially checks each element until target is found or end is reached. Time complexity: O(n). Simple but inefficient for large datasets. Works on unsorted data. Used when data is small or unsorted.",
+                r: "Linear search is like looking for a specific book by checking every book on the shelf one by one.",
+                tags: ["searching", "linear-search", "school", "basic-algorithms"]
+            },
+            {
+                q: "What is binary search and when is it used?",
+                a: "Binary search divides sorted array in half repeatedly to find target. Time complexity: O(log n). Requires sorted data. Much faster than linear search for large datasets. Used in phone books, dictionaries, and sorted databases.",
+                r: "Binary search is like finding a word in dictionary by always checking middle page and eliminating half.",
+                tags: ["searching", "binary-search", "school", "efficient-algorithms"]
+            },
+            {
+                q: "What is bubble sort and how does it work?",
+                a: "Bubble sort repeatedly swaps adjacent elements if they're in wrong order. Passes through list until no swaps needed. Time complexity: O(n²). Simple but inefficient. Used for educational purposes and small datasets.",
+                r: "Bubble sort is like bubbles rising to surface - larger elements 'bubble up' to end of array.",
+                tags: ["sorting", "bubble-sort", "school", "basic-sorting"]
+            },
+            {
+                q: "What is selection sort and its working principle?",
+                a: "Selection sort finds minimum element and places it at beginning. Repeats for remaining unsorted portion. Time complexity: O(n²). Simple but inefficient. Makes exactly n-1 swaps. Used for educational purposes.",
+                r: "Selection sort is like picking the shortest person repeatedly and moving them to front of line.",
+                tags: ["sorting", "selection-sort", "school", "basic-sorting"]
+            },
+            {
+                q: "What is insertion sort and when is it useful?",
+                a: "Insertion sort builds sorted array one element at a time by inserting each element in correct position. Time complexity: O(n²). Efficient for small or nearly sorted datasets. Used in card sorting and small arrays.",
+                r: "Insertion sort is like sorting playing cards by picking each card and inserting it in right place.",
+                tags: ["sorting", "insertion-sort", "school", "basic-sorting"]
+            },
+            {
+                q: "What is time complexity and why is it important?",
+                a: "Time complexity measures how algorithm runtime grows with input size. Important for comparing algorithms and predicting performance. Expressed using Big O notation. Helps choose appropriate algorithm for given problem size.",
+                r: "Time complexity is like measuring how much longer a task takes as you get more work to do.",
+                tags: ["complexity", "time-complexity", "school", "big-o"]
+            },
+            {
+                q: "What is space complexity and how does it affect algorithms?",
+                a: "Space complexity measures memory usage as input size grows. Important for memory-constrained environments. Trade-off often exists between time and space complexity. Helps optimize algorithm for available resources.",
+                r: "Space complexity is like measuring how much desk space you need as your work grows.",
+                tags: ["complexity", "space-complexity", "school", "big-o"]
+            },
+            // College Level Questions
+            {
+                q: "What is Big O notation and how is it used?",
+                a: "Big O notation describes upper bound of algorithm's growth rate. Used to analyze and compare algorithm efficiency asymptotically. Ignores constants and lower-order terms. Common notations: O(1), O(log n), O(n), O(n log n), O(n²), O(2^n).",
+                r: "Big O is like speed limit - it tells you worst-case performance regardless of specific details.",
+                tags: ["complexity", "big-o-notation", "college", "asymptotic-analysis"]
+            },
+            {
+                q: "What is the difference between best, average, and worst case complexity?",
+                a: "Best case: minimum time/space for optimal input. Average case: expected performance for random input. Worst case: maximum time/space for any input. Big O typically refers to worst case. Real-world performance often closer to average case.",
+                r: "Best case is like perfect weather, worst case is like storm, average is like typical weather.",
+                tags: ["complexity", "case-analysis", "college", "performance-analysis"]
+            },
+            {
+                q: "What is merge sort and how does it work?",
+                a: "Merge sort divides array into halves, recursively sorts them, then merges. Uses divide-and-conquer strategy. Time complexity: O(n log n) in all cases. Space complexity: O(n). Stable sort. Used when stability and guaranteed performance are needed.",
+                r: "Merge sort is like sorting two piles of cards separately, then merging them into one sorted pile.",
+                tags: ["sorting", "merge-sort", "college", "divide-conquer"]
+            },
+            {
+                q: "What is quick sort and its partitioning strategy?",
+                a: "Quick sort picks pivot element, partitions array around it, recursively sorts subarrays. Average time: O(n log n), worst case: O(n²). In-place sorting. Most widely used sorting algorithm due to good average performance.",
+                r: "Quick sort is like organizing students by height - pick one as reference, arrange shorter/taller around them.",
+                tags: ["sorting", "quick-sort", "college", "partitioning"]
+            },
+            {
+                q: "What is heap sort and how does it utilize heap data structure?",
+                a: "Heap sort builds max-heap from array, repeatedly extracts maximum element. Time complexity: O(n log n) in all cases. In-place sorting. Not stable. Used when memory is constrained and worst-case guarantee is needed.",
+                r: "Heap sort is like always taking the tallest person from a group and placing them at the end.",
+                tags: ["sorting", "heap-sort", "college", "heap-data-structure"]
+            },
+            {
+                q: "What is recursion and how does it work in algorithms?",
+                a: "Recursion is technique where function calls itself to solve smaller instances of same problem. Requires base case and recursive case. Uses call stack. Elegant for divide-and-conquer problems. Can lead to stack overflow if not optimized.",
+                r: "Recursion is like Russian dolls - each doll contains a smaller version of itself.",
+                tags: ["recursion", "recursive-algorithms", "college", "problem-solving"]
+            },
+            {
+                q: "What is the difference between recursion and iteration?",
+                a: "Recursion uses function calls and call stack, iteration uses loops. Recursion: elegant, stack overhead, risk of overflow. Iteration: explicit control, often more efficient. Many recursive solutions can be converted to iterative.",
+                r: "Recursion is like climbing stairs by jumping to top, iteration is like taking one step at a time.",
+                tags: ["recursion", "iteration", "college", "comparison"]
+            },
+            {
+                q: "What is divide and conquer paradigm?",
+                a: "Divide and conquer breaks problem into smaller subproblems, solves them recursively, then combines solutions. Steps: divide, conquer, combine. Examples: merge sort, quick sort, binary search. Enables efficient solutions to complex problems.",
+                r: "Divide and conquer is like solving big puzzle by breaking it into smaller pieces, solving each, then putting together.",
+                tags: ["paradigm", "divide-conquer", "college", "algorithm-design"]
+            },
+            {
+                q: "What is greedy algorithm and when is it applicable?",
+                a: "Greedy algorithm makes locally optimal choices at each step. Works when greedy choice property and optimal substructure hold. Not always optimal. Examples: Dijkstra's, Prim's, Huffman coding. Simple and often efficient.",
+                r: "Greedy algorithm is like always taking the biggest piece available - might work, might not.",
+                tags: ["paradigm", "greedy", "college", "optimization"]
+            },
+            {
+                q: "What is dynamic programming and its key principles?",
+                a: "Dynamic programming solves complex problems by breaking into overlapping subproblems. Key principles: optimal substructure, overlapping subproblems. Uses memoization or tabulation. Examples: Fibonacci, knapsack, shortest paths.",
+                r: "Dynamic programming is like remembering solutions to math problems to avoid recalculating them.",
+                tags: ["paradigm", "dynamic-programming", "college", "optimization"]
+            },
+            // University Level Questions
+            {
+                q: "What is graph traversal and its main algorithms?",
+                a: "Graph traversal visits all vertices in graph. Main algorithms: BFS (level-by-level), DFS (deep exploration). BFS uses queue, DFS uses stack/recursion. Time complexity: O(V+E). Used in pathfinding, connectivity, and network analysis.",
+                r: "Graph traversal is like exploring all rooms in a building - either floor by floor (BFS) or following one path completely (DFS).",
+                tags: ["graph-algorithms", "traversal", "university", "bfs-dfs"]
+            },
+            {
+                q: "What is Dijkstra's algorithm and its applications?",
+                a: "Dijkstra's finds shortest paths from source to all vertices in weighted graph with non-negative edges. Uses priority queue. Time complexity: O(E + V log V). Used in GPS navigation, network routing, and logistics optimization.",
+                r: "Dijkstra's is like finding shortest driving distance from your home to all other locations.",
+                tags: ["graph-algorithms", "shortest-path", "university", "dijkstra"]
+            },
+            {
+                q: "What is minimum spanning tree and its algorithms?",
+                a: "MST connects all vertices with minimum total edge weight. Algorithms: Kruskal's (sort edges, add non-cyclic), Prim's (grow from vertex). Time: O(E log E) for Kruskal's, O(E log V) for Prim's. Used in network design and clustering.",
+                r: "MST is like building cheapest road network connecting all cities without creating loops.",
+                tags: ["graph-algorithms", "mst", "university", "optimization"]
+            },
+            {
+                q: "What is topological sorting and its applications?",
+                a: "Topological sorting produces linear ordering of vertices in DAG where edges go from earlier to later. Algorithms: Kahn's (BFS-based), DFS-based. Time: O(V+E). Used in task scheduling, dependency resolution, and build systems.",
+                r: "Topological sort is like creating course schedule where prerequisites come before advanced courses.",
+                tags: ["graph-algorithms", "topological-sort", "university", "dag"]
+            },
+            {
+                q: "What is the difference between BFS and DFS in terms of applications?",
+                a: "BFS finds shortest path in unweighted graphs, explores level by level. DFS explores deeply, used for cycle detection, topological sort. BFS uses more memory for wide graphs, DFS for deep graphs. Choice depends on problem requirements.",
+                r: "BFS is like ripples spreading in pond, DFS is like following one stream to its source.",
+                tags: ["graph-algorithms", "bfs-vs-dfs", "university", "comparison"]
+            },
+            {
+                q: "What is hash table and its collision resolution techniques?",
+                a: "Hash table stores key-value pairs using hash function. Collision resolution: chaining (linked lists), open addressing (probing). Average time: O(1) for operations. Used in databases, caches, and symbol tables.",
+                r: "Hash table is like smart filing cabinet where hash function tells you exactly which drawer to check.",
+                tags: ["data-structures", "hash-table", "university", "collision-resolution"]
+            },
+            {
+                q: "What is binary search tree and its operations?",
+                a: "BST maintains order: left < node < right. Operations: search, insert, delete - O(h) where h is height. Balanced BST: O(log n), unbalanced: O(n). Used in dictionaries, databases, and file systems.",
+                r: "BST is like library where books on left shelf are alphabetically before current book, right shelf after.",
+                tags: ["data-structures", "bst", "university", "search-trees"]
+            },
+            {
+                q: "What is AVL tree and its balancing mechanism?",
+                a: "AVL tree is self-balancing BST where height difference ≤ 1. Uses rotations (LL, RR, LR, RL) to maintain balance. Operations: O(log n) guaranteed. Stricter than Red-Black trees but more rotations. Used when lookup performance is critical.",
+                r: "AVL tree is like perfectly balanced mobile sculpture - any imbalance is immediately corrected.",
+                tags: ["data-structures", "avl-trees", "university", "balanced-trees"]
+            },
+            {
+                q: "What is Red-Black tree and its properties?",
+                a: "Red-Black tree is self-balancing BST with color properties. Rules: root is black, red nodes have black children, all paths have same black height. Rotations and recoloring maintain balance. O(log n) operations. Used in Linux kernel, Java TreeMap.",
+                r: "Red-Black tree is like traffic system where red lights ensure no path gets too long.",
+                tags: ["data-structures", "red-black-trees", "university", "balanced-trees"]
+            },
+            {
+                q: "What is B-tree and its use in databases?",
+                a: "B-tree is self-balancing tree optimized for disk storage. Large nodes minimize disk I/O. Order m determines maximum children. Time: O(log n). Used in databases, file systems, and indexing where disk access is expensive.",
+                r: "B-tree is like filing cabinet with many drawers - reduces trips to filing cabinet.",
+                tags: ["data-structures", "b-trees", "university", "databases"]
+            },
+            // National Level Questions
+            {
+                q: "What is Floyd-Warshall algorithm and its applications?",
+                a: "Floyd-Warshall finds all-pairs shortest paths using dynamic programming. Time: O(V³), Space: O(V²). Handles negative edges but not negative cycles. Used in network routing, distance matrices, and transitive closure.",
+                r: "Floyd-Warshall is like calculating shortest distance between every pair of cities in a country.",
+                tags: ["graph-algorithms", "all-pairs-shortest-path", "national", "floyd-warshall"]
+            },
+            {
+                q: "What is Bellman-Ford algorithm and when is it preferred?",
+                a: "Bellman-Ford finds shortest paths from source, handles negative edge weights. Detects negative cycles. Time: O(VE). Used when negative weights exist or cycle detection needed. Slower than Dijkstra's but more versatile.",
+                r: "Bellman-Ford is like careful traveler who checks all possible routes multiple times to ensure shortest path.",
+                tags: ["graph-algorithms", "shortest-path", "national", "negative-weights"]
+            },
+            {
+                q: "What is maximum flow problem and Ford-Fulkerson algorithm?",
+                a: "Maximum flow finds maximum flow from source to sink in network. Ford-Fulkerson uses augmenting paths. Time: O(E * max_flow). Edmonds-Karp (BFS) achieves O(VE²). Used in network design, bipartite matching, and supply chain.",
+                r: "Maximum flow is like finding maximum water that can flow through pipe network from source to destination.",
+                tags: ["graph-algorithms", "max-flow", "national", "network-flow"]
+            },
+            {
+                q: "What are strongly connected components and Tarjan's algorithm?",
+                a: "SCCs are maximal subgraphs where each vertex reachable from every other. Tarjan's algorithm finds SCCs using DFS and low-link values. Time: O(V+E). Used in graph analysis, social networks, and compiler optimization.",
+                r: "SCCs are like finding friend circles where everyone can reach everyone else through mutual connections.",
+                tags: ["graph-algorithms", "scc", "national", "connectivity"]
+            },
+            {
+                q: "What is suffix array and its construction algorithms?",
+                a: "Suffix array is sorted array of all suffixes of string. Size: O(2n-1) states, O(3n-4) transitions. Construction: O(n) time. Used for substring counting, pattern matching, and longest common substring.",
+                r: "Suffix array is like index of book showing all possible starting points of words in sorted order.",
+                tags: ["strings", "suffix-arrays", "national", "pattern-matching"]
+            },
+            {
+                q: "What is KMP algorithm for pattern matching?",
+                a: "Knuth-Morris-Pratt finds pattern occurrences efficiently using LPS array. Preprocessing: O(m), searching: O(n+m). Avoids redundant comparisons. Used in text editors, DNA analysis, and plagiarism detection.",
+                r: "KMP is like smart searching that remembers where patterns matched before to avoid rechecking.",
+                tags: ["strings", "pattern-matching", "national", "kmp"]
+            },
+            {
+                q: "What is segment tree and its applications?",
+                a: "Segment tree supports range queries and updates on arrays. Operations: O(log n) for both. Used for range sum, min, max queries. Space: O(4n). Used in competitive programming and database indexing.",
+                r: "Segment tree is like hierarchical summary that can quickly answer questions about any range.",
+                tags: ["data-structures", "segment-trees", "national", "range-queries"]
+            },
+            {
+                q: "What is Binary Indexed Tree (Fenwick Tree)?",
+                a: "BIT supports point updates and prefix sum queries in O(log n). More memory-efficient than segment trees. Uses binary representation. Used for frequency counting, inversion counting, and range sum queries.",
+                r: "BIT is like clever calculator that can quickly update values and calculate running totals.",
+                tags: ["data-structures", "bit", "fenwick-tree", "national", "range-queries"]
+            },
+            {
+                q: "What is the concept of NP-Completeness?",
+                a: "NP-Complete problems are in NP and as hard as any NP problem. If any NP-complete has polynomial solution, P=NP. Examples: SAT, Hamiltonian Cycle, Vertex Cover. Proved through polynomial reductions. Fundamental to theoretical CS.",
+                r: "NP-Complete problems are like puzzles that seem to require trying all possibilities but might have clever solutions.",
+                tags: ["complexity-theory", "np-complete", "national", "theoretical-cs"]
+            },
+            {
+                q: "What is amortized analysis and its importance?",
+                a: "Amortized analysis shows average cost per operation over sequence. Methods: aggregate, accounting, potential. Provides performance guarantees when individual operations vary. Used in dynamic arrays, hash tables, and splay trees.",
+                r: "Amortized analysis is like budgeting - expensive operations balanced by cheap ones over time.",
+                tags: ["analysis", "amortized-analysis", "national", "performance"]
+            },
+            // International Level Questions
+            {
+                q: "What is suffix automaton and its construction?",
+                a: "Suffix automaton is minimal DFA accepting all substrings of string. Size: O(2n-1) states, O(3n-4) transitions. Construction: O(n) time. Used for substring counting, pattern matching, and longest common substring.",
+                r: "Suffix automaton is like compact machine that can recognize any substring of text efficiently.",
+                tags: ["strings", "suffix-automaton", "international", "advanced-algorithms"]
+            },
+            {
+                q: "What is persistent data structure and its types?",
+                a: "Persistent structures preserve previous versions when modified. Types: fully persistent (all versions accessible), partially persistent (latest modifiable). Examples: persistent linked lists, segment trees. Used in functional programming.",
+                r: "Persistent structures are like time travel for data - you can access any previous version.",
+                tags: ["data-structures", "persistence", "international", "functional-programming"]
+            },
+            {
+                q: "What is randomized algorithm and its analysis?",
+                a: "Randomized algorithms use random numbers for decisions. Types: Las Vegas (always correct), Monte Carlo (bounded error). Analysis uses probability and expectation. Examples: QuickSort, randomized MST, Miller-Rabin primality test.",
+                r: "Randomized algorithms are like making decisions by coin flips - often simpler and surprisingly effective.",
+                tags: ["algorithms", "randomization", "international", "probability"]
+            },
+            {
+                q: "What is online algorithm and competitive analysis?",
+                a: "Online algorithms make decisions without future information. Competitive analysis compares to optimal offline algorithm. Examples: paging, caching, load balancing. Competitive ratio measures worst-case performance. Used in real-time systems.",
+                r: "Online algorithms are like chess players who must move without knowing opponent's future moves.",
+                tags: ["algorithms", "online-algorithms", "international", "competitive-analysis"]
+            },
+            {
+                q: "What is approximation algorithm and performance guarantee?",
+                a: "Approximation algorithms find near-optimal solutions for NP-hard problems. Performance ratio: algorithm/ optimal. Types: constant-factor, PTAS, FPTAS. Examples: vertex cover (2-approx), set cover (ln n-approx), TSP (1.5-approx).",
+                r: "Approximation algorithms are like finding good enough solutions when perfect ones are too expensive.",
+                tags: ["algorithms", "approximation", "international", "optimization"]
+            },
+            {
+                q: "What is parameterized complexity and FPT algorithms?",
+                a: "Parameterized complexity analyzes problems based on input size and parameters. FPT problems have f(k)·poly(n) algorithms. Examples: vertex cover (O(2^k·n)), k-path, feedback vertex set. Used for exact exponential-time algorithms.",
+                r: "Parameterized algorithms are like specialized tools efficient when certain aspects are small.",
+                tags: ["complexity-theory", "parameterized-complexity", "international", "fpt"]
+            },
+            {
+                q: "What is parallel algorithm and its design paradigms?",
+                a: "Parallel algorithms use multiple processors simultaneously. Paradigms: divide-and-conquer, pipeline, map-reduce. Analysis includes work, span, parallelism. Examples: parallel merge sort, parallel prefix sum. Used in HPC and distributed systems.",
+                r: "Parallel algorithms are like teamwork - multiple processors working together to solve problems faster.",
+                tags: ["parallel-algorithms", "concurrency", "international", "distributed-computing"]
+            },
+            {
+                q: "What is streaming algorithm and its memory efficiency?",
+                a: "Streaming algorithms process large data streams with limited memory. Use sampling, sketching, sliding windows. Memory sublinear in input size. Examples: frequency moments, heavy hitters, distinct elements. Used in big data and network monitoring.",
+                r: "Streaming algorithms are like summarizing long speech while only remembering key points.",
+                tags: ["streaming", "big-data", "international", "memory-efficient"]
+            },
+            {
+                q: "What is computational geometry and its main problems?",
+                a: "Computational geometry solves geometric problems. Main problems: convex hull, line intersection, nearest neighbors, range searching. Data structures: KD-trees, Voronoi diagrams. Used in graphics, robotics, GIS, pattern recognition.",
+                r: "Computational geometry is like solving puzzles with shapes, lines, and spaces.",
+                tags: ["computational-geometry", "geometric-algorithms", "international", "spatial-data"]
+            },
+            {
+                q: "What is quantum algorithm and its potential impact?",
+                a: "Quantum algorithms use quantum phenomena (superposition, entanglement). Examples: Shor's (factoring), Grover's (search). Offer exponential/quadratic speedups. Still largely theoretical with practical challenges. Could revolutionize cryptography and optimization.",
+                r: "Quantum algorithms are like using quantum physics to solve certain problems much faster than classical computers.",
+                tags: ["quantum-computing", "quantum-algorithms", "international", "theoretical"]
+            },
+            {
+                q: "What is the concept of algorithmic game theory?",
+                a: "Algorithmic game theory combines game theory with computer science. Studies strategic behavior in computational systems. Topics: mechanism design, auction algorithms, price of anarchy. Used in online advertising, network routing, and resource allocation.",
+                r: "Algorithmic game theory is like designing rules for games where computers are players trying to optimize their outcomes.",
+                tags: ["game-theory", "mechanism-design", "international", "economics"]
+            },
+            // Additional Advanced Questions
+            {
+                q: "What is the difference between deterministic and nondeterministic algorithms?",
+                a: "Deterministic algorithms produce same output for same input, follow single path. Nondeterministic can have multiple possible execution paths. Deterministic: predictable, easier to debug. Nondeterministic: theoretical concept, basis for NP complexity class.",
+                r: "Deterministic is like following exact recipe, nondeterministic is like having multiple recipe choices.",
+                tags: ["complexity-theory", "determinism", "algorithms", "theoretical-cs"]
+            },
+            {
+                q: "What is the difference between online and offline algorithms?",
+                a: "Offline algorithms have complete input information before processing. Online algorithms make decisions with partial information. Offline: optimal solutions possible. Online: must handle uncertainty, use competitive analysis.",
+                r: "Offline is like solving puzzle with all pieces visible, online is like solving puzzle pieces as they arrive.",
+                tags: ["algorithms", "online-algorithms", "offline-algorithms", "comparison"]
+            },
+            {
+                q: "What is the concept of approximation ratio in approximation algorithms?",
+                a: "Approximation ratio measures worst-case performance of approximation algorithm compared to optimal solution. Ratio = algorithm solution / optimal solution. Lower ratio better. Used when exact solutions are computationally expensive.",
+                r: "Approximation ratio is like guaranteeing your solution is never more than twice as bad as perfect solution.",
+                tags: ["approximation", "algorithms", "optimization", "performance-guarantee"]
+            },
+            {
+                q: "What is the difference between PTAS and FPTAS?",
+                a: "PTAS (Polynomial Time Approximation Scheme): running time polynomial in input size for fixed approximation factor. FPTAS (Fully PTAS): polynomial in both input size and 1/ε. FPTAS more efficient for small ε, PTAS more general.",
+                r: "PTAS is like adjustable precision tool, FPTAS is like precision tool that stays efficient even at high precision.",
+                tags: ["approximation", "ptas", "fptas", "algorithms", "optimization"]
+            },
+            {
+                q: "What is the concept of competitive analysis in online algorithms?",
+                a: "Competitive analysis compares online algorithm performance to optimal offline algorithm. Competitive ratio = worst-case online cost / optimal offline cost. Provides performance guarantee for online decisions. Used in caching, paging, load balancing.",
+                r: "Competitive analysis is like measuring how well you perform when making decisions without seeing the future.",
+                tags: ["online-algorithms", "competitive-analysis", "algorithms", "performance-analysis"]
+            },
+            {
+                q: "What is the difference between Las Vegas and Monte Carlo algorithms?",
+                a: "Las Vegas algorithms always correct, running time varies (randomized). Monte Carlo algorithms have bounded running time, may produce wrong answer with small probability. Las Vegas: correctness guaranteed. Monte Carlo: efficiency guaranteed.",
+                r: "Las Vegas is like perfect gambler who might take variable time, Monte Carlo is like quick gambler who might occasionally be wrong.",
+                tags: ["randomized-algorithms", "las-vegas", "monte-carlo", "probability"]
+            },
+            {
+                q: "What is the concept of randomized quick sort and its advantages?",
+                a: "Randomized quick sort chooses random pivot instead of fixed pivot. Expected time O(n log n), eliminates worst-case O(n²) for specific inputs. More robust against adversarial inputs. Simple to implement, good average performance.",
+                r: "Randomized quick sort is like shuffling cards before sorting to avoid worst-case arrangements.",
+                tags: ["sorting", "randomized-algorithms", "quick-sort", "probability"]
+            },
+            {
+                q: "What is the difference between parallel and distributed algorithms?",
+                a: "Parallel algorithms use multiple processors on shared memory. Distributed algorithms run on multiple machines with local memory. Parallel: fast communication, shared data. Distributed: message passing, network delays, fault tolerance.",
+                r: "Parallel is like team working in same room, distributed is like team working in different offices communicating by messages.",
+                tags: ["parallel-algorithms", "distributed-algorithms", "concurrency", "comparison"]
+            },
+            {
+                q: "What is the concept of MapReduce paradigm?",
+                a: "MapReduce processes large datasets across distributed clusters. Map: transform data into key-value pairs. Reduce: aggregate values for each key. Automatically handles parallelization, fault tolerance, data distribution. Used in big data processing.",
+                r: "MapReduce is like dividing census work among many counters, then combining their results.",
+                tags: ["mapreduce", "distributed-algorithms", "big-data", "parallel-processing"]
+            },
+            {
+                q: "What is the difference between SIMD and MIMD architectures?",
+                a: "SIMD (Single Instruction Multiple Data): same operation on multiple data simultaneously. MIMD (Multiple Instruction Multiple Data): different operations on different data. SIMD: vector operations, GPUs. MIMD: multicore CPUs, distributed systems.",
+                r: "SIMD is like orchestra playing same note, MIMD is like orchestra playing different instruments simultaneously.",
+                tags: ["parallel-computing", "simd", "mimd", "computer-architecture"]
+            },
+            {
+                q: "What is the concept of streaming algorithms and their applications?",
+                a: "Streaming algorithms process data streams with limited memory, typically sublinear in input size. Use sampling, sketching, sliding windows. Applications: network monitoring, clickstream analysis, sensor data. Handle massive, continuous data.",
+                r: "Streaming algorithms are like summarizing a long speech while only remembering key points.",
+                tags: ["streaming-algorithms", "big-data", "memory-efficient", "real-time"]
+            },
+            {
+                q: "What is the difference between exact and approximate algorithms?",
+                a: "Exact algorithms find optimal solutions, often exponential time. Approximate algorithms find near-optimal solutions in polynomial time. Exact: guaranteed optimal, may be slow. Approximate: faster, bounded error, practical for NP-hard problems.",
+                r: "Exact is like finding perfect solution, approximate is like finding good enough solution quickly.",
+                tags: ["algorithms", "optimization", "exact-vs-approximate", "complexity"]
+            },
+            {
+                q: "What is the concept of parameterized algorithms and fixed-parameter tractability?",
+                a: "Parameterized algorithms solve problems efficiently when certain parameters are small. FPT: f(k)·poly(n) time where k is parameter. Examples: vertex cover, k-path, feedback vertex set. Provides exact solutions for structured instances.",
+                r: "Parameterized algorithms are like specialized tools that work perfectly when problem has small specific features.",
+                tags: ["parameterized-complexity", "fpt", "algorithms", "exact-algorithms"]
+            },
+            {
+                q: "What is the difference between kernelization and preprocessing?",
+                a: "Kernelization reduces problem instance while preserving answer equivalence, with size bound in parameter. Preprocessing improves instance but no size guarantee. Kernelization: theoretical, parameterized. Preprocessing: practical, heuristic.",
+                r: "Kernelization is like guaranteed size reduction, preprocessing is like general cleanup.",
+                tags: ["parameterized-complexity", "kernelization", "preprocessing", "algorithms"]
+            },
+            {
+                q: "What is the concept of exponential time hypothesis (ETH)?",
+                a: "ETH conjectures that 3-SAT cannot be solved in subexponential time 2^(o(n)). Used to prove conditional lower bounds. Implies certain problems require exponential time. Important for understanding algorithm limits.",
+                r: "ETH is like believing some problems fundamentally require exponential time regardless of clever algorithms.",
+                tags: ["complexity-theory", "eth", "exponential-time", "lower-bounds"]
+            },
+            {
+                q: "What is the difference between worst-case and average-case analysis?",
+                a: "Worst-case analysis considers maximum running time over all inputs. Average-case considers expected time over input distribution. Worst-case: guarantees performance. Average-case: reflects typical performance, may be optimistic.",
+                r: "Worst-case is like planning for worst traffic, average-case is like expecting normal traffic.",
+                tags: ["algorithm-analysis", "worst-case", "average-case", "performance"]
+            },
+            {
+                q: "What is the concept of amortized analysis and its methods?",
+                a: "Amortized analysis shows average cost per operation over sequence. Methods: aggregate (total cost/n), accounting (charge scheme), potential (energy model). Used when individual operations vary but overall pattern is predictable.",
+                r: "Amortized analysis is like budgeting - some operations expensive, but average cost stays low.",
+                tags: ["amortized-analysis", "algorithm-analysis", "data-structures", "performance"]
+            },
+            {
+                q: "What is the difference between lower bounds and upper bounds in algorithm analysis?",
+                a: "Upper bounds show algorithm's maximum running time (Big O). Lower bounds show minimum time any algorithm needs (Big Ω). Upper: algorithm performance guarantee. Lower: problem difficulty guarantee. Gap indicates room for improvement.",
+                r: "Upper bound is like speed limit, lower bound is like minimum speed needed.",
+                tags: ["algorithm-analysis", "lower-bounds", "upper-bounds", "complexity"]
+            },
+            {
+                q: "What is the concept of reduction in computational complexity?",
+                a: "Reduction transforms one problem into another to transfer complexity results. If A reduces to B, B at least as hard as A. Used for NP-completeness proofs, problem classification. Types: many-one, Turing, polynomial-time.",
+                r: "Reduction is like using calculator for arithmetic to solve math problem - transfers difficulty.",
+                tags: ["complexity-theory", "reductions", "np-completeness", "computational-complexity"]
+            },
+            {
+                q: "What is the difference between NP, co-NP, and PSPACE?",
+                a: "NP: problems with polynomial-time verifiers. co-NP: complements of NP problems. PSPACE: problems solvable with polynomial space. Relationships: P ⊆ NP ∩ co-NP ⊆ PSPACE. Unknown if inclusions are proper.",
+                r: "NP is like finding solution, co-NP is like verifying no solution exists, PSPACE is like having enough workspace.",
+                tags: ["complexity-theory", "np", "co-np", "pspace", "complexity-classes"]
+            },
+            {
+                q: "What is the concept of interactive proofs and their power?",
+                a: "Interactive proofs involve verifier and prover exchanging messages. IP = PSPACE (surprising power). Zero-knowledge proofs reveal nothing but validity. Used in cryptography, verification systems. More powerful than standard proofs.",
+                r: "Interactive proofs are like detective interrogation where witness convinces detective without revealing all details.",
+                tags: ["complexity-theory", "interactive-proofs", "cryptography", "verification"]
+            },
+            {
+                q: "What is the difference between decision problems and optimization problems?",
+                a: "Decision problems have yes/no answers. Optimization problems find best solution among many. Decision: simpler, basis for complexity classes. Optimization: often harder, can be reduced to multiple decision calls.",
+                r: "Decision is like asking if path exists, optimization is like finding shortest path.",
+                tags: ["problem-types", "decision-problems", "optimization", "complexity"]
+            },
+            {
+                q: "What is the concept of approximation schemes and their types?",
+                a: "Approximation schemes provide trade-off between solution quality and running time. PTAS: polynomial for fixed ε. FPTAS: polynomial in both n and 1/ε. EPTAS: exponential in 1/ε but efficient in practice. Used for NP-hard optimization.",
+                r: "Approximation schemes are like adjustable quality controls - better quality takes more time.",
+                tags: ["approximation", "ptas", "fptas", "optimization", "algorithms"]
+            },
+            {
+                q: "What is the difference between heuristic and exact algorithms?",
+                a: "Heuristic algorithms use rules of thumb, no optimality guarantee. Exact algorithms guarantee optimal solutions. Heuristic: fast, practical, may fail. Exact: slower, guaranteed success. Often used together.",
+                r: "Heuristic is like experienced guess, exact is like systematic calculation.",
+                tags: ["algorithms", "heuristics", "exact-algorithms", "optimization"]
+            },
+            {
+                q: "What is the concept of metaheuristics and their applications?",
+                a: "Metaheuristics are high-level strategies guiding other heuristics. Examples: genetic algorithms, simulated annealing, tabu search. Balance exploration and exploitation. Used for complex optimization where traditional methods fail.",
+                r: "Metaheuristics are like smart search strategies that adapt and learn during optimization.",
+                tags: ["metaheuristics", "optimization", "genetic-algorithms", "simulated-annealing"]
+            },
+            {
+                q: "What is the difference between local search and global search?",
+                a: "Local search explores neighboring solutions, may get stuck in local optima. Global search explores entire solution space, finds global optimum. Local: fast, simple. Global: complete, slower. Hybrid approaches common.",
+                r: "Local search is like climbing nearest hill, global search is like surveying entire landscape.",
+                tags: ["search-algorithms", "local-search", "global-search", "optimization"]
+            },
+            {
+                q: "What is the concept of simulated annealing and its inspiration?",
+                a: "Simulated annealing is metaheuristic inspired by metal annealing process. Accepts worse solutions with decreasing probability to escape local optima. Temperature parameter controls exploration. Used for combinatorial optimization.",
+                r: "Simulated annealing is like controlled cooling that allows atoms to settle into optimal arrangement.",
+                tags: ["metaheuristics", "simulated-annealing", "optimization", "local-search"]
+            },
+            {
+                q: "What is the difference between genetic algorithms and evolutionary programming?",
+                a: "Genetic algorithms use crossover and mutation on fixed-length chromosomes. Evolutionary programming focuses on mutation and selection, variable representations. GA: population-based, recombination. EP: emphasis on behavioral evolution.",
+                r: "Genetic algorithms are like breeding champion solutions, evolutionary programming is like evolving behaviors.",
+                tags: ["metaheuristics", "genetic-algorithms", "evolutionary-programming", "optimization"]
+            },
+            {
+                q: "What is the concept of tabu search and its mechanisms?",
+                a: "Tabu search enhances local search by maintaining tabu list of recent moves to avoid cycling. Uses aspiration criteria to override tabu. Balances exploration and exploitation. Effective for combinatorial optimization.",
+                r: "Tabu search is like explorer who avoids recently visited places to discover new territories.",
+                tags: ["metaheuristics", "tabu-search", "local-search", "optimization"]
+            },
+            {
+                q: "What is the difference between ant colony optimization and particle swarm optimization?",
+                a: "Ant colony optimization inspired by ant foraging, uses pheromone trails. Particle swarm optimization inspired by bird flocking, uses velocity and position updates. ACO: discrete optimization. PSO: continuous optimization.",
+                r: "Ant colony is like many ants finding best path together, particle swarm is like flock of birds finding best location.",
+                tags: ["metaheuristics", "ant-colony", "particle-swarm", "swarm-intelligence"]
+            },
+            {
+                q: "What is the concept of artificial neural networks in optimization?",
+                a: "Neural networks can learn optimization patterns and provide approximate solutions. Used for function approximation, pattern recognition, decision making. Training is optimization problem itself. Hybrid approaches combine with traditional methods.",
+                r: "Neural networks are like learning optimization strategies from experience rather than following fixed rules.",
+                tags: ["neural-networks", "optimization", "machine-learning", "approximation"]
+            },
+            {
+                q: "What is the difference between supervised and unsupervised learning algorithms?",
+                a: "Supervised learning uses labeled training data to learn input-output mapping. Unsupervised learning finds patterns in unlabeled data. Supervised: prediction, classification. Unsupervised: clustering, dimensionality reduction.",
+                r: "Supervised is like learning with answer key, unsupervised is like finding patterns without guidance.",
+                tags: ["machine-learning", "supervised-learning", "unsupervised-learning", "algorithms"]
+            },
+            {
+                q: "What is the concept of reinforcement learning and its applications?",
+                a: "Reinforcement learning learns optimal actions through trial and error with rewards. Uses exploration-exploitation balance. Applications: game playing, robotics, control systems. Algorithms: Q-learning, policy gradients, actor-critic.",
+                r: "Reinforcement learning is like learning to ride bicycle through practice and feedback.",
+                tags: ["reinforcement-learning", "machine-learning", "optimization", "decision-making"]
+            },
+            {
+                q: "What is the difference between classification and regression algorithms?",
+                a: "Classification predicts discrete categories (classes). Regression predicts continuous values. Classification: spam detection, image recognition. Regression: price prediction, temperature forecasting. Different evaluation metrics and techniques.",
+                r: "Classification is like sorting mail into categories, regression is like predicting exact temperature.",
+                tags: ["machine-learning", "classification", "regression", "prediction"]
+            },
+            {
+                q: "What is the concept of ensemble methods and their advantages?",
+                a: "Ensemble methods combine multiple models to improve performance. Types: bagging, boosting, stacking. Reduces overfitting, improves accuracy, robust to noise. Examples: random forests, gradient boosting, AdaBoost.",
+                r: "Ensemble methods are like committee of experts making better decisions together than individually.",
+                tags: ["ensemble-methods", "machine-learning", "bagging", "boosting"]
+            },
+            {
+                q: "What is the difference between overfitting and underfitting?",
+                a: "Overfitting: model too complex, learns noise, poor generalization. Underfitting: model too simple, misses patterns, poor performance on both train and test. Balance needed through regularization, cross-validation.",
+                r: "Overfitting is like memorizing answers, underfitting is like not studying enough.",
+                tags: ["machine-learning", "overfitting", "underfitting", "model-selection"]
+            },
+            {
+                q: "What is the concept of cross-validation in model evaluation?",
+                a: "Cross-validation splits data into training/validation sets multiple times. K-fold: divide into k parts, use each for validation once. Provides robust performance estimate, prevents overfitting to particular split. Used for model selection.",
+                r: "Cross-validation is like testing student with multiple different exams to assess true knowledge.",
+                tags: ["machine-learning", "cross-validation", "model-evaluation", "validation"]
+            },
+            {
+                q: "What is the difference between precision and recall?",
+                a: "Precision: TP/(TP+FP) - accuracy of positive predictions. Recall: TP/(TP+FN) - coverage of actual positives. Trade-off depends on application. High precision: few false positives. High recall: few false negatives.",
+                r: "Precision is like accuracy of guilty verdicts, recall is like catching all actual criminals.",
+                tags: ["machine-learning", "precision", "recall", "evaluation-metrics"]
+            },
+            {
+                q: "What is the concept of ROC curves and AUC?",
+                a: "ROC (Receiver Operating Characteristic) plots true positive rate vs false positive rate at various thresholds. AUC (Area Under Curve) summarizes performance. AUC=0.5: random, AUC=1: perfect. Used for binary classifier evaluation.",
+                r: "ROC curve is like testing alarm system at different sensitivity levels, AUC is overall effectiveness score.",
+                tags: ["machine-learning", "roc-curve", "auc", "evaluation-metrics"]
+            },
+            {
+                q: "What is the difference between feature selection and feature extraction?",
+                a: "Feature selection chooses subset of original features. Feature extraction creates new features from existing ones. Selection: maintains interpretability. Extraction: may improve performance, reduces dimensionality. Both address curse of dimensionality.",
+                r: "Feature selection is like choosing best ingredients, feature extraction is like creating new recipe from existing ingredients.",
+                tags: ["machine-learning", "feature-selection", "feature-extraction", "dimensionality-reduction"]
+            },
+            {
+                q: "What is the concept of dimensionality reduction and its methods?",
+                a: "Dimensionality reduction reduces number of features while preserving information. Methods: PCA (linear), t-SNE (non-linear), autoencoders (neural). Addresses curse of dimensionality, improves visualization, reduces computation.",
+                r: "Dimensionality reduction is like summarizing long book into key points without losing essence.",
+                tags: ["machine-learning", "dimensionality-reduction", "pca", "t-sne"]
+            },
+            {
+                q: "What is the difference between batch and online learning?",
+                a: "Batch learning trains on entire dataset at once. Online learning updates model incrementally with new data. Batch: stable, requires all data. Online: adaptive, handles streaming data, memory efficient.",
+                r: "Batch learning is like studying entire textbook before exam, online learning is like learning continuously.",
+                tags: ["machine-learning", "batch-learning", "online-learning", "training-methods"]
+            },
+            {
+                q: "What is the concept of transfer learning and its applications?",
+                a: "Transfer learning applies knowledge from source domain to target domain. Uses pre-trained models, fine-tuning. Reduces training time, data requirements. Applications: computer vision, NLP, limited data scenarios.",
+                r: "Transfer learning is like using bicycle riding skills to learn motorcycle riding faster.",
+                tags: ["machine-learning", "transfer-learning", "deep-learning", "pre-trained-models"]
+            },
+            {
+                q: "What is the difference between generative and discriminative models?",
+                a: "Generative models learn data distribution, can generate new samples. Discriminative models learn decision boundary, focus on classification. Generative: Naive Bayes, GANs. Discriminative: logistic regression, SVMs.",
+                r: "Generative is like learning to write essays, discriminative is like learning to grade essays.",
+                tags: ["machine-learning", "generative-models", "discriminative-models", "probability"]
+            },
+            {
+                q: "What is the concept of attention mechanisms in neural networks?",
+                a: "Attention mechanisms allow models to focus on relevant parts of input. Weights importance of different elements. Used in transformers, machine translation, computer vision. Improves performance on long sequences.",
+                r: "Attention is like highlighting important words while reading long document.",
+                tags: ["deep-learning", "attention-mechanism", "transformers", "neural-networks"]
+            },
+            {
+                q: "What is the difference between CNN and RNN architectures?",
+                a: "CNN (Convolutional Neural Network) uses spatial convolutions, good for images, grid data. RNN (Recurrent Neural Network) uses sequential processing, good for time series, text. CNN: translation invariant. RNN: memory of past.",
+                r: "CNN is like visual cortex processing images, RNN is like language center processing sentences.",
+                tags: ["deep-learning", "cnn", "rnn", "neural-architectures"]
+            },
+            {
+                q: "What is the concept of transformers and their impact?",
+                a: "Transformers use self-attention mechanisms, process all tokens in parallel. Revolutionized NLP with BERT, GPT. Better than RNNs for long sequences, parallelizable. Applications: translation, text generation, multimodal tasks.",
+                r: "Transformers are like understanding sentence by considering all words simultaneously rather than sequentially.",
+                tags: ["deep-learning", "transformers", "attention", "nlp"]
+            }
+                
+        ];
+
+        // Function to download all questions as PDF
+        function downloadPDF() {
+            // Show loading message
+            const originalText = event.target.innerHTML;
+            event.target.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            event.target.disabled = true;
+            
+            setTimeout(() => {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Set font size and style
+                doc.setFontSize(20);
+                doc.text('Algorithms - Interview Questions', 20, 20);
+                
+                doc.setFontSize(12);
+                doc.text('Complete collection of Algorithms interview questions and answers', 20, 30);
+                
+                let yPosition = 50;
+                const pageHeight = doc.internal.pageSize.height;
+                const lineHeight = 7;
+                const margin = 20;
+                
+                // Add all questions to PDF
+                data.forEach((item, index) => {
+                    // Check if we need a new page
+                    if (yPosition > pageHeight - 40) {
+                        doc.addPage();
+                        yPosition = 30;
+                    }
+                    
+                    // Question number and title
+                    doc.setFontSize(14);
+                    doc.setFont(undefined, 'bold');
+                    const questionText = `Q${index + 1}: ${item.q}`;
+                    const questionLines = doc.splitTextToSize(questionText, 170);
+                    
+                    questionLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Answer
+                    doc.setFontSize(11);
+                    doc.setFont(undefined, 'normal');
+                    const answerText = `Answer: ${item.a}`;
+                    const answerLines = doc.splitTextToSize(answerText, 170);
+                    
+                    answerLines.forEach(line => {
+                        if (yPosition > pageHeight - 20) {
+                            doc.addPage();
+                            yPosition = 30;
+                        }
+                        doc.text(line, margin, yPosition);
+                        yPosition += lineHeight;
+                    });
+                    
+                    // Real-world example (if exists)
+                    if (item.r) {
+                        doc.setFont(undefined, 'italic');
+                        const exampleText = `Example: ${item.r}`;
+                        const exampleLines = doc.splitTextToSize(exampleText, 170);
+                        
+                        exampleLines.forEach(line => {
+                            if (yPosition > pageHeight - 20) {
+                                doc.addPage();
+                                yPosition = 30;
+                            }
+                            doc.text(line, margin, yPosition);
+                            yPosition += lineHeight;
+                        });
+                    }
+                    
+                    // Add spacing between questions
+                    yPosition += lineHeight * 2;
+                    
+                    // Add separator line
+                    if (yPosition < pageHeight - 20) {
+                        doc.setLineWidth(0.1);
+                        doc.line(margin, yPosition, 190, yPosition);
+                        yPosition += lineHeight;
+                    }
+                });
+                
+                // Add footer
+                const totalPages = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= totalPages; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(10);
+                    doc.setFont(undefined, 'normal');
+                    doc.text(`Page ${i} of ${totalPages}`, 105, pageHeight - 10, { align: 'center' });
+                    doc.text('Generated from IT Interview Hub', 105, pageHeight - 5, { align: 'center' });
+                }
+                
+                // Save the PDF
+                doc.save('Algorithms-Interview-Questions.pdf');
+                
+                // Restore button state
+                event.target.innerHTML = originalText;
+                event.target.disabled = false;
+            }, 100);
+        }
+
+        // Function to copy code to clipboard
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+
+            if (!codeElement) return;
+
+            const code = codeElement.innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                // Show copied feedback
+                const copyBtn = codeElement.closest('.code-container').querySelector('.copy-btn');
+                if (copyBtn) {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                }
+            }).catch(err => {
+                console.error('Failed to copy code: ', err);
+            });
+        }
+    
+
+        // Function to scroll to specific question
+        function scrollToQuestion(questionId) {
+            const element = document.getElementById(questionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active TOC link
+                const tocLinks = document.querySelectorAll('.toc-link');
+                tocLinks.forEach(link => link.classList.remove('active'));
+                
+                const activeLink = document.querySelector(`.toc-link[href="#${questionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Function to render table of contents
+        function renderTOC() {
+            const tocList = document.getElementById('tocList');
+            if (!tocList) return;
+
+            const source = currentQuestions && currentQuestions.length ? currentQuestions : data;
+            const start = (currentPage - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+
+            const pageItems = source.slice(start, end);
+
+            tocList.innerHTML = pageItems.map((item, index) => {
+                const number = start + index + 1;
+                const shortQ = item.q.substring(0, 50) + (item.q.length > 50 ? '...' : '');
+                return `
+                    <li class="toc-item">
+                        <a href="#q-${number}" class="toc-link" onclick="scrollToQuestion('q-${number}'); return false;">
+                            <span class="toc-number">${number}.</span>
+                            <span class="toc-question">${shortQ}</span>
+                        </a>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        // Function to handle search with highlighting
+        function filterQuestions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (!searchTerm) {
+                currentQuestions = [...data];
+                currentPage = 1;
+                updatePagination();
+                return;
+            }
+            
+            currentQuestions = data.filter(item => 
+                item.q.toLowerCase().includes(searchTerm) || 
+                item.a.toLowerCase().includes(searchTerm) ||
+                (item.r && item.r.toLowerCase().includes(searchTerm)) ||
+                (item.tags && item.tags.some(tag => tag.toLowerCase().includes(searchTerm)))
+            );
+            
+            currentPage = 1;
+            updatePagination();
+            
+            // Highlight search terms after rendering
+            setTimeout(() => highlightSearchTerms(searchTerm), 100);
+        }
+
+        // Function to highlight search terms
+        function highlightSearchTerms(searchTerm) {
+            if (!searchTerm) return;
+            
+            const questionsContainer = document.getElementById('questionsContainer');
+            const questionBoxes = questionsContainer.querySelectorAll('.q-box');
+            
+            questionBoxes.forEach(box => {
+                const h3 = box.querySelector('h3');
+                const paragraphs = box.querySelectorAll('p');
+                
+                // Highlight in question title
+                if (h3) {
+                    h3.innerHTML = highlightText(h3.textContent, searchTerm);
+                }
+                
+                // Highlight in paragraphs
+                paragraphs.forEach(p => {
+                    p.innerHTML = highlightText(p.textContent, searchTerm);
+                });
+            });
+        }
+
+        // Function to highlight text
+        function highlightText(text, searchTerm) {
+            if (!searchTerm) return text;
+            
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+        }
+
+        // Add CSS for search highlighting
+        const searchHighlightStyle = document.createElement('style');
+        searchHighlightStyle.textContent = `
+            .search-highlight {
+                background-color: #fef08a;
+                color: #713f12;
+                padding: 2px 4px;
+                border-radius: 3px;
+                font-weight: 500;
+            }
+        `;
+        document.head.appendChild(searchHighlightStyle);
+
+        // Function to render questions with pagination
+        function renderQuestions(questionsToRender = data) {
+            currentQuestions = [...questionsToRender];
+            currentPage = 1; // Reset to first page when filtering
+            updatePagination();
+        }
+
+        // Function to update pagination
+        function updatePagination() {
+            const questionsContainer = document.getElementById('questionsContainer');
+            const pageInfo = document.getElementById('pageInfo');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+
+            // Calculate pagination details
+            const start = (currentPage - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
+
+            // Render questions for the current page
+            const questionsHTML = currentQuestions.slice(start, end).map((item, index) => {
+                const questionNumber = (currentPage - 1) * questionsPerPage + index + 1;
+                return `
+                    <div class="q-box" id="q-${questionNumber}">
+                        <h3>${item.q}</h3>
+                        <div class="q-meta">
+                            <span class="q-number">${questionNumber}</span>
+                            <span class="q-tags">
+                                ${item.tags.map(tag => `<span class="q-tag">${tag}</span>`).join('')}
+                            </span>
+                        </div>
+                        <p>${item.a}</p>
+                        ${item.r ? `<p class="q-result">${item.r}</p>` : ''}
+                        ${item.c ? `
+                            <div class="code-container">
+                                <div class="code-header">
+                                    <span class="code-title">Example Code</span>
+                                    <button class="copy-btn" onclick="copyCode('code-${questionNumber}')">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <pre><code id="code-${questionNumber}" class="language-javascript">${item.c}</code></pre>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            questionsContainer.innerHTML = questionsHTML;
+
+            renderTOC();
+
+            // Update page info
+            if (pageInfo) {
+                pageInfo.textContent = `Page ${currentPage} of ${pageCount} (${currentQuestions.length} questions)`;
+            }
+
+            // Update navigation buttons
+            if (prevPageBtn) {
+                prevPageBtn.disabled = currentPage === 1;
+            }
+            if (nextPageBtn) {
+                nextPageBtn.disabled = currentPage === pageCount || pageCount === 0;
+            }
+
+            // Highlight code blocks
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        }
+
+        // Pagination functions
+        function nextPage() {
+            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
+            if (currentPage < pageCount) {
+                currentPage++;
+                updatePagination();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderQuestions();
+
+            // Pagination button event listeners
+            const nextPageBtn = document.getElementById('nextPage');
+            if (nextPageBtn) {
+                nextPageBtn.addEventListener('click', nextPage);
+            }
+            const prevPageBtn = document.getElementById('prevPage');
+            if (prevPageBtn) {
+                prevPageBtn.addEventListener('click', prevPage);
+            }
+
+            const tocToggleBtn = document.getElementById('tocToggleBtn');
+            const tocList = document.getElementById('tocList');
+            if (tocToggleBtn && tocList) {
+                tocToggleBtn.addEventListener('click', function() {
+                    tocList.classList.toggle('toc-hidden');
+                });
+            }
+            
+            // Add search event listener
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterQuestions);
+            }
+
+            // Mobile menu functionality
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+            const mobileSidebarClose = document.getElementById('mobileSidebarClose');
+
+            function openMobileMenu() {
+                mobileSidebar.classList.add('active');
+                mobileSidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileSidebar.classList.remove('active');
+                mobileSidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', openMobileMenu);
+            }
+
+            if (mobileSidebarClose) {
+                mobileSidebarClose.addEventListener('click', closeMobileMenu);
+            }
+
+            if (mobileSidebarOverlay) {
+                mobileSidebarOverlay.addEventListener('click', closeMobileMenu);
+            }
+
+            // Close mobile menu when clicking on TOC links
+            const mobileTocLinks = mobileSidebar?.querySelectorAll('.toc-link');
+            if (mobileTocLinks) {
+                mobileTocLinks.forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+            }
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileSidebar?.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
