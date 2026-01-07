@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="layout.js"></script>
     <style>
         :root {
             --primary: #2563eb;
@@ -821,6 +822,8 @@
     </style>
 </head>
 <body>
+    <div id="header"></div>
+    
     <header>
         <div class="header-content">
             <h1>OOP Concepts</h1>
@@ -1960,6 +1963,17 @@
                 }
             });
         });
+
+// Load layout.js for header/footer functionality
+(function() {
+    if (!document.querySelector('script[src="layout.js"]')) {
+        const script = document.createElement('script');
+        script.src = 'layout.js';
+        script.async = false;
+        document.head.appendChild(script);
+    }
+})();
     </script>
+    <div id="footer"></div>
 </body>
 </html>

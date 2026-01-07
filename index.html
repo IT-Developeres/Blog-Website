@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="layout.js"></script>
     <style>
 :root {
   --primary: #2563eb;
@@ -383,17 +384,7 @@ footer{
 
 <body>
 
-<header>
-  <div class="header-container">
-    <a href="/" class="logo">
-      <i class="fas fa-laptop-code"></i>
-      IT Interview Hub
-    </a>
-    <nav>
-      <a href="#topics" class="btn btn-outline">Browse Topics</a>
-    </nav>
-  </div>
-</header>
+<div id="header"></div>
 
 <main>
   <section class="hero">
@@ -466,9 +457,7 @@ footer{
       </div>
     </div>
   </section>
-<footer>
-© 2025 IT Interview Hub
-</footer>
+<div id="footer"></div>
 
 <script>
 const topics = [
@@ -619,6 +608,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 btn.addEventListener("click", loadTopics);
+
+// Load layout.js for header/footer functionality
+(function() {
+    if (!document.querySelector('script[src="layout.js"]')) {
+        const script = document.createElement('script');
+        script.src = 'layout.js';
+        script.async = false;
+        document.head.appendChild(script);
+    }
+})();
+
 loadTopics();
 </script>
 

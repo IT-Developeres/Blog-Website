@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IT Interview Hub</title>
+    <meta name="description" content="Get in touch with IT Interview Hub. Have questions, feedback, or suggestions? We'd love to hear from you!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/contact-styles.css">
+    <script src="layout.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background: var(--light);
+            color: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: #fff;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,10L50,30L70,10L90,30L70,50L90,70L70,90L50,70L30,90L30,70L10,50L30,30L10,10L30,10Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            padding: 4rem 0;
+            background-color: #f9fafb;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 4rem 3% 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Get in touch with any questions or feedback!</p>
+        </div>
+    </div>
+
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <div class="form-header">
+                    <span class="form-badge">
+                        <i class="fas fa-envelope"></i> Send us a Message
+                    </span>
+                    <h2 class="form-title">Get In Touch</h2>
+                    <p class="form-description">
+                        Have a question, suggestion, or feedback? Fill out the form below and we'll get back to you as soon as possible.
+                    </p>
+                </div>
+
+                <div class="form-message" id="formMessage">
+                    <div class="message-content">
+                        <i class="fas fa-check-circle message-icon" id="messageIcon"></i>
+                        <div>
+                            <strong id="messageTitle">Success!</strong>
+                            <p id="messageText">Your message has been sent successfully.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <i class="fas fa-user"></i> Full Name
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            class="form-input" 
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">
+                            <i class="fas fa-tag"></i> Subject
+                        </label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            class="form-input" 
+                            placeholder="What is this regarding?"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">
+                            <i class="fas fa-comment"></i> Message
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="form-textarea" 
+                            placeholder="Tell us what's on your mind..."
+                            rows="6"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Feel free to reach out to us through any of the following channels:</p>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <a href="mailto:contact@itinterviewhub.com">contact@itinterviewhub.com</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Response Time</h3>
+                        <p>We typically respond within 24-48 hours</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Website</h3>
+                        <a href="index.html">www.itinterviewhub.com</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Support</h3>
+                        <p>For technical support or questions about our content</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="contact-grid" style="margin-top: 3rem;">
+            <div style="grid-column: 1 / -1; background: white; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 2rem;">
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem; text-align: center;">
+                    <i class="fas fa-question-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                    Frequently Asked Questions
+                </h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            How can I contribute content?
+                        </h3>
+                        <p style="color: #6b7280; line-height: 1.6;">
+                            We welcome contributions! Please reach out to us via email with your suggestions or content ideas.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            Is the content free?
+                        </h3>
+                        <p style="color: #6b7280; line-height: 1.6;">
+                            Yes! All our content is completely free to access. We believe in making quality interview preparation resources available to everyone.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            How often is content updated?
+                        </h3>
+                        <p style="color: #6b7280; line-height: 1.6;">
+                            We regularly update our content to reflect the latest interview trends and technologies. New topics and questions are added frequently.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            Can I request a specific topic?
+                        </h3>
+                        <p style="color: #6b7280; line-height: 1.6;">
+                            Absolutely! We value your feedback. Use the contact form above to suggest topics you'd like us to cover.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formMessage = document.getElementById('formMessage');
+            const messageIcon = document.getElementById('messageIcon');
+            const messageTitle = document.getElementById('messageTitle');
+            const messageText = document.getElementById('messageText');
+            const submitBtn = document.querySelector('.btn-submit');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Show success message
+                formMessage.classList.add('success');
+                formMessage.style.display = 'block';
+                messageIcon.className = 'fas fa-check-circle message-icon';
+                messageTitle.textContent = 'Success!';
+                messageText.textContent = 'Thank you for your message! We\'ll get back to you within 24-48 hours.';
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Reset button
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                submitBtn.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+                
+                // Scroll to message
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 1500);
+        });
+
+        // Load layout.js for header/footer functionality
+        (function() {
+            if (!document.querySelector('script[src="layout.js"]')) {
+                const script = document.createElement('script');
+                script.src = 'layout.js';
+                script.async = false;
+                document.head.appendChild(script);
+            }
+        })();
+    </script>
+</body>
+</html>
+

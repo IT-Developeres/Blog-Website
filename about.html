@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - IT Interview Hub</title>
+    <meta name="description" content="Learn about IT Interview Hub - your comprehensive resource for IT interview preparation with 75+ topics covering programming, web development, and more.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="layout.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background: var(--light);
+            color: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: #fff;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,10L50,30L70,10L90,30L70,50L90,70L70,90L50,70L30,90L30,70L10,50L30,30L10,10L30,10Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            background: #fff;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 1.75rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: #fff;
+            padding: 4rem 5%;
+            margin: 4rem 0;
+            border-radius: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .team-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background: var(--light);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .team-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 4rem 3% 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 2rem 3%;
+            }
+
+            .about-content {
+                padding: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>About IT Interview Hub</h1>
+            <p>Your trusted companion for mastering technical interviews</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <div class="about-content">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--dark);">Our Mission</h2>
+                <p>
+                    IT Interview Hub was created with a simple yet powerful mission: to help aspiring developers and IT professionals succeed in their technical interviews. We understand that preparing for technical interviews can be overwhelming, with countless topics to cover and concepts to master.
+                </p>
+                <p>
+                    Our platform provides a comprehensive, structured approach to interview preparation. We've curated over 75 essential topics covering everything from programming fundamentals to advanced system design, ensuring you have the resources you need to excel in your next interview.
+                </p>
+                <p>
+                    Whether you're a fresh graduate entering the tech industry or an experienced professional looking to advance your career, IT Interview Hub is designed to support your journey every step of the way.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <h2>Why Choose Us?</h2>
+                <p>We provide comprehensive, up-to-date interview preparation resources</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Comprehensive Content</h3>
+                    <p>75+ topics covering all aspects of technical interviews, from coding to system design and everything in between.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Regular Updates</h3>
+                    <p>Our content is regularly updated to reflect the latest interview trends, technologies, and best practices in the industry.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Hands-on Practice</h3>
+                    <p>Practical coding exercises and real-world interview questions with detailed solutions to help you practice effectively.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Driven</h3>
+                    <p>Built by developers, for developers. Our content is created and reviewed by experienced professionals in the field.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Structured Learning</h3>
+                    <p>Organized topics and categories help you create a systematic study plan tailored to your needs and goals.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Accessible Anywhere</h3>
+                    <p>Access our resources from any device, anywhere, anytime. Study at your own pace and on your own schedule.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label">Interview Topics</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Interview Questions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Monthly Visitors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free Access</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-title">
+                <h2>What We Cover</h2>
+                <p>Comprehensive topics across all major IT domains</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming Fundamentals</h3>
+                    <p>Core programming concepts, OOP principles, and language-specific topics.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Essential data structures, algorithm patterns, and problem-solving strategies.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Frontend, backend, full-stack development, and modern web technologies.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>System Design</h3>
+                    <p>Architecture patterns, scalability, distributed systems, and design principles.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Cloud platforms, containerization, CI/CD, and infrastructure management.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security</h3>
+                    <p>Cybersecurity, authentication, authorization, and secure coding practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="about-content">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--dark);">Get Started Today</h2>
+                <p>
+                    Ready to start your interview preparation journey? Browse our comprehensive collection of topics, practice with real interview questions, and build the confidence you need to succeed.
+                </p>
+                <p>
+                    Remember, consistent practice and a structured approach are key to interview success. Start with the fundamentals, gradually move to advanced topics, and don't forget to practice coding problems regularly.
+                </p>
+                <p style="margin-top: 2rem;">
+                    <a href="index.html#topics" style="display: inline-block; background: var(--primary); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: var(--transition);">
+                        Explore Topics <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load layout.js for header/footer functionality
+        (function() {
+            if (!document.querySelector('script[src="layout.js"]')) {
+                const script = document.createElement('script');
+                script.src = 'layout.js';
+                script.async = false;
+                document.head.appendChild(script);
+            }
+        })();
+    </script>
+</body>
+</html>
+

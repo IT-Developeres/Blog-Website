@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 - 70+ Essential Interview Questions & Answers</title>
-    <meta name="description" content="Master HTML5 with 70+ essential interview questions, detailed answers, and real-world code examples. Perfect for school, college, university, and job interview preparation at national and international levels.">
+    <title>CSS3 - 80+ Essential Interview Questions & Answers</title>
+    <meta name="description" content="Master CSS3 with 80+ essential interview questions, detailed answers, and real-world code examples. Perfect for interview preparation and skill building for students and professionals.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="layout.js"></script>
     <style>
         :root {
             --primary: #2563eb;
@@ -822,12 +821,10 @@
     </style>
 </head>
 <body>
-    <div id="header"></div>
-    
     <header>
         <div class="header-content">
-            <h1>HTML5</h1>
-            <p>Master Modern HTML5 with 70+ essential interview questions, detailed answers, and real-world code examples for school, college, university students, and national & international job interviews</p>
+            <h1>CSS3</h1>
+            <p>Master Modern CSS3 with 80+ essential interview questions, detailed answers, and real-world code examples for students and professionals</p>
             <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Search questions...">
@@ -899,15 +896,12 @@
                 <span>/</span>
                 <a href="#">Topics</a>
                 <span>/</span>
-                <span>HTML5</span>
+                <span>CSS3</span>
             </div>
             
-            <h2 style="margin-bottom: 2rem;">70+ Essential HTML5 Interview Questions</h2>
+            <h2 style="margin-bottom: 2rem;">80+ Essential Web Development Interview Questions</h2>
             
             <!-- Adsterra Ad Placement - Top -->
-            <!-- Ad Placeholder -->
-            <div style="text-align: center; margin: 2rem 0; padding: 1rem; background: #f3f4f6; border-radius: 8px; color: #6b7280;">
-  <!-- Adsterra Ad Placement - Top -->
             <div style="text-align: center; margin: 2rem 0;">
                 <script>
   atOptions = {
@@ -919,7 +913,6 @@
   };
 </script>
 <script src="https://www.highperformanceformat.com/30e0f65d6b0b49e9f4a86a454e6d5a48/invoke.js"></script> </div>
-                     </div>
             
             <div id="questionsContainer">
                 <!-- Questions will be inserted here by JavaScript -->
@@ -940,7 +933,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 IT Interview Hub – HTML5</p>
+            <p> 2025 IT Interview Hub – Web Development</p>
             <p>Your go-to resource for technical interview preparation</p>
             <div class="footer-links">
                 <a href="/">Home</a>
@@ -967,349 +960,319 @@
         // Questions data
         const data = [
             {
-                q: "What is HTML5 and how does it differ from previous HTML versions?",
-                a: "HTML5 is the latest evolution of the HTML standard. It introduces semantic elements, multimedia support (audio/video), canvas/SVG graphics, local storage, geolocation, and better form controls. It has a simpler doctype (<!DOCTYPE html>) and focuses on web applications rather than just documents.",
-                tags: ["html5", "basics", "evolution"]
+                q: "What is CSS (Cascading Style Sheets)?",
+                a: "CSS is a stylesheet language used to describe the presentation of HTML documents. It controls colors, fonts, spacing, positioning, and responsive design. CSS separates content from presentation, making websites maintainable and consistent.",
+                tags: ["css", "basics", "styling"]
             },
             {
-                q: "What is the basic syntax structure of HTML5?",
-                a: "HTML5 uses element tags with opening <tag> and closing </tag> syntax. Elements can have attributes in opening tags. Some elements are self-closing. The basic structure includes <!DOCTYPE html>, <html>, <head>, and <body> elements. All elements must be properly nested.",
-                tags: ["html5", "syntax", "structure"]
+                q: "What are CSS selectors and how do they work?",
+                a: "CSS selectors are patterns used to select and style HTML elements. Types: element selectors (p, div), class selectors (.class), ID selectors (#id), attribute selectors ([type='text']), pseudo-classes (:hover), pseudo-elements (::before), and combinators (space, >, +). Specificity determines which rule applies.",
+                tags: ["css", "selectors", "specificity"]
             },
             {
-                q: "What are semantic HTML5 elements and why are they important?",
-                a: "Semantic elements clearly describe their meaning: <header>, <nav>, <main>, <article>, <section>, <aside>, <figure>, <figcaption>, <footer>, <time>, <mark>. They improve accessibility, SEO, code readability, and provide better structure for assistive technologies and search engines.",
-                tags: ["html5", "semantic", "accessibility", "seo"]
+                q: "What is the CSS Box Model?",
+                a: "CSS Box Model consists of content, padding, border, and margin. Content is the actual content area. Padding is space between content and border. Border surrounds padding. Margin is space outside border. Box-sizing property controls how width/height are calculated: content-box (default) or border-box.",
+                tags: ["css", "box-model", "layout"]
             },
             {
-                q: "What new tags were introduced in HTML5?",
-                a: "New semantic tags provide meaningful structure: <header> (page/section header), <nav> (navigation links), <main> (main content), <article> (self-contained content), <section> (thematic grouping), <aside> (sidebar/tangential content), <figure>/<figcaption> (images with captions), <footer> (page/section footer), <time> (date/time), <mark> (highlighted text), <details>/<summary> (expandable content). Multimedia tags: <audio>, <video>, <source>, <track> (captions/subtitles). Graphics: <canvas> (JavaScript drawing), <svg> (vector graphics). Form enhancements: <datalist>, <output>, <progress>, <meter>. Other: <embed>, <wbr>, <rp>, <rt>, <ruby>.",
-                tags: ["html5", "tags", "new-elements"]
+                q: "What are CSS units and when to use each?",
+                a: "CSS units: Absolute units (px, pt, cm, in) - fixed size. Relative units (em, rem, %, vw, vh) - scale with viewport/font. em relative to parent font-size, rem to root font-size, % to parent, vw/vh to viewport. Use rem for typography, px for borders, % for layouts, vw/vh for responsive design.",
+                tags: ["css", "units", "responsive"]
             },
             {
-                q: "What HTML5 tags replaced older deprecated tags?",
-                a: "Semantic HTML5 tags replaced generic div-based structures: <header> replaces <div id='header'> or <div class='header'> for top sections, <nav> replaces <div class='navigation'> for menu items, <main> replaces <div id='content'> for primary content, <section> replaces <div class='section'> for thematic content groups, <article> replaces <div class='article'> for standalone content pieces, <aside> replaces <div class='sidebar'> for secondary content, <footer> replaces <div id='footer'> for bottom sections. <mark> replaces <font color='yellow'> or <span style='background-color: yellow'>, <time> replaces <span class='date'> for semantic dates, <figure>/<figcaption> replace <div class='image-container'> with <p class='caption'> for images with descriptions.",
-                tags: ["html5", "deprecated", "replacement"]
+                q: "What is CSS Flexbox and how does it work?",
+                a: "Flexbox is a 1D layout method for arranging items in rows/columns. Key properties: display: flex, flex-direction (row/column), justify-content (center/space-between), align-items (center/stretch), flex-wrap (wrap/nowrap), flex-grow (expand), flex-shrink (shrink). Perfect for navigation bars, card layouts, centering content.",
+                tags: ["css", "flexbox", "layout"]
             },
             {
-                q: "What is the purpose of the <canvas> element in HTML5?",
-                a: "<canvas> element provides a blank drawing surface controlled via JavaScript API for dynamic graphics, animations, and real-time image processing. Key features: 2D rendering context (getContext('2d')), pixel-level manipulation, path drawing, text rendering, image filtering, and animation frames. Common uses: interactive games (using requestAnimationFrame), data visualization (charts, graphs), photo editing applications, particle systems, and complex visual effects. Canvas can be extended with WebGL for 3D graphics and GPU acceleration. Unlike SVG, canvas is raster-based (pixel-based) and better for complex animations with many objects.",
-                tags: ["html5", "canvas", "graphics", "javascript"]
+                q: "What is CSS Grid and when should you use it?",
+                a: "CSS Grid is a 2D layout system for creating complex layouts. Properties: display: grid, grid-template-columns/rows, grid-gap, grid-area. Use for overall page layouts, card grids, dashboard designs. Combines with Flexbox for best results - Grid for main layout, Flexbox for component alignment.",
+                tags: ["css", "grid", "layout"]
             },
             {
-                q: "How do you embed video in HTML5?",
-                a: "HTML5 video embedding uses <video> element with multiple <source> tags for cross-browser compatibility: <video controls width='640' height='360' poster='poster.jpg'><source src='video.mp4' type='video/mp4'><source src='video.webm' type='video/webm'><source src='video.ogg' type='video/ogg'>Your browser doesn't support HTML5 video.</video>. Key attributes: controls (show playback controls), autoplay (start automatically), loop (repeat playback), muted (audio off), poster (placeholder image), width/height (dimensions), preload (how to load video). Supported formats: MP4 (H.264), WebM (VP8/VP9), Ogg (Theora). JavaScript API provides methods: play(), pause(), load(), canPlayType(). Events: play, pause, ended, timeupdate, progress.",
-                tags: ["html5", "video", "multimedia"]
+                q: "What are CSS media queries and responsive design?",
+                a: "Media queries apply CSS based on device characteristics. Syntax: @media (max-width: 768px) { }. Breakpoints: mobile (<768px), tablet (768-1024px), desktop (>1024px). Use mobile-first approach - design for mobile first, then enhance for larger screens. Essential for modern web development.",
+                tags: ["css", "media-queries", "responsive"]
             },
             {
-                q: "How do you embed audio in HTML5?",
-                a: "HTML5 audio embedding uses <audio> element with fallback sources: <audio controls preload='metadata'><source src='audio.mp3' type='audio/mpeg'><source src='audio.ogg' type='audio/ogg'><source src='audio.wav' type='audio/wav'>Your browser doesn't support HTML5 audio.</audio>. Key attributes: controls (show player), autoplay (start automatically), loop (repeat), muted (silent), preload (none/metadata/auto), volume (0.0-1.0). Supported formats: MP3 (MPEG-1 Audio Layer 3), Ogg Vorbis, WAV, AAC. JavaScript API: play(), pause(), load(), volume property, currentTime property, duration property. Audio events: play, pause, ended, timeupdate, loadedmetadata. Can be styled with CSS and enhanced with Web Audio API for advanced processing.",
-                tags: ["html5", "audio", "multimedia"]
+                q: "What is CSS specificity and how does it work?",
+                a: "CSS specificity determines which rule applies when multiple rules target same element. Calculation: inline styles (1000) > ID selectors (100) > class selectors (10) > element selectors (1). !important overrides all. Use specific selectors, avoid !important, and understand cascade order for maintainable CSS.",
+                tags: ["css", "specificity", "cascade"]
             },
             {
-                q: "What are HTML5 form input types?",
-                a: "HTML5 introduced 13 new input types for better user experience and validation: email (email validation), url (URL validation), tel (telephone number), search (search field styling), number (numeric input with min/max/step), range (slider control), date (calendar picker), month (month/year picker), week (week/year picker), time (time picker), datetime-local (date and time), color (color picker). Example: <input type='email' placeholder='Enter email' required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'>. These provide: built-in validation, specialized mobile keyboards, native UI controls, accessibility improvements, and reduced JavaScript dependency. Not all types are supported in all browsers, so always provide fallbacks.",
-                tags: ["html5", "forms", "input-types"]
+                q: "What are CSS pseudo-classes and pseudo-elements?",
+                a: "Pseudo-classes select elements based on state: :hover, :active, :focus, :first-child, :nth-child(). Pseudo-elements style specific parts: ::before, ::after, ::first-letter, ::first-line. Used for tooltips, hover effects, decorative elements, and advanced styling without extra HTML.",
+                tags: ["css", "pseudo-classes", "pseudo-elements"]
             },
             {
-                q: "What are HTML5 form attributes?",
-                a: "New attributes: placeholder, required, pattern, min, max, step, autocomplete, autofocus, multiple, formnovalidate, formaction, formenctype, formmethod, formtarget, list (for datalist). These enhance form validation and user experience.",
-                tags: ["html5", "forms", "attributes"]
+                q: "What is CSS positioning and what are the types?",
+                a: "CSS positioning: static (default), relative (positioned relative to normal), absolute (positioned relative to nearest positioned ancestor), fixed (positioned relative to viewport), sticky (hybrid of relative and fixed). Properties: top, right, bottom, left, z-index. Use absolute for overlays, fixed for headers, sticky for navigation bars.",
+                tags: ["css", "positioning", "layout"]
             },
             {
-                q: "What is the <datalist> element in HTML5?",
-                a: "<datalist> provides predefined options for input elements: <input list='browsers'><datalist id='browsers'><option value='Chrome'><option value='Firefox'></datalist>. It creates autocomplete functionality without JavaScript.",
-                tags: ["html5", "forms", "datalist"]
+                q: "What are CSS transitions and animations?",
+                a: "Transitions animate property changes over time: transition: property duration timing-function. Animations use keyframes for complex sequences: @keyframes, animation-name, duration, iteration-count. Use transitions for hover effects, animations for loading spinners and attention-grabbing effects. Performance: prefer transform/opacity over left/top.",
+                tags: ["css", "transitions", "animations"]
             },
             {
-                q: "What is HTML5 local storage and how does it work?",
-                a: "Local storage allows storing data locally in the browser (up to 5MB). Use localStorage.setItem('key', 'value') and localStorage.getItem('key'). Data persists across sessions. Unlike cookies, it's not sent with HTTP requests.",
-                tags: ["html5", "storage", "localStorage"]
+                q: "What is CSS custom properties (CSS Variables)?",
+                a: "CSS custom properties store reusable values: --primary-color: #blue; var(--primary-color). Benefits: theming, dynamic updates, reduced repetition. Scope: :root for global, element-specific for local. Use with fallback: color: var(--primary-color, #blue). Essential for design systems.",
+                tags: ["css", "variables", "custom-properties"]
             },
             {
-                q: "What is sessionStorage in HTML5?",
-                a: "sessionStorage stores data for one session only (until tab is closed). Same API as localStorage: sessionStorage.setItem(), sessionStorage.getItem(). Data is isolated per tab and cleared when tab closes.",
-                tags: ["html5", "storage", "sessionStorage"]
+                q: "What are CSS preprocessors and why use them?",
+                a: "CSS preprocessors extend CSS with programming features: Sass/SCSS, Less, Stylus. Features: variables, nesting, mixins, functions, imports. Benefits: modular code, calculations, loops, conditionals. Compiled to standard CSS. Use for large projects, design systems, and team collaboration.",
+                tags: ["css", "preprocessors", "sass", "less"]
             },
             {
-                q: "What is the difference between localStorage and sessionStorage?",
-                a: "localStorage persists across browser sessions with no expiration. sessionStorage lasts only for current session and is cleared when tab closes. Both have ~5MB limit and same API. Use localStorage for persistence, sessionStorage for temporary tab data.",
-                tags: ["html5", "storage", "comparison"]
+                q: "What is the difference between display: none and visibility: hidden?",
+                a: "display: none removes element from document flow and takes no space. visibility: hidden hides element but maintains space in layout. display: none triggers reflow, visibility: hidden doesn't. Use visibility for animations, display for completely removing elements.",
+                tags: ["css", "display", "visibility"]
             },
             {
-                q: "What is HTML5 Geolocation API?",
-                a: "Geolocation API gets user's geographical position: navigator.geolocation.getCurrentPosition(showPosition, showError). Provides latitude, longitude, accuracy, altitude, speed. Requires user permission. Used for location-based services.",
-                tags: ["html5", "geolocation", "api"]
+                q: "What are CSS transforms and when to use them?",
+                a: "CSS transforms modify element coordinate space: translate(x,y), rotate(angle), scale(x,y), skew(x,y). Used for animations, hover effects, 3D effects. Hardware-accelerated for better performance than position changes. Combine with transitions for smooth effects.",
+                tags: ["css", "transforms", "animations"]
             },
             {
-                q: "What are HTML5 Web Workers?",
-                a: "Web Workers allow running JavaScript in background threads: var worker = new Worker('worker.js'). They prevent blocking the main UI thread for heavy computations. Communication via postMessage() and onmessage events.",
-                tags: ["html5", "web-workers", "javascript"]
+                q: "What is CSS float and how does it work?",
+                a: "CSS float removes element from normal flow and shifts left/right. Properties: float: left/right/none, clear: both/left/right/none. Legacy layout method replaced by Flexbox/Grid. Still useful for text wrapping around images. Clearfix needed to contain floated children.",
+                tags: ["css", "float", "layout"]
             },
             {
-                q: "What is HTML5 Drag and Drop API?",
-                a: "Drag and Drop API allows dragging elements: draggable='true' with events: dragstart, dragover, drop. Use dataTransfer.setData() and getData() to transfer data. Enables file uploads and custom drag interactions.",
-                tags: ["html5", "drag-drop", "api"]
+                q: "What are CSS gradients and how to create them?",
+                a: "CSS gradients create smooth color transitions: linear-gradient(direction, color1, color2), radial-gradient(shape, size, color1, color2). Multiple color stops supported. Use for backgrounds, buttons, overlays. Replaces image gradients for better performance and customization.",
+                tags: ["css", "gradients", "backgrounds"]
             },
             {
-                q: "What is the HTML5 history API?",
-                a: "History API manipulates browser history: history.pushState(state, title, url), history.replaceState(), history.back(), history.forward(). Enables single-page applications with proper URL management without page reloads.",
-                tags: ["html5", "history", "spa"]
+                q: "What is CSS opacity and transparency?",
+                a: "CSS opacity controls element transparency: opacity: 0.5 (50% transparent). Range 0-1. Affects child elements. Use rgba() for transparent colors without affecting children. Important for overlays, modal backgrounds, and hover effects.",
+                tags: ["css", "opacity", "transparency"]
             },
             {
-                q: "What are HTML5 Web Sockets?",
-                a: "WebSockets provide full-duplex communication: var socket = new WebSocket('ws://server'). Events: onopen, onmessage, onclose, onerror. Enables real-time bidirectional communication for chat, gaming, live updates.",
-                tags: ["html5", "websockets", "real-time"]
+                q: "What are CSS filters and what can they do?",
+                a: "CSS filters apply visual effects: blur(), brightness(), contrast(), grayscale(), sepia(), saturate(), hue-rotate(). Used for image effects, hover states, and creative designs. Performance consideration: filters are GPU-accelerated but can be expensive on large elements.",
+                tags: ["css", "filters", "effects"]
             },
             {
-                q: "What is the Server-Sent Events (SSE) API in HTML5?",
-                a: "SSE allows server to push data to client: var eventSource = new EventSource('/events'). One-way communication from server to client. Used for live feeds, notifications, stock updates. Simpler than WebSockets for server-to-client only.",
-                tags: ["html5", "sse", "api"]
+                q: "What is CSS overflow and how to control it?",
+                a: "CSS overflow controls content that doesn't fit: visible (default), hidden, scroll, auto. Properties: overflow-x, overflow-y for specific directions. Use for scrollable containers, text truncation with text-overflow: ellipsis. Important for responsive design.",
+                tags: ["css", "overflow", "layout"]
             },
             {
-                q: "What is HTML5 Application Cache?",
-                a: "Application Cache enables offline web applications: <html manifest='app.cache'). Manifest file defines cached, network, and fallback resources. Largely replaced by Service Workers but still useful for simple offline functionality.",
-                tags: ["html5", "offline", "cache"]
+                q: "What are CSS vendor prefixes and why are they needed?",
+                a: "Vendor prefixes add experimental CSS features: -webkit-, -moz-, -ms-, -o-. Needed for browser compatibility with new features. Autoprefixer tools can add them automatically. Modern browsers require fewer prefixes but still needed for some properties.",
+                tags: ["css", "vendor-prefixes", "compatibility"]
             },
             {
-                q: "What are HTML5 microdata and why is it important?",
-                a: "Microdata adds machine-readable semantics to HTML: itemscope, itemtype, itemprop. Helps search engines understand content structure. Example: <div itemscope itemtype='http://schema.org/Person'><span itemprop='name'>John</span></div>.",
-                tags: ["html5", "microdata", "seo", "semantics"]
+                q: "What is the difference between margin and padding?",
+                a: "Padding is space inside element between content and border. Margin is space outside element between border and other elements. Padding adds to element size, margin creates external space. Collapsing margins: vertical margins of adjacent elements can combine into single margin.",
+                tags: ["css", "margin", "padding", "box-model"]
             },
             {
-                q: "What is the role of the <main> element in HTML5?",
-                a: "<main> contains the dominant content of the document. There should be only one <main> element per page, excluding those hidden in templates or dialogs. It improves accessibility and semantic structure.",
-                tags: ["html5", "semantic", "main"]
+                q: "What are CSS z-index and stacking context?",
+                a: "CSS z-index controls stacking order of positioned elements. Higher values appear above lower values. Only works on positioned elements (relative, absolute, fixed, sticky). New stacking context created by opacity, transform, filter. Use for dropdowns, modals, tooltips.",
+                tags: ["css", "z-index", "stacking"]
             },
             {
-                q: "How do you use the <figure> and <figcaption> elements?",
-                a: "<figure> wraps self-contained content like images, diagrams, code snippets. <figcaption> provides caption: <figure><img src='chart.png' alt='Sales chart'><figcaption>Figure 1: Monthly sales data</figcaption></figure>.",
-                tags: ["html5", "figure", "figcaption", "semantic"]
+                q: "What is CSS aspect-ratio property?",
+                a: "CSS aspect-ratio maintains element proportions: aspect-ratio: 16/9. Replaces padding-top hack for video embeds. Works with width/height auto. Values: ratios, auto. Essential for responsive video, images, and containers.",
+                tags: ["css", "aspect-ratio", "responsive"]
             },
             {
-                q: "What is the <time> element used for in HTML5?",
-                a: "<time> represents dates/times in machine-readable format: <time datetime='2023-12-25'>Christmas Day</time>. Helps calendars, search engines, and assistive technologies understand temporal content.",
-                tags: ["html5", "time", "semantic"]
+                q: "What are CSS logical properties and why use them?",
+                a: "CSS logical properties adapt to writing direction: margin-inline-start vs margin-left, padding-block vs padding-top. Benefits: works for RTL/LTR languages, internationalization, better maintainability. Properties: inset, block-size, inline-size. Use for multilingual websites.",
+                tags: ["css", "logical-properties", "internationalization"]
             },
             {
-                q: "What are HTML5 data attributes?",
-                a: "Custom data attributes store private data: data-role, data-id, data-options. Accessed via JavaScript: element.dataset.role or element.getAttribute('data-role'). Used for JavaScript functionality without polluting class/ID attributes.",
-                tags: ["html5", "data-attributes", "javascript"]
+                q: "What is CSS container queries and when to use it?",
+                a: "CSS container queries apply styles based on parent container size, not viewport. Properties: container-type, container-name, @container query. Benefits: component-based responsive design, reusable components, better encapsulation. Use for design systems and component libraries.",
+                tags: ["css", "container-queries", "responsive"]
             },
             {
-                q: "What is the <progress> element in HTML5?",
-                a: "<progress> shows completion progress: <progress value='75' max='100'>75%</progress>. Used for file uploads, form completion, loading states. Has value, max attributes and indeterminate state when value is not set.",
-                tags: ["html5", "progress", "forms"]
+                q: "What are CSS clamp(), min(), and max() functions?",
+                a: "CSS clamp() sets value between min and max: clamp(min, preferred, max). min() selects smallest value, max() selects largest. Use for responsive typography: font-size: clamp(16px, 2vw, 24px). Replaces media queries for fluid scaling.",
+                tags: ["css", "clamp", "responsive", "functions"]
             },
             {
-                q: "What is the <meter> element in HTML5?",
-                a: "<meter> displays scalar measurement within known range: <meter value='0.6' min='0' max='1'>60%</meter>. Used for disk usage, scores, polls. Has value, min, max, low, high, optimum attributes.",
-                tags: ["html5", "meter", "forms"]
+                q: "What is CSS object-fit and object-position?",
+                a: "CSS object-fit controls how replaced elements (img, video) fill container: fill, contain, cover, scale-down. object-position controls alignment: 50% 50% for center. Replaces background-size for images. Essential for responsive images and video thumbnails.",
+                tags: ["css", "object-fit", "images"]
             },
             {
-                q: "What are the <details> and <summary> elements?",
-                a: "<details> creates disclosure widget with <summary> as visible label: <details><summary>More info</summary><p>Hidden content here</p></details>. Native accordion without JavaScript. Has open attribute.",
-                tags: ["html5", "details", "summary", "interactive"]
+                q: "What are CSS counter styles and how to use them?",
+                a: "CSS counters create automatic numbering: counter-reset, counter-increment, content: counter(). Use for automatic list numbering, figure numbering, section headings. Benefits: semantic markup, accessible, maintainable. Can be nested for complex numbering schemes.",
+                tags: ["css", "counters", "generated-content"]
             },
             {
-                q: "What is the <mark> element used for?",
-                a: "<mark> highlights text for reference or notation: <p>The <mark>important</mark> part is highlighted</p>. Different from <em> or <strong> - used for highlighting rather than emphasis.",
-                tags: ["html5", "mark", "semantic"]
+                q: "What is CSS scroll-behavior property?",
+                a: "CSS scroll-behavior controls scrolling: auto (default), smooth, instant. smooth provides animated scrolling between anchor links. Performance consideration: smooth scrolling can impact performance on long pages. Use for single-page applications and anchor navigation.",
+                tags: ["css", "scroll-behavior", "user-experience"]
             },
             {
-                q: "How does HTML5 handle cross-origin resource sharing (CORS)?",
-                a: "HTML5 supports CORS through headers and attributes. <img crossorigin>, <script crossorigin>, <video crossorigin>. Server must send appropriate CORS headers like Access-Control-Allow-Origin. Enables secure cross-origin requests.",
-                tags: ["html5", "cors", "security"]
+                q: "What are CSS shape-outside and clip-path?",
+                a: "CSS shape-outside wraps text around custom shapes: circle(), ellipse(), polygon(). clip-path creates complex shapes and masks. Use for creative layouts, image galleries, text effects. Advanced feature with limited browser support but powerful for unique designs.",
+                tags: ["css", "shapes", "clip-path"]
             },
             {
-                q: "What is the contenteditable attribute in HTML5?",
-                a: "contenteditable makes elements editable: <div contenteditable='true'>Edit this text</div>. Used for rich text editors, inline editing. Works with designMode and execCommand for advanced editing features.",
-                tags: ["html5", "contenteditable", "editing"]
+                q: "What is CSS will-change property?",
+                a: "CSS will-change hints browser about element changes for optimization: auto, scroll-position, contents, transform, opacity. Helps browsers optimize rendering and decide when to create GPU layers. Use for animations and performance-critical elements.",
+                tags: ["css", "will-change", "performance"]
             },
             {
-                q: "What are HTML5 web components?",
-                a: "Web Components are reusable custom elements: Custom Elements, Shadow DOM, HTML Templates, ES Modules. Create custom tags like <my-component>. Enable encapsulated, reusable UI components without frameworks.",
-                tags: ["html5", "web-components", "custom-elements"]
+                q: "What are CSS color functions and how to use them?",
+                a: "CSS color functions: rgb(), rgba(), hsl(), hsla(), color-mix(), lab(), lch(). Benefits: dynamic colors, transparency, better color manipulation. Use for theming, hover effects, and design systems. Modern browsers support advanced color spaces for better accuracy.",
+                tags: ["css", "colors", "functions"]
             },
             {
-                q: "What is the Shadow DOM in HTML5?",
-                a: "Shadow DOM provides encapsulation for custom elements: element.attachShadow({mode: 'open'}). Styles and DOM are scoped to component, preventing conflicts. Essential for web components and framework-like behavior.",
-                tags: ["html5", "shadow-dom", "web-components"]
+                q: "What is CSS gap property and Flexbox/Grid gaps?",
+                a: "CSS gap sets spacing between flex/grid items: gap: 10px (row-gap + column-gap). Replaces margin hacks for spacing. Works with Flexbox and Grid. Values: length, percentage. Simplifies layout code and improves consistency.",
+                tags: ["css", "gap", "flexbox", "grid"]
             },
             {
-                q: "What are HTML5 templates?",
-                a: "<template> holds inert HTML fragments: <template><div>Content here</div></template>. Content is not rendered until activated with JavaScript. Used for reusable content, web components, dynamic content insertion.",
-                tags: ["html5", "templates", "web-components"]
+                q: "What are CSS initial and inherit values?",
+                a: "CSS initial resets property to initial value. inherit inherits from parent element. Use initial for reseting styles, inherit for intentional inheritance. Most properties inherit by default, some don't (background, border, padding). Important for CSS architecture.",
+                tags: ["css", "inheritance", "values"]
             },
             {
-                q: "What is the HTML5 slot element?",
-                a: "<slot> creates placeholder in web components: <template><slot name='title'></slot></template>. Content distributed via slot attribute: <my-component><span slot='title'>Title</span></my-component>. Enables composition of components.",
-                tags: ["html5", "slot", "web-components"]
+                q: "What is CSS text-overflow property?",
+                a: "CSS text-overflow controls text overflow: clip, ellipsis, fade. Used with white-space: nowrap and overflow: hidden for single-line text truncation. Essential for card layouts, tables, and responsive design. Add title attribute for full text on hover.",
+                tags: ["css", "text-overflow", "typography"]
             },
             {
-                q: "What are HTML5 media queries?",
-                a: "Media queries apply CSS based on device characteristics: @media (max-width: 768px) { ... }. Essential for responsive design. Check width, height, orientation, resolution, color, aspect-ratio.",
-                tags: ["html5", "media-queries", "responsive"]
+                q: "What are CSS user-select and pointer-events properties?",
+                a: "CSS user-select controls text selection: none, text, all, auto. pointer-events controls click events: none, auto, visible. Use for preventing text selection on buttons, making overlays clickable-through, and custom interactions. Important for accessibility and UX.",
+                tags: ["css", "user-select", "pointer-events"]
             },
             {
-                q: "What is the viewport meta tag in HTML5?",
-                a: "Viewport controls mobile display: <meta name='viewport' content='width=device-width, initial-scale=1.0'>. Essential for responsive design. Controls width, height, initial-scale, maximum-scale, user-scalable.",
-                tags: ["html5", "viewport", "mobile", "responsive"]
+                q: "What is CSS backface-visibility property?",
+                a: "CSS backface-visibility controls back face of 3D transforms: visible, hidden. Used with transform-style: preserve-3d. Prevents showing back of rotating elements. Essential for 3D animations, card flips, and cube effects.",
+                tags: ["css", "3d", "transforms"]
             },
             {
-                q: "What are HTML5 responsive images techniques?",
-                a: "Use srcset attribute: <img src='small.jpg' srcset='medium.jpg 1000w, large.jpg 2000w' sizes='(max-width: 1000px) 100vw, 50vw'>. Also picture element for art direction: <picture><source media='(min-width: 800px)' srcset='large.jpg'><img src='small.jpg'></picture>.",
-                tags: ["html5", "responsive", "images", "srcset"]
+                q: "What are CSS blend modes and how to use them?",
+                a: "CSS mix-blend-mode controls how overlapping elements blend: multiply, screen, overlay, color-dodge, etc. background-blend-mode for background images. Use for creative effects, overlays, and image processing. Limited browser support but powerful for visual effects.",
+                tags: ["css", "blend-modes", "effects"]
             },
             {
-                q: "What is the picture element in HTML5?",
-                a: "<picture> provides art direction for responsive images: <picture><source media='(min-width: 800px)' srcset='large.jpg'><source media='(min-width: 400px)' srcset='medium.jpg'><img src='small.jpg' alt='Description'></picture>. Different images for different screen sizes.",
-                tags: ["html5", "picture", "responsive", "images"]
+                q: "What is CSS perspective property?",
+                a: "CSS perspective creates 3D space for transform elements: perspective: 1000px. Applied to parent of transformed elements. Creates depth perception. Use with rotateX/Y, translateZ. Essential for realistic 3D effects and animations.",
+                tags: ["css", "perspective", "3d"]
             },
             {
-                q: "What is HTML5 Web Storage API?",
-                a: "Web Storage includes localStorage and sessionStorage. API: setItem(key, value), getItem(key), removeItem(key), clear(), key(index), length. Stores only strings (use JSON.stringify/parse for objects). More secure and larger than cookies.",
-                tags: ["html5", "web-storage", "api"]
+                q: "What are CSS custom selectors and attribute selectors?",
+                a: "CSS custom selectors target attributes: [type='text'], [data-], [disabled], :checked, :not(), :has(). Powerful for form styling, component states, and conditional styling. Use for reducing classes and creating semantic styling based on HTML attributes.",
+                tags: ["css", "selectors", "attributes"]
             },
             {
-                q: "What is IndexedDB in HTML5?",
-                a: "IndexedDB is client-side database for large structured data: indexedDB.open('database', version). Supports transactions, indexes, cursors. Better than localStorage for complex data, larger storage needs, and querying capabilities.",
-                tags: ["html5", "indexeddb", "database", "storage"]
+                q: "What is CSS isolation property?",
+                a: "CSS isolation creates new stacking context: auto, isolate. Prevents blend modes from affecting outside elements. Use with mix-blend-mode for contained effects. Important for component encapsulation and complex layouts.",
+                tags: ["css", "isolation", "stacking"]
             },
             {
-                q: "What are HTML5 File API capabilities?",
-                a: "File API allows reading files: <input type='file' onchange='readFile(event)'. Use FileReader to read as text, data URL, or ArrayBuffer. Supports drag-drop file uploads, file validation, and client-side processing.",
-                tags: ["html5", "file-api", "javascript"]
+                q: "What are CSS environment variables and env() function?",
+                a: "CSS env() reads environment variables: env(safe-area-inset-top), env(viewport-height). Provides system UI values like notches, safe areas. Use for mobile layouts, PWA interfaces, and adapting to device constraints. Essential for modern mobile development.",
+                tags: ["css", "environment-variables", "responsive"]
             },
             {
-                q: "What is HTML5 Notification API?",
-                a: "Notification API shows system notifications: Notification.requestPermission().then(() => new Notification('Title')). Used for web apps to show alerts even when tab is not active. Requires user permission.",
-                tags: ["html5", "notifications", "api"]
+                q: "What is CSS subgrid and how does it differ from Grid?",
+                a: "CSS subgrid allows grid items to be grid containers themselves. Parent creates grid, child creates subgrid. Use for complex nested layouts, component grids, and design systems. Advanced feature with limited support but powerful for modular layouts.",
+                tags: ["css", "subgrid", "grid"]
             },
             {
-                q: "What is HTML5 Fullscreen API?",
-                a: "Fullscreen API enables fullscreen mode: element.requestFullscreen(). Exit with document.exitFullscreen(). Used for videos, presentations, immersive experiences. Events: fullscreenchange, fullscreenerror.",
-                tags: ["html5", "fullscreen", "api"]
+                q: "What are CSS trigonometric functions?",
+                a: "CSS trig functions: sin(), cos(), tan(), asin(), acos(), atan(). Used with transform for circular motion, wave effects, mathematical animations. Values in radians/degrees. Use for loading animations, particle effects, and creative motion graphics.",
+                tags: ["css", "trigonometric", "functions", "animations"]
             },
             {
-                q: "What are HTML5 performance best practices?",
-                a: "Best practices: use semantic HTML, optimize images (WebP, AVIF), lazy loading, minify HTML, use CDN, enable compression, reduce HTTP requests, use async/defer for scripts, implement caching strategies, optimize critical rendering path.",
-                tags: ["html5", "performance", "optimization"]
+                q: "What is CSS accent-color property?",
+                a: "CSS accent-color controls form control colors: checkboxes, radio buttons, range sliders. Replaces platform defaults with brand colors. Use for consistent UI theming. Works with color-scheme for light/dark mode support.",
+                tags: ["css", "accent-color", "forms", "theming"]
             },
             {
-                q: "What is HTML5 accessibility (a11y) importance?",
-                a: "HTML5 improves accessibility with semantic elements, ARIA attributes, alt text, form labels, keyboard navigation. Screen readers better understand content structure. Use proper heading hierarchy, landmark elements, and ARIA roles when needed.",
-                tags: ["html5", "accessibility", "a11y", "aria"]
+                q: "What are CSS logical box model properties?",
+                a: "CSS logical properties: margin-inline-start, padding-block-end, border-inline-width. Adapt to text direction (LTR/RTL). Replaces physical properties (margin-left) for internationalization. Essential for multilingual websites and right-to-left languages.",
+                tags: ["css", "logical-properties", "internationalization"]
             },
             {
-                q: "What are ARIA attributes in HTML5?",
-                a: "ARIA (Accessible Rich Internet Applications) attributes enhance accessibility: aria-label, aria-describedby, aria-expanded, aria-hidden, role='navigation'. Use when semantic HTML5 elements aren't sufficient or for custom components.",
-                tags: ["html5", "aria", "accessibility"]
+                q: "What is CSS appearance property?",
+                a: "CSS appearance controls native element styling: none, auto, button, searchfield, textarea. Removes default browser styling for form controls. Use for custom form styling, consistent cross-browser appearance. Important for design systems.",
+                tags: ["css", "appearance", "forms"]
             },
             {
-                q: "What is HTML5 validation features?",
-                a: "Built-in form validation: required, pattern, min, max, step, type-specific validation. Use :valid, :invalid CSS pseudo-classes. Constraint validation API: element.checkValidity(), element.setCustomValidity().",
-                tags: ["html5", "validation", "forms"]
+                q: "What are CSS scroll-snap and scroll-margin properties?",
+                a: "CSS scroll-snap creates magnetic scroll points: scroll-snap-type: mandatory/proximity. scroll-margin adjusts snap position. Use for carousel effects, image galleries, and smooth scrolling experiences. Essential for mobile UX and touch interfaces.",
+                tags: ["css", "scroll-snap", "user-experience"]
             },
             {
-                q: "What are HTML5 security considerations?",
-                a: "Security: use HTTPS, validate input, sanitize user content, use CSP headers, secure cookies, CORS properly. Avoid eval(), use textContent instead of innerHTML. Be careful with postMessage and cross-origin iframes.",
-                tags: ["html5", "security", "best-practices"]
+                q: "What is CSS color-scheme property?",
+                a: "CSS color-scheme indicates preferred color theme: light, dark, normal. Browser adjusts UI accordingly. Use with prefers-color-scheme media query. Enables automatic dark/light mode switching. Important for accessibility and user preference support.",
+                tags: ["css", "color-scheme", "dark-mode"]
             },
             {
-                q: "What is HTML5 Content Security Policy (CSP)?",
-                a: "CSP prevents XSS attacks: <meta http-equiv='Content-Security-Policy' content='default-src 'self'; script-src 'self' https://trusted.com'>. Controls resource loading, inline scripts, eval(). Essential for modern web security.",
-                tags: ["html5", "csp", "security"]
+                q: "What are CSS property values and global keywords?",
+                a: "CSS global keywords: inherit, initial, revert, revert-layer, unset. inherit takes parent value. initial uses default. revert reverts to previous cascade. revert-layer reverts to previous layer. unset combines inherit and initial. Use for CSS architecture and resets.",
+                tags: ["css", "values", "global-keywords"]
             },
             {
-                q: "What are HTML5 progressive enhancement principles?",
-                a: "Progressive Enhancement builds basic functionality that works everywhere, then enhances for capable browsers. Start with semantic HTML, add CSS for styling, JavaScript for enhancement. Ensures accessibility and graceful degradation.",
-                tags: ["html5", "progressive-enhancement", "best-practices"]
+                q: "What is CSS font-palette property?",
+                a: "CSS font-palette selects user-preferred fonts: @font-palette values. Part of CSS Fonts Level 4. Allows users to choose preferred font variations. Use for typography customization and accessibility. Limited browser support but future-facing feature.",
+                tags: ["css", "fonts", "typography"]
             },
             {
-                q: "What is HTML5 mobile-first design?",
-                a: "Mobile-first designs for small screens first, then enhances for larger screens using media queries. Use viewport meta tag, touch-friendly interfaces, responsive images. Improves performance and user experience on mobile devices.",
-                tags: ["html5", "mobile-first", "responsive"]
+                q: "What are CSS nesting rules and how do they work?",
+                a: "CSS nesting allows writing nested selectors: .card { h2 { color: blue; } }. Reduces repetition, improves organization. Uses & symbol for parent selector. Supported in modern browsers. Alternative to preprocessors. Essential for maintainable CSS architecture.",
+                tags: ["css", "nesting", "architecture"]
             },
             {
-                q: "What are HTML5 semantic sectioning elements?",
-                a: "Sectioning elements create document outline: <body>, <article>, <section>, <nav>, <aside>. Each creates new document context. <h1>-<h6> headings scoped to sectioning element. Improves document structure and accessibility.",
-                tags: ["html5", "sectioning", "semantic", "outline"]
+                q: "What is CSS cascade layers and @layer rule?",
+                a: "CSS cascade layers control specificity order: @layer base, components, utilities. Lower priority layers overridden by higher. Use for reset styles, component overrides, utility classes. Prevents specificity wars. Essential for large projects and design systems.",
+                tags: ["css", "cascade-layers", "specificity"]
             },
             {
-                q: "What is HTML5 document outline algorithm?",
-                a: "Outline algorithm creates document structure from sectioning elements and headings. Tools like HTML5 Outliner can validate. Proper outline improves SEO and accessibility. Use <h1> per section, avoid skipping heading levels.",
-                tags: ["html5", "outline", "semantic", "seo"]
+                q: "What are CSS container style queries?",
+                a: "CSS container style queries apply styles based on container computed styles: @container style(min-width: 300px). More powerful than size queries. Use for responsive components, theme switching, and conditional styling based on container properties.",
+                tags: ["css", "container-queries", "responsive"]
             },
             {
-                q: "What are HTML5 embed and object elements?",
-                a: "<embed> for external content (plugins): <embed src='content.swf' type='application/x-shockwave-flash'>. <object> more flexible: <object data='content.pdf' type='application/pdf'><param name='param1' value='value1'></object>. Both being replaced by modern alternatives.",
-                tags: ["html5", "embed", "object", "multimedia"]
+                q: "What is CSS anchor positioning and @anchor rule?",
+                a: "CSS anchor positioning positions elements relative to anchor elements: position: absolute; position-anchor: #anchor-name. Use for tooltips, popovers, callouts. @anchor rule defines positioning defaults. Replaces JavaScript positioning for many use cases.",
+                tags: ["css", "anchor-positioning", "layout"]
             },
             {
-                q: "What is HTML5 iframe sandbox attribute?",
-                a: "sandbox attribute restricts iframe content: <iframe sandbox='allow-scripts allow-same-origin'>. Options: allow-scripts, allow-same-origin, allow-forms, allow-popups, allow-top-navigation. Improves security when embedding third-party content.",
-                tags: ["html5", "iframe", "sandbox", "security"]
+                q: "What are CSS scope rules and scoped styles?",
+                a: "CSS @scope creates style boundaries: @scope (.component) { }. Styles apply only within scope. Prevents style leakage, improves encapsulation. Use for component-based styling, shadow DOM, and style isolation. Alternative to shadow DOM encapsulation.",
+                tags: ["css", "scope", "encapsulation"]
             },
             {
-                q: "What are HTML5 script loading attributes?",
-                a: "async and defer attributes: <script async src='script.js'> (download async, execute when ready), <script defer src='script.js'> (download async, execute after parsing). Improve page load performance. Regular scripts block rendering.",
-                tags: ["html5", "script", "async", "defer", "performance"]
+                q: "What is CSS transition-behavior property?",
+                a: "CSS transition-behavior controls discrete property animations: normal, allow-discrete. Enables smooth transitions for properties like display, top. Use for modern animations, layout transitions. Improves user experience with animated state changes.",
+                tags: ["css", "transitions", "animations"]
             },
             {
-                q: "What is HTML5 preloading resources?",
-                a: "Preload critical resources: <link rel='preload' href='font.woff2' as='font' crossorigin>. Preconnect for external domains: <link rel='preconnect' href='https://fonts.googleapis.com'>. Improves performance by loading resources earlier.",
-                tags: ["html5", "preload", "performance", "optimization"]
+                q: "What are CSS relative color syntax and color-mix()?",
+                a: "CSS relative colors: from lab(l a b), oklab. color-mix() blends colors: color-mix(in oklab, white 50%). Better than RGB for perceptual uniformity. Use for theming, opacity effects, and color calculations. Essential for modern color systems.",
+                tags: ["css", "colors", "color-mix", "relative-colors"]
             },
             {
-                q: "What are HTML5 internationalization features?",
-                a: "i18n support: lang attribute, dir attribute (ltr/rtl), Unicode support, logical properties (margin-inline-start). Use <html lang='en'>, proper character encoding UTF-8. Essential for global applications.",
-                tags: ["html5", "internationalization", "i18n", "global"]
+                q: "What is CSS text-wrap and balance properties?",
+                a: "CSS text-wrap controls text wrapping: wrap, nowrap, balance. text-wrap: balance optimizes line breaks for headings. Improves typography and layout. Use for responsive text, multi-line headings, and better text flow control.",
+                tags: ["css", "text-wrap", "typography", "layout"]
             },
             {
-                q: "What is HTML5 manifest for web apps?",
-                a: "Web App Manifest: manifest.json file with name, icons, theme_color, start_url, display mode. Enables 'Add to Home Screen' and PWA features: <link rel='manifest' href='manifest.json'>.",
-                tags: ["html5", "manifest", "pwa", "mobile"]
+                q: "What are CSS size container queries?",
+                a: "CSS size container queries respond to container dimensions: @container size(min-width: 300px). More precise than regular container queries. Use for responsive components, adaptive layouts, and size-based styling. Essential for component libraries and design systems.",
+                tags: ["css", "container-queries", "responsive"]
             },
             {
-                q: "What are HTML5 service workers?",
-                a: "Service workers intercept network requests: navigator.serviceWorker.register('/sw.js'). Enable offline functionality, push notifications, background sync. Essential for PWAs. Run separately from main thread.",
-                tags: ["html5", "service-workers", "pwa", "offline"]
+                q: "What is CSS field-sizing and when to use it?",
+                a: "CSS field-sizing controls form element sizing: content, fixed, max-content, min-content. field-sizing: content makes inputs fit content width. Use for form inputs, text areas, and responsive forms. Improves user experience and layout consistency.",
+                tags: ["css", "field-sizing", "forms"]
             },
             {
-                q: "What is HTML5 cache API?",
-                a: "Cache API stores network responses: caches.open('v1').then(cache => cache.add('/styles.css')). Used by service workers for offline functionality. More granular control than application cache.",
-                tags: ["html5", "cache-api", "service-workers", "offline"]
-            },
-            {
-                q: "What are HTML5 background sync API?",
-                a: "Background Sync defers actions until connectivity: self.registration.sync.register('sync-tag'). Used by service workers for offline-first apps. Handles failed network requests when connection restored.",
-                tags: ["html5", "background-sync", "service-workers", "offline"]
-            },
-            {
-                q: "What is HTML5 push notification API?",
-                a: "Push API enables server-triggered notifications: self.addEventListener('push', event => { showNotification(event.data.text()) }). Used by service workers. Requires user permission and subscription.",
-                tags: ["html5", "push-api", "notifications", "service-workers"]
-            },
-            {
-                q: "What are HTML5 best practices for SEO?",
-                a: "SEO best practices: use semantic HTML5, proper heading hierarchy, meta descriptions, title tags, alt text, structured data (microdata/JSON-LD), clean URLs, fast loading, mobile-friendly design, proper use of canonical tags.",
-                tags: ["html5", "seo", "best-practices", "semantic"]
-            },
-            {
-                q: "What is HTML5 structured data?",
-                a: "Structured data helps search engines understand content: JSON-LD scripts, microdata, or RDFa. Example: script with JSON-LD format containing context and type. Improves rich snippets in search results.",
-                tags: ["html5", "structured-data", "seo", "json-ld"]
-            },
-            {
-                q: "What are HTML5 web standards compliance?",
-                a: "Validate HTML5 with W3C validator. Use proper DOCTYPE, valid markup, semantic elements. Ensure accessibility (WCAG), performance (Core Web Vitals), and security (HTTPS, CSP). Follow web standards for compatibility.",
-                tags: ["html5", "standards", "validation", "compliance"]
-            },
-            {
-                q: "What is HTML5 future development trends?",
-                a: "Future trends: Web Components, WebAssembly, WebGPU, WebCodecs, Privacy Sandbox, Enhanced PWA capabilities, AI/ML integration, Web3/blockchain, AR/VR support, better performance APIs, improved accessibility standards.",
-                tags: ["html5", "future", "trends", "webassembly"]
+                q: "What are CSS timeline and animation-range properties?",
+                a: "CSS timeline defines animation sequences: @timeline. animation-range controls when keyframes apply. Use for scroll-linked animations, complex sequences, and performance optimization. Advanced feature for sophisticated animations and user interactions.",
+                tags: ["css", "timeline", "animations", "scroll-driven"]
             }
         ];
 
@@ -1326,10 +1289,10 @@
                 
                 // Set font size and style
                 doc.setFontSize(20);
-                doc.text('HTML5 - Interview Questions', 20, 20);
+                doc.text('Web Development - Interview Questions', 20, 20);
                 
                 doc.setFontSize(12);
-                doc.text('Complete collection of HTML5 interview questions and answers', 20, 30);
+                doc.text('Complete collection of Web Development interview questions and answers', 20, 30);
                 
                 let yPosition = 50;
                 const pageHeight = doc.internal.pageSize.height;
@@ -1412,19 +1375,12 @@
                 }
                 
                 // Save the PDF
-                doc.save('HTML5-Interview-Questions.pdf');
+                doc.save('Web-Development-Interview-Questions.pdf');
                 
                 // Restore button state
                 event.target.innerHTML = originalText;
                 event.target.disabled = false;
             }, 100);
-        }
-
-        // Function to escape HTML
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
         }
 
         // Function to copy code to clipboard
@@ -1462,7 +1418,7 @@
                 const tocLinks = document.querySelectorAll('.toc-link');
                 tocLinks.forEach(link => link.classList.remove('active'));
                 
-                const activeLink = document.querySelector('.toc-link[href="#' + questionId + '"]');
+                const activeLink = document.querySelector(`.toc-link[href="#${questionId}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
                 }
@@ -1483,7 +1439,14 @@
             tocList.innerHTML = pageItems.map((item, index) => {
                 const number = start + index + 1;
                 const shortQ = item.q.substring(0, 50) + (item.q.length > 50 ? '...' : '');
-                return '<li class="toc-item"><a href="#q-' + number + '" class="toc-link"><span class="toc-number">' + number + '.</span><span class="toc-question">' + escapeHtml(shortQ) + '</span></a></li>';
+                return `
+                    <li class="toc-item">
+                        <a href="#q-${number}" class="toc-link" onclick="scrollToQuestion('q-${number}'); return false;">
+                            <span class="toc-number">${number}.</span>
+                            <span class="toc-question">${shortQ}</span>
+                        </a>
+                    </li>
+                `;
             }).join('');
         }
 
@@ -1573,36 +1536,41 @@
             // Calculate pagination details
             const start = (currentPage - 1) * questionsPerPage;
             const end = start + questionsPerPage;
+            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
+
             // Render questions for the current page
             const questionsHTML = currentQuestions.slice(start, end).map((item, index) => {
                 const questionNumber = (currentPage - 1) * questionsPerPage + index + 1;
-                return '<div class="q-box" id="q-' + questionNumber + '">' +
-                        '<h3>' + item.q + '</h3>' +
-                        '<div class="q-meta">' +
-                            '<span class="q-number">' + questionNumber + '</span>' +
-                            '<span class="q-tags">' +
-                                item.tags.map(tag => '<span class="q-tag">' + tag + '</span>').join('') +
-                            '</span>' +
-                        '</div>' +
-                        '<p>' + item.a + '</p>' +
-                        (item.r ? '<p class="q-result">' + item.r + '</p>' : '') +
-                        (item.c ? 
-                            '<div class="code-container">' +
-                                '<div class="code-header">' +
-                                    '<span class="code-title">Example Code</span>' +
-                                    '<button class="copy-btn" onclick="copyCode(\'code-' + questionNumber + '\')">' +
-                                        '<i class="fas fa-copy"></i> Copy' +
-                                    '</button>' +
-                                '</div>' +
-                                '<pre><code id="code-' + questionNumber + '" class="language-javascript">' + escapeHtml(item.c) + '</code></pre>' +
-                            '</div>' : '') +
-                    '</div>';
+                return `
+                    <div class="q-box" id="q-${questionNumber}">
+                        <h3>${item.q}</h3>
+                        <div class="q-meta">
+                            <span class="q-number">${questionNumber}</span>
+                            <span class="q-tags">
+                                ${item.tags.map(tag => `<span class="q-tag">${tag}</span>`).join('')}
+                            </span>
+                        </div>
+                        <p>${item.a}</p>
+                        ${item.r ? `<p class="q-result">${item.r}</p>` : ''}
+                        ${item.c ? `
+                            <div class="code-container">
+                                <div class="code-header">
+                                    <span class="code-title">Example Code</span>
+                                    <button class="copy-btn" onclick="copyCode('code-${questionNumber}')">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <pre><code id="code-${questionNumber}" class="language-javascript">${item.c}</code></pre>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
             }).join('');
 
             questionsContainer.innerHTML = questionsHTML;
 
-            const pageCount = Math.ceil(currentQuestions.length / questionsPerPage);
-            
+            renderTOC();
+
             // Update page info
             if (pageInfo) {
                 pageInfo.textContent = `Page ${currentPage} of ${pageCount} (${currentQuestions.length} questions)`;
@@ -1699,7 +1667,7 @@
             }
 
             // Close mobile menu when clicking on TOC links
-            const mobileTocLinks = mobileSidebar && mobileSidebar.querySelectorAll('.toc-link');
+            const mobileTocLinks = mobileSidebar?.querySelectorAll('.toc-link');
             if (mobileTocLinks) {
                 mobileTocLinks.forEach(link => {
                     link.addEventListener('click', closeMobileMenu);
@@ -1708,22 +1676,11 @@
 
             // Close mobile menu on escape key
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && mobileSidebar && mobileSidebar.classList.contains('active')) {
+                if (e.key === 'Escape' && mobileSidebar?.classList.contains('active')) {
                     closeMobileMenu();
                 }
             });
         });
-
-// Load layout.js for header/footer functionality
-(function() {
-    if (!document.querySelector('script[src="layout.js"]')) {
-        const script = document.createElement('script');
-        script.src = 'layout.js';
-        script.async = false;
-        document.head.appendChild(script);
-    }
-})();
     </script>
-    <div id="footer"></div>
 </body>
 </html>
